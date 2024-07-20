@@ -1,0 +1,9 @@
+{
+  "name": "knex-migrations",
+  "version": "1.0.0",
+  "dependencies": {
+    "@babel/register": "^7.24.6",
+    "dotenv": "^16.4.5",
+    "knex": "^3.1.0"
+  }
+}
