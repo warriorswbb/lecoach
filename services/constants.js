@@ -35,7 +35,7 @@ export const teamNames = [
     fullTeamName: "Memorial Sea-Hawks",
   },
   {
-    city: "St. Francis Xavier",
+    city: "StFX",
     teamName: "X-Women",
     short: "SFX",
     fullSchoolName: "St. Francis Xavier University",
@@ -252,14 +252,14 @@ export const teamNames = [
     fullTeamName: "Ottawa Gee Gees",
   },
   {
-    city: "Queen's",
+    city: "Queens",
     teamName: "Gaels",
     short: "QUE",
     fullSchoolName: "Queen's University",
     fullTeamName: "Queen's Gaels",
   },
   {
-    city: "TMU",
+    city: "TMUnow",
     teamName: "Bold",
     short: "TMU",
     fullSchoolName: "Toronto Metropolitan University",
@@ -280,7 +280,7 @@ export const teamNames = [
     fullTeamName: "Western Mustangs",
   },
   {
-    city: "Wilfrid Laurier",
+    city: "WLUteam",
     teamName: "Golden Hawks",
     short: "WLU",
     fullSchoolName: "Wilfrid Laurier University",
@@ -301,7 +301,7 @@ export const teamNames = [
     fullTeamName: "York Lions",
   },
   {
-    city: "Bishop's",
+    city: "Bishops",
     teamName: "Gaiters",
     short: "BIS",
     fullSchoolName: "Bishop's University",
