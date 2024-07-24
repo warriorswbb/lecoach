@@ -2,7 +2,9 @@ import cron from "node-cron";
 import axios from "axios";
 import cheerio from "cheerio";
 import { teamNames } from "./constants.js";
-import { createObjectCsvWriter } from 'csv-writer';
+import { createObjectCsvWriter } from "csv-writer";
+import fs from "fs";
+import path from "path";
 
 // https://usportshoops.ca/history/yangstats.php?Gender=WBB&Season=2023-24&Team=Waterloo&SType=statgame
 
@@ -10,10 +12,16 @@ import { createObjectCsvWriter } from 'csv-writer';
 //     console.log('running every second');
 // });
 
-const baseUrl = "https://usportshoops.ca/history/yangstats.php?Gender=WBB&Season=2023-24&Team=TEAM_NAME&SType=statgame";
+const resultFolder = path.resolve("./result");
+if (!fs.existsSync(resultFolder)) {
+  fs.mkdirSync(resultFolder, { recursive: true });
+}
+
+const baseUrl =
+  "https://usportshoops.ca/history/yangstats.php?Gender=WBB&Season=2023-24&Team=TEAM_NAME&SType=statgame";
 
 async function fetch_team_data(team) {
-  const url = baseUrl.replace("TEAM_NAME", team.city); // Adjust the field as necessary
+  const url = baseUrl.replace("TEAM_NAME", team.city);
   try {
     const { data } = await axios.get(url);
     const $ = cheerio.load(data);
@@ -22,24 +30,17 @@ async function fetch_team_data(team) {
     $("br").each((index, element) => {
       const text = $(element).get(0).nextSibling.nodeValue;
       if (text) {
-        const cleanedText = text.trim().replace(/;/g, ",");
-        rows.push({ data: cleanedText }); // Store as object to fit CSV writer format
+        let cleanedText = text.trim().replace(/;/g, ",");
+        let cleanerText = cleanedText.trim().replace(/"/g, "");
+        rows.push(cleanerText);
       }
     });
 
     if (rows.length === 0) {
       console.error(`No data found for ${team.fullTeamName}`);
     } else {
-      // Create CSV writer
-      const csvWriter = createObjectCsvWriter({
-        path: `./${team.city}_data.csv`, // File path
-        header: [
-          { id: 'data', title: 'Data' },
-        ],
-      });
-
-      // Write data to CSV
-      await csvWriter.writeRecords(rows);
+      const csvPath = path.join(resultFolder, `${team.city}_data.csv`);
+      fs.writeFileSync(csvPath, rows.join("\n"), "utf8");
       console.log(`Data for ${team.fullTeamName} written to CSV.`);
     }
   } catch (error) {
