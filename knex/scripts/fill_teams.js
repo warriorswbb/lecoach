@@ -1,11 +1,5 @@
-import knex from "knex";
-import config from "./knexfile.js";
-import { teamNames } from "./constants.js";
-import path from 'path';
-
-console.log("Current Directory:", process.cwd());
-console.log("Knex Configuration:", config.development);
-const kx = knex(config.development);
+import { teamNames } from "../constants.js";
+import kx from "./config.js";
 
 const fillTeamTable = async () => {
   for (const team of teamNames) {

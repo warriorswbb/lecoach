@@ -13,7 +13,7 @@
     "rollback": "cd knex && knex migrate:rollback",
     "scrape-games": "cd services && node scrape_games.js",
 
-    "fill-db": "cd scripts && cd database && node fill_team.js"
+    "fill-db": "cd knex && cd scripts && node fill_teams.js"
   },
   "keywords": [],
   "author": "",

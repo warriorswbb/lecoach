@@ -1,12 +1,7 @@
-// Update with your config settings.
-/**
- * @type { Object.<string, import("knex").Knex.Config> }
- */
+import dotenv from 'dotenv';
+dotenv.config();
 
-require('dotenv').config();
-
-module.exports = {
-
+const config = {
   development: {
     client: 'postgresql',
     connection: {
@@ -54,5 +49,6 @@ module.exports = {
   //     tableName: 'knex_migrations'
   //   }
   // }
-
 };
+
+export default config;
