@@ -17,6 +17,7 @@ if (!fs.existsSync(resultFolder)) {
   fs.mkdirSync(resultFolder, { recursive: true });
 }
 
+// for now just adjust the year manully since we should only have to do this once
 const baseUrl =
   "https://usportshoops.ca/history/yangstats.php?Gender=WBB&Season=2023-24&Team=TEAM_NAME&SType=statgame";
 
@@ -35,7 +36,7 @@ async function fetch_team_data(team) {
         rows.push(cleanerText);
       }
     });
-
+    
     if (rows.length === 0) {
       console.error(`No data found for ${team.fullTeamName}`);
     } else {

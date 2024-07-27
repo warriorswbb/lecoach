@@ -11,7 +11,7 @@
     "new-migration": "cd knex && knex migrate:make",
     "migrate": "cd knex && knex migrate:latest",
     "rollback": "cd knex && knex migrate:rollback",
-    "scrape-test": "cd services && node test.js"
+    "scrape-games": "cd services && node scrape_games.js"
   },
   "keywords": [],
   "author": "",
