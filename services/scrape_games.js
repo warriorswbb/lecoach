@@ -36,7 +36,7 @@ async function fetch_team_data(team) {
         rows.push(cleanerText);
       }
     });
-    
+
     if (rows.length === 0) {
       console.error(`No data found for ${team.fullTeamName}`);
     } else {
