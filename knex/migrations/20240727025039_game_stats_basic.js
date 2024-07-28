@@ -14,8 +14,9 @@ export async function up(knex) {
       .references("team_id")
       .inTable("teams")
       .onDelete("CASCADE");
+    t.integer("team_one_score").notNullable();
+    t.integer("team_two_score").notNullable();
     t.string("winning_team").notNullable();
-    t.string("losing_team").notNullable();
     t.boolean("overtime").defaultTo(false);
     t.text("comments");
   });

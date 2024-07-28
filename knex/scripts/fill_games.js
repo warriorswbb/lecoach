@@ -11,7 +11,20 @@ import kx from "./config.js";
 const baseUrl =
   "https://usportshoops.ca/history/yangstats.php?Gender=WBB&Season=2023-24&Team=TEAM_NAME&SType=gameinfo";
 
-async function fetch_team_data(team) {
+const cleanTeamName = (teamName) => {
+  const teamNameMap = {
+    Laurier: "WLUteam",
+    "Toronto Metropolitan": "TMUnow",
+    "Saint Francis Xavier": "StFX",
+  };
+
+  if (teamNameMap[teamName]) {
+    teamName = teamNameMap[teamName];
+  }
+  return teamName.replace(/'/g, "");
+};
+
+const fetch_games = async (team) => {
   const url = baseUrl.replace("TEAM_NAME", team.city);
   try {
     const { data } = await axios.get(url);
@@ -35,51 +48,42 @@ async function fetch_team_data(team) {
         const row = rows[i];
         const values = row.split(",");
 
-        let teamCity = values[2];
-        if (teamCity === "Saint Mary's") {
-            teamCity = "Saint Marys";
-        }
-        const team = await kx("teams").where("team_city", teamCity).first();
+        const teamOne = cleanTeamName(values[6]);
+        const teamTwo = cleanTeamName(values[9]);
 
-        const playerName = values[4];
-        const player = await kx("players").where("player_name", playerName).first();
+        const team1 = await kx("teams").where("team_city", teamOne).first();
+        const team2 = await kx("teams").where("team_city", teamTwo).first();
 
-        if (team && player) {
-          const teamId = team.team_id;
-          const playerId = player.id;
+        const gameId = values[2];
+        const winning_team = values[7] > values[10] ? team1 : team2;
+        const overtime = values[12] === "0" ? false : true;
 
-          // Map the values to the correct columns once we have players table
+        const gameExists = await kx("games").where("game_id", gameId).first();
+
+        if (!gameExists) {
+
+          const team1Id = team1 ? team1.team_id : null;
+          const team2Id = team2 ? team2.team_id : null;
+
           const insertData = {
-            // season: values[0],
+            season: values[0],
             // gender: values[1],
-            team_id: teamId,
-            player_id: playerId,
-            game_id: values[3],
-            // GP: values[5],
-            // GS: values[6],
-            mins: values[7],
-            fg3: values[8],
-            fga3: values[9],
-            fg2: values[10],
-            fga2: values[11],
-            fga: values[9] + values[11],
-            ft: values[12],
-            fta: values[13],
-            oreb: values[14],
-            dreb: values[15],
-            reb: values[16],
-            pf: values[17],
-            assist: values[18],
-            turn: values[19],
-            block: values[20],
-            steal: values[21],
-            points: values[22]
+            game_id: gameId,
+            date: values[3],
+            location: values[4],
+            team_one: team1Id,
+            team_two: team2Id,
+            team_one_score: values[7],
+            team_two_score: values[10],
+            winning_team: winning_team.team_id,
+            overtime: overtime,
+            comments: values[13],
           };
 
           // Insert the parsed data into the database
-          await kx("player_game_stats").insert(insertData);
+          await kx("games").insert(insertData);
         } else {
-          console.error(`No team found for city: ${teamCity}`);
+          console.log(`Game already exists: ${gameId}`);
         }
       }
     } else {
@@ -88,12 +92,12 @@ async function fetch_team_data(team) {
   } catch (error) {
     console.error(`Error fetching data for ${team.fullTeamName}:`, error);
   }
-}
+};
 
-async function fetch_all_teams_data() {
-  const promises = teamNames.map((team) => fetch_team_data(team));
+async function fetch_all_games() {
+  const promises = teamNames.map((team) => fetch_games(team));
   await Promise.all(promises);
-//   return;
+  //   return;
 }
 
-fetch_all_teams_data();
+fetch_all_games();
