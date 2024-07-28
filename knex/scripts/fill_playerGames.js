@@ -11,7 +11,20 @@ import kx from "./config.js";
 const baseUrl =
   "https://usportshoops.ca/history/yangstats.php?Gender=WBB&Season=2023-24&Team=TEAM_NAME&SType=statgame";
 
-async function fetch_team_data(team) {
+const cleanTeamName = (teamName) => {
+  const teamNameMap = {
+    Laurier: "WLUteam",
+    "Toronto Metropolitan": "TMUnow",
+    "Saint Francis Xavier": "StFX",
+  };
+
+  if (teamNameMap[teamName]) {
+    teamName = teamNameMap[teamName];
+  }
+  return teamName.replace(/'/g, "");
+};
+
+async function fetch_data(team) {
   const url = baseUrl.replace("TEAM_NAME", team.city);
   try {
     const { data } = await axios.get(url);
@@ -33,34 +46,36 @@ async function fetch_team_data(team) {
         const row = rows[i];
         const values = row.split(",");
 
-        let teamCity = values[2];
-        if (teamCity === "Saint Mary's") {
-            teamCity = "Saint Marys";
-        }
+        const teamCity = cleanTeamName(values[2]);
         const team = await kx("teams").where("team_city", teamCity).first();
 
-        const playerName = values[4];
-        const player = await kx("players").where("player_name", playerName).first();
+        const game_id = values[3];
+        const game = await kx("games").where("game_id", game_id).first();
 
-        if (team && player) {
+        const playerName = values[4];
+        const player = await kx("players")
+          .where("player_name", playerName)
+          .first();
+
+        if (team && player && !game) {
           const teamId = team.team_id;
           const playerId = player.id;
+          const game_id = game_id;
+
+          const fga3 = parseInt(values[9], 10);
+          const fga2 = parseInt(values[11], 10);
 
           // Map the values to the correct columns once we have players table
           const insertData = {
-            // season: values[0],
-            // gender: values[1],
-            team_id: teamId,
+            game_id: game_id,
             player_id: playerId,
-            game_id: values[3],
-            // GP: values[5],
-            // GS: values[6],
+            team_id: teamId,
             mins: values[7],
             fg3: values[8],
             fga3: values[9],
             fg2: values[10],
             fga2: values[11],
-            fga: values[9] + values[11],
+            fga: fga3 + fga2,
             ft: values[12],
             fta: values[13],
             oreb: values[14],
@@ -71,13 +86,21 @@ async function fetch_team_data(team) {
             turn: values[19],
             block: values[20],
             steal: values[21],
-            points: values[22]
+            points: values[22],
           };
 
+          console.log("Inserting game stats: ", game_id);
           // Insert the parsed data into the database
           await kx("player_game_stats").insert(insertData);
         } else {
-          console.error(`No team found for city: ${teamCity}`);
+          // if (game) {
+          //   console.log(`Game already migrated: ${game_id}`);
+          //   continue;
+          // } else if (!team) {
+          //   console.error(`No team found for city: ${teamCity}`);
+          // } else {
+          //   console.error(`No player found for ${playerName}`);
+          // }
         }
       }
     } else {
@@ -88,10 +111,10 @@ async function fetch_team_data(team) {
   }
 }
 
-async function fetch_all_teams_data() {
-  const promises = teamNames.map((team) => fetch_team_data(team));
+async function fetch_player_games() {
+  const promises = teamNames.map((team) => fetch_data(team));
   await Promise.all(promises);
-//   return;
+  //   return;
 }
 
-fetch_all_teams_data();
+fetch_player_games();

@@ -7,7 +7,7 @@ import fs from "fs";
 import path from "path";
 import kx from "./config.js";
 
-// run this after we have all the games in the database
+// done
 const baseUrl =
   "https://usportshoops.ca/history/yangstats.php?Gender=WBB&Season=2023-24&Team=TEAM_NAME&SType=gameinfo";
 
@@ -39,8 +39,6 @@ const fetch_games = async (team) => {
         rows.push(cleanerText);
       }
     });
-
-    console.log(rows);
 
     if (rows.length !== 0) {
       // store in database
@@ -81,9 +79,10 @@ const fetch_games = async (team) => {
           };
 
           // Insert the parsed data into the database
+          console.log("Inserting game: ", gameId);
           await kx("games").insert(insertData);
         } else {
-          console.log(`Game already exists: ${gameId}`);
+          // console.log(`Game already exists: ${gameId}`);
         }
       }
     } else {
