@@ -7,7 +7,6 @@ import fs from "fs";
 import path from "path";
 import kx from "./config.js";
 
-// run this after we have all the games
 const baseUrl =
   "https://usportshoops.ca/history/yangstats.php?Gender=WBB&Season=2023-24&Team=TEAM_NAME&SType=statgame";
 
@@ -57,10 +56,19 @@ async function fetch_data(team) {
           .where("player_name", playerName)
           .first();
 
-        if (team && player && !game) {
+        if (team && player && game) {
           const teamId = team.team_id;
           const playerId = player.id;
-          const game_id = game_id;
+
+          const alreadyExists = await kx("player_game_stats")
+            .where("game_id", game_id)
+            .andWhere("team_id", teamId)
+            .andWhere("player_id", playerId);
+
+          if (alreadyExists.length > 0) {
+            console.log(`Already migrated: ${game_id}, ${teamId}, ${playerId}`);
+            continue;
+          }
 
           const fga3 = parseInt(values[9], 10);
           const fga2 = parseInt(values[11], 10);
@@ -90,7 +98,6 @@ async function fetch_data(team) {
           };
 
           console.log("Inserting game stats: ", game_id);
-          // Insert the parsed data into the database
           await kx("player_game_stats").insert(insertData);
         } else {
           // if (game) {
@@ -109,6 +116,7 @@ async function fetch_data(team) {
   } catch (error) {
     console.error(`Error fetching data for ${team.fullTeamName}:`, error);
   }
+  return;
 }
 
 async function fetch_player_games() {

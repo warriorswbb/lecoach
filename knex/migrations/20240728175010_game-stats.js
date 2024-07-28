@@ -1,27 +1,6 @@
 export async function up(knex) {
-  await knex.schema.createTable("games", (t) => {
-    t.string("game_id").primary();
-    t.date("date").notNullable();
-    t.string("season").notNullable();
-    t.string("location").notNullable();
-    t.integer("team_one")
-      .unsigned()
-      .references("team_id")
-      .inTable("teams")
-      .onDelete("CASCADE");
-    t.integer("team_two")
-      .unsigned()
-      .references("team_id")
-      .inTable("teams")
-      .onDelete("CASCADE");
-    t.integer("team_one_score").notNullable();
-    t.integer("team_two_score").notNullable();
-    t.string("winning_team").notNullable();
-    t.boolean("overtime").defaultTo(false);
-    t.text("comments");
-  });
-
   await knex.schema.createTable("player_game_stats", (t) => {
+    t.increments("id").primary();
     t.string("game_id")
       .unsigned()
       .references("game_id")
@@ -32,7 +11,6 @@ export async function up(knex) {
       .references("id")
       .inTable("players")
       .onDelete("CASCADE");
-    t.primary(["game_id", "player_id"]);
     t.integer("team_id")
       .unsigned()
       .references("team_id")
@@ -94,5 +72,4 @@ export async function up(knex) {
 export async function down(knex) {
   await knex.schema.dropTable("player_game_stats");
   await knex.schema.dropTable("team_game_stats");
-  await knex.schema.dropTable("games");
 }

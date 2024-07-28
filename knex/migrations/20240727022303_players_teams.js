@@ -15,9 +15,9 @@ export async function up(knex) {
     t.string("player_name").notNullable();
     t.integer("team_id").references("team_id").inTable("teams");
   });
-};
+}
 
 export async function down(knex) {
   await knex.schema.dropTable("players");
   await knex.schema.dropTable("teams");
-};
+}
