@@ -7,9 +7,9 @@ import fs from "fs";
 import path from "path";
 import kx from "./config.js";
 
-// run this after we have all the games
+// run this after we have all the games in the database
 const baseUrl =
-  "https://usportshoops.ca/history/yangstats.php?Gender=WBB&Season=2023-24&Team=TEAM_NAME&SType=statgame";
+  "https://usportshoops.ca/history/yangstats.php?Gender=WBB&Season=2023-24&Team=TEAM_NAME&SType=gameinfo";
 
 async function fetch_team_data(team) {
   const url = baseUrl.replace("TEAM_NAME", team.city);
@@ -26,6 +26,8 @@ async function fetch_team_data(team) {
         rows.push(cleanerText);
       }
     });
+
+    console.log(rows);
 
     if (rows.length !== 0) {
       // store in database

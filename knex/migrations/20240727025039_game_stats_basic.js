@@ -2,6 +2,7 @@ export async function up(knex) {
   await knex.schema.createTable("games", (t) => {
     t.string("game_id").primary();
     t.date("date").notNullable();
+    t.string("season").notNullable();
     t.string("location").notNullable();
     t.integer("team_one")
       .unsigned()
@@ -86,19 +87,6 @@ export async function up(knex) {
     t.integer("steal").notNullable();
     t.integer("points").notNullable();
     t.integer("possessions");
-  });
-
-  await knex.schema.table("games", (t) => {
-    t.integer("team_one_stat_id")
-      .unsigned()
-      .references("id")
-      .inTable("team_game_stats")
-      .onDelete("CASCADE");
-    t.integer("team_two_stat_id")
-      .unsigned()
-      .references("id")
-      .inTable("team_game_stats")
-      .onDelete("CASCADE");
   });
 }
 
