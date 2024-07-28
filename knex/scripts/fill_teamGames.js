@@ -9,17 +9,55 @@ import kx from "./config.js";
 
 async function team_game_stats() {
   try {
-    const games = await kx("games").select("game_id");
+    const games = await kx("games").select("game_id", "team_one", "team_two");
     for (const game of games) {
       const gameId = game.game_id;
+      const team1 = game.team_one;
+      const team2 = game.team_two;
+      console.log(gameId, team1, team2);
 
-      const stats = await kx("player_game_stats").where("game_id", gameId);
+      const teamOne_name = await kx("teams")
+        .select("team_name")
+        .where("team_id", team1);
+      const teamTwo_name = await kx("teams")
+        .select("team_name")
+        .where("team_id", team1);
 
-      
-      let insertData = {
+      const teamOne_stats = await kx("player_game_stats")
+        .where("game_id", gameId)
+        .andWhere("team_id", team1);
+
+      const teamTwo_stats = await kx("player_game_stats")
+        .where("game_id", gameId)
+        .andWhere("team_id", team2);
+
+      let insertDataOne = {
         game_id: gameId,
-        team_id: 0,
-        team_name: "",
+        team_id: team1,
+        team_name: "null",
+        mins: 0,
+        fg3: 0,
+        fga3: 0,
+        fg2: 0,
+        fga2: 0,
+        fga: 0,
+        ft: 0,
+        fta: 0,
+        oreb: 0,
+        dreb: 0,
+        reb: 0,
+        pf: 0,
+        assist: 0,
+        turn: 0,
+        block: 0,
+        steal: 0,
+        points: 0,
+      };
+
+      let insertDataTwo = {
+        game_id: gameId,
+        team_id: team2,
+        team_name: "null",
         mins: 0,
         fg3: 0,
         fga3: 0,
@@ -40,36 +78,52 @@ async function team_game_stats() {
       };
 
       // Aggregate stats for the current game
-      stats.forEach(stat => {
-        insertData.team_id = stat.team_id;
-        insertData.team_name = stat.team_name;
-        insertData.mins += stat.mins;
-        insertData.fg3 += stat.fg3;
-        insertData.fga3 += stat.fga3;
-        insertData.fg2 += stat.fg2;
-        insertData.fga2 += stat.fga2;
-        insertData.fga += stat.fga;
-        insertData.ft += stat.ft;
-        insertData.fta += stat.fta;
-        insertData.oreb += stat.oreb;
-        insertData.dreb += stat.dreb;
-        insertData.reb += stat.reb;
-        insertData.pf += stat.pf;
-        insertData.assist += stat.assist;
-        insertData.turn += stat.turn;
-        insertData.block += stat.block;
-        insertData.steal += stat.steal;
-        insertData.points += stat.points;
+      teamOne_stats.forEach((stat) => {
+        insertDataOne.mins += stat.mins;
+        insertDataOne.fg3 += stat.fg3;
+        insertDataOne.fga3 += stat.fga3;
+        insertDataOne.fg2 += stat.fg2;
+        insertDataOne.fga2 += stat.fga2;
+        insertDataOne.fga += stat.fga;
+        insertDataOne.ft += stat.ft;
+        insertDataOne.fta += stat.fta;
+        insertDataOne.oreb += stat.oreb;
+        insertDataOne.dreb += stat.dreb;
+        insertDataOne.reb += stat.reb;
+        insertDataOne.pf += stat.pf;
+        insertDataOne.assist += stat.assist;
+        insertDataOne.turn += stat.turn;
+        insertDataOne.block += stat.block;
+        insertDataOne.steal += stat.steal;
+        insertDataOne.points += stat.points;
       });
 
-      // Insert the aggregated data into the 'team_game_stats' table
-      await kx("team_game_stats").insert(insertData);
+      teamTwo_stats.forEach((stat) => {
+        insertDataTwo.mins += stat.mins;
+        insertDataTwo.fg3 += stat.fg3;
+        insertDataTwo.fga3 += stat.fga3;
+        insertDataTwo.fg2 += stat.fg2;
+        insertDataTwo.fga2 += stat.fga2;
+        insertDataTwo.fga += stat.fga;
+        insertDataTwo.ft += stat.ft;
+        insertDataTwo.fta += stat.fta;
+        insertDataTwo.oreb += stat.oreb;
+        insertDataTwo.dreb += stat.dreb;
+        insertDataTwo.reb += stat.reb;
+        insertDataTwo.pf += stat.pf;
+        insertDataTwo.assist += stat.assist;
+        insertDataTwo.turn += stat.turn;
+        insertDataTwo.block += stat.block;
+        insertDataTwo.steal += stat.steal;
+        insertDataTwo.points += stat.points;
+      });
+
+      // // Insert the aggregated data into the 'team_game_stats' table
+      await kx("team_game_stats").insert(insertDataOne);
+      await kx("team_game_stats").insert(insertDataTwo);
     }
   } catch (error) {
-    console.error('Error updating team game stats:', error);
-  } finally {
-    // Close the database connection if needed
-    await kx.destroy();
+    console.error("Error updating team game stats:", error);
   }
 }
 
