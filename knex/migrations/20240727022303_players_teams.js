@@ -1,8 +1,4 @@
-/**
- * @param { import("knex").Knex } knex
- * @returns { Promise<void> }
- */
-exports.up = async function (knex) {
+export async function up(knex) {
   await knex.schema.createTable("teams", (t) => {
     t.increments("team_id").primary();
     t.string("team_city").notNullable();
@@ -21,11 +17,7 @@ exports.up = async function (knex) {
   });
 };
 
-/**
- * @param { import("knex").Knex } knex
- * @returns { Promise<void> }
- */
-exports.down = async function (knex) {
+export async function down(knex) {
   await knex.schema.dropTable("players");
   await knex.schema.dropTable("teams");
 };

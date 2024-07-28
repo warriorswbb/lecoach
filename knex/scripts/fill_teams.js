@@ -1,6 +1,7 @@
 import { teamNames } from "../constants.js";
 import kx from "./config.js";
 
+// done
 const fillTeamTable = async () => {
   for (const team of teamNames) {
     console.log(team);

@@ -1,16 +1,11 @@
 import cron from "node-cron";
 import axios from "axios";
 import cheerio from "cheerio";
-import { teamNames } from "./constants.js";
+import { teamNames } from "../constants.js";
 import { createObjectCsvWriter } from "csv-writer";
 import fs from "fs";
 import path from "path";
 import kx from "./config.js";
-
-const resultFolder = path.resolve("./result");
-if (!fs.existsSync(resultFolder)) {
-  fs.mkdirSync(resultFolder, { recursive: true });
-}
 
 // for now just adjust the year manully since we should only have to do this once
 const baseUrl =
@@ -37,37 +32,45 @@ async function fetch_team_data(team) {
       for (let i = 1; i < rows.length; i++) {
         const row = rows[i];
         const values = row.split(",");
+
         const teamCity = values[2];
         const team = await kx("teams").where("team_city", teamCity).first();
 
-        if (team) {
+        const playerName = values[4];
+        const player = await kx("players").where("player_name", playerName).first();
+
+        if (team && player) {
           const teamId = team.team_id;
+          const playerId = player.id;
 
           // Map the values to the correct columns once we have players table
           const insertData = {
-            season: values[0],
-            gender: values[1],
+            // season: values[0],
+            // gender: values[1],
             team_id: teamId,
-            mins: values[3],
-            fg3: values[4],
-            fga: values[5],
-            fg2: values[6],
-            fga2: values[7],
-            ft: values[8],
-            fta: values[9],
-            oreb: values[10],
-            dreb: values[11],
-            reb: values[12],
-            pf: values[13],
-            assist: values[14],
-            turn: values[15],
-            block: values[16],
-            steal: values[17],
-            points: values[18],
+            player_id: playerId,
+            game_id: values[3],
+            // GP: values[5],
+            // GS: values[6],
+            mins: values[7],
+            fg3: values[8],
+            fga3: values[9],
+            fg2: values[10],
+            fga2: values[11],
+            ft: values[12],
+            oreb: values[13],
+            dreb: values[14],
+            reb: values[15],
+            pf: values[16],
+            assist: values[17],
+            turn: values[18],
+            block: values[19],
+            steal: values[20],
+            points: values[21]
           };
 
           // Insert the parsed data into the database
-          await db("player_game_stats").insert(insertData);
+          await kx("player_game_stats").insert(insertData);
         } else {
           console.error(`No team found for city: ${teamCity}`);
         }
@@ -83,6 +86,7 @@ async function fetch_team_data(team) {
 async function fetch_all_teams_data() {
   const promises = teamNames.map((team) => fetch_team_data(team));
   await Promise.all(promises);
+//   return;
 }
 
 fetch_all_teams_data();

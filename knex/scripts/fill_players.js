@@ -7,7 +7,7 @@ import fs from "fs";
 import path from "path";
 import kx from "./config.js";
 
-// for now just adjust the year manully since we should only have to do this once
+// done
 const baseUrl =
   "https://usportshoops.ca/history/yangstats.php?Gender=WBB&Season=2023-24&Team=TEAM_NAME&SType=statgame";
 

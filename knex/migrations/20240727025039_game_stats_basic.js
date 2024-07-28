@@ -1,10 +1,26 @@
-/**
- * @param { import("knex").Knex } knex
- * @returns { Promise<void> }
- */
-exports.up = async function (knex) {
+export async function up(knex) {
+  await knex.schema.createTable("games", (t) => {
+    t.string("game_id").primary();
+    t.date("date").notNullable();
+    t.string("location").notNullable();
+    t.integer("team_one")
+      .unsigned()
+      .references("team_id")
+      .inTable("teams")
+      .onDelete("CASCADE");
+    t.integer("team_two")
+      .unsigned()
+      .references("team_id")
+      .inTable("teams")
+      .onDelete("CASCADE");
+    t.string("winning_team").notNullable();
+    t.string("losing_team").notNullable();
+    t.boolean("overtime").defaultTo(false);
+    t.text("comments");
+  });
+
   await knex.schema.createTable("player_game_stats", (t) => {
-    t.integer("game_id")
+    t.string("game_id")
       .unsigned()
       .references("game_id")
       .inTable("games")
@@ -22,9 +38,10 @@ exports.up = async function (knex) {
       .onDelete("CASCADE");
     t.integer("mins").notNullable();
     t.integer("fg3").notNullable();
-    t.integer("fga").notNullable();
+    t.integer("fga3").notNullable();
     t.integer("fg2").notNullable();
     t.integer("fga2").notNullable();
+    t.integer("fga").notNullable();
     t.integer("ft").notNullable();
     t.integer("fta").notNullable();
     t.integer("oreb").notNullable();
@@ -40,7 +57,7 @@ exports.up = async function (knex) {
 
   await knex.schema.createTable("team_game_stats", (t) => {
     t.increments("id").primary();
-    t.integer("game_id")
+    t.string("game_id")
       .unsigned()
       .references("game_id")
       .inTable("games")
@@ -53,9 +70,10 @@ exports.up = async function (knex) {
     t.string("team_name").notNullable();
     t.integer("mins").notNullable();
     t.integer("fg3").notNullable();
-    t.integer("fga").notNullable();
+    t.integer("fga3").notNullable();
     t.integer("fg2").notNullable();
     t.integer("fga2").notNullable();
+    t.integer("fga").notNullable();
     t.integer("ft").notNullable();
     t.integer("fta").notNullable();
     t.integer("oreb").notNullable();
@@ -82,17 +100,10 @@ exports.up = async function (knex) {
       .inTable("team_game_stats")
       .onDelete("CASCADE");
   });
-};
+}
 
-/**
- * @param { import("knex").Knex } knex
- * @returns { Promise<void> }
- */
-exports.down = async function (knex) {
+export async function down(knex) {
   await knex.schema.dropTable("player_game_stats");
   await knex.schema.dropTable("team_game_stats");
-  await knex.schema.table("games", (t) => {
-    t.dropColumn("team_one_stat_id");
-    t.dropColumn("team_two_stat_id");
-  });
-};
+  await knex.schema.dropTable("games");
+}
