@@ -1,41 +1,40 @@
-import fs from 'fs';
-import csv from 'csv-parser';
-import kx from './config.js';
+import fs from "fs";
+import csv from "csv-parser";
+import kx from "./config.js";
 
-async function updateTeamSeasonStats() {
-  const teams = await kx('teams').select('team_id', 'team_fullName');
-  const teamNameToId = teams.reduce((acc, team) => {
-    acc[team.team_fullName] = team.team_id;
-    return acc;
-  }, {});
+// done
+// delete =sep the first row in csv
+let teams = [];
 
-  const updates = [];
+const updateTeamSeasonStats = async (teams) => {
+  for (const team of teams) {
+    const teamRecord = await kx("teams")
+      .select("team_id")
+      .where("team_fullname", team.team)
+      .first();
 
-  fs.createReadStream('teams.csv')
-    .pipe(csv())
-    .on('data', (row) => {
-      const teamFullName = row.Team;
-      const possession = row.Poss;
-      const teamId = teamNameToId[teamFullName];
-
-      if (teamId) {
-        updates.push({
-          team_id: teamId,
-          possession: possession
+    if (teamRecord) {
+      await kx("team_season_stats")
+        .where("team_one", teamRecord.team_id)
+        .update({
+          poss_per_game: team.possessions,
         });
-      }
-    })
-    .on('end', async () => {
-      for (const update of updates) {
-        await kx('team_season_stats')
-          .where('team_id', update.team_id)
-          .update({ possession: update.possession });
-      }
-      console.log('Team season stats updated successfully.');
-    })
-    .on('error', (error) => {
-      console.error('Error reading the CSV file:', error);
-    });
-}
+      console.log(`Updated possessions for ${team.team}`);
+    } else {
+      console.log(`Team not found: ${team.team}`);
+    }
+  }
+};
 
-updateTeamSeasonStats();
+fs.createReadStream("overall2023.csv")
+  .pipe(csv())
+  .on("data", (row) => {
+    teams.push({
+      team: row.Team,
+      possessions: parseFloat(row.Poss),
+    });
+  })
+  .on("end", () => {
+    console.log("CSV file successfully processed");
+    updateTeamSeasonStats(teams);
+  });

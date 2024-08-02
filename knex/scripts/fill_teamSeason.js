@@ -1,8 +1,6 @@
-// attach game stats for team 1 and 2 to games table done
-// aggregate stats and fill team season table
-// scrape csv data for season posessions.
 import kx from "./config.js";
 
+// done
 const aggregateSeasonStats = async () => {
   try {
     // Get the aggregated stats from team_game_stats, grouped by team_id and season

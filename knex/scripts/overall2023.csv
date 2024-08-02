@@ -1,4 +1,3 @@
-sep=,
 "Rank","Team","GP","Poss","%Time","Pts","PPP","FG Att","FG Made","FG Miss","FG%","eFG%","TO%","%FT","FTA/FGA","%SF","Score%","2 FG Att","2 FG Made","2 FG Miss","2 FG%","3FG Att","3 FG Made","3 FG Miss","3 FG%","3PA/FGA"
 1,"Saskatchewan Huskies",32,94.7,100,80.8,0.853,70.5,30.1,40.4,42.7,47.8,16.3,11.2,0.27,9.6,40,46.5,22.9,23.6,49.3,24,7.2,16.8,29.9,0.34
 2,"Carleton University Ravens",33,94.5,100,78.8,0.834,70.9,30.1,40.8,42.4,46.9,16.1,10.4,0.26,8.7,39.8,51.5,23.8,27.7,46.2,19.4,6.3,13.1,32.4,0.27
