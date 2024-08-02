@@ -1,6 +1,8 @@
 import kx from "./config.js";
 
-async function player_efficiency() {
+
+// done
+const player_efficiency = async () => {
   try {
     const player_stats = await kx("player_game_stats");
 
