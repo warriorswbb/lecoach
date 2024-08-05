@@ -5,6 +5,7 @@ import bodyParser from "body-parser";
 
 const app = express();
 
+// old graphql config
 const startServer = async () => {
   await server.start();
   app.use("/", bodyParser.json(), expressMiddleware(server));

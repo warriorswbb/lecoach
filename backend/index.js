@@ -2,6 +2,8 @@ import { port } from "./config/environment";
 import app from "./app";
 import connectDB from "./db";
 
+
+// old graphql config
 const start = async () => {
   try {
     console.log("Connecting to database");
