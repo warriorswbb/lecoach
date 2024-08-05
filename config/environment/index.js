@@ -21,4 +21,8 @@ const dbConfig = {
   port: process.env.DB_PORT,
 };
 
-export { port, env, dbConfig };
+const postgres = {
+  url: process.env.POSTGRES_URL,
+};
+
+export { port, env, dbConfig, postgres };
