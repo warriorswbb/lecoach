@@ -1,11 +1,12 @@
 {
   "name": "knex-migrations",
   "version": "1.0.0",
-  "type": "module",
   "dependencies": {
     "@babel/register": "^7.24.6",
     "dotenv": "^16.4.5",
     "knex": "^3.1.0",
-    "sqlite3": "^5.1.7"
+    "sqlite3": "^5.1.7",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.5.4"
   }
 }
