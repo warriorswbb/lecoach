@@ -6,6 +6,8 @@ class Vorp {
   private teamName: string = "";
 
   teamStats: Record<string, any> = {};
+  playerStats: Record<string, any> = {};
+
   teamPoss: number = 0;
 
   constructor(team: number, season: string) {
@@ -30,7 +32,7 @@ class Vorp {
   };
 
   // store team stats into this.teamStats
-  allTeamStats = async () => {
+  getTeamStats = async () => {
     try {
       const stats = await kx("team_season_stats")
         .where({ team_one: this.teamId })
@@ -43,6 +45,35 @@ class Vorp {
       }
     } catch (error) {
       console.error("Error fetching team stats:", error);
+      throw error;
+    }
+  };
+
+  getPlayerStats = async () => {
+    try {
+      const stats = await kx("player_season_stats")
+        .where({ team_id: this.teamId })
+        .andWhere({ season: this.season });
+
+      if (stats) {
+        this.playerStats = stats;
+      }
+
+      for (const stat of stats) {
+        console.log(stat["id"]);
+
+        const playerNameRecord = await kx("players")
+          .where({ id: stat["player_id"] })
+          .first();
+
+        if (playerNameRecord) {
+          stat["player_name"] = playerNameRecord.player_name;
+        }
+      }
+
+      // console.log(this.playerStats);
+    } catch (error) {
+      console.error("Error fetching player stats:", error);
       throw error;
     }
   };

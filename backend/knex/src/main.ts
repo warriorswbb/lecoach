@@ -8,7 +8,8 @@ import Vorp from "./vorp.ts";
 const test = async () => {
   const team = new Vorp(1, "2023-2024");
   const bpm = await team.calculateBPM();
-  const teamStats = await team.allTeamStats();
+  const teamStats = await team.getTeamStats();
+  const playerStats = await team.getPlayerStats();
 };
 
 test()
