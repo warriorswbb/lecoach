@@ -18,7 +18,7 @@ class Vorp {
   }
 
   private init = async () => {
-    this.teamName = await this.getTeamName(); // gets team name
+    this.teamName = await this.getTeamName();
   };
 
   // get team name
@@ -49,6 +49,7 @@ class Vorp {
     }
   };
 
+  // put player stats in this.playerStats
   getPlayerStats = async () => {
     try {
       const stats = await kx("player_season_stats")
@@ -76,6 +77,20 @@ class Vorp {
       console.error("Error fetching player stats:", error);
       throw error;
     }
+  };
+
+
+
+  getTeamShootingContextStats = async () => {
+    const teamStats = this.teamStats;
+    for (const stat of teamStats[0]) {
+      console.log(stat);
+
+    }
+  };
+
+  getTeamAdvanced = async () => {
+    // get ratings / pace .. etc, call this from getTeamStats
   };
 
   calculateBPM = async () => {
