@@ -126,7 +126,11 @@ export async function up(knex) {
 
     t.integer("points").notNullable();
 
-    t.integer("possessions");
+    t.float("possessions");
+
+    t.float("offrtg");
+
+    t.float("defrtg");
   });
 }
 

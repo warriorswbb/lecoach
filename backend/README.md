@@ -16,3 +16,8 @@
 
 - `ts-node-esm`
 
+
+### notes
+
+- I used the simplified poss formula found here : https://www.nbastuffer.com/analytics101/possession/
+- the numbers I got are a bit different from what it says on synergy / slower pace in playoff games?

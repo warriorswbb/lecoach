@@ -79,18 +79,18 @@ class Vorp {
     }
   };
 
-
-
   getTeamShootingContextStats = async () => {
+    // TODO after team advanced
     const teamStats = this.teamStats;
     for (const stat of teamStats[0]) {
       console.log(stat);
-
     }
   };
 
   getTeamAdvanced = async () => {
     // get ratings / pace .. etc, call this from getTeamStats
+    
+
   };
 
   calculateBPM = async () => {

@@ -4,6 +4,8 @@ import kx from "./config.js";
 
 // done
 // delete =sep the first row in csv
+
+// deprecated to use poss formula instead of using synergy stats
 let teams = [];
 
 const updateTeamSeasonStats = async (teams) => {

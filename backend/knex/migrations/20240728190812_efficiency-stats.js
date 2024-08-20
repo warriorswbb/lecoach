@@ -51,7 +51,7 @@ export async function up(knex) {
     t.integer("block").notNullable();
     t.integer("steal").notNullable();
     t.integer("points").notNullable();
-    t.integer("possessions");
+    t.float("possessions");
   });
 }
 
