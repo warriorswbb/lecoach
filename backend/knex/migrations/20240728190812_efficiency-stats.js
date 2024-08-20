@@ -52,6 +52,10 @@ export async function up(knex) {
     t.integer("steal").notNullable();
     t.integer("points").notNullable();
     t.float("possessions");
+    t.float("offrtg");
+    t.float("defrtg");
+    t.float("offrtg_adj");
+    t.float("defrtg_adj");
   });
 }
 
