@@ -131,6 +131,8 @@ export async function up(knex) {
     t.float("offrtg");
 
     t.float("defrtg");
+
+    t.float("pace");
   });
 }
 

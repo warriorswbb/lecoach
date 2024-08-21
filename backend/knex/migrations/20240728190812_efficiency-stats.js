@@ -56,6 +56,7 @@ export async function up(knex) {
     t.float("defrtg");
     t.float("offrtg_adj");
     t.float("defrtg_adj");
+    t.float("pace");
   });
 }
 

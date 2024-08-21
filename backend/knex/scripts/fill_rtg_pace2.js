@@ -1,60 +1,9 @@
 import kx from "./config.js";
 
+// done
 //off def rtg formula: https://www.fromtherumbleseat.com/pages/advanced-basketball-statistics-formula-sheet
-const calculateRatings = async () => {
-  try {
-    const games = await kx("team_game_stats")
-      .select("game_id", "team_id", "points", "possessions")
-      .orderBy("game_id");
-
-    const gameGroups = games.reduce((acc, game) => {
-      if (!acc[game.game_id]) {
-        acc[game.game_id] = [];
-      }
-      acc[game.game_id].push(game);
-      return acc;
-    }, {});
-
-    // loop through each game group and calculate OR and DR
-    for (const game_id in gameGroups) {
-      let [team1, team2] = gameGroups[game_id];
-      //   console.log("team1", team1, "team2", team2);
-      if (!team1.points && !team2.points) {
-        console.log("No points for either team", game_id);
-        continue;
-      }
-
-      if (!team1.points) {
-        team1 = team2;
-      }
-
-      if (!team2.points) {
-        team2 = team1;
-      }
-
-      const gamePoss = team1.possessions + team2.possessions;
-
-      const team1Ortg = (100 / gamePoss) * team1.points;
-      const team1Drtg = (100 / gamePoss) * team2.points;
-
-      const team2Ortg = (100 / gamePoss) * team2.points;
-      const team2Drtg = (100 / gamePoss) * team1.points;
-
-      await kx("team_game_stats")
-        .where({ game_id: game_id, team_id: team1.team_id })
-        .update({ offrtg: team1Ortg, defrtg: team1Drtg });
-
-      await kx("team_game_stats")
-        .where({ game_id: game_id, team_id: team2.team_id })
-        .update({ offrtg: team2Ortg, defrtg: team2Drtg });
-    }
-    console.info("Offensive and Defensive Ratings updated successfully.");
-  } catch (error) {
-    console.error("Error updating ratings:", error);
-  }
-};
-
-const adjRatings = async () => {
+// pace https://captaincalculator.com/sports/basketball/pace-factor-calculator/
+const seasonRatingsPace = async () => {
   try {
     let offRtg_total = 0; // we need to get average to calculate adj rating
 
@@ -62,6 +11,7 @@ const adjRatings = async () => {
       .select("team_id")
       .sum("defrtg as def_rtg")
       .sum("offrtg as off_rtg")
+      .sum("pace as tm_pace")
       .groupBy("team_id");
 
     for (const team of rtgByTeam) {
@@ -69,11 +19,16 @@ const adjRatings = async () => {
         .select("games_played")
         .where({ team_one: team.team_id });
       if (team.team_id) {
+        // console.log(team.tm_pace)
+        if (team.team_id === 29) {
+          console.log("team", gamesPlayed[0]?.games_played);
+        }
         await kx("team_season_stats")
           .where({ team_one: team.team_id })
           .update({
             defrtg: team.def_rtg / gamesPlayed[0]?.games_played,
             offrtg: team.off_rtg / gamesPlayed[0]?.games_played,
+            pace: team.tm_pace / gamesPlayed[0]?.games_played,
           });
 
         offRtg_total += team.off_rtg / gamesPlayed[0]?.games_played;
@@ -89,6 +44,7 @@ const adjRatings = async () => {
         .where({ team_one: team.team_id });
 
       if (team.team_id) {
+        // adj off and def rtg
         const offAdj = team.off_rtg / gamesPlayed[0]?.games_played - avgOffRtg;
         const defAdj = avgOffRtg - team.def_rtg / gamesPlayed[0]?.games_played;
 
@@ -105,17 +61,7 @@ const adjRatings = async () => {
   }
 };
 
-calculateRatings()
-  .then(() => {
-    console.info("Done");
-    process.exit(0);
-  })
-  .catch((err) => {
-    console.error(err);
-    process.exit(1);
-  });
-
-adjRatings()
+seasonRatingsPace()
   .then(() => {
     console.info("Done");
     process.exit(0);
