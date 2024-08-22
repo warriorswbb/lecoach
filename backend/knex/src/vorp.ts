@@ -1,4 +1,5 @@
 import kx from "../config.ts";
+import { TeamStats } from "./types/types.ts";
 
 class Vorp {
   private teamId: number;
@@ -6,9 +7,8 @@ class Vorp {
   private teamName: string = "";
 
   teamStats: Record<string, any> = {};
-  playerStats: Record<string, any> = {};
 
-  teamPoss: number = 0;
+  playerStats: Record<string, any> = {};
 
   constructor(team: number, season: string) {
     this.teamId = team;
@@ -19,6 +19,9 @@ class Vorp {
 
   private init = async () => {
     this.teamName = await this.getTeamName();
+    await this.getPlayerStats();
+    await this.getTeamStats();
+    await this.getTeamShootingContextStats();
   };
 
   // get team name
@@ -39,9 +42,27 @@ class Vorp {
         .andWhere({ season: this.season })
         .first();
 
-      this.teamPoss = stats?.poss_per_game;
+      console.log(stats);
+
+      const ovrRtg = stats.offrtg_adj + stats.defrtg_adj;
+      const avgLead = (ovrRtg * stats.pace) / 100 / 2;
+      const leadBonus = (0.35 / 2) * avgLead;
+      const ovrRtg_adj = ovrRtg + leadBonus;
+      const offRtg_leadAdj = stats.offrtg_adj + leadBonus / 2;
+
+      const tmTsa = stats.fga + 0.44 * stats.fta;
+      const tmPts_tsTsa = stats.points / tmTsa;
+
+      const extendedStats = {
+        ...stats,
+        ovrRtg,
+        ovrRtg_adj,
+        offRtg_leadAdj,
+        tmPts_tsTsa,
+      };
+
       if (stats) {
-        this.teamStats = stats;
+        this.teamStats = extendedStats;
       }
     } catch (error) {
       console.error("Error fetching team stats:", error);
@@ -61,8 +82,6 @@ class Vorp {
       }
 
       for (const stat of stats) {
-        console.log(stat["id"]);
-
         const playerNameRecord = await kx("players")
           .where({ id: stat["player_id"] })
           .first();
@@ -85,12 +104,6 @@ class Vorp {
     for (const stat of teamStats[0]) {
       console.log(stat);
     }
-  };
-
-  getTeamAdvanced = async () => {
-    // get ratings / pace .. etc, call this from getTeamStats
-    
-
   };
 
   calculateBPM = async () => {
