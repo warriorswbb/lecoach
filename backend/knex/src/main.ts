@@ -10,6 +10,7 @@ const test = async () => {
   // const bpm = await team.calculateBPM();
   const teamStats = await team.getTeamStats();
   const playerStats = await team.getPlayerStats();
+  const shootingStats = await team.getTeamShootingContextStats();
 };
 
 test()
