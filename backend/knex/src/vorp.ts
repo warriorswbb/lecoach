@@ -91,6 +91,7 @@ class Vorp {
     }
   };
 
+  // shooting context and per 100 stats
   getTeamShootingContextStats = async () => {
     try {
       const players = this.playerStats;
@@ -105,23 +106,56 @@ class Vorp {
         const pts_tsa = !tsa ? 0 : player.points / tsa;
 
         if (!teamStats.tmPts_tsTsa || !teamStats.pace) {
-          throw new Error(`Missing team stats: tmPts_tsTsa or pace for ${player.player_name}`);
+          throw new Error(
+            `Missing team stats: tmPts_tsTsa or pace for ${player.player_name}`
+          );
         }
 
         player["tsa"] = tsa;
         player["pts_tsTsa"] = pts_tsa;
         player["pts_adj"] = (pts_tsa - teamStats.tmPts_tsTsa + 1) * tsa;
-        player["poss"] = player.mins * teamStats?.pace / 48;
+        player["poss"] = (player.mins * teamStats?.pace) / 48;
         player["threshPts"] = tsa * (pts_tsa - (teamStats.tmPts_tsTsa - 0.33));
+
+        // per 100 stats
+        player["adj_pts_p100"] = (player.pts_adj / player.poss) * 100;
+        player["fga_p100"] = (player.fga / player.poss) * 100;
+        player["fta_p100"] = (player.fta / player.poss) * 100;
+        player["fg3_p100"] = (player.fg3 / player.poss) * 100;
+        player["ast_p100"] = (player.assist / player.poss) * 100;
+        player["to_p100"] = (player.turn / player.poss) * 100;
+        player["orb_p100"] = (player.oreb / player.poss) * 100;
+        player["drb_p100"] = (player.dreb / player.poss) * 100;
+        player["trb_p100"] = (player.reb / player.poss) * 100;
+        player["stl_p100"] = (player.steal / player.poss) * 100;
+        player["blk_p100"] = (player.block / player.poss) * 100;
+        player["pf_p100"] = (player.pf / player.poss) * 100;
+
+        console.log(player);
+
+        // % of stats
+        const percent_min = player.mins / (teamStats.mins / 5);
+
+        
+
+        console.log(percent_min);
+
+        player["percent_min"] = percent_min;
+        player["percent_treb"] = player.reb / teamStats.reb / percent_min;
+
+
       }
 
-      console.log(players);
+      console.log(teamStats);
+
+      // console.log(players);
     } catch (error) {
       console.error("Error fetching player stats:", error);
       throw error;
     }
   };
 
+  // final step
   calculateBPM = async () => {
     const games = await kx("test_table").select("*");
     return this.teamId + 1;
