@@ -101,6 +101,8 @@ class Vorp {
         return;
       }
 
+      let teamTreshPts = 0;
+
       for (const player of Object.values(players)) {
         const tsa = player.fga + 0.44 * player.fta;
         const pts_tsa = !tsa ? 0 : player.points / tsa;
@@ -116,6 +118,10 @@ class Vorp {
         player["pts_adj"] = (pts_tsa - teamStats.tmPts_tsTsa + 1) * tsa;
         player["poss"] = (player.mins * teamStats?.pace) / 48;
         player["threshPts"] = tsa * (pts_tsa - (teamStats.tmPts_tsTsa - 0.33));
+
+        if (player.threshPts) {
+          teamTreshPts += player.threshPts;
+        }
 
         // per 100 stats
         player["adj_pts_p100"] = (player.pts_adj / player.poss) * 100;
@@ -136,23 +142,36 @@ class Vorp {
         // % of stats
         const percent_min = player.mins / (teamStats.mins / 5);
 
-        
-
         console.log(percent_min);
 
+        // using decimal and not percent right now
         player["percent_min"] = percent_min;
         player["percent_treb"] = player.reb / teamStats.reb / percent_min;
-
-
+        player["percent_stl"] = player.steal / teamStats.steal / percent_min;
+        player["percent_pf"] = player.pf / teamStats.pf / percent_min;
+        player["percent_ast"] = player.assist / teamStats.assist / percent_min;
+        player["percent_blk"] = player.block / teamStats.block / percent_min;
       }
 
+      teamStats["threshPts"] = teamTreshPts;
       console.log(teamStats);
 
-      // console.log(players);
+      for (const player of Object.values(players)) {
+        const percent_min = player.mins / (teamStats.mins / 5);
+        player["percent_threshPts"] =
+          player.threshPts / teamTreshPts / percent_min;
+      }
+
+      console.log(players);
     } catch (error) {
       console.error("Error fetching player stats:", error);
       throw error;
     }
+  };
+
+  // estimate positions
+  estimatePlayerPositions = async () => {
+    
   };
 
   // final step
