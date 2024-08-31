@@ -182,15 +182,25 @@ class Vorp {
     }
   };
 
-  // helper sum product function for estimating positions
-  sumProdPos = (player: PercentStats, weights: PercentStats): number => {
+  // helper sum product functions for estimating positions
+  sumProd = <T extends Record<string, number>>(obj1: T, obj2: T): number => {
     let sumProduct = 0;
 
-    const keys = Object.keys(weights) as (keyof PercentStats)[];
+    const keys = Object.keys(obj1) as (keyof T)[];
 
     keys.forEach((key) => {
-      sumProduct += (player[key] || 0) * (weights[key] || 0);
+      sumProduct += (obj1[key] || 0) * (obj2[key] || 0);
     });
+
+    return sumProduct;
+  };
+
+  sumProdList = (arr1: number[], arr2: number[]): number => {
+    let sumProduct = 0;
+
+    for (let i = 0; i < arr1.length; i++) {
+      sumProduct += (arr1[i] || 0) * (arr2[i] || 0);
+    }
 
     return sumProduct;
   };
@@ -198,7 +208,10 @@ class Vorp {
   // estimate positions
   estimatePlayerPositions = async () => {
     const players = this.playerStats;
+    const team = this.teamStats;
     const PPW = PositionPercentageWeights;
+    const estPosList: { name: string; position: number }[] = [];
+    const plyrMins: number[] = [];
 
     for (const player of Object.values(players)) {
       const percentObject = {
@@ -209,9 +222,28 @@ class Vorp {
         percent_blk: player.percent_blk,
       };
 
-      const test = this.sumProdPos(percentObject, PPW) + Intercept;
-      console.log(test, player.player_name);
+      const estPos1 = this.sumProd(percentObject, PPW) + Intercept;
+      estPosList.push({
+        name: player.player_name,
+        position: estPos1,
+      });
+      plyrMins.push(player.mins);
     }
+
+    if (estPosList.length === 0) {
+      console.error("No player stats to estimate positions");
+    }
+
+    // values can't be over 5 or under 1
+    const trimEstPos1 = estPosList.map((player) => {
+      player.position = Math.max(Math.min(player.position, 5), 1);
+      return player.position;
+    });
+
+    const tmAvg1 = this.sumProdList(trimEstPos1, plyrMins) / team.mins;
+    console.log(tmAvg1);
+
+    console.log(estPosList);
   };
 
   // final step
