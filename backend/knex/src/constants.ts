@@ -1,5 +1,3 @@
-
-
 export const teamNames = [
   {
     city: "Waterloo",
@@ -338,3 +336,24 @@ export const teamNames = [
     fullTeamName: "University Quebec - Montreal",
   },
 ];
+
+export const PositionPercentageWeights = {
+  // intercept: 2.130,
+  percent_treb: 8.668,
+  percent_stl: -2.486,
+  percent_pf: 0.992,
+  percent_ast: -3.536,
+  percent_blk: 1.667,
+  // minWt: 50
+};
+
+export const Intercept = 2.130;
+
+export const OffensiveRoleWeights = {
+  // intercept: 6.000,
+  ast: -6.642,
+  thresh: -8.544,
+  ptThreshold: -0.33,
+  defaultPos: 4.0,
+  // minWt: 50
+};

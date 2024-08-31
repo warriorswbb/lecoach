@@ -11,6 +11,8 @@ const test = async () => {
   const teamStats = await team.getTeamStats();
   const playerStats = await team.getPlayerStats();
   const shootingStats = await team.getTeamShootingContextStats();
+
+  const positions = await team.estimatePlayerPositions();
 };
 
 test()

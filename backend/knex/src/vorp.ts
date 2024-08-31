@@ -1,5 +1,18 @@
 import kx from "../config.ts";
 import { TeamStats } from "./types/types.ts";
+import {
+  PositionPercentageWeights,
+  OffensiveRoleWeights,
+  Intercept,
+} from "./constants.ts";
+
+type PercentStats = {
+  percent_treb: number;
+  percent_stl: number;
+  percent_pf: number;
+  percent_ast: number;
+  percent_blk: number;
+};
 
 class Vorp {
   private teamId: number;
@@ -169,9 +182,36 @@ class Vorp {
     }
   };
 
+  // helper sum product function for estimating positions
+  sumProdPos = (player: PercentStats, weights: PercentStats): number => {
+    let sumProduct = 0;
+
+    const keys = Object.keys(weights) as (keyof PercentStats)[];
+
+    keys.forEach((key) => {
+      sumProduct += (player[key] || 0) * (weights[key] || 0);
+    });
+
+    return sumProduct;
+  };
+
   // estimate positions
   estimatePlayerPositions = async () => {
-    
+    const players = this.playerStats;
+    const PPW = PositionPercentageWeights;
+
+    for (const player of Object.values(players)) {
+      const percentObject = {
+        percent_treb: player.percent_treb,
+        percent_stl: player.percent_stl,
+        percent_pf: player.percent_pf,
+        percent_ast: player.percent_ast,
+        percent_blk: player.percent_blk,
+      };
+
+      const test = this.sumProdPos(percentObject, PPW) + Intercept;
+      console.log(test, player.player_name);
+    }
   };
 
   // final step
