@@ -7,6 +7,7 @@ import {
   Intercept,
   BPMCoefficients,
   OBPMCoefficients,
+  PosConst,
 } from "./constants.ts";
 
 class Vorp {
@@ -145,12 +146,12 @@ class Vorp {
         player["blk_p100"] = (player.block / player.poss) * 100;
         player["pf_p100"] = (player.pf / player.poss) * 100;
 
-        console.log(player);
+        // console.log(player);
 
         // % of stats
         const percent_min = player.mins / (teamStats.mins / 5);
 
-        console.log(percent_min);
+        // console.log(percent_min);
 
         // using decimal and not percent right now
         player["percent_min"] = percent_min;
@@ -162,7 +163,7 @@ class Vorp {
       }
 
       teamStats["threshPts"] = teamTreshPts;
-      console.log(teamStats);
+      // console.log(teamStats);
 
       for (const player of Object.values(players)) {
         const percent_min = player.mins / (teamStats.mins / 5);
@@ -170,7 +171,7 @@ class Vorp {
           player.threshPts / teamTreshPts / percent_min;
       }
 
-      console.log(players);
+      // console.log(players);
     } catch (error) {
       console.error("Error fetching player stats:", error);
       throw error;
@@ -261,7 +262,7 @@ class Vorp {
     const offRoleList: { name: string; offRole: number }[] = [];
     const trimOffRoles: number[] = [];
     const plyrMins: number[] = [];
-    
+
     for (const player of Object.values(players)) {
       const offrole =
         OffRoleIntercept +
@@ -304,11 +305,12 @@ class Vorp {
   calculateBPMCoefficients = async () => {
     type CoefficientsKeys = keyof typeof BPMCoefficients.pos1;
     const players = this.playerStats;
+
     const coefficients: CoefficientsKeys[] = [
-      "adjPt",
+      "adj_pts",
       "fga",
       "fta",
-      "threePtFg",
+      "fg3",
       "ast",
       "to",
       "orb",
@@ -321,20 +323,89 @@ class Vorp {
 
     for (const player of Object.values(players)) {
       for (const coeff of coefficients) {
-        const posKey = coeff === "adjPt" ? "position" : "offRole";
+        const posKey = coeff === "adj_pts" ? "position" : "offRole";
         player[`bpmCoeff_${coeff}`] =
           ((5 - player[posKey]) / 4) * BPMCoefficients.pos1[coeff] +
           ((player[posKey] - 1) / 4) * BPMCoefficients.pos5[coeff];
       }
-      console.log(player);
+      // console.log(player);
     }
-
   };
 
-  // final step
+  // raw bpm
+  calculateRawBPM = async () => {
+    const players = this.playerStats;
+    console.log("Raw BPM :");
+
+    const categories = [
+      {
+        coeffs: [
+          "bpmCoeff_adj_pts",
+          "bpmCoeff_fga",
+          "bpmCoeff_fta",
+          "bpmCoeff_fg3",
+        ],
+        p100s: ["adj_pts_p100", "fga_p100", "fta_p100", "fg3_p100"],
+        result: "scoringRawBpm",
+      },
+      {
+        coeffs: ["bpmCoeff_ast", "bpmCoeff_to"],
+        p100s: ["ast_p100", "to_p100"],
+        result: "ballHandlingBpm",
+      },
+      {
+        coeffs: ["bpmCoeff_orb", "bpmCoeff_drb", "bpmCoeff_trb"],
+        p100s: ["orb_p100", "drb_p100", "trb_p100"],
+        result: "reboundingBpm",
+      },
+      {
+        coeffs: ["bpmCoeff_stl", "bpmCoeff_blk", "bpmCoeff_pf"],
+        p100s: ["stl_p100", "blk_p100", "pf_p100"],
+        result: "defenseBpm",
+      },
+    ];
+    // raw bpm = 4 cats + pos const
+    for (const player of Object.values(players)) {
+      for (const { coeffs, p100s, result } of categories) {
+        player[result] = this.sumProdList(
+          coeffs.map((key) => player[key]),
+          p100s.map((key) => player[key])
+        );
+      }
+      // console.log(
+      //   player.player_name,
+      //   player.scoringRawBpm,
+      //   player.ballHandlingBpm,
+      //   player.reboundingBpm,
+      //   player.defenseBpm
+      // );
+
+      let posConst = 0;
+      const guard = player.position < 3;
+
+      posConst = guard
+        ? ((player.position - 1) / 2) * PosConst.pos3 +
+          ((3 - player.position) / 2) * PosConst.pos1
+        : ((player.position - 3) / 2) * PosConst.pos5 +
+          ((5 - player.position) / 2) * PosConst.pos3;
+      posConst += PosConst.offSlope * (player.offRole - 3);
+
+      const rawBpm =
+        player.scoringRawBpm +
+        player.ballHandlingBpm +
+        player.reboundingBpm +
+        player.defenseBpm +
+        posConst;
+
+      console.log(player.player_name, rawBpm);
+      player["rawBpm"] = rawBpm;
+    }
+  };
+
+  // bpm calculation
   calculateBPM = async () => {
-    const games = await kx("test_table").select("*");
-    return this.teamId + 1;
+    const players = this.playerStats;
+    console.log(players);
   };
 }
 

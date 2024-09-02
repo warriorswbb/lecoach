@@ -1,5 +1,3 @@
-import { TeamStats, PlayerStats, BPMCoefficientsType } from "./types/types.ts";
-
 export const teamNames = [
   {
     city: "Waterloo",
@@ -350,6 +348,7 @@ export const PositionPercentageWeights = {
 };
 
 export const Intercept = 2.13;
+
 export const OffRoleIntercept = 6;
 
 export const OffensiveRoleWeights = {
@@ -363,10 +362,10 @@ export const OffensiveRoleWeights = {
 
 export const BPMCoefficients = {
   pos1: {
-    adjPt: 0.86,
+    adj_pts: 0.86,
     fga: -0.56,
     fta: -0.246,
-    threePtFg: 0.389,
+    fg3: 0.389,
     ast: 0.58,
     to: -0.964,
     orb: 0.613,
@@ -377,10 +376,10 @@ export const BPMCoefficients = {
     pf: -0.367,
   },
   pos5: {
-    adjPt: 0.86,
+    adj_pts: 0.86,
     fga: -0.78,
     fta: -0.343,
-    threePtFg: 0.389,
+    fg3: 0.389,
     ast: 1.034,
     to: -0.964,
     orb: 0.181,
@@ -394,10 +393,10 @@ export const BPMCoefficients = {
 
 export const OBPMCoefficients = {
   pos1: {
-    adjPt: 0.605,
+    adj_pts: 0.605,
     fga: -0.33,
     fta: -0.145,
-    threePtFg: 0.477,
+    fg3: 0.477,
     ast: 0.476,
     to: -0.579,
     orb: 0.606,
@@ -408,10 +407,10 @@ export const OBPMCoefficients = {
     pf: -0.439,
   },
   pos5: {
-    adjPt: 0.605,
+    adj_pts: 0.605,
     fga: -0.472,
     fta: -0.208,
-    threePtFg: 0.477,
+    fg3: 0.477,
     ast: 0.476,
     to: -0.882,
     orb: 0.422,
@@ -421,4 +420,11 @@ export const OBPMCoefficients = {
     blk: 0.097,
     pf: -0.439,
   },
+};
+
+export const PosConst = {
+  pos1: -0.818,
+  pos3: 0,
+  pos5: 0,
+  offSlope: 1.387,
 };
