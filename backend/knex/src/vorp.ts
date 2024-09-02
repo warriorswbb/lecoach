@@ -1,18 +1,11 @@
 import kx from "../config.ts";
-import { TeamStats } from "./types/types.ts";
+import { TeamStats, PlayerStats } from "./types/types.ts";
 import {
   PositionPercentageWeights,
   OffensiveRoleWeights,
+  OffRoleIntercept,
   Intercept,
 } from "./constants.ts";
-
-type PercentStats = {
-  percent_treb: number;
-  percent_stl: number;
-  percent_pf: number;
-  percent_ast: number;
-  percent_blk: number;
-};
 
 class Vorp {
   private teamId: number;
@@ -227,7 +220,7 @@ class Vorp {
         name: player.player_name,
         position: estPos1,
       });
-      plyrMins.push(player.mins);
+      plyrMins.push(player.mins); // used for team avg
     }
 
     if (estPosList.length === 0) {
@@ -240,10 +233,70 @@ class Vorp {
       return player.position;
     });
 
-    const tmAvg1 = this.sumProdList(trimEstPos1, plyrMins) / team.mins;
-    console.log(tmAvg1);
+    // const tmAvg1 = this.sumProdList(trimEstPos1, plyrMins) / team.mins;
+    // console.log(tmAvg1); 3.0492456886882726 close enough to 3
 
-    console.log(estPosList);
+    // add position to player objects
+    estPosList.forEach((player) => {
+      const matchingPlayer = this.playerStats.find(
+        (p: PlayerStats) => p.player_name === player.name
+      );
+
+      if (matchingPlayer) {
+        matchingPlayer.position = player.position;
+        // console.log(matchingPlayer.player_name, matchingPlayer.position);
+      } else {
+        console.error("No matching player found for", player.name);
+      }
+    });
+  };
+
+  // estimate offesive roles
+  estimateOffensiveRoles = async () => {
+    const players = this.playerStats;
+    const team = this.teamStats;
+    const ORW = OffensiveRoleWeights;
+    const offRoleList: { name: string; offRole: number }[] = [];
+    const trimOffRoles: number[] = [];
+    const plyrMins: number[] = [];
+
+    console.log("trimmed off roles:");
+    for (const player of Object.values(players)) {
+      const offrole =
+        OffRoleIntercept +
+        ORW.ast * player.percent_ast +
+        ORW.thresh * player.percent_threshPts;
+
+      // default pos is 4, min weight is 50
+      const minAdj1 = (offrole * player.mins + 4 * 50) / (player.mins + 50);
+
+      const trim1 = Math.max(Math.min(minAdj1, 5), 1);
+
+      offRoleList.push({
+        name: player.player_name,
+        offRole: trim1,
+      });
+
+      plyrMins.push(player.mins);
+      trimOffRoles.push(trim1);
+    }
+
+    const tmAvg1 = this.sumProdList(trimOffRoles, plyrMins) / team.mins;
+    // console.log(tmAvg1); 3.0388120288637963 close enough to 3
+
+    // add position to player objects
+    offRoleList.forEach((player) => {
+      const matchingPlayer = this.playerStats.find(
+        (p: PlayerStats) => p.player_name === player.name
+      );
+
+      if (matchingPlayer) {
+        matchingPlayer.offRole = player.offRole;
+        // console.log(matchingPlayer.player_name, matchingPlayer.position);
+      } else {
+        console.error("No matching player found for", player.name);
+      }
+    });
   };
 
   // final step

@@ -13,6 +13,8 @@ const test = async () => {
   const shootingStats = await team.getTeamShootingContextStats();
 
   const positions = await team.estimatePlayerPositions();
+
+  const offrole = await team.estimateOffensiveRoles();
 };
 
 test()

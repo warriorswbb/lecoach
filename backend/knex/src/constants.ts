@@ -348,6 +348,7 @@ export const PositionPercentageWeights = {
 };
 
 export const Intercept = 2.130;
+export const OffRoleIntercept = 6;
 
 export const OffensiveRoleWeights = {
   // intercept: 6.000,
