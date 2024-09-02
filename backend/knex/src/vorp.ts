@@ -335,7 +335,7 @@ class Vorp {
   // raw bpm
   calculateRawBPM = async () => {
     const players = this.playerStats;
-    console.log("Raw BPM :");
+    // console.log("Raw BPM :");
 
     const categories = [
       {
@@ -397,15 +397,28 @@ class Vorp {
         player.defenseBpm +
         posConst;
 
-      console.log(player.player_name, rawBpm);
+      // console.log(player.player_name, rawBpm);
       player["rawBpm"] = rawBpm;
     }
   };
 
   // bpm calculation
-  calculateBPM = async () => {
+  calculateBpmVorp = async () => {
     const players = this.playerStats;
-    console.log(players);
+    console.log("bpm and vorp :");
+
+    for (const player of Object.values(players)) {
+      const contribRaw = player.percent_min * player.rawBpm;
+      const bpm = contribRaw + player.rawBpm;
+      const contrib = player.percent_min * bpm;
+      const vorp = (bpm + 2) * player.percent_min;
+
+      console.log(player.player_name, bpm, vorp);
+
+      player["bpm"] = bpm;
+      player["contrib"] = contrib;
+      player["vorp"] = vorp;
+    }
   };
 }
 

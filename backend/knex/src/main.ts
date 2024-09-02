@@ -19,6 +19,8 @@ const test = async () => {
   const bpmCoeff = await team.calculateBPMCoefficients();
 
   const bpmRaw = await team.calculateRawBPM();
+
+  const bpmVorp = await team.calculateBpmVorp();
 };
 
 test()
