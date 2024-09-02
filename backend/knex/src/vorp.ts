@@ -5,6 +5,8 @@ import {
   OffensiveRoleWeights,
   OffRoleIntercept,
   Intercept,
+  BPMCoefficients,
+  OBPMCoefficients,
 } from "./constants.ts";
 
 class Vorp {
@@ -259,8 +261,7 @@ class Vorp {
     const offRoleList: { name: string; offRole: number }[] = [];
     const trimOffRoles: number[] = [];
     const plyrMins: number[] = [];
-
-    console.log("trimmed off roles:");
+    
     for (const player of Object.values(players)) {
       const offrole =
         OffRoleIntercept +
@@ -297,6 +298,37 @@ class Vorp {
         console.error("No matching player found for", player.name);
       }
     });
+  };
+
+  // calculate bpm coefficients
+  calculateBPMCoefficients = async () => {
+    type CoefficientsKeys = keyof typeof BPMCoefficients.pos1;
+    const players = this.playerStats;
+    const coefficients: CoefficientsKeys[] = [
+      "adjPt",
+      "fga",
+      "fta",
+      "threePtFg",
+      "ast",
+      "to",
+      "orb",
+      "drb",
+      "trb",
+      "stl",
+      "blk",
+      "pf",
+    ];
+
+    for (const player of Object.values(players)) {
+      for (const coeff of coefficients) {
+        const posKey = coeff === "adjPt" ? "position" : "offRole";
+        player[`bpmCoeff_${coeff}`] =
+          ((5 - player[posKey]) / 4) * BPMCoefficients.pos1[coeff] +
+          ((player[posKey] - 1) / 4) * BPMCoefficients.pos5[coeff];
+      }
+      console.log(player);
+    }
+
   };
 
   // final step

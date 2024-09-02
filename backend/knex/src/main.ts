@@ -15,6 +15,8 @@ const test = async () => {
   const positions = await team.estimatePlayerPositions();
 
   const offrole = await team.estimateOffensiveRoles();
+
+  const bpmCoeff = await team.calculateBPMCoefficients();
 };
 
 test()

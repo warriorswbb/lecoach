@@ -92,3 +92,18 @@ export type PlayerStats = {
   percent_threshPts: number;
   position: number;
 };
+
+export type BPMCoefficientsType = {
+  adjPt: number;
+  fga: number;
+  fta: number;
+  threePtFg: number;
+  ast: number;
+  to: number;
+  orb: number;
+  drb: number;
+  trb: number;
+  stl: number;
+  blk: number;
+  pf: number;
+};
