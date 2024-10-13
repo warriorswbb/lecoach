@@ -6,14 +6,14 @@
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon ./index.js --exec babel-node --es-module-specifier-resolution=node",
-    "start": "cd knex && nodemon ./server.js --exec babel-node --es-module-specifier-resolution=node",
+    "dev-deprecated": "nodemon ./index.js --exec babel-node --es-module-specifier-resolution=node",
+    "start": "cd src && nodemon ./server.js --exec babel-node --es-module-specifier-resolution=node",
     "test-db": "tsx ./src/test.ts",
-    "new-migration": "cd knex && knex migrate:make",
-    "migrate": "cd knex && knex migrate:latest",
-    "rollback": "cd knex && knex migrate:rollback",
+    "new-migration": "cd src && knex migrate:make",
+    "migrate": "cd src && knex migrate:latest",
+    "rollback": "cd src && knex migrate:rollback",
     "scrape-games": "cd services && node scrape_games.js",
-    "fill-db": "cd knex && cd scripts && node fill_teams.js"
+    "fill-db": "cd src && cd scripts && node fill_teams.js"
   },
   "keywords": [],
   "author": "",

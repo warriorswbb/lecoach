@@ -6,7 +6,7 @@ import {
   OffRoleIntercept,
   Intercept,
   BPMCoefficients,
-  OBPMCoefficients,
+  // OBPMCoefficients,
   PosConst,
 } from "./constants.ts";
 
@@ -146,12 +146,8 @@ class Vorp {
         player["blk_p100"] = (player.block / player.poss) * 100;
         player["pf_p100"] = (player.pf / player.poss) * 100;
 
-        // console.log(player);
-
         // % of stats
         const percent_min = player.mins / (teamStats.mins / 5);
-
-        // console.log(percent_min);
 
         // using decimal and not percent right now
         player["percent_min"] = percent_min;
@@ -163,7 +159,6 @@ class Vorp {
       }
 
       teamStats["threshPts"] = teamTreshPts;
-      // console.log(teamStats);
 
       for (const player of Object.values(players)) {
         const percent_min = player.mins / (teamStats.mins / 5);
@@ -171,7 +166,6 @@ class Vorp {
           player.threshPts / teamTreshPts / percent_min;
       }
 
-      // console.log(players);
     } catch (error) {
       console.error("Error fetching player stats:", error);
       throw error;
@@ -247,7 +241,6 @@ class Vorp {
 
       if (matchingPlayer) {
         matchingPlayer.position = player.position;
-        // console.log(matchingPlayer.player_name, matchingPlayer.position);
       } else {
         console.error("No matching player found for", player.name);
       }
@@ -283,7 +276,7 @@ class Vorp {
       trimOffRoles.push(trim1);
     }
 
-    const tmAvg1 = this.sumProdList(trimOffRoles, plyrMins) / team.mins;
+    // const tmAvg1 = this.sumProdList(trimOffRoles, plyrMins) / team.mins;
     // console.log(tmAvg1); 3.0388120288637963 close enough to 3
 
     // add position to player objects
@@ -294,7 +287,6 @@ class Vorp {
 
       if (matchingPlayer) {
         matchingPlayer.offRole = player.offRole;
-        // console.log(matchingPlayer.player_name, matchingPlayer.position);
       } else {
         console.error("No matching player found for", player.name);
       }
@@ -328,14 +320,12 @@ class Vorp {
           ((5 - player[posKey]) / 4) * BPMCoefficients.pos1[coeff] +
           ((player[posKey] - 1) / 4) * BPMCoefficients.pos5[coeff];
       }
-      // console.log(player);
     }
   };
 
   // raw bpm
   calculateRawBPM = async () => {
     const players = this.playerStats;
-    // console.log("Raw BPM :");
 
     const categories = [
       {
@@ -372,13 +362,6 @@ class Vorp {
           p100s.map((key) => player[key])
         );
       }
-      // console.log(
-      //   player.player_name,
-      //   player.scoringRawBpm,
-      //   player.ballHandlingBpm,
-      //   player.reboundingBpm,
-      //   player.defenseBpm
-      // );
 
       let posConst = 0;
       const guard = player.position < 3;
@@ -397,7 +380,6 @@ class Vorp {
         player.defenseBpm +
         posConst;
 
-      // console.log(player.player_name, rawBpm);
       player["rawBpm"] = rawBpm;
     }
   };
@@ -405,15 +387,12 @@ class Vorp {
   // bpm calculation
   calculateBpmVorp = async () => {
     const players = this.playerStats;
-    console.log("bpm and vorp :");
 
     for (const player of Object.values(players)) {
       const contribRaw = player.percent_min * player.rawBpm;
       const bpm = contribRaw + player.rawBpm;
       const contrib = player.percent_min * bpm;
       const vorp = (bpm + 2) * player.percent_min;
-
-      console.log(player.player_name, bpm, vorp);
 
       player["bpm"] = bpm;
       player["contrib"] = contrib;
