@@ -14,17 +14,39 @@ const AppWrap = styled.div`
   width: 100vw;
 `;
 
-function App() {
+const ShotChartContainer = styled.div`
+  height: 50vh;
+  width: 50vw;
+`;
 
-  const shots = Array.from({ length: 10000 }, () => ({
-    loc_x: d3.randomNormal(0, 100)(), // Clustering around the center (x = 0) with a standard deviation of 100
-    loc_y: d3.randomNormal(100, 100)(), // Clustering around the area near the basket (y = 100) with a standard deviation of 100
-    shot_made_flag: Math.random() > 0.5 ? 1 : 0
-  }));
+function App() {
+  const arcRadius = 227; // Radius of the 3-point line arc
+  const buffer = 5; // Buffer zone to keep points away from the arc (adjust as needed)
+  
+  const shots = Array.from({ length: 10000 }, () => {
+    let loc_x, loc_y, distanceFromCenter;
+  
+    do {
+      loc_x = d3.randomNormal(0, 100)(); // Cluster around the center
+      loc_y = d3.randomNormal(0, 100)(); // Cluster near the basket
+      distanceFromCenter = Math.sqrt(loc_x * loc_x + loc_y * loc_y); // Distance from center (0,0)
+    } while (
+      distanceFromCenter > arcRadius - buffer && 
+      distanceFromCenter < arcRadius + buffer
+    );
+  
+    return {
+      loc_x,
+      loc_y,
+      shot_made_flag: Math.random() > 0.5 ? 1 : 0,
+    };
+  });
 
   return (
     <AppWrap>
-      <ShotChart shots={shots} />
+      <ShotChartContainer>
+        <ShotChart shots={shots} />
+      </ShotChartContainer>
     </AppWrap>
   );
 }

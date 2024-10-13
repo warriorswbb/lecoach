@@ -5,8 +5,8 @@ import styled from "styled-components";
 
 const Test = styled.div`
   position: absolute;
-  left: 0;
-  top: 0;
+  bottom: 0;
+  margin-bottom: 35px;
 `;
 
 const ShotChart = ({ shots }) => {
@@ -57,7 +57,7 @@ const ShotChart = ({ shots }) => {
       .select(markingsRef.current)
       .attr("width", 800)
       .attr("height", 750)
-      .attr("viewBox", "-270 -500 600 600");
+      .attr("viewBox", "-270 -500 600 592");
 
     svg.selectAll("*").remove(); // Clear previous SVG elements if they exist
 
@@ -149,7 +149,6 @@ const ShotChart = ({ shots }) => {
   return (
     <div>
       <div ref={plotRef}></div>
-
       <Test>
         <svg ref={markingsRef}></svg>
       </Test>
