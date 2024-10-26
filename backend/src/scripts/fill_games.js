@@ -9,7 +9,7 @@ import kx from "./config.js";
 
 // done
 const baseUrl =
-  "https://usportshoops.ca/history/yangstats.php?Gender=WBB&Season=2023-24&Team=TEAM_NAME&SType=gameinfo";
+  "https://usportshoops.ca/history/yangstats.php?Gender=WBB&Season=2024-25&Team=TEAM_NAME&SType=gameinfo";
 
 const cleanTeamName = (teamName) => {
   const teamNameMap = {
@@ -59,9 +59,8 @@ const fetch_games = async (team) => {
         const gameExists = await kx("games").where("game_id", gameId).first();
 
         if (!gameExists) {
-
-          const team1Id = team1 ? team1.team_id : null;
-          const team2Id = team2 ? team2.team_id : null;
+          const team1Id = team1 ? team1?.team_id : null;
+          const team2Id = team2 ? team2?.team_id : null;
 
           const insertData = {
             season: values[0],
@@ -73,7 +72,7 @@ const fetch_games = async (team) => {
             team_two: team2Id,
             team_one_score: values[7],
             team_two_score: values[10],
-            winning_team: winning_team.team_id,
+            winning_team: winning_team?.team_id,
             overtime: overtime,
             comments: values[13],
           };
@@ -99,4 +98,12 @@ async function fetch_all_games() {
   //   return;
 }
 
-fetch_all_games();
+fetch_all_games()
+  .then(() => {
+    console.info("Done");
+    process.exit(0);
+  })
+  .catch((err) => {
+    console.error(err);
+    process.exit(1);
+  });
