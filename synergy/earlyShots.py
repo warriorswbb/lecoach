@@ -11,6 +11,9 @@ prev = 0
 prevPlay = ""
 
 errorPlays = []
+shotAfterTo = []
+
+#TODO - use transition tag in description
 
 for play in data["result"]:
     print("_________")
@@ -43,6 +46,10 @@ for play in data["result"]:
         if shotClock < 0 or shotClock > 24 and shot:
             errorPlays.append(id)
             print("ERROR")
+
+    if shot and prevPlay == "Turnover":
+        shotClock = (prev - play["clock"]) // 10
+        shotAfterTo.append([name, id, shotClock])
 
     prev = play["clock"]
     prevPlay = play["name"]
@@ -99,3 +106,7 @@ for play in data["result"]:
 # print(shotCounter)
 print(len(shots))
 print(shotCounter)
+print(errorPlays)
+
+for p in shotAfterTo:
+    print(p)
