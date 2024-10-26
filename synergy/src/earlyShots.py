@@ -1,6 +1,7 @@
 import json
 from collections import defaultdict
 
+
 with open('plays.json', 'r') as file:
     data = json.load(file)
 
@@ -24,6 +25,9 @@ for play in data["result"]:
     player = play["playActors"][0]["player"]["name"]
     team = play["playActors"][0]["team"]["abbr"]
     shotCoords = [play["shotX"], play["shotY"]] if "shotX" in play else [None, None]
+    description = play["description"]
+    transition = play["items"][1]["name"] == "Transition"
+
 
     # process shots
     if shot:
