@@ -2,5 +2,6 @@ node_modules
 .env
 synergy/test.json
 synergy/test2.json
-synergy/venv
+synergy/mvenv
 synergy/src/__pycache__
+synergy/streamlit/play_by_play.csv

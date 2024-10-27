@@ -46,11 +46,7 @@ const processPlayByPlayData = async () => {
             play_name: play?.name,
             description: play.description,
             shot: !!play.shot,
-            shot_result:
-              (play.shot2Attempt && play.shot2made) ||
-              (play.shot3Attempt && play.shot3made)
-                ? "made"
-                : "missed",
+            shot_result: play?.name?.startsWith("Make") ? "made" : "missed",
             shot_quality: play?.shotQuality,
             shot_x: play?.shotX,
             shot_y: play?.shotY,
