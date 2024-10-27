@@ -16,28 +16,8 @@ headers = {
     "accept": "application/json, text/plain, */*",
     "accept-encoding": "gzip, deflate, br, zstd",
     "accept-language": "en-US,en;q=0.9",
-    "authorization": (
-        "Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6IjhDRjI4QTUzNTUzOURFMDU3ODFEOEFCRkQ5QUY4QUY1"
-        "IiwidHlwIjoiYXQrand0In0.eyJpc3MiOiJodHRwczovL2F1dGguc3luZXJneXNwb3J0c3RlY2guY29t"
-        "IiwibmJmIjoxNzMwMDA0NDAwLCJpYXQiOjE3MzAwMDQ0MDAsImV4cCI6MTczMDAwNTAwMCwiYXVkIjpb"
-        "ImFwaS5jb25maWciLCJhcGkuc2VjdXJpdHkiLCJhcGkuYmFza2V0YmFsbCIsImFwaS5zcG9ydCIsImFw"
-        "aS5lZGl0b3IiLCJodHRwczovL2F1dGguc3luZXJneXNwb3J0c3RlY2guY29tL3Jlc291cmNlcyJdLCJz"
-        "Y29wZSI6WyJvcGVuaWQiLCJhcGkuY29uZmlnIiwiYXBpLnNlY3VyaXR5IiwiYXBpLmJhc2tldGJhbGwi"
-        "LCJhcGkuc3BvcnQiLCJhcGkuZWRpdG9yIiwib2ZmbGluZV9hY2Nlc3MiXSwiYW1yIjpbInB3ZCJdLCJj"
-        "bGllbnRfaWQiOiJjbGllbnQuYmFza2V0YmFsbC50ZWFtc2l0ZSIsInN1YiI6IjY1ZWYzZTMxZDAyMDZk"
-        "ZWViNGY2ODVmMiIsImF1dGhfdGltZSI6MTcyOTkxNjA2NCwiaWRwIjoibG9jYWwiLCJlbWFpbCI6InN0"
-        "ZXZlbnRhbnlhbmdAZ21haWwuY29tIiwibmFtZSI6IlN0ZXZlbiBZYW5nIiwic2lkIjoiREY2NTJFQTJB"
-        "RjU2QjE2QjA5MjVENDY3NTI5OEJGMTUifQ.c3-8SmcjJTEX9s-qJJLGRAhJkoLEQEfv7ecObEY925iTo90q"
-        "MgQ2HzN7pdkfRegdGX9fbN2_J-BL5g8w2oFQLLCu9NwFEvsqdOUeH1zvfBaw16TbTnWcuEfUrR0CnUabev"
-        "C4Jy-BgAPqTg3bbcMJ70EUeHG5VVVVPCDC-qjbU5auFf68CVEMvbSh1cACkDDI9ETb9yo4ck4X7qGEc9T"
-        "czQCPFOkELMAYwzXvnsJvVEg2xNspMReMYafcYieeSxyFBHXsENDeIVV-GUgCihPdrofSD-hFc68t55lk"
-        "EwmI_Uj91LJ7CID-B1tjy5-oqS98coZPX2Buz8TH6weqc3aP2g"
-    ),
-    "newrelic": (
-        "eyJ2IjpbMCwxXSwiZCI6eyJ0eSI6IkJyb3dzZXIiLCJhYyI6IjE0MDM4ODIiLCJhcCI6IjExMjAwMjIx"
-        "MjMiLCJpZCI6ImI1YTZhMDcyYWM2NzI5YTMiLCJ0ciI6ImIxZjg0ZGIyZjNkNDJkNTYwMTc1M2Y3OTg1"
-        "ZmQyZmRmIiwidGkiOjE3MzAwMDQ4Mjg0NDksInRrIjoiMTM4NDI3MyJ9fQ=="
-    ),
+    "authorization": "Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6IjhDRjI4QTUzNTUzOURFMDU3ODFEOEFCRkQ5QUY4QUY1IiwidHlwIjoiYXQrand0In0.eyJpc3MiOiJodHRwczovL2F1dGguc3luZXJneXNwb3J0c3RlY2guY29tIiwibmJmIjoxNzMwMDA2NTAwLCJpYXQiOjE3MzAwMDY1MDAsImV4cCI6MTczMDAwNzEwMCwiYXVkIjpbImFwaS5jb25maWciLCJhcGkuc2VjdXJpdHkiLCJhcGkuYmFza2V0YmFsbCIsImFwaS5zcG9ydCIsImFwaS5lZGl0b3IiLCJodHRwczovL2F1dGguc3luZXJneXNwb3J0c3RlY2guY29tL3Jlc291cmNlcyJdLCJzY29wZSI6WyJvcGVuaWQiLCJhcGkuY29uZmlnIiwiYXBpLnNlY3VyaXR5IiwiYXBpLmJhc2tldGJhbGwiLCJhcGkuc3BvcnQiLCJhcGkuZWRpdG9yIiwib2ZmbGluZV9hY2Nlc3MiXSwiYW1yIjpbInB3ZCJdLCJjbGllbnRfaWQiOiJjbGllbnQuYmFza2V0YmFsbC50ZWFtc2l0ZSIsInN1YiI6IjY1ZWYzZTMxZDAyMDZkZWViNGY2ODVmMiIsImF1dGhfdGltZSI6MTcyOTkxNjA2NCwiaWRwIjoibG9jYWwiLCJlbWFpbCI6InN0ZXZlbnRhbnlhbmdAZ21haWwuY29tIiwibmFtZSI6IlN0ZXZlbiBZYW5nIiwic2lkIjoiREY2NTJFQTJBRjU2QjE2QjA5MjVENDY3NTI5OEJGMTUifQ.MkaZnP1yOBgrcglFRskIN4f3JDtV_OJ12CmwbaCUTr-AyU0boq6aVDBL_lwgLLqYFfnUWZuJp0k4EMbsgaasOZZ5L-vqyEEMlepk4RVoa1yIudINI-88uukJY9EmLsaooTIr9z_Nm-ijsLgt2QvDsXtWP4-crFDxNt3HTbdF-TViWDUSgMXPs6_8StmW32euTEFyRMOir-1ljEpJ5ZaULHSV8v27PkYc4We6z0U5AOHlUclRrpCvQCvDZ0KLhouhKRVYOUZlXaD87mf62PnTepkUWcXWjZC5b9ZqX_oWdvxLHUinQkL3Gm6ZaT7ORQ478zjEaNjlZEXbIGj0MRnBdA",
+    "newrelic": "eyJ2IjpbMCwxXSwiZCI6eyJ0eSI6IkJyb3dzZXIiLCJhYyI6IjE0MDM4ODIiLCJhcCI6IjExMjAwMjIxMjMiLCJpZCI6IjMzMmEyZGUzZDM1Yjg1MGQiLCJ0ciI6IjY1NzA3MjlmZDI1YzQxYzFiZjc3OTIwYjE4ZWMwMTg4IiwidGkiOjE3MzAwMDY1MTIwNzcsInRrIjoiMTM4NDI3MyJ9fQ==",
     "origin": "https://apps.synergysports.com",
     "priority": "u=1, i",
     "referer": "https://apps.synergysports.com/",
@@ -51,9 +31,13 @@ headers = {
     "x-synergy-client": "ProductVersion=2024.10.15.3688; ProductName=Basketball.TeamSite"
 }
 
-
 def fetch_game_data(game_id):
     url = f'https://basketball.synergysportstech.com/api/games/{game_id}/events?skip=0&take=1000'
+    file_path = f"play_by_play_data/{game_id}.json"
+
+    if os.path.exists(file_path):
+        print(f"Data for game {game_id} already exists.")
+        return
     
     try:
         response = requests.get(url, headers=headers)
