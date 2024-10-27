@@ -1,3 +1,5 @@
 - `template.py` - template
-- `src/getGameIds` - used to get game ids > gamesIds.csv
-- `src/scrapeGame` - uses gamesIds.csv to put {id}.json play by play files in /data
+- `src/getGameIds` - used to get game ids > ids.csv
+- `src/scrapeGame` - uses ids.csv to put {id}.json play by play files in /play_by_play_data
+- TODO: matchDbGameIds.py - check if all the ids_with_game_id have a corresponding row in database
+    - 
