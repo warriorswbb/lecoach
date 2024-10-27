@@ -1,0 +1,1001 @@
+Season,GameID,UTCDate,GameName,Team1_FullName,Team2_FullName,GameID_DB
+2014-2015,550a33494bc1ea55eb70e356,2015-03-15T14:00:00Z,CIS - Saskatchewan@BritishColumbia,British Columbia Thunderbirds,Saskatchewan Huskies,W20150315UBCSAS
+2014-2015,550a74704bc1ea55eb70e36c,2015-03-14T16:00:00Z,CIS - McGill@BritishColumbia,British Columbia Thunderbirds,McGill University Martlets,W20150314UBCMCG
+2014-2015,54fcbbd54bc1ea55eb70c8fc,2015-03-08T01:00:00Z,CanadaWest - Saskatchewan@BritishColumbia,British Columbia Thunderbirds,Saskatchewan Huskies,W20150308UBCSAS
+2014-2015,54fc9d5d4bc1ea55eb70c8e2,2015-03-07T00:00:00Z,CanadaWest - Alberta@BritishColumbia,British Columbia Thunderbirds,Alberta Pandas,W20150307UBCALB
+2014-2015,54f33dc43ad33bf4a9d84428,2015-03-01T02:00:00Z,CanadaWest - MacEwan@Alberta,Alberta Pandas,MacEwan University Griffins,W20150301ALBMAC
+2014-2015,54f2c54d3ad33bf4a9d8438c,2015-03-01T01:00:00Z,CanadaWest - Regina@BritishColumbia,British Columbia Thunderbirds,Regina (Canada) Cougars,W20150301UBCREG
+2014-2015,54f571494bc1ea55eb70b602,2015-02-28T22:00:00Z,CanadaWest - Victoria@ThompsonRivers,Thompson Rivers University Wolfpack,Victoria Vikes,W20150228TRUVIC
+2014-2015,54f1f34e3ad33bf4a9d8424d,2015-02-28T04:00:00Z,CanadaWest - MacEwan@Alberta,Alberta Pandas,MacEwan University Griffins,W20150228ALBMAC
+2014-2015,54f24a053ad33bf4a9d84283,2015-02-28T03:00:00Z,CanadaWest - Victoria@ThompsonRivers,Thompson Rivers University Wolfpack,Victoria Vikes,W20150228TRUVIC
+2014-2015,54f1daee3ad33bf4a9d8422f,2015-02-28T03:00:00Z,CanadaWest - Regina@BritishColumbia,British Columbia Thunderbirds,Regina (Canada) Cougars,W20150228UBCREG
+2014-2015,54f1b7c53ad33bf4a9d841f6,2015-02-27T03:00:00Z,CanadaWest - Victoria@ThompsonRivers,Thompson Rivers University Wolfpack,Victoria Vikes,W20150227TRUVIC
+2014-2015,54eb96ae3ad33bf4a9d83921,2015-02-22T03:00:00Z,CanadaWest - Calgary@Victoria,Victoria Vikes,Calgary Dinos,W20150222VICCAL
+2014-2015,54eb90943ad33bf4a9d838e7,2015-02-22T02:00:00Z,CanadaWest - Regina@FraserValley,Fraser Valley Cascades,Regina (Canada) Cougars,W20150222UFVREG
+2014-2015,54ebd1423ad33bf4a9d839ab,2015-02-22T01:00:00Z,CanadaWest - Winnipeg@Saskatchewan,Saskatchewan Huskies,Winnipeg Wesmen,W20150222SASWIN
+2014-2015,54eb68433ad33bf4a9d83818,2015-02-21T03:00:00Z,CanadaWest - Calgary@Victoria,Victoria Vikes,Calgary Dinos,W20150221VICCAL
+2014-2015,54eb1c563ad33bf4a9d83713,2015-02-21T02:00:00Z,CanadaWest - Regina@FraserValley,Fraser Valley Cascades,Regina (Canada) Cougars,W20150221UFVREG
+2014-2015,54e8c88f3ad33bf4a9d83483,2015-02-21T01:00:00Z,CanadaWest - Winnipeg@Saskatchewan,Saskatchewan Huskies,Winnipeg Wesmen,W20150221SASWIN
+2014-2015,54e244533ad33bf4a9d82792,2015-02-15T01:00:00Z,TrinityWestern@Victoria,Victoria Vikes,Trinity Western Spartans,W20150215VICTWU
+2014-2015,54e3379a3ad33bf4a9d8289e,2015-02-15T01:00:00Z,Manitoba@UBC,British Columbia Thunderbirds,Manitoba Bisons,W20150215UBCMAN
+2014-2015,54e16cb63ad33bf4a9d824dc,2015-02-15T00:15:00Z,Calgary@Saskatchewan,Saskatchewan Huskies,Calgary Dinos,W20150215SASCAL
+2014-2015,54e366f13ad33bf4a9d828e0,2015-02-15T00:00:00Z,MacEwan@MountRoyal,Mount Royal Cougars ,MacEwan University Griffins,W20150215UNKMAC
+2014-2015,54e1c9853ad33bf4a9d82580,2015-02-15T00:00:00Z,Lethbridge@Alberta,Alberta Pandas,Lethbridge Pronghorns,W20150215ALBLET
+2014-2015,54e203a23ad33bf4a9d82631,2015-02-14T22:00:00Z,ThompsonRivers@FraserValley,Fraser Valley Cascades,Thompson Rivers University Wolfpack,W20150214UFVTRU
+2014-2015,54e230a33ad33bf4a9d82752,2015-02-14T20:00:00Z,Regina(Canada)@Winnipeg,Winnipeg Wesmen,Regina (Canada) Cougars,W20150214WINREG
+2014-2015,54e21b8f3ad33bf4a9d826d6,2015-02-14T02:00:00Z,TrinityWestern@Victoria,Victoria Vikes,Trinity Western Spartans,W20150214VICTWU
+2014-2015,54e32dc03ad33bf4a9d82895,2015-02-14T02:00:00Z,Manitoba@UBC,British Columbia Thunderbirds,Manitoba Bisons,W20150214UBCMAN
+2014-2015,54dfc3743ad33bf4a9d82173,2015-02-14T01:00:00Z,MacEwan@MountRoyal,Mount Royal Cougars ,MacEwan University Griffins,W20150214UNKMAC
+2014-2015,54dfe1723ad33bf4a9d82191,2015-02-14T01:00:00Z,Lethbridge@Alberta,Alberta Pandas,Lethbridge Pronghorns,W20150214ALBLET
+2014-2015,54df7f7b3ad33bf4a9d8214a,2015-02-14T00:15:00Z,Calgary@Saskatchewan,Saskatchewan Huskies,Calgary Dinos,W20150214SASCAL
+2014-2015,54df716b3ad33bf4a9d8213a,2015-02-14T00:00:00Z,Regina(Canada)@Winnipeg,Winnipeg Wesmen,Regina (Canada) Cougars,W20150214WINREG
+2014-2015,54e00e713ad33bf4a9d821da,2015-02-13T23:00:00Z,ThompsonRivers@FraserValley,Fraser Valley Cascades,Thompson Rivers University Wolfpack,W20150213UFVTRU
+2014-2015,54d959383ad33bf4a9d816d9,2015-02-08T01:00:00Z,Winnipeg@TrinityWestern,Trinity Western Spartans,Winnipeg Wesmen,W20150208TWUWIN
+2014-2015,54d88fa93ad33bf4a9d81469,2015-02-08T01:00:00Z,FraserValley@UNBC,Northern British Columbia Timberwolves,Fraser Valley Cascades,W20150208UNBCUFV
+2014-2015,54d85c183ad33bf4a9d8143a,2015-02-08T01:00:00Z,UBCOkaganan@MacEwan,MacEwan University Griffins,British Columbia - Okanagan ,W20150208MACUNK
+2014-2015,54d892f03ad33bf4a9d8146c,2015-02-08T00:00:00Z,Saskatchewan@Lethbridge,Lethbridge Pronghorns,Saskatchewan Huskies,W20150208LETSAS
+2014-2015,54d9e5d63ad33bf4a9d81755,2015-02-08T00:00:00Z,UBC@Regina(Canada),Regina (Canada) Cougars,British Columbia Thunderbirds,W20150208REGUBC
+2014-2015,54da4f4d3ad33bf4a9d81922,2015-02-07T23:00:00Z,Victoria@BrandonUniversity,Brandon University Bobcats,Victoria Vikes,W20150207BRAVIC
+2014-2015,54da0cc33ad33bf4a9d81785,2015-02-07T22:00:00Z,MountRoyal@ThompsonRivers,Thompson Rivers University Wolfpack,Mount Royal Cougars ,W20150207TRUUNK
+2014-2015,54d6965c3ad33bf4a9d80fd1,2015-02-07T02:00:00Z,FraserValley@UNBC,Northern British Columbia Timberwolves,Fraser Valley Cascades,W20150207UNBCUFV
+2014-2015,54d910173ad33bf4a9d815f5,2015-02-07T02:00:00Z,Winnipeg@TrinityWestern,Trinity Western Spartans,Winnipeg Wesmen,W20150207TWUWIN
+2014-2015,54d64f1d3ad33bf4a9d80f98,2015-02-07T01:00:00Z,Saskatchewan@Lethbridge,Lethbridge Pronghorns,Saskatchewan Huskies,W20150207LETSAS
+2014-2015,54d6518e3ad33bf4a9d80f9a,2015-02-07T01:00:00Z,UBCOkaganan@MacEwan,MacEwan University Griffins,British Columbia - Okanagan ,W20150207MACUNK
+2014-2015,54d8b2593ad33bf4a9d8149e,2015-02-07T00:00:00Z,UBC@Regina(Canada),Regina (Canada) Cougars,British Columbia Thunderbirds,W20150207REGUBC
+2014-2015,54dc47733ad33bf4a9d81c84,2015-02-07T00:00:00Z,Victoria@BrandonUniversity,Brandon University Bobcats,Victoria Vikes,W20150207BRAVIC
+2014-2015,54d68aa43ad33bf4a9d80fc5,2015-02-06T23:00:00Z,MountRoyal@ThompsonRivers,Thompson Rivers University Wolfpack,Mount Royal Cougars ,W20150206TRUUNK
+2014-2015,54db0f7c3ad33bf4a9d81b73,2015-02-06T01:00:00Z,Alberta@Calgary,Calgary Dinos,Alberta Pandas,W20150206CALALB
+2014-2015,54d1201d3ad33bf4a9d804ca,2015-02-01T22:00:00Z,FraserValley@MountRoyal,Mount Royal Cougars ,Fraser Valley Cascades,W20150201UNKUFV
+2014-2015,54d0e1c63ad33bf4a9d80175,2015-02-01T01:00:00Z,Lethbridge@Victoria,Victoria Vikes,Lethbridge Pronghorns,W20150201VICLET
+2014-2015,54cf37af3ad33bf4a9d7fdd2,2015-02-01T01:00:00Z,MacEwan@UNBC,Northern British Columbia Timberwolves,MacEwan University Griffins,W20150201UNBCMAC
+2014-2015,54d12b5d3ad33bf4a9d804ef,2015-02-01T01:00:00Z,FraserValley@MountRoyal,Mount Royal Cougars ,Fraser Valley Cascades,W20150201UNKUFV
+2014-2015,54cf6d9a3ad33bf4a9d7fe23,2015-02-01T01:00:00Z,Calgary@UBC,British Columbia Thunderbirds,Calgary Dinos,W20150201UBCCAL
+2014-2015,54cea6613ad33bf4a9d7fd80,2015-02-01T00:15:00Z,TrinityWestern@Sasakatchewan,Saskatchewan Huskies,Trinity Western Spartans,W20150201SASTWU
+2014-2015,54ceb03a3ad33bf4a9d7fd8f,2015-02-01T00:00:00Z,BrandonUniversity@Alberta,Alberta Pandas,Brandon University Bobcats,W20150201ALBBRA
+2014-2015,54cfb0293ad33bf4a9d7ff41,2015-01-31T23:00:00Z,Winnipeg@Manitoba,Manitoba Bisons,Winnipeg Wesmen,W20150131MANWIN
+2014-2015,54cfb0293ad33bf4a9d7ff42,2015-01-31T22:00:00Z,ThompsonRivers@UBCOkaganan,British Columbia - Okanagan ,Thompson Rivers University Wolfpack,W20150131UNKTRU
+2014-2015,54d0e50e3ad33bf4a9d801d0,2015-01-31T02:00:00Z,Lethbridge@Victoria,Victoria Vikes,Lethbridge Pronghorns,W20150131VICLET
+2014-2015,54cd65c83ad33bf4a9d7fb75,2015-01-31T02:00:00Z,MacEwan@UNBC,Northern British Columbia Timberwolves,MacEwan University Griffins,W20150131UNBCMAC
+2014-2015,54ce01613ad33bf4a9d7fbe6,2015-01-31T02:00:00Z,Calgary@UBC,British Columbia Thunderbirds,Calgary Dinos,W20150131UBCCAL
+2014-2015,54cd60703ad33bf4a9d7fb66,2015-01-31T01:00:00Z,BrandonUniversity@Alberta,Alberta Pandas,Brandon University Bobcats,W20150131ALBBRA
+2014-2015,54cd4a6a3ad33bf4a9d7fb4e,2015-01-31T00:15:00Z,TrinityWestern@Sasakatchewan,Saskatchewan Huskies,Trinity Western Spartans,W20150131SASTWU
+2014-2015,54ce03433ad33bf4a9d7fbea,2015-01-31T00:00:00Z,Manitoba@Winnipeg,Winnipeg Wesmen,Manitoba Bisons,W20150131WINMAN
+2014-2015,54cf97c93ad33bf4a9d7feec,2015-01-30T23:00:00Z,ThompsonRivers@UBCOkaganan,British Columbia - Okanagan ,Thompson Rivers University Wolfpack,W20150130UNKTRU
+2014-2015,54c6dca93ad33bf4a9d7ed74,2015-01-25T01:00:00Z,UBC@TrinityWestern,Trinity Western Spartans,British Columbia Thunderbirds,W20150125TWUUBC
+2014-2015,54c6a5d13ad33bf4a9d7ecdf,2015-01-25T01:00:00Z,UBCOkaganan@FraserValley,Fraser Valley Cascades,British Columbia - Okanagan ,W20150125UFVUNK
+2014-2015,54cb7e923ad33bf4a9d7f905,2015-01-25T00:00:00Z,Victoria@Calgary,Calgary Dinos,Victoria Vikes,W20150125CALVIC
+2014-2015,54c6a55a3ad33bf4a9d7ecdc,2015-01-25T00:00:00Z,Alberta@Regina(Canada),Regina (Canada) Cougars,Alberta Pandas,W20150125REGALB
+2014-2015,54c63cd43ad33bf4a9d7eb63,2015-01-25T00:00:00Z,UNBC@MountRoyal,Mount Royal Cougars ,Northern British Columbia Timberwolves,W20150125UNKUNBC
+2014-2015,54d0400e3ad33bf4a9d800cc,2015-01-24T23:00:00Z,Saskatchewan@Manitoba,Manitoba Bisons,Saskatchewan Huskies,W20150124MANSAS
+2014-2015,54c632833ad33bf4a9d7eb4c,2015-01-24T23:00:00Z,MacEwan@ThompsonRivers,Thompson Rivers University Wolfpack,MacEwan University Griffins,W20150124TRUMAC
+2014-2015,54c67e743ad33bf4a9d7ec83,2015-01-24T20:00:00Z,BrandonUniversity@Winnipeg,Winnipeg Wesmen,Brandon University Bobcats,W20150124WINBRA
+2014-2015,54c46c9a3ad33bf4a9d7e940,2015-01-24T02:00:00Z,UBC@TrinityWestern,Trinity Western Spartans,British Columbia Thunderbirds,W20150124TWUUBC
+2014-2015,54c6a8a23ad33bf4a9d7ece3,2015-01-24T02:00:00Z,UBCOkaganan@FraserValley,Fraser Valley Cascades,British Columbia - Okanagan ,W20150124UFVUNK
+2014-2015,54cb79e23ad33bf4a9d7f8fd,2015-01-24T01:00:00Z,Victoria@Calgary,Calgary Dinos,Victoria Vikes,W20150124CALVIC
+2014-2015,54c46aad3ad33bf4a9d7e93f,2015-01-24T01:00:00Z,UNBC@MountRoyal,Mount Royal Cougars ,Northern British Columbia Timberwolves,W20150124UNKUNBC
+2014-2015,54c63b6c3ad33bf4a9d7eb60,2015-01-24T00:00:00Z,Alberta@Regina(Canada),Regina (Canada) Cougars,Alberta Pandas,W20150124REGALB
+2014-2015,54d038173ad33bf4a9d8007e,2015-01-24T00:00:00Z,Saskatchewan@Manitoba,Manitoba Bisons,Saskatchewan Huskies,W20150124MANSAS
+2014-2015,54c41bfa3ad33bf4a9d7e89f,2015-01-23T23:00:00Z,MacEwan@ThompsonRivers,Thompson Rivers University Wolfpack,MacEwan University Griffins,W20150123TRUMAC
+2014-2015,54c386eb3ad33bf4a9d7e729,2015-01-23T00:00:00Z,Winnipeg@BrandonUniversity,Brandon University Bobcats,Winnipeg Wesmen,W20150123BRAWIN
+2014-2015,54bd23f53ad33bf4a9d7d931,2015-01-18T01:00:00Z,Winnipeg@Victoria,Victoria Vikes,Winnipeg Wesmen,W20150118VICWIN
+2014-2015,54be51d33ad33bf4a9d7db8d,2015-01-18T01:00:00Z,MountRoyal@UBCOkaganan,British Columbia - Okanagan ,Mount Royal Cougars ,W20150118UNKUNK
+2014-2015,54bcc01d3ad33bf4a9d7d849,2015-01-18T01:00:00Z,BrandonUniversity@UBC,British Columbia Thunderbirds,Brandon University Bobcats,W20150118UBCBRA
+2014-2015,54bc4e363ad33bf4a9d7d716,2015-01-18T00:15:00Z,Regina(Canada)@Saskatchewan,Saskatchewan Huskies,Regina (Canada) Cougars,W20150118SASREG
+2014-2015,54bc9c7e3ad33bf4a9d7d80a,2015-01-18T00:00:00Z,FraserValley@MacEwan,MacEwan University Griffins,Fraser Valley Cascades,W20150118MACUFV
+2014-2015,54bcf4263ad33bf4a9d7d888,2015-01-18T00:00:00Z,Calgary@Lethbridge,Lethbridge Pronghorns,Calgary Dinos,W20150118LETCAL
+2014-2015,54bcd87d3ad33bf4a9d7d862,2015-01-17T23:00:00Z,ThompsonRivers@UNBC,Northern British Columbia Timberwolves,Thompson Rivers University Wolfpack,W20150117UNBCTRU
+2014-2015,54beb5aa3ad33bf4a9d7dd3a,2015-01-17T19:00:00Z,Manitoba@Alberta,Alberta Pandas,Manitoba Bisons,W20150117ALBMAN
+2014-2015,54be62b23ad33bf4a9d7db9f,2015-01-17T02:00:00Z,MountRoyal@UBCOkaganan,British Columbia - Okanagan ,Mount Royal Cougars ,W20150117UNKUNK
+2014-2015,54bb07d03ad33bf4a9d7d4ff,2015-01-17T02:00:00Z,Winnipeg@Victoria,Victoria Vikes,Winnipeg Wesmen,W20150117VICWIN
+2014-2015,54bcb2fe3ad33bf4a9d7d846,2015-01-17T02:00:00Z,BrandonUniversity@UBC,British Columbia Thunderbirds,Brandon University Bobcats,W20150117UBCBRA
+2014-2015,54baaf263ad33bf4a9d7d4c3,2015-01-17T01:00:00Z,Manitoba@Alberta,Alberta Pandas,Manitoba Bisons,W20150117ALBMAN
+2014-2015,54ba6ba93ad33bf4a9d7d427,2015-01-17T01:00:00Z,Calgary@Lethbridge,Lethbridge Pronghorns,Calgary Dinos,W20150117LETCAL
+2014-2015,54ba8c513ad33bf4a9d7d467,2015-01-17T01:00:00Z,FraserValley@MacEwan,MacEwan University Griffins,Fraser Valley Cascades,W20150117MACUFV
+2014-2015,54ba81b13ad33bf4a9d7d436,2015-01-17T00:15:00Z,Regina(Canada)@Saskatchewan,Saskatchewan Huskies,Regina (Canada) Cougars,W20150117SASREG
+2014-2015,54ba99563ad33bf4a9d7d476,2015-01-16T23:00:00Z,ThompsonRivers@UNBC,Northern British Columbia Timberwolves,Thompson Rivers University Wolfpack,W20150116UNBCTRU
+2014-2015,54b415e33ad33bf4a9d7c803,2015-01-11T01:00:00Z,MountRoyal@FraserValley,Fraser Valley Cascades,Mount Royal Cougars ,W20150111UFVUNK
+2014-2015,54b3ae4c3ad33bf4a9d7c6e9,2015-01-11T01:00:00Z,UNBC@MacEwan,MacEwan University Griffins,Northern British Columbia Timberwolves,W20150111MACUNBC
+2014-2015,54b477dd3ad33bf4a9d7c99a,2015-01-11T01:00:00Z,Regina(Canada)@TrinityWestern,Trinity Western Spartans,Regina (Canada) Cougars,W20150111TWUREG
+2014-2015,54b304223ad33bf4a9d7c654,2015-01-11T00:00:00Z,UBC@Lethbridge,Lethbridge Pronghorns,British Columbia Thunderbirds,W20150111LETUBC
+2014-2015,54b4840e3ad33bf4a9d7c9a2,2015-01-10T23:00:00Z,Victoria@Manitoba,Manitoba Bisons,Victoria Vikes,W20150110MANVIC
+2014-2015,54b404903ad33bf4a9d7c7b9,2015-01-10T23:00:00Z,Alberta@Winnipeg,Winnipeg Wesmen,Alberta Pandas,W20150110WINALB
+2015-2016,56e539b550238a164763093c,2016-03-13T01:00:00Z,OUA - RyersonUni@UniOttawa,Ottawa Gee-Gees,Ryerson University Rams,W20160313OTTUNK
+2015-2016,56e65aa750238a1647632c18,2016-03-13T00:00:00Z,CanadaWest - Regina@Saskatchewan,Saskatchewan Huskies,Regina (Canada) Cougars,W20160313SASREG
+2015-2016,56e53f8d50238a1647630ec5,2016-03-12T23:00:00Z,OUA - Windsor@McMaster,McMaster Marauders,Windsor Lancers,W20160312MACWIN
+2015-2016,56e3f1a950238a164762c889,2016-03-12T01:00:00Z,OUA - Windsor@RyersonUni,Ryerson University Rams,Windsor Lancers,W20160312UNKWIN
+2015-2016,56e4119b50238a164762db3d,2016-03-11T23:00:00Z,OUA - McMaster@UniOttawa,Ottawa Gee-Gees,McMaster Marauders,W20160311OTTMAC
+2015-2016,56e40eb150238a164762db39,2016-03-11T22:00:00Z,CanadaWest - Alberta@Saskatchewan,Saskatchewan Huskies,Alberta Pandas,W20160311SASALB
+2015-2016,56e6737e50238a1647632c20,2016-03-11T19:00:00Z,CanadaWest - Regina@MacEwan,MacEwan University Griffins,Regina (Canada) Cougars,W20160311MACREG
+2015-2016,56dc730d50238a1647615f1a,2016-03-06T02:00:00Z,CanadaWest - Calgary@Regina,Regina (Canada) Cougars,Calgary Dinos,W20160306REGCAL
+2015-2016,56dc6b6650238a1647615f0f,2016-03-06T00:00:00Z,CanadaWest - Victoria@MacEwan,MacEwan University Griffins,Victoria Vikes,W20160306MACVIC
+2015-2016,56dc691050238a1647615f0d,2016-03-05T23:00:00Z,CanadaWest - BritishColumbia@Saskatchewan,Saskatchewan Huskies,British Columbia Thunderbirds,W20160305SASUBC
+2015-2016,56ddfa7b50238a164761955b,2016-03-05T23:00:00Z,QuebecMontreal@McGill,McGill University Martlets,University Quebec - Montreal,W20160305MCGUQA
+2015-2016,56dc617e50238a1647615ed3,2016-03-05T21:00:00Z,OUA - QueensOntario@McMaster,McMaster Marauders,Queens (ON) University Golden Gaels,W20160305MACQUE
+2015-2016,56dc76df50238a1647615f21,2016-03-05T21:00:00Z,OUA - Windsor@CarletonUni,Carleton University Ravens,Windsor Lancers,W20160305CARWIN
+2015-2016,56dc3beb50238a1647615e69,2016-03-05T21:00:00Z,OUA - Guelph@UniOttawa,Ottawa Gee-Gees,Guelph Gryphons,W20160305OTTGUE
+2015-2016,56dc30d550238a1647615e58,2016-03-05T21:00:00Z,OUA - WesternOntario@RyersonUni,Ryerson University Rams,Western Ontario Mustangs,W20160305UNKWES
+2015-2016,56daef3950238a16476127f8,2016-03-05T02:00:00Z,CanadaWest - ThompsonRivers@Alberta,Alberta Pandas,Thompson Rivers University Wolfpack,W20160305ALBTRU
+2015-2016,56db9a8050238a1647612ccf,2016-03-05T01:00:00Z,CanadaWest - Calgary@Regina,Regina (Canada) Cougars,Calgary Dinos,W20160305REGCAL
+2015-2016,56daa8e550238a1647610e37,2016-03-05T00:00:00Z,CanadaWest - Victoria@MacEwan,MacEwan University Griffins,Victoria Vikes,W20160305MACVIC
+2015-2016,56db13f750238a1647612914,2016-03-04T23:00:00Z,BritishColumbia@Saskatchewan,Saskatchewan Huskies,British Columbia Thunderbirds,W20160304SASUBC
+2015-2016,56d9a32d50238a164760db47,2016-03-04T02:00:00Z,CanadaWest - ThompsonRivers@Alberta,Alberta Pandas,Thompson Rivers University Wolfpack,W20160304ALBTRU
+2015-2016,56d9b13f50238a164760db82,2016-03-03T22:00:00Z,ConcordiaQuebec@QuebecMontreal,University Quebec - Montreal,Concordia (QUE) Stingers,W20160303UQACON
+2015-2016,56d817ef50238a1647607392,2016-03-02T22:00:00Z,OUA - Brock@Guelph,Guelph Gryphons,Brock Badgers,W20160302GUEBRO
+2015-2016,56d81c2250238a1647607f61,2016-03-02T21:00:00Z,OUA - TorontoVarBlues@WesternOntario,Western Ontario Mustangs,Toronto Varsity Blues,W20160302WESTOR
+2015-2016,56d7fa6650238a164760733c,2016-03-02T21:00:00Z,OUA - Laurentian@QueensOntario,Queens (ON) University Golden Gaels,Laurentian Voyageurs ,W20160302QUEUNK
+2015-2016,56d819cc50238a1647607761,2016-03-02T21:00:00Z,OUA - Laurier@Windsor,Windsor Lancers,Wilfrid Laurier,W20160302WINWLU
+2015-2016,56d48f4050238a16475ff6e3,2016-02-28T22:00:00Z,CanadaWest - TrinityWestern@Victoria,Victoria Vikes,Trinity Western Spartans,W20160228VICTWU
+2015-2016,56d2e08b50238a16475fc19b,2016-02-28T02:00:00Z,CanadaWest - TrinityWestern@Victoria,Victoria Vikes,Trinity Western Spartans,W20160228VICTWU
+2015-2016,56d506a450238a16476009e4,2016-02-28T01:00:00Z,CanadaWest - BritishColumbia@FraserValley,Fraser Valley Cascades,British Columbia Thunderbirds,W20160228UFVUBC
+2015-2016,56d4ad3950238a16475ff8b7,2016-02-28T00:00:00Z,SaintMarys@CapeBreton,Cape Breton Capers,Saint Mary's (CAN) Huskies  ,W20160228CBUNK
+2015-2016,56dccf3850238a1647616dc0,2016-02-28T00:00:00Z,StFrancisXavier@MemorialCan,Memorial Sea-Hawks,St. Francis Xavier X-Men,W20160228MEMUNK
+2015-2016,56d3404350238a16475fc3f7,2016-02-27T23:30:00Z,Lakehead@Windsor,Windsor Lancers,Lakehead University Thunderwolves,W20160227WINLAK
+2015-2016,56d57a2650238a1647602bd5,2016-02-27T23:00:00Z,RyersonUni@York,York (ONT) Lions,Ryerson University Rams,W20160227YORUNK
+2015-2016,56d331de50238a16475fc3a4,2016-02-27T23:00:00Z,TorontoVarBlues@QueensOntario,Queens (ON) University Golden Gaels,Toronto Varsity Blues,W20160227QUETOR
+2015-2016,56d3357b50238a16475fc3e4,2016-02-27T23:00:00Z,CarletonUni@Nipissing,Nipissing Lakers,Carleton University Ravens,W20160227NIPCAR
+2015-2016,56d3500550238a16475fc49a,2016-02-27T23:00:00Z,Brock@Guelph,Guelph Gryphons,Brock Badgers,W20160227GUEBRO
+2015-2016,56d439a250238a16475ff37e,2016-02-27T23:00:00Z,Acadia@NewBrunswick,New Brunswick Varsity Reds,Acadia Axewomen,W20160227UNBACA
+2015-2016,56d516c750238a1647601352,2016-02-27T23:00:00Z,UniOttawa@Laurentian,Laurentian Voyageurs ,Ottawa Gee-Gees,W20160227UNKOTT
+2015-2016,56d3419d50238a16475fc3fb,2016-02-27T23:00:00Z,Algoma@WesternOntario,Western Ontario Mustangs,Algoma Thunderbirds,W20160227WESALG
+2015-2016,56d359ee50238a16475fc7c4,2016-02-27T22:00:00Z,Laval@QuebecMontreal,University Quebec - Montreal,Laval University,W20160227UQALAV
+2015-2016,56d1e21350238a16475f8af5,2016-02-27T03:00:00Z,CanadaWest - TrinityWestern@Victoria,Victoria Vikes,Trinity Western Spartans,W20160227VICTWU
+2015-2016,56d1cfb750238a16475f8a98,2016-02-27T02:00:00Z,CanadaWest - BritishColumbia@FraserValley,Fraser Valley Cascades,British Columbia Thunderbirds,W20160227UFVUBC
+2015-2016,56d5ffb550238a1647603787,2016-02-27T00:00:00Z,Dalhousie@CapeBreton,Cape Breton Capers,Dalhousie Tigers,W20160227CBDAL
+2015-2016,56d4557f50238a16475ff583,2016-02-26T23:00:00Z,Algoma@Windsor,Windsor Lancers,Algoma Thunderbirds,W20160226WINALG
+2015-2016,56d1cd0c50238a16475f8a94,2016-02-26T23:00:00Z,Lakehead@WesternOntario,Western Ontario Mustangs,Lakehead University Thunderwolves,W20160226WESLAK
+2015-2016,56d1a07550238a16475f89ed,2016-02-26T23:00:00Z,CarletonUni@Laurentian,Laurentian Voyageurs ,Carleton University Ravens,W20160226UNKCAR
+2015-2016,56d568c650238a1647602052,2016-02-26T23:00:00Z,StFrancisXavier@MemorialCan,Memorial Sea-Hawks,St. Francis Xavier X-Men,W20160226MEMUNK
+2015-2016,56d5e66050238a1647603386,2016-02-26T23:00:00Z,TorontoVarBlues@York,York (ONT) Lions,Toronto Varsity Blues,W20160226YORTOR
+2015-2016,56d1a33c50238a16475f89f1,2016-02-26T23:00:00Z,RyersonUni@QueensOntario,Queens (ON) University Golden Gaels,Ryerson University Rams,W20160226QUEUNK
+2015-2016,56d1e84650238a16475f8af9,2016-02-26T23:00:00Z,McMaster@Guelph,Guelph Gryphons,McMaster Marauders,W20160226GUEMAC
+2015-2016,56d1b54e50238a16475f8a7e,2016-02-26T23:00:00Z,UniOttawa@Nipissing,Nipissing Lakers,Ottawa Gee-Gees,W20160226NIPOTT
+2015-2016,56d022e750238a16475f39ba,2016-02-25T16:00:00Z,Waterloo@Laurier,Wilfrid Laurier,Waterloo Warriors,W20160225WLUWAT
+2015-2016,56d24f8e50238a16475f94aa,2016-02-24T23:00:00Z,McMaster@Brock,Brock Badgers,McMaster Marauders,W20160224BROMAC
+2015-2016,56cde40d50238a16475ec2da,2016-02-23T23:00:00Z,SaintMarys@Acadia,Acadia Axewomen,Saint Mary's (CAN) Huskies  ,W20160223ACAUNK
+2015-2016,56cb9b8850238a16475e6031,2016-02-21T01:00:00Z,BCOkanagan @ThompsonRivers,Thompson Rivers University Wolfpack,British Columbia - Okanagan ,W20160221TRUUNK
+2015-2016,56cb0f4350238a16475b858f,2016-02-21T01:00:00Z,BrandonUni@Victoria,Victoria Vikes,Brandon University Bobcats,W20160221VICBRA
+2015-2016,56cac5a050238a16475b7ae9,2016-02-21T00:00:00Z,NorthernBC@MacEwan,MacEwan University Griffins,Northern British Columbia Timberwolves,W20160221MACUNBC
+2015-2016,56cb1d5050238a16475bf835,2016-02-21T00:00:00Z,TrinityWestern@Lethbridge,Lethbridge Pronghorns,Trinity Western Spartans,W20160221LETTWU
+2015-2016,56cadf8c50238a16475b7b03,2016-02-21T00:00:00Z,FraserValley@MountRoyal,Mount Royal Cougars ,Fraser Valley Cascades,W20160221UNKUFV
+2015-2016,56d4bc0350238a16475ff9bd,2016-02-21T00:00:00Z,CapeBreton@StFrancisXavier,St. Francis Xavier X-Men,Cape Breton Capers,W20160221UNKCB
+2015-2016,56caf9eb50238a16475b853e,2016-02-21T00:00:00Z,Calgary@Alberta,Alberta Pandas,Calgary Dinos,W20160221ALBCAL
+2015-2016,56cb53a350238a16475e5697,2016-02-21T00:00:00Z,Saskatchewan@Regina,Regina (Canada) Cougars,Saskatchewan Huskies,W20160221REGSAS
+2015-2016,56cc710150238a16475e91c5,2016-02-20T23:00:00Z,ConcordiaQuebec@Bishops,Bishops Gaiters,Concordia (QUE) Stingers,W20160220BISCON
+2015-2016,56cafbf350238a16475b8542,2016-02-20T23:00:00Z,TorontoVarBlues@Lakehead,Lakehead University Thunderwolves,Toronto Varsity Blues,W20160220LAKTOR
+2015-2016,56ca555450238a16475b4d3f,2016-02-20T23:00:00Z,Waterloo@CarletonUni,Carleton University Ravens,Waterloo Warriors,W20160220CARWAT
+2015-2016,56cb784750238a16475e5d3e,2016-02-20T23:00:00Z,Laurentian@McMaster,McMaster Marauders,Laurentian Voyageurs ,W20160220MACUNK
+2015-2016,56cb060550238a16475b857f,2016-02-20T23:00:00Z,Winnipeg@BritishColumbia,British Columbia Thunderbirds,Winnipeg Wesmen,W20160220UBCWIN
+2015-2016,56cc5f9a50238a16475e8fc0,2016-02-20T23:00:00Z,Nipissing@Brock,Brock Badgers,Nipissing Lakers,W20160220BRONIP
+2015-2016,56cac33650238a16475b7ae7,2016-02-20T23:00:00Z,Laurier@UniOttawa,Ottawa Gee-Gees,Wilfrid Laurier,W20160220OTTWLU
+2015-2016,56c9b88b50238a16475b46ec,2016-02-20T18:00:00Z,Windsor@WesternOntario,Western Ontario Mustangs,Windsor Lancers,W20160220WESWIN
+2015-2016,56c91ecc50238a16475b161a,2016-02-20T02:00:00Z,BCOkanagan @ThompsonRivers,Thompson Rivers University Wolfpack,British Columbia - Okanagan ,W20160220TRUUNK
+2015-2016,56c8df0c50238a16475b158d,2016-02-20T02:00:00Z,BrandonUni@Victoria,Victoria Vikes,Brandon University Bobcats,W20160220VICBRA
+2015-2016,56c8abf450238a16475b10ff,2016-02-20T01:00:00Z,TrinityWestern@Lethbridge,Lethbridge Pronghorns,Trinity Western Spartans,W20160220LETTWU
+2015-2016,56c8a5de50238a16475b10f8,2016-02-20T01:00:00Z,NorthernBC@MacEwan,MacEwan University Griffins,Northern British Columbia Timberwolves,W20160220MACUNBC
+2015-2016,56c8dcb750238a16475b158b,2016-02-20T01:00:00Z,FraserValley@MountRoyal,Mount Royal Cougars ,Fraser Valley Cascades,W20160220UNKUFV
+2015-2016,56c8dc3d50238a16475b1588,2016-02-20T00:00:00Z,Winnipeg@BritishColumbia,British Columbia Thunderbirds,Winnipeg Wesmen,W20160220UBCWIN
+2015-2016,56c8add650238a16475b1102,2016-02-20T00:00:00Z,Saskatchewan@Regina,Regina (Canada) Cougars,Saskatchewan Huskies,W20160220REGSAS
+2015-2016,56c982c750238a16475b3061,2016-02-19T23:00:00Z,Laurentian@Brock,Brock Badgers,Laurentian Voyageurs ,W20160219BROUNK
+2015-2016,56c986c750238a16475b366a,2016-02-19T23:00:00Z,NewBrunswick@Acadia,Acadia Axewomen,New Brunswick Varsity Reds,W20160219ACAUNB
+2015-2016,56c902aa50238a16475b15ea,2016-02-19T23:00:00Z,Nipissing@McMaster,McMaster Marauders,Nipissing Lakers,W20160219MACNIP
+2015-2016,56c8a38550238a16475b10f7,2016-02-19T23:00:00Z,RyersonUni@Lakehead,Lakehead University Thunderwolves,Ryerson University Rams,W20160219LAKUNK
+2015-2016,56c8b4dc50238a16475b110b,2016-02-19T23:00:00Z,TorontoVarBlues@Guelph,Guelph Gryphons,Toronto Varsity Blues,W20160219GUETOR
+2015-2016,56c8b5ce50238a16475b110c,2016-02-19T23:00:00Z,Waterloo@UniOttawa,Ottawa Gee-Gees,Waterloo Warriors,W20160219OTTWAT
+2015-2016,56c8c90350238a16475b1574,2016-02-19T23:00:00Z,York@Algoma,Algoma Thunderbirds,York (ONT) Lions,W20160219ALGYOR
+2015-2016,56c8948550238a16475b106a,2016-02-19T23:00:00Z,Laurier@CarletonUni,Carleton University Ravens,Wilfrid Laurier,W20160219CARWLU
+2015-2016,56c6431a50238a16475a919b,2016-02-17T23:00:00Z,RyersonUni@Guelph,Guelph Gryphons,Toronto Metropolitan University,W20160217GUETMU
+2015-2016,56c1a0b950238a164757ce22,2016-02-14T01:00:00Z,MacEwan@BCOkanagan ,British Columbia - Okanagan ,MacEwan University Griffins,W20160214UNKMAC
+2015-2016,56c1c89150238a164757d448,2016-02-14T01:00:00Z,ThompsonRivers@FraserValley,Fraser Valley Cascades,Thompson Rivers University Wolfpack,W20160214UFVTRU
+2015-2016,56c2edfe50238a164757e437,2016-02-14T01:00:00Z,ManitobaBisons@TrinityWestern,Trinity Western Spartans,Manitoba Bisons,W20160214TWUMAN
+2015-2016,56c202a150238a164757d583,2016-02-14T01:00:00Z,MountRoyal@NorthernBC,Northern British Columbia Timberwolves,Mount Royal Cougars ,W20160214UNBCUNK
+2015-2016,56c1ace950238a164757ce3e,2016-02-14T00:15:00Z,Alberta@Saskatchewan,Saskatchewan Huskies,Alberta Pandas,W20160214SASALB
+2015-2016,56c331f550238a164757ee91,2016-02-14T00:00:00Z,Lethbridge@Winnipeg,Winnipeg Wesmen,Lethbridge Pronghorns,W20160214WINLET
+2015-2016,56c1229650238a164757cc1e,2016-02-13T23:00:00Z,Nipissing@Laurentian,Laurentian Voyageurs,Nipissing Lakers,W20160213LAUNIP
+2015-2016,56c2f5f950238a164757e448,2016-02-13T23:00:00Z,StFrancisXavier@NewBrunswick,New Brunswick Varsity Reds,St. Francis Xavier X-Men,W20160213UNBUNK
+2015-2016,56c1b4ce50238a164757d41f,2016-02-13T23:00:00Z,BritishColumbia@BrandonUni,Brandon University Bobcats,British Columbia Thunderbirds,W20160213BRAUBC
+2015-2016,56c0c28f50238a164757ca07,2016-02-13T23:00:00Z,Algoma@RyersonUni,Ryerson University Rams,Algoma Thunderbirds,W20160213UNKALG
+2015-2016,56c10a4550238a164757cc04,2016-02-13T23:00:00Z,Lakehead@Laurier,Wilfrid Laurier,Lakehead University Thunderwolves,W20160213WLULAK
+2015-2016,56c14e5c50238a164757cd16,2016-02-13T23:00:00Z,Guelph@Waterloo,Waterloo Warriors,Guelph Gryphons,W20160213WATGUE
+2015-2016,56c20fbc50238a164757d61d,2016-02-13T23:00:00Z,CarletonUni@McMaster,McMaster Marauders,Carleton University Ravens,W20160213MACCAR
+2015-2016,56c1a0b950238a164757ce23,2016-02-13T23:00:00Z,Windsor@QueensOntario,Queens (ON) University Golden Gaels,Windsor Lancers,W20160213QUEWIN
+2015-2016,56c3220450238a164757ee1d,2016-02-13T23:00:00Z,CapeBreton@SaintMarys,Saint Mary's (CAN) Huskies  ,Cape Breton Capers,W20160213UNKCB
+2016-2017,58c2ae6c35268c61b069df94,2017-03-12T17:00:00Z,CIS - Laval@McGill,McGill University Martlets,Laval University,W20170312MCGLAV
+2016-2017,58c2ae6c35268c61b069df90,2017-03-12T14:00:00Z,CarletonUni@QueensOntario,Queens (ON) University Golden Gaels,Carleton University Ravens,W20170312QUECAR
+2016-2017,58c51f0635268c61b0a7e02f,2017-03-12T00:00:00Z,CIS -  Regina@Saskatchewan,Saskatchewan Huskies,Regina (Canada) Cougars,W20170312SASREG
+2016-2017,58c2ae6c35268c61b069df8b,2017-03-11T21:00:00Z,CarletonUni@CIS - McGill,McGill University Martlets,Carleton University Ravens,W20170311MCGCAR
+2016-2017,58c2ae6c35268c61b069df87,2017-03-11T19:00:00Z,CIS - Laval@QueensOntario,Queens (ON) University Golden Gaels,Laval University,W20170311QUELAV
+2016-2017,58c3d10c35268c61b003db03,2017-03-11T01:00:00Z,Regina@CIS - Victoria,Victoria Vikes,Regina (Canada) Cougars,W20170311VICREG
+2016-2017,58c2ae6c35268c61b069df81,2017-03-10T23:00:00Z,CIS - CapeBreton@Saskatchewan,Saskatchewan Huskies,Cape Breton Capers,W20170310SASCB
+2016-2017,58c0fe0035268c61b078dd1e,2017-03-09T08:27:00Z,Regina@CIS - McGill,McGill University Martlets,Regina (Canada) Cougars,W20170309MCGREG
+2016-2017,58c2092f35268c61b00782ba,2017-03-09T08:27:00Z,CapeBreton@CIS - QueensOntario,Queens (ON) University Golden Gaels,Cape Breton Capers,W20170309QUECB
+2016-2017,58c0fe0035268c61b078dd22,2017-03-09T08:27:00Z,CIS - CarletonUni@Victoria,Victoria Vikes,Carleton University Ravens,W20170309VICCAR
+2016-2017,58c2161435268c61b00d3add,2017-03-09T08:27:00Z,Laval@CIS - Saskatchewan,Saskatchewan Huskies,Laval University,W20170309SASLAV
+2016-2017,58b9dfbb35268c61b0bb3387,2017-03-05T08:27:00Z,AUS - Acadia@CapeBreton,Cape Breton Capers,Acadia Axewomen,W20170305CBACA
+2016-2017,58b9dfbb35268c61b0bb3380,2017-03-04T08:27:00Z,AUS - Acadia@SaintMary's(CAN),Saint Mary's (CAN) Huskies  ,Acadia Axewomen,W20170304UNKACA
+2016-2017,58b9e6c335268c61b0bd6453,2017-03-04T08:27:00Z,RSEQ - Concordia(QUE)@McGill,McGill University Martlets,Concordia (QUE) Stingers,W20170304MCGCON
+2016-2017,58adfd8c35268c61b0da8622,2017-03-04T08:27:00Z,Ontario - Windsor@McMaster,McMaster Marauders,Windsor Lancers,W20170304MACWIN
+2016-2017,58b1fc9635268c61b039991f,2017-03-04T08:27:00Z,CanadaWest - Regina@Saskatchewan,Saskatchewan Huskies,Regina (Canada) Cougars,W20170304SASREG
+2016-2017,58adfd8c35268c61b0da8626,2017-03-04T08:27:00Z,Ontario - CarletonUni@QueensOntario,Queens (ON) University Golden Gaels,Carleton University Ravens,W20170304QUECAR
+2016-2017,58b9dfbb35268c61b0bb3383,2017-03-04T08:27:00Z,AUS - CapeBreton@NewBrunswick,New Brunswick Varsity Reds,Cape Breton Capers,W20170304UNBCB
+2016-2017,58b9dfbb35268c61b0bb337a,2017-03-03T08:27:00Z,AUS - Acadia@PrinceEdward,Prince Edward Island Panthers,Acadia Axewomen,W20170303UPEIACA
+2016-2017,58adfd8c35268c61b0da861d,2017-03-03T08:27:00Z,Ontario - Windsor@QueensOntario,Queens (ON) University Golden Gaels,Windsor Lancers,W20170303QUEWIN
+2016-2017,58b1fc9635268c61b0399918,2017-03-03T08:27:00Z,CanadaWest - Winnipeg@Regina,Regina (Canada) Cougars,Winnipeg Wesmen,W20170303REGWIN
+2016-2017,58b9dfbb35268c61b0bb337e,2017-03-03T08:27:00Z,AUS - MemorialCan@CapeBreton,Cape Breton Capers,Memorial Sea-Hawks,W20170303CBMEM
+2016-2017,58adfd8c35268c61b0da861f,2017-03-03T08:27:00Z,Ontario - McMaster@CarletonUni,Carleton University Ravens,McMaster Marauders,W20170303CARMAC
+2016-2017,58b1fc9635268c61b0399914,2017-03-03T08:27:00Z,CanadaWest - Alberta@Saskatchewan,Saskatchewan Huskies,Alberta Pandas,W20170303SASALB
+2016-2017,58b9e6c335268c61b0bd6450,2017-03-02T08:27:00Z,RSEQ - QuebecMontreal@McGill,McGill University Martlets,University Quebec - Montreal,W20170302MCGUQA
+2016-2017,57d76ed85762021398cd4a60,2017-02-25T23:00:00Z,SaintMary's(CAN)@CapeBreton,Cape Breton Capers,Saint Mary's (CAN) Huskies  ,W20170225CBUNK
+2016-2017,57d76ed85762021398cd4a5f,2017-02-25T23:00:00Z,PrinceEdward@StFrancisXavier,St. Francis Xavier X-Women,Prince Edward Island Panthers,W20170225SFXUPEI
+2016-2017,57dc84961c496ea6cc6d1774,2017-02-25T22:00:00Z,Bishops@QuebecMontreal,University Quebec - Montreal,Bishops Gaiters,W20170225UQABIS
+2016-2017,58adfd8c35268c61b0da8603,2017-02-25T20:00:00Z,Ontario - Lakehead@QueensOntario,Queens (ON) University Golden Gaels,Lakehead University Thunderwolves,W20170225QUELAK
+2016-2017,58adfd8c35268c61b0da8600,2017-02-25T20:00:00Z,Ontario - Laurier@CarletonUni,Carleton University Ravens,Wilfrid Laurier,W20170225CARWLU
+2016-2017,58adfd8c35268c61b0da85fb,2017-02-25T20:00:00Z,Ontario - RyersonUni@Windsor,Windsor Lancers,Ryerson University Rams,W20170225WINUNK
+2016-2017,58adfd8c35268c61b0da85f7,2017-02-25T20:00:00Z,Ontario - WesternOntario@McMaster,McMaster Marauders,Western Ontario Mustangs,W20170225MACWES
+2016-2017,58b0f03b35268c61b0a6d514,2017-02-25T19:00:00Z,CandaWest - FraserValley@Saskatchewan,Saskatchewan Huskies,Fraser Valley Cascades,W20170225SASUFV
+2016-2017,57dc86e81c496ea6cc6d1780,2017-02-25T19:00:00Z,Laval@Concordia(QUE),Concordia (QUE) Stingers,Laval University,W20170225CONLAV
+2016-2017,58b0f03b35268c61b0a6d511,2017-02-25T18:30:00Z,CandaWest - Victoria@Winnipeg,Winnipeg Wesmen,Victoria Vikes,W20170225WINVIC
+2016-2017,57d76ed85762021398cd4a5e,2017-02-25T18:00:00Z,MemorialCan@Acadia,Acadia Axewomen,Memorial Sea-Hawks,W20170225ACAMEM
+2016-2017,57d76ed85762021398cd4a5a,2017-02-24T23:00:00Z,MemorialCan@Acadia,Acadia Axewomen,Memorial Sea-Hawks,W20170224ACAMEM
+2016-2017,57d76ed85762021398cd4a5c,2017-02-24T23:00:00Z,NewBrunswick@StFrancisXavier,St. Francis Xavier X-Men,New Brunswick Varsity Reds,W20170224UNKUNB
+2016-2017,57d76ed85762021398cd4a5d,2017-02-24T23:00:00Z,PrinceEdward@Dalhousie,Dalhousie Tigers,Prince Edward Island Panthers,W20170224DALUPEI
+2016-2017,57d76ed85762021398cd4a5b,2017-02-24T23:00:00Z,SaintMary's(CAN)@CapeBreton,Cape Breton Capers,Saint Mary's (CAN) Huskies  ,W20170224CBUNK
+2016-2017,58adf7b035268c61b0d7f7e3,2017-02-24T22:00:00Z,CanadaWest - Victoria@Winnipeg,Winnipeg Wesmen,Victoria Vikes,W20170224WINVIC
+2016-2017,58adf7b035268c61b0d7f7eb,2017-02-24T22:00:00Z,CanadaWest - BritishColumbia@Alberta,Alberta Pandas,British Columbia Thunderbirds,W20170224ALBUBC
+2016-2017,58adf7b035268c61b0d7f7e7,2017-02-24T22:00:00Z,CanadaWest - TrinityWestern@Regina,Regina (Canada) Cougars,Trinity Western Spartans,W20170224REGTWU
+2016-2017,58adf7b035268c61b0d7f7e0,2017-02-24T22:00:00Z,CanadaWest - FraserValley@Saskatchewan,Saskatchewan Huskies,Fraser Valley Cascades,W20170224SASUFV
+2016-2017,57dc88d61c496ea6cc6d1a7c,2017-02-23T23:00:00Z,McGill@Laval,Laval University,McGill University Martlets,W20170223LAVMCG
+2016-2017,58adf7b035268c61b0d7f7d9,2017-02-23T22:00:00Z,CanadaWest - TrinityWestern@Regina,Regina (Canada) Cougars,Trinity Western Spartans,W20170223REGTWU
+2016-2017,58adf7b035268c61b0d7f7d5,2017-02-23T22:00:00Z,CanadaWest - Victoria@Winnipeg,Winnipeg Wesmen,Victoria Vikes,W20170223WINVIC
+2016-2017,58adf7b035268c61b0d7f7dd,2017-02-23T22:00:00Z,CanadaWest - BritishColumbia@Alberta,Alberta Pandas,British Columbia Thunderbirds,W20170223ALBUBC
+2016-2017,58adf7b035268c61b0d7f7d0,2017-02-23T22:00:00Z,CanadaWest - FraserValley@Saskatchewan,Saskatchewan Huskies,Fraser Valley Cascades,W20170223SASUFV
+2016-2017,58adf7b035268c61b0d7f7ba,2017-02-22T23:00:00Z,Ontario - TorontoVarBlues@Laurier,Wilfrid Laurier,Toronto Varsity Blues,W20170222WLUTOR
+2016-2017,57dc84961c496ea6cc6d1773,2017-02-22T23:00:00Z,Concordia(QUE)@Bishops,Bishops Gaiters,Concordia (QUE) Stingers,W20170222BISCON
+2016-2017,58adfd8c35268c61b0da85f4,2017-02-22T20:00:00Z,Ontario - WesternOntario@UniOttawa,Ottawa Gee-Gees,Western Ontario Mustangs,W20170222OTTWES
+2016-2017,58adfd8c35268c61b0da85ef,2017-02-22T20:00:00Z,Ontario - Lakehead@Brock,Brock Badgers,Lakehead University Thunderwolves,W20170222BROLAK
+2016-2017,58ae324735268c61b0f22726,2017-02-22T20:00:00Z,Ontario - York(ONT)@RyersonUni,Ryerson University Rams,York (ONT) Lions,W20170222UNKYOR
+2016-2017,58aa760635268c61b0a4405d,2017-02-19T18:00:00Z,CanadaWest - Calgary@FraserValley,Fraser Valley Cascades,Calgary Dinos,W20170219UFVCAL
+2016-2017,57d76ed85762021398cd4a59,2017-02-19T18:00:00Z,CapeBreton@PrinceEdward,Prince Edward Island Panthers,Cape Breton Capers,W20170219UPEICB
+2016-2017,57d8c5f15762021398cd599d,2017-02-18T23:00:00Z,TorontoVarBlues@CarletonUni,Carleton University Ravens,Toronto Varsity Blues,W20170218CARTOR
+2016-2017,57d8c5075762021398cd599b,2017-02-18T23:00:00Z,RyersonUni@UniOttawa,Ottawa Gee-Gees,Ryerson University Rams,W20170218OTTUNK
+2016-2017,57d76ed85762021398cd4a58,2017-02-18T23:00:00Z,Acadia@Dalhousie,Dalhousie Tigers,Acadia Axewomen,W20170218DALACA
+2016-2017,57d8c5f15762021398cd599e,2017-02-18T23:00:00Z,Nipissing@Algoma,Algoma Thunderbirds,Nipissing Lakers,W20170218ALGNIP
+2016-2017,57d8c5075762021398cd599a,2017-02-18T23:00:00Z,Laurier@Lakehead,Lakehead University Thunderwolves,Wilfrid Laurier,W20170218LAKWLU
+2016-2017,57d8c5f15762021398cd599c,2017-02-18T23:00:00Z,Waterloo@Guelph,Guelph Gryphons,Waterloo Warriors,W20170218GUEWAT
+2016-2017,58a676fb35268c61b03be47d,2017-02-18T22:00:00Z,CanadaWest - NorthernBC@BritishColumbia,British Columbia Thunderbirds,Northern British Columbia Timberwolves,W20170218UBCUNBC
+2016-2017,58a676fb35268c61b03be481,2017-02-18T22:00:00Z,CanadaWest - MacEwan@Victoria,Victoria Vikes,MacEwan University Griffins,W20170218VICMAC
+2016-2017,58a676fb35268c61b03be47f,2017-02-18T22:00:00Z,CanadaWest - Calgary@FraserValley,Fraser Valley Cascades,Calgary Dinos,W20170218UFVCAL
+2016-2017,57dc84961c496ea6cc6d1772,2017-02-18T18:00:00Z,Bishops@McGill,McGill University Martlets,Bishops Gaiters,W20170218MCGBIS
+2016-2017,57d8c5075762021398cd5999,2017-02-18T18:00:00Z,Brock@Windsor,Windsor Lancers,Brock Badgers,W20170218WINBRO
+2016-2017,57d8c5075762021398cd5998,2017-02-18T18:00:00Z,McMaster@WesternOntario,Western Ontario Mustangs,McMaster Marauders,W20170218WESMAC
+2016-2017,57dc88d61c496ea6cc6d1a80,2017-02-17T23:00:00Z,QuebecMontreal@Laval,Laval University,University Quebec - Montreal,W20170217LAVUQA
+2016-2017,57d76ed85762021398cd4a57,2017-02-17T23:00:00Z,CapeBreton@NewBrunswick,New Brunswick Varsity Reds,Cape Breton Capers,W20170217UNBCB
+2016-2017,57d8c5075762021398cd5995,2017-02-17T23:00:00Z,RyersonUni@CarletonUni,Carleton University Ravens,Ryerson University Rams,W20170217CARUNK
+2016-2017,57d8c5075762021398cd5993,2017-02-17T23:00:00Z,Waterloo@Lakehead,Lakehead University Thunderwolves,Waterloo Warriors,W20170217LAKWAT
+2016-2017,57d76cf75762021398cd4a55,2017-02-17T23:00:00Z,StFrancisXavier@Acadia,Acadia Axewomen,St. Francis Xavier X-Men,W20170217ACAUNK
+2016-2017,57d8c5075762021398cd5996,2017-02-17T23:00:00Z,Laurentian@Algoma,Algoma Thunderbirds,Laurentian Voyageurs ,W20170217ALGUNK
+2016-2017,57d8c5075762021398cd5997,2017-02-17T23:00:00Z,York(ONT)@QueensOntario,Queens (ON) University Golden Gaels,York (ONT) Lions,W20170217QUEYOR
+2016-2017,58a7d43335268c61b0f371b7,2017-02-17T23:00:00Z,SaintMary's(CAN)@Dalhousie,Dalhousie Tigers,Saint Mary's (CAN) Huskies  ,W20170217DALUNK
+2016-2017,57d8c5075762021398cd5994,2017-02-17T23:00:00Z,TorontoVarBlues@UniOttawa,Ottawa Gee-Gees,Toronto Varsity Blues,W20170217OTTTOR
+2016-2017,58a676fb35268c61b03be479,2017-02-17T22:00:00Z,CanadaWest - BrandonUni@TrinityWestern,Trinity Western Spartans,Brandon University Bobcats,W20170217TWUBRA
+2016-2017,58a676fb35268c61b03be46f,2017-02-17T22:00:00Z,CanadaWest - NorthernBC@BritishColumbia,British Columbia Thunderbirds,Northern British Columbia Timberwolves,W20170217UBCUNBC
+2016-2017,58a676fb35268c61b03be474,2017-02-17T22:00:00Z,CanadaWest - Calgary@FraserValley,Fraser Valley Cascades,Calgary Dinos,W20170217UFVCAL
+2016-2017,58a676fb35268c61b03be476,2017-02-17T22:00:00Z,CanadaWest - MacEwan@Victoria,Victoria Vikes,MacEwan University Griffins,W20170217VICMAC
+2016-2017,57dc86e81c496ea6cc6d177f,2017-02-16T23:00:00Z,McGill@Concordia(QUE),Concordia (QUE) Stingers,McGill University Martlets,W20170216CONMCG
+2016-2017,58a676fb35268c61b03be46d,2017-02-16T22:00:00Z,CanadaWest - BrandonUni@TrinityWestern,Trinity Western Spartans,Brandon University Bobcats,W20170216TWUBRA
+2016-2017,57d8c5075762021398cd5992,2017-02-15T23:00:00Z,McMaster@Windsor,Windsor Lancers,McMaster Marauders,W20170215WINMAC
+2016-2017,57d8c4a75762021398cd5991,2017-02-15T23:00:00Z,Brock@WesternOntario,Western Ontario Mustangs,Brock Badgers,W20170215WESBRO
+2016-2017,57d4d9e95762021398cce277,2017-02-13T00:00:00Z,Lethbridge@Alberta,Alberta Pandas,Lethbridge Pronghorns,W20170213ALBLET
+2016-2017,57d76cf75762021398cd4a54,2017-02-12T17:00:00Z,PrinceEdward@MemorialCan,Memorial Sea-Hawks,Prince Edward Island Panthers,W20170212MEMUPEI
+2016-2017,57d4e1de5762021398cce289,2017-02-12T01:00:00Z,FraserValley@BCOkanagan ,British Columbia - Okanagan ,Fraser Valley Cascades,W20170212UNKUFV
+2016-2017,57d4a8bc5762021398ccdf74,2017-02-12T01:00:00Z,Saskatchewan@NorthernBC,Northern British Columbia Timberwolves,Saskatchewan Huskies,W20170212UNBCSAS
+2016-2017,57d4b5545762021398ccdfbd,2017-02-12T01:00:00Z,Winnipeg@Victoria,Victoria Vikes,Winnipeg Wesmen,W20170212VICWIN
+2016-2017,57d4c97d5762021398cce237,2017-02-12T01:00:00Z,BritishColumbia@TrinityWestern,Trinity Western Spartans,British Columbia Thunderbirds,W20170212TWUUBC
+2016-2017,57dc84961c496ea6cc6d1771,2017-02-12T01:00:00Z,Laval@Bishops,Bishops Gaiters,Laval University,W20170212BISLAV
+2016-2017,57d4dc3c5762021398cce280,2017-02-12T00:00:00Z,ThompsonRivers@Regina,Regina (Canada) Cougars,Thompson Rivers University Wolfpack,W20170212REGTRU
+2016-2017,57d4afbb5762021398ccdf9a,2017-02-12T00:00:00Z,MacEwan@Calgary,Calgary Dinos,MacEwan University Griffins,W20170212CALMAC
+2016-2017,57d4ab7f5762021398ccdf86,2017-02-11T23:00:00Z,MountRoyal@ManitobaBisons,Manitoba Bisons,Mount Royal Cougars ,W20170211MANUNK
+2016-2017,58a0318335268c61b0c37797,2017-02-11T23:00:00Z,CarletonUni@York(ONT),York (ONT) Lions,Carleton University Ravens,W20170211YORCAR
+2016-2017,57d8c4a75762021398cd598d,2017-02-11T23:00:00Z,Algoma@McMaster,McMaster Marauders,Algoma Thunderbirds,W20170211MACALG
+2016-2017,57d76cf75762021398cd4a53,2017-02-11T23:00:00Z,Acadia@SaintMary's(CAN),Saint Mary's (CAN) Huskies  ,Acadia Axewomen,W20170211UNKACA
+2016-2017,57dc86e81c496ea6cc6d177e,2017-02-11T23:00:00Z,Concordia(QUE)@QuebecMontreal,University Quebec - Montreal,Concordia (QUE) Stingers,W20170211UQACON
+2016-2017,57d76cf75762021398cd4a52,2017-02-11T23:00:00Z,PrinceEdward@MemorialCan,Memorial Sea-Hawks,Prince Edward Island Panthers,W20170211MEMUPEI
+2017-2018,5aa623f02cb661f293011987,2018-03-11T23:30:00Z,USport - Saskatchewan@Carleton,Carleton University Ravens,Saskatchewan Huskies,W20180311CARSAS
+2017-2018,5aa5fd002cb661f293b43cbf,2018-03-11T20:30:00Z,USport - McGill@Regina,Regina (Canada) Cougars,McGill University Martlets,W20180311REGMCG
+2017-2018,5aa4e85b2cb661f29389456a,2018-03-11T00:00:00Z,USport - Saskatchewan@Regina,Regina (Canada) Cougars,Saskatchewan Huskies,W20180311REGSAS
+2017-2018,5aa4940f2cb661f2930d2a85,2018-03-10T20:00:00Z,USport - McGill@CarletonUni,Carleton University Ravens,McGill University Martlets,W20180310CARMCG
+2017-2018,5aa460722cb661f293f0d4b0,2018-03-10T17:00:00Z,USport - Calgary@Laval,Laval University,Calgary Dinos,W20180310LAVCAL
+2017-2018,5aa39fae2cb661f2936b8f22,2018-03-10T01:00:00Z,Laval@USport - Acadia,Acadia Axewomen,Laval University,W20180310ACALAV
+2017-2018,5aa39de42cb661f293587320,2018-03-09T23:00:00Z,USport - Calgary@McMaster,McMaster Marauders,Calgary Dinos,W20180309MACCAL
+2017-2018,5aa2632d2cb661f2934645e2,2018-03-09T02:00:00Z,Saskatchewan@USport - Acadia,Acadia Axewomen,Saskatchewan Huskies,W20180309ACASAS
+2017-2018,5aa25fc02cb661f2932f8aab,2018-03-09T00:00:00Z,USport - Laval@Regina,Regina (Canada) Cougars,Laval University,W20180309REGLAV
+2017-2018,5aa333db2cb661f29324a94e,2018-03-08T21:00:00Z,USport - McMaster@McGill,McGill University Martlets,McMaster Marauders,W20180308MCGMAC
+2017-2018,5aa2594c2cb661f29301f746,2018-03-08T19:00:00Z,USport - Calgary@CarletonUni,Carleton University Ravens,Calgary Dinos,W20180308CARCAL
+2017-2018,5a9c8da72cb661f2933efd48,2018-03-04T18:00:00Z,AUS - PrinceEdward@Acadia,Acadia Axewomen,Prince Edward Island Panthers,W20180304ACAUPEI
+2017-2018,5a9c100d2cb661f29342d159,2018-03-04T02:00:00Z,CanadaWest - Calgary@TrinityWestern,Trinity Western Spartans,Calgary Dinos,W20180304TWUCAL
+2017-2018,5a9bb4842cb661f29392057e,2018-03-03T20:00:00Z,AUS - PrinceEdward@CapeBreton,Cape Breton Capers,Prince Edward Island Panthers,W20180303CBUPEI
+2017-2018,5a9bba4b2cb661f293d8f3f4,2018-03-03T20:00:00Z,RSEQ - McGill@Laval,Laval University,McGill University Martlets,W20180303LAVMCG
+2017-2018,5a9be39c2cb661f293aa6e3c,2018-03-03T18:00:00Z,OUA - CarletonUni@McMaster,McMaster Marauders,Carleton University Ravens,W20180303MACCAR
+2017-2018,5a9b26fb2cb661f2932b2800,2018-03-03T18:00:00Z,AUS - SaintMary's(CAN)@Acadia,Acadia Axewomen,Saint Mary's (CAN) Huskies,W20180303ACASMU
+2017-2018,5a9a848a2cb661f2931d6ad4,2018-03-03T01:00:00Z,CanadaWest - Saskatchewan@Regina,Regina (Canada) Cougars,Saskatchewan Huskies,W20180303REGSAS
+2017-2018,5a99f62d2cb661f293340c4c,2018-03-02T08:27:00Z,AUS - MemorialCan@SaintMary's(CAN),Saint Mary's (CAN) Huskies  ,Memorial Sea-Hawks,W20180302UNKMEM
+2017-2018,5a99f92c2cb661f2935eb031,2018-03-02T08:27:00Z,AUS - NewBrunswick@PrinceEdward,Prince Edward Island Panthers,New Brunswick Varsity Reds,W20180302UPEIUNB
+2017-2018,5a97e5472cb661f2937bf630,2018-02-28T23:00:00Z,OUA - UniOttawa@McMaster,McMaster Marauders,Ottawa Gee-Gees,W20180228MACOTT
+2017-2018,5a97ba922cb661f293484505,2018-02-28T11:00:00Z,OUA - Windsor@CarletonUni,Carleton University Ravens,Windsor Lancers,W20180228CARWIN
+2017-2018,5a98740d2cb661f2937abe72,2018-02-28T05:00:00Z,RSEQ - Bishops@McGill,McGill University Martlets,Bishops Gaiters,W20180228MCGBIS
+2017-2018,5a98a0e42cb661f293e61a55,2018-02-28T05:00:00Z,RSEQ - QuebecMontreal@Laval,Laval University,University Quebec - Montreal,W20180228LAVUQA
+2017-2018,5a92da4ae182fd4d2f7ae2ae,2018-02-25T01:00:00Z,CanadaWest - TrinityWestern@Saskatchewan,Saskatchewan Huskies,Trinity Western Spartans,W20180225SASTWU
+2017-2018,5a92e251e182fd4d2fc98c4f,2018-02-25T00:00:00Z,OUA - Lakehead@Windsor,Windsor Lancers,Lakehead University Thunderwolves,W20180225WINLAK
+2017-2018,5a92c65fe182fd4d2fc4da4b,2018-02-24T23:00:00Z,OUA - UniOttawa@QueensOntario,Queens (ON) University Golden Gaels,Ottawa Gee-Gees,W20180224QUEOTT
+2017-2018,5a92b23be182fd4d2f1738e0,2018-02-24T23:00:00Z,Dalhousie@PrinceEdward,Prince Edward Island Panthers,Dalhousie Tigers,W20180224UPEIDAL
+2017-2018,5a92d81de182fd4d2f66cdf5,2018-02-24T23:00:00Z,OUA - RyersonUni@CarletonUni,Carleton University Ravens,Ryerson University Rams,W20180224CARUNK
+2017-2018,5a92d317e182fd4d2f33b5d1,2018-02-24T23:00:00Z,StFrancisXavier@NewBrunswick,New Brunswick Varsity Reds,St. Francis Xavier X-Men,W20180224UNBUNK
+2017-2018,5a95b9d12cb661f29376facf,2018-02-24T21:00:00Z,Laval@Concordia(QUE),Concordia (QUE) Stingers,Laval University,W20180224CONLAV
+2017-2018,5a927a3be182fd4d2f57374d,2018-02-24T18:00:00Z,OUA - WesternOntario@McMaster,McMaster Marauders,Western Ontario Mustangs,W20180224MACWES
+2017-2018,5a931748e182fd4d2fb80a95,2018-02-24T18:00:00Z,QuebecMontreal@McGill,McGill University Martlets,University Quebec - Montreal,W20180224MCGUQA
+2017-2018,5a9218492cb661f293ec4abf,2018-02-24T17:00:00Z,SaintMary's(CAN)@MemorialCan,Memorial Sea-Hawks,Saint Mary's (CAN) Huskies  ,W20180224MEMUNK
+2017-2018,5a9133b82cb661f29384d9ba,2018-02-24T00:00:00Z,CanadaWest - Calgary@Regina,Regina (Canada) Cougars,Calgary Dinos,W20180224REGCAL
+2017-2018,5a9134792cb661f29390a894,2018-02-24T00:00:00Z,CanadaWest - TrinityWestern@Saskatchewan,Saskatchewan Huskies,Trinity Western Spartans,W20180224SASTWU
+2017-2018,5a915ed72cb661f293b50d22,2018-02-23T23:00:00Z,Concordia(QUE)@Bishops,Bishops Gaiters,Concordia (QUE) Stingers,W20180223BISCON
+2017-2018,5a91125f2cb661f2933a0892,2018-02-23T23:00:00Z,SaintMary's(CAN)@MemorialCan,Memorial Sea-Hawks,Saint Mary's (CAN) Huskies  ,W20180223MEMUNK
+2017-2018,5a912e742cb661f2934587bb,2018-02-23T23:00:00Z,StFrancisXavier@PrinceEdward,Prince Edward Island Panthers,St. Francis Xavier X-Women,W20180223UPEISFX
+2017-2018,5a913bba2cb661f2930777d2,2018-02-23T23:00:00Z,Dalhousie@NewBrunswick,New Brunswick Varsity Reds,Dalhousie Tigers,W20180223UNBDAL
+2017-2018,5a9121652cb661f293ca99eb,2018-02-23T23:00:00Z,Acadia@CapeBreton,Cape Breton Capers,Acadia Axewomen,W20180223CBACA
+2017-2018,5a900df32cb661f2934ae503,2018-02-23T00:00:00Z,CanadaWest - Calgary@Regina,Regina (Canada) Cougars,Calgary Dinos,W20180223REGCAL
+2017-2018,5a90020b2cb661f293ee7bdc,2018-02-23T00:00:00Z,CanadaWest - TrinityWestern@Saskatchewan,Saskatchewan Huskies,Trinity Western Spartans,W20180223SASTWU
+2017-2018,5a8fefde2cb661f29369df03,2018-02-22T23:00:00Z,McGill@Laval,Laval University,McGill University Martlets,W20180222LAVMCG
+2017-2018,5a8e81612cb661f293d7594a,2018-02-22T00:00:00Z,OUA - Laurier@Lakehead,Lakehead University Thunderwolves,Wilfrid Laurier,W20180222LAKWLU
+2017-2018,5a8eacad2cb661f29316cea0,2018-02-22T00:00:00Z,OUA - WesternOntario@Guelph,Guelph Gryphons,Western Ontario Mustangs,W20180222GUEWES
+2017-2018,5a8e9b3a2cb661f29391ed5d,2018-02-22T00:00:00Z,OUA - TorontoVarBlues@UniOttawa,Ottawa Gee-Gees,Toronto Varsity Blues,W20180222OTTTOR
+2017-2018,5a8ec16b2cb661f293c24ace,2018-02-21T23:00:00Z,OUA - York(ONT)@RyersonUni,Ryerson University Rams,York (ONT) Lions,W20180221UNKYOR
+2017-2018,5a8b1ba6f63adec3bbb73c65,2018-02-18T18:00:00Z,QuebecMontreal@Laval,Laval University,University Quebec - Montreal,W20180218LAVUQA
+2017-2018,5a8afcf5f63adec3bb13ef65,2018-02-18T18:00:00Z,MemorialCan@StFrancisXavier,St. Francis Xavier X-Men,Memorial Sea-Hawks,W20180218UNKMEM
+2017-2018,5a89d8fef63adec3bbd6cee9,2018-02-18T00:00:00Z,CanadaWest - Victoria@Calgary,Calgary Dinos,Victoria Vikes,W20180218CALVIC
+2017-2018,5a8aa4baf63adec3bbab9dca,2018-02-17T23:00:00Z,Acadia@Dalhousie,Dalhousie Tigers,Acadia Axewomen,W20180217DALACA
+2017-2018,5a8a9fcbf63adec3bb8a005d,2018-02-17T23:00:00Z,Laurentian@RyersonUni,Ryerson University Rams,Laurentian Voyageurs ,W20180217UNKUNK
+2017-2018,5a89fc06f63adec3bb32b211,2018-02-17T23:00:00Z,QueensOntario@CarletonUni,Carleton University Ravens,Queens (ON) University Golden Gaels,W20180217CARQUE
+2017-2018,5a89e5f7f63adec3bb569114,2018-02-17T23:00:00Z,York(ONT)@UniOttawa,Ottawa Gee-Gees,York (ONT) Lions,W20180217OTTYOR
+2017-2018,5a8aa26af63adec3bb9c600c,2018-02-17T23:00:00Z,Nipissing@TorontoVarBlues,Toronto Varsity Blues,Nipissing Lakers,W20180217TORNIP
+2017-2018,5a899551f63adec3bb270463,2018-02-17T23:00:00Z,Laurier@Lakehead,Lakehead University Thunderwolves,Wilfrid Laurier,W20180217LAKWLU
+2017-2018,5a89f782f63adec3bb04dce1,2018-02-17T23:00:00Z,PrinceEdward@NewBrunswick,New Brunswick Varsity Reds,Prince Edward Island Panthers,W20180217UNBUPEI
+2017-2018,5a8a0f4ff63adec3bb01874e,2018-02-17T23:00:00Z,Algoma@McMaster,McMaster Marauders,Algoma Thunderbirds,W20180217MACALG
+2017-2018,5a89f6b4f63adec3bbfc2813,2018-02-17T23:00:00Z,MemorialCan@StFrancisXavier,St. Francis Xavier X-Men,Memorial Sea-Hawks,W20180217UNKMEM
+2017-2018,5a8978c5f63adec3bb389fbc,2018-02-17T21:00:00Z,CapeBreton@SaintMary's(CAN),Saint Mary's (CAN) Huskies  ,Cape Breton Capers,W20180217UNKCB
+2017-2018,5a89cb98f63adec3bb4f7c16,2018-02-17T21:00:00Z,Bishops@McGill,McGill University Martlets,Bishops Gaiters,W20180217MCGBIS
+2017-2018,5a892704f63adec3bb0f834d,2018-02-17T18:00:00Z,WesternOntario@Guelph,Guelph Gryphons,Western Ontario Mustangs,W20180217GUEWES
+2017-2018,5a8988c6f63adec3bbb6a5b6,2018-02-17T08:27:00Z,Brock@Windsor,Windsor Lancers,Brock Badgers,W20180217WINBRO
+2017-2018,5a8c17aff63adec3bbd87f64,2018-02-17T05:00:00Z,Canada West - Winnipeg@Saskatchewan,Saskatchewan Huskies,Winnipeg Wesmen,W20180217SASWIN
+2017-2018,5a885950f63adec3bb4a06ea,2018-02-17T00:00:00Z,CanadaWest - Alberta@TrinityWestern,Trinity Western Spartans,Alberta Pandas,W20180217TWUALB
+2017-2018,5a882b80f63adec3bbe5e15a,2018-02-17T00:00:00Z,CanadaWest - BritishColumbia@Regina,Regina (Canada) Cougars,British Columbia Thunderbirds,W20180217REGUBC
+2017-2018,5a8828aaf63adec3bbd32652,2018-02-17T00:00:00Z,CanadaWest - Victoria@Calgary,Calgary Dinos,Victoria Vikes,W20180217CALVIC
+2017-2018,5a881f4ef63adec3bb93fa94,2018-02-17T00:00:00Z,CanadaWest - Winnipeg@Saskatchewan,Saskatchewan Huskies,Winnipeg Wesmen,W20180217SASWIN
+2017-2018,5a883f54f63adec3bb771184,2018-02-16T23:00:00Z,Algoma@McMaster,McMaster Marauders,Algoma Thunderbirds,W20180216MACALG
+2017-2018,5a881046f63adec3bb35bfb0,2018-02-16T23:00:00Z,Waterloo@Windsor,Windsor Lancers,Waterloo Warriors,W20180216WINWAT
+2017-2018,5a882459f63adec3bbb5e5a0,2018-02-16T23:00:00Z,Nipissing@RyersonUni,Ryerson University Rams,Nipissing Lakers,W20180216UNKNIP
+2017-2018,5a881b29f63adec3bb7a2541,2018-02-16T23:00:00Z,PrinceEdward@NewBrunswick,New Brunswick Varsity Reds,Prince Edward Island Panthers,W20180216UNBUPEI
+2017-2018,5a88007bf63adec3bbd4cbff,2018-02-16T23:00:00Z,CapeBreton@SaintMary's(CAN),Saint Mary's (CAN) Huskies  ,Cape Breton Capers,W20180216UNKCB
+2017-2018,5a88063bf63adec3bbf9a20f,2018-02-16T23:00:00Z,Laurentian@TorontoVarBlues,Toronto Varsity Blues,Laurentian Voyageurs ,W20180216TORUNK
+2017-2018,5a881580f63adec3bb55a0a2,2018-02-16T23:00:00Z,York(ONT)@CarletonUni,Carleton University Ravens,York (ONT) Lions,W20180216CARYOR
+2017-2018,5a8817d6f63adec3bb6553bd,2018-02-16T23:00:00Z,QueensOntario@UniOttawa,Ottawa Gee-Gees,Queens (ON) University Golden Gaels,W20180216OTTQUE
+2017-2018,5a88078bf63adec3bb0158bb,2018-02-16T23:00:00Z,Laurier@Lakehead,Lakehead University Thunderwolves,Wilfrid Laurier,W20180216LAKWLU
+2017-2018,5a86e33ff63adec3bbce3101,2018-02-16T00:00:00Z,CanadaWest - Winnipeg@Saskatchewan,Saskatchewan Huskies,Winnipeg Wesmen,W20180216SASWIN
+2017-2018,5a872373f63adec3bbac2649,2018-02-16T00:00:00Z,CanadaWest - Alberta@TrinityWestern,Trinity Western Spartans,Alberta Pandas,W20180216TWUALB
+2017-2018,5a86ca96f63adec3bb23b4a3,2018-02-16T00:00:00Z,CanadaWest - BritishColumbia@Regina,Regina (Canada) Cougars,British Columbia Thunderbirds,W20180216REGUBC
+2017-2018,5a86acf8f63adec3bb671e57,2018-02-15T23:00:00Z,Concordia(QUE)@QuebecMontreal,University Quebec - Montreal,Concordia (QUE) Stingers,W20180215UQACON
+2017-2018,5a87662df63adec3bbc1c76e,2018-02-15T23:00:00Z,Dalhousie@Acadia,Acadia Axewomen,Dalhousie Tigers,W20180215ACADAL
+2017-2018,5a8548b9f63adec3bbef9e8a,2018-02-14T23:00:00Z,Guelph@Waterloo,Waterloo Warriors,Guelph Gryphons,W20180214WATGUE
+2017-2018,5a85abf5f63adec3bb379852,2018-02-14T23:00:00Z,Brock@WesternOntario,Western Ontario Mustangs,Brock Badgers,W20180214WESBRO
+2017-2018,5a81cce7f63adec3bbc1eee1,2018-02-11T23:00:00Z,Bishops@Laval,Laval University,Bishops Gaiters,W20180211LAVBIS
+2017-2018,5a8086cc6ca03e9fbbc9279b,2018-02-10T23:00:00Z,UniOttawa@Nipissing,Nipissing Lakers,Ottawa Gee-Gees,W20180210NIPOTT
+2017-2018,5a80e0396ca03e9fbb382ee2,2018-02-10T23:00:00Z,TorontoVarBlues@York(ONT),York (ONT) Lions,Toronto Varsity Blues,W20180210YORTOR
+2017-2018,5a80d45f6ca03e9fbbe85bed,2018-02-10T23:00:00Z,CarletonUni@Laurentian,Laurentian Voyageurs,Carleton University Ravens,W20180210LAUCAR
+2017-2018,5a809f2d6ca03e9fbb70b4a1,2018-02-10T23:00:00Z,Lakehead@Brock,Brock Badgers,Lakehead University Thunderwolves,W20180210BROLAK
+2017-2018,5a80a1ae6ca03e9fbb823a97,2018-02-10T23:00:00Z,RyersonUni@QueensOntario,Queens (ON) University Golden Gaels,Ryerson University Rams,W20180210QUEUNK
+2017-2018,5a8183576ca03e9fbbf55196,2018-02-10T23:00:00Z,CapeBreton@Acadia,Acadia Axewomen,Cape Breton Capers,W20180210ACACB
+2017-2018,5a880960f63adec3bb0c4fb3,2018-02-10T23:00:00Z,Laval@Bishops,Bishops Gaiters,Laval University,W20180210BISLAV
+2017-2018,5a80a20e6ca03e9fbb84ca79,2018-02-10T23:00:00Z,Windsor@Algoma,Algoma Thunderbirds,Windsor Lancers,W20180210ALGWIN
+2017-2018,5a8029e96ca03e9fbbab91a7,2018-02-10T18:00:00Z,WesternOntario@McMaster,McMaster Marauders,Western Ontario Mustangs,W20180210MACWES
+2017-2018,5a81b83b6ca03e9fbb2805a0,2018-02-10T18:00:00Z,Guelph@Laurier,Wilfrid Laurier,Guelph Gryphons,W20180210WLUGUE
+2017-2018,5a830a3ef63adec3bb7f6e81,2018-02-10T14:00:00Z,McGill@Concordia(QUE),Concordia (QUE) Stingers,McGill University Martlets,W20180210CONMCG
+2017-2018,5a81900c6ca03e9fbb3c0d8a,2018-02-10T08:27:00Z,CanadaWest - ManitobaBisons@Alberta,Alberta Pandas,Manitoba Bisons,W20180210ALBMAN
+2017-2018,5a7edc2a6ca03e9fbb59903f,2018-02-09T23:00:00Z,CapeBreton@Dalhousie,Dalhousie Tigers,Cape Breton Capers,W20180209DALCB
+2017-2018,5a7efd116ca03e9fbb06c326,2018-02-09T23:00:00Z,Guelph@Waterloo,Waterloo Warriors,Guelph Gryphons,W20180209WATGUE
+2018-2019,5c7d4d3d85d07ba9768c4c4b,2019-03-10T23:30:00Z,USport - McMaster@Laval,Laval University,McMaster Marauders,W20190310LAVMAC
+2018-2019,5c7d4d3d85d07ba9768c4c30,2019-03-10T19:00:00Z,USport - UniOttawa@Saskatchewan,Saskatchewan Huskies,Ottawa Gee-Gees,W20190310SASOTT
+2018-2019,5c7d4d3d85d07ba9768c4b3b,2019-03-10T17:00:00Z,USport - RyersonUni@Acadia,Acadia Axewomen,Ryerson University Rams,W20190310ACAUNK
+2018-2019,5c7d4d3d85d07ba9768c4ac7,2019-03-10T00:00:00Z,USport - UniOttawa@Laval,Laval University,Ottawa Gee-Gees,W20190310LAVOTT
+2018-2019,5c7d4d3c85d07ba9768c4aa2,2019-03-09T20:00:00Z,USport - Saskatchewan@McMaster,McMaster Marauders,Saskatchewan Huskies,W20190309MACSAS
+2018-2019,5c7d4d3c85d07ba9768c4a86,2019-03-09T01:00:00Z,USport - RyersonUni@Regina,Regina (Canada) Cougars,Ryerson University Rams,W20190309REGUNK
+2018-2019,5c7d4d3c85d07ba9768c4a2d,2019-03-08T23:00:00Z,USport - Concordia(QUE)@Acadia,Acadia Axewomen,Concordia (QUE) Stingers,W20190308ACACON
+2018-2019,5c7d4e6885d07ba97690dbae,2019-03-08T01:00:00Z,Regina@USport - UniOttawa,Ottawa Gee-Gees,Regina (Canada) Cougars,W20190308OTTREG
+2018-2019,5c7d4e6885d07ba97690db82,2019-03-07T23:00:00Z,RyersonUni@Laval,Laval University,Toronto Metropolitan University,W20190307LAVTMU
+2018-2019,5c7d4e6885d07ba97690db60,2019-03-07T19:00:00Z,Acadia@Saskatchewan,Saskatchewan Huskies,Acadia Axewomen,W20190307SASACA
+2018-2019,5c7d4e6885d07ba97690db52,2019-03-07T17:00:00Z,Concordia(QUE)@USport - McMaster,McMaster Marauders,Concordia (QUE) Stingers,W20190307MACCON
+2018-2019,5c75630d85d07ba976034184,2019-03-03T18:00:00Z,AUS - MemorialCan@Acadia,Acadia Axewomen,Memorial Sea-Hawks,W20190303ACAMEM
+2018-2019,5c75630d85d07ba976034172,2019-03-02T20:00:00Z,AUS - Acadia@PrinceEdward,Prince Edward Island Panthers,Acadia Axewomen,W20190302UPEIACA
+2018-2019,5c75630d85d07ba976034163,2019-03-02T18:00:00Z,AUS - MemorialCan@CapeBreton,Cape Breton Capers,Memorial Sea-Hawks,W20190302CBMEM
+2018-2019,5c6eb9fc85d07ba976025afb,2019-03-02T08:27:00Z,OUA - McMaster@UniOttawa,Ottawa Gee-Gees,McMaster Marauders,W20190302OTTMAC
+2018-2019,5c7568ea85d07ba9761fb9be,2019-03-02T08:27:00Z,RSEQ - Concordia(QUE)@Laval,Laval University,Concordia (QUE) Stingers,W20190302LAVCON
+2018-2019,5c77f80185d07ba976380c38,2019-03-02T00:00:00Z,CanadaWest - Regina@Saskatchewan,Saskatchewan Huskies,Regina (Canada) Cougars,W20190302SASREG
+2018-2019,5c75630d85d07ba97603414e,2019-03-01T20:00:00Z,AUS - Dalhousie@Acadia,Acadia Axewomen,Dalhousie Tigers,W20190301ACADAL
+2018-2019,5c75630d85d07ba976034131,2019-03-01T18:00:00Z,AUS - Quarterfinal #1,New Brunswick Varsity Reds,Memorial Sea-Hawks,W20190301UNBMEM
+2018-2019,5c6eb9fc85d07ba976025aeb,2019-02-28T08:27:00Z,OUA - CarletonUni@McMaster,McMaster Marauders,Carleton University Ravens,W20190228MACCAR
+2018-2019,5c7568ea85d07ba9761fb995,2019-02-27T08:27:00Z,RSEQ - McGill@Concordia(QUE),Concordia (QUE) Stingers,McGill University Martlets,W20190227CONMCG
+2018-2019,5c6eb9fc85d07ba976025af3,2019-02-27T08:27:00Z,OUA - Lakehead@UniOttawa,Ottawa Gee-Gees,Lakehead University Thunderwolves,W20190227OTTLAK
+2018-2019,5c7568ea85d07ba9761fb980,2019-02-27T08:27:00Z,RSEQ - QuebecMontreal@Laval,Laval University,University Quebec - Montreal,W20190227LAVUQA
+2018-2019,5c6eb9fc85d07ba976025add,2019-02-24T00:00:00Z,OUA - Guelph@Lakehead,Lakehead University Thunderwolves,Guelph Gryphons,W20190224LAKGUE
+2018-2019,5b78317d11ef0d110340918d,2019-02-23T23:00:00Z,Bishops@QuebecMontreal,University Quebec - Montreal,Bishops Gaiters,W20190223UQABIS
+2018-2019,5c6eb9fc85d07ba976025acd,2019-02-23T23:00:00Z,OUA - RyersonUni@CarletonUni,Carleton University Ravens,Ryerson University Rams,W20190223CARUNK
+2018-2019,5b78317d11ef0d1103409193,2019-02-23T23:00:00Z,Laval@McGill,McGill University Martlets,Laval University,W20190223MCGLAV
+2018-2019,5b7b81eaaeda7199398ab4b9,2019-02-23T22:00:00Z,PrinceEdward@StFrancisXavier,St. Francis Xavier X-Women,Prince Edward Island Panthers,W20190223SFXUPEI
+2018-2019,5b7b81eaaeda7199398ab4bd,2019-02-23T22:00:00Z,Acadia@NewBrunswick,New Brunswick Varsity Reds,Acadia Axewomen,W20190223UNBACA
+2018-2019,5c6eb9fc85d07ba976025abf,2019-02-23T19:00:00Z,OUA - Brock@McMaster,McMaster Marauders,Brock Badgers,W20190223MACBRO
+2018-2019,5c6eb9fc85d07ba976025ab6,2019-02-23T18:00:00Z,OUA - York(ONT)@UniOttawa,Ottawa Gee-Gees,York (ONT) Lions,W20190223OTTYOR
+2018-2019,5c71add885d07ba9766a698c,2019-02-23T15:30:00Z,Dalhousie@MemorialCan,Memorial Sea-Hawks,Dalhousie Tigers,W20190223MEMDAL
+2018-2019,5c6ad71085d07ba976a9a805,2019-02-23T00:00:00Z,CanadaWest - Lethbridge@Saskatchewan,Saskatchewan Huskies,Lethbridge Pronghorns,W20190223SASLET
+2018-2019,5c6ad71085d07ba976a9a817,2019-02-23T00:00:00Z,CanadaWest - Regina@Calgary,Calgary Dinos,Regina (Canada) Cougars,W20190223CALREG
+2018-2019,5b7b81eaaeda7199398ab4b1,2019-02-22T22:00:00Z,SaintMary's(CAN)@NewBrunswick,New Brunswick Varsity Reds,Saint Mary's (CAN) Huskies  ,W20190222UNBUNK
+2018-2019,5b7b81eaaeda7199398ab4ae,2019-02-22T22:00:00Z,PrinceEdward@CapeBreton,Cape Breton Capers,Prince Edward Island Panthers,W20190222CBUPEI
+2018-2019,5c748a4185d07ba9765de779,2019-02-22T16:30:00Z,Dalhousie@MemorialCan,Memorial Sea-Hawks,Dalhousie Tigers,W20190222MEMDAL
+2018-2019,5c6ad71085d07ba976a9a7f3,2019-02-22T00:00:00Z,CanadaWest - Regina@Calgary,Calgary Dinos,Regina (Canada) Cougars,W20190222CALREG
+2018-2019,5c6ad71085d07ba976a9a7dc,2019-02-22T00:00:00Z,CanadaWest - Lethbridge@Saskatchewan,Saskatchewan Huskies,Lethbridge Pronghorns,W20190222SASLET
+2018-2019,5b78317d11ef0d1103409188,2019-02-21T23:00:00Z,McGill@QuebecMontreal,University Quebec - Montreal,McGill University Martlets,W20190221UQAMCG
+2018-2019,5b78317d11ef0d1103409184,2019-02-21T23:00:00Z,Concordia(QUE)@Laval,Laval University,Concordia (QUE) Stingers,W20190221LAVCON
+2018-2019,5c6e0a3785d07ba976010986,2019-02-20T18:00:00Z,OUA - York(ONT)@QueensOntario,Queens (ON) University Golden Gaels,York (ONT) Lions,W20190220QUEYOR
+2018-2019,5c6e0a3785d07ba97601099b,2019-02-20T18:00:00Z,OUA - Laurier@Brock,Brock Badgers,Wilfrid Laurier,W20190220BROWLU
+2018-2019,5c6e0a3785d07ba976010991,2019-02-20T18:00:00Z,OUA - Guelph@Windsor,Windsor Lancers,Guelph Gryphons,W20190220WINGUE
+2018-2019,5c6df9d485d07ba976e8a509,2019-02-20T08:27:00Z,OUA - Laurentian@RyersonUni,Ryerson University Rams,Laurentian Voyageurs ,W20190220UNKUNK
+2018-2019,5b7b81eaaeda7199398ab4a6,2019-02-17T17:00:00Z,MemorialCan@SaintMary's(CAN),Saint Mary's (CAN) Huskies  ,Memorial Sea-Hawks,W20190217UNKMEM
+2018-2019,5c68ab9685d07ba976ec2e08,2019-02-17T00:00:00Z,CapeBreton@StFrancisXavier,St. Francis Xavier X-Men,Cape Breton Capers,W20190217UNKCB
+2018-2019,5c69532e85d07ba976646dab,2019-02-16T23:00:00Z,Nipissing@UniOttawa,Ottawa Gee-Gees,Nipissing Lakers,W20190216OTTNIP
+2018-2019,5c6587b385d07ba976a7bc1c,2019-02-16T23:00:00Z,CanadaWest - NorthernBC@Calgary,Calgary Dinos,Northern British Columbia Timberwolves,W20190216CALUNBC
+2018-2019,5b7bb323aeda719939dc2317,2019-02-16T23:00:00Z,Algoma@Windsor,Windsor Lancers,Algoma Thunderbirds,W20190216WINALG
+2018-2019,5b78317d11ef0d1103409179,2019-02-16T23:00:00Z,Concordia(QUE)@Bishops,Bishops Gaiters,Concordia (QUE) Stingers,W20190216BISCON
+2018-2019,5b7bb323aeda719939dc230e,2019-02-16T23:00:00Z,QueensOntario@RyersonUni,Ryerson University Rams,Queens (ON) University Golden Gaels,W20190216UNKQUE
+2018-2019,5b7bb323aeda719939dc2313,2019-02-16T23:00:00Z,York(ONT)@TorontoVarBlues,Toronto Varsity Blues,York (ONT) Lions,W20190216TORYOR
+2018-2019,5b78317d11ef0d110340917e,2019-02-16T23:00:00Z,QuebecMontreal@Laval,Laval University,University Quebec - Montreal,W20190216LAVUQA
+2018-2019,5b7bb0caaeda719939d934c6,2019-02-16T23:00:00Z,Brock@Lakehead,Lakehead University Thunderwolves,Brock Badgers,W20190216LAKBRO
+2018-2019,5ba11bb3aeda71993928b619,2019-02-16T23:00:00Z,Laurentian@CarletonUni,Carleton University Ravens,Laurentian Voyageurs ,W20190216CARUNK
+2018-2019,5b7b81eaaeda7199398ab4a1,2019-02-16T22:00:00Z,MemorialCan@SaintMary's(CAN),Saint Mary's (CAN) Huskies  ,Memorial Sea-Hawks,W20190216UNKMEM
+2018-2019,5b7b81eaaeda7199398ab49e,2019-02-16T22:00:00Z,Acadia@PrinceEdward,Prince Edward Island Panthers,Acadia Axewomen,W20190216UPEIACA
+2018-2019,5b7b7f92aeda719939872a98,2019-02-16T22:00:00Z,NewBrunswick@Dalhousie,Dalhousie Tigers,New Brunswick Varsity Reds,W20190216DALUNB
+2018-2019,5b7bb0caaeda719939d934bd,2019-02-16T18:00:00Z,McMaster@WesternOntario,Western Ontario Mustangs,McMaster Marauders,W20190216WESMAC
+2018-2019,5b7bb0caaeda719939d934c1,2019-02-16T18:00:00Z,Laurier@Guelph,Guelph Gryphons,Wilfrid Laurier,W20190216GUEWLU
+2018-2019,5c6587b385d07ba976a7bbcf,2019-02-16T00:00:00Z,CanadaWest - Victoria@Regina,Regina (Canada) Cougars,Victoria Vikes,W20190216REGVIC
+2018-2019,5c677ae785d07ba9763cb59f,2019-02-15T23:00:00Z,Laurentian@UniOttawa,Ottawa Gee-Gees,Laurentian Voyageurs ,W20190215OTTUNK
+2018-2019,5b7bb0caaeda719939d934b5,2019-02-15T23:00:00Z,Algoma@Windsor,Windsor Lancers,Algoma Thunderbirds,W20190215WINALG
+2018-2019,5c6587b385d07ba976a7bc04,2019-02-15T23:00:00Z,CanadaWest - Lethbridge@Alberta,Alberta Pandas,Lethbridge Pronghorns,W20190215ALBLET
+2018-2019,5c6587b385d07ba976a7bbb8,2019-02-15T23:00:00Z,CanadaWest - Winnipeg@Saskatchewan,Saskatchewan Huskies,Winnipeg Wesmen,W20190215SASWIN
+2018-2019,5b7bb0caaeda719939d934a2,2019-02-15T23:00:00Z,Brock@Lakehead,Lakehead University Thunderwolves,Brock Badgers,W20190215LAKBRO
+2018-2019,5b7baaefaeda719939cf245c,2019-02-15T23:00:00Z,QueensOntario@TorontoVarBlues,Toronto Varsity Blues,Queens (ON) University Golden Gaels,W20190215TORQUE
+2018-2019,5c6587b385d07ba976a7bbec,2019-02-15T23:00:00Z,CanadaWest - NorthernBC@Calgary,Calgary Dinos,Northern British Columbia Timberwolves,W20190215CALUNBC
+2018-2019,5b7bb0caaeda719939d934a8,2019-02-15T23:00:00Z,Waterloo@Laurier,Wilfrid Laurier,Waterloo Warriors,W20190215WLUWAT
+2018-2019,5b7bb0caaeda719939d934ad,2019-02-15T23:00:00Z,York(ONT)@RyersonUni,Ryerson University Rams,York (ONT) Lions,W20190215UNKYOR
+2018-2019,5ba11bb3aeda71993928b615,2019-02-15T23:00:00Z,Nipissing@CarletonUni,Carleton University Ravens,Nipissing Lakers,W20190215CARNIP
+2018-2019,5b7b7f92aeda719939872a94,2019-02-15T22:00:00Z,NewBrunswick@Dalhousie,Dalhousie Tigers,New Brunswick Varsity Reds,W20190215DALUNB
+2018-2019,5b7b7f92aeda719939872a91,2019-02-15T22:00:00Z,Acadia@PrinceEdward,Prince Edward Island Panthers,Acadia Axewomen,W20190215UPEIACA
+2018-2019,5c6587b385d07ba976a7bb8b,2019-02-15T00:00:00Z,CanadaWest - Victoria@Regina,Regina (Canada) Cougars,Victoria Vikes,W20190215REGVIC
+2018-2019,5c6587b385d07ba976a7bb73,2019-02-14T23:00:00Z,CanadaWest - Winnipeg@Saskatchewan,Saskatchewan Huskies,Winnipeg Wesmen,W20190214SASWIN
+2018-2019,5c6587b385d07ba976a7bba4,2019-02-14T23:00:00Z,CanadaWest - Lethbridge@Alberta,Alberta Pandas,Lethbridge Pronghorns,W20190214ALBLET
+2018-2019,5b78317d11ef0d1103409174,2019-02-14T23:00:00Z,McGill@Concordia(QUE),Concordia (QUE) Stingers,McGill University Martlets,W20190214CONMCG
+2018-2019,5b7b7f92aeda719939872a8c,2019-02-14T22:00:00Z,StFrancisXavier@CapeBreton,Cape Breton Capers,St. Francis Xavier X-Men,W20190214CBUNK
+2018-2019,5b7baaefaeda719939cf2456,2019-02-13T23:00:00Z,WesternOntario@Waterloo,Waterloo Warriors,Western Ontario Mustangs,W20190213WATWES
+2018-2019,5b7baaefaeda719939cf2459,2019-02-13T23:00:00Z,Guelph@McMaster,McMaster Marauders,Guelph Gryphons,W20190213MACGUE
+2018-2019,5b7ba896aeda719939cbbde8,2019-02-10T23:00:00Z,Windsor@WesternOntario,Western Ontario Mustangs,Windsor Lancers,W20190210WESWIN
+2018-2019,5b7b7f92aeda719939872a88,2019-02-10T17:00:00Z,PrinceEdward@Dalhousie,Dalhousie Tigers,Prince Edward Island Panthers,W20190210DALUPEI
+2018-2019,5b7baaefaeda719939cf2442,2019-02-09T23:00:00Z,WesternOntario@Brock,Brock Badgers,Western Ontario Mustangs,W20190209BROWES
+2018-2019,5b7ba896aeda719939cbbe09,2019-02-09T23:00:00Z,Waterloo@Guelph,Guelph Gryphons,Waterloo Warriors,W20190209GUEWAT
+2018-2019,5b7baaefaeda719939cf2445,2019-02-09T23:00:00Z,TorontoVarBlues@Nipissing,Nipissing Lakers,Toronto Varsity Blues,W20190209NIPTOR
+2018-2019,5b7baaefaeda719939cf2448,2019-02-09T23:00:00Z,McMaster@Algoma,Algoma Thunderbirds,McMaster Marauders,W20190209ALGMAC
+2018-2019,5b7baaefaeda719939cf244c,2019-02-09T23:00:00Z,UniOttawa@York(ONT),York (ONT) Lions,Ottawa Gee-Gees,W20190209YOROTT
+2018-2019,5ba11bb3aeda71993928b611,2019-02-09T23:00:00Z,CarletonUni@QueensOntario,Queens (ON) University Golden Gaels,Carleton University Ravens,W20190209QUECAR
+2018-2019,5b78317d11ef0d110340916e,2019-02-09T23:00:00Z,Laval@Bishops,Bishops Gaiters,Laval University,W20190209BISLAV
+2018-2019,5b7baaefaeda719939cf244f,2019-02-09T23:00:00Z,RyersonUni@Laurentian,Laurentian Voyageurs ,Ryerson University Rams,W20190209UNKUNK
+2018-2019,5b7baaefaeda719939cf2452,2019-02-09T23:00:00Z,Lakehead@Laurier,Wilfrid Laurier,Lakehead University Thunderwolves,W20190209WLULAK
+2018-2019,5b7b7f92aeda719939872a80,2019-02-09T22:00:00Z,CapeBreton@Acadia,Acadia Axewomen,Cape Breton Capers,W20190209ACACB
+2018-2019,5b7b7f92aeda719939872a85,2019-02-09T22:00:00Z,SaintMary's(CAN)@StFrancisXavier,St. Francis Xavier X-Men,Saint Mary's (CAN) Huskies  ,W20190209UNKUNK
+2018-2019,5c5ee22585d07ba97607e87a,2019-02-09T22:00:00Z,CanadaWest - Winnipeg@BritishColumbia,British Columbia Thunderbirds,Winnipeg Wesmen,W20190209UBCWIN
+2018-2019,5b78317d11ef0d110340916a,2019-02-09T21:00:00Z,QuebecMontreal@McGill,McGill University Martlets,University Quebec - Montreal,W20190209MCGUQA
+2018-2019,5b7ba896aeda719939cbbdfd,2019-02-08T23:00:00Z,RyersonUni@Nipissing,Nipissing Lakers,Ryerson University Rams,W20190208NIPUNK
+2018-2019,5b7ba896aeda719939cbbe00,2019-02-08T23:00:00Z,TorontoVarBlues@Laurentian,Laurentian Voyageurs ,Toronto Varsity Blues,W20190208UNKTOR
+2018-2019,5b7ba896aeda719939cbbdf8,2019-02-08T23:00:00Z,Lakehead@Laurier,Wilfrid Laurier,Lakehead University Thunderwolves,W20190208WLULAK
+2018-2019,5ba11bb3aeda71993928b60e,2019-02-08T23:00:00Z,CarletonUni@York(ONT),York (ONT) Lions,Carleton University Ravens,W20190208YORCAR
+2019-2020,5e61587a7455336e878d08f3,2020-03-08T21:00:00Z,USport - Brock@Saskatchewan,Saskatchewan Huskies,Brock Badgers,W20200308SASBRO
+2019-2020,5e61587a7455336e878d08ff,2020-03-08T16:00:00Z,USport - PrinceEdward@Laval,Laval University,Prince Edward Island Panthers,W20200308LAVUPEI
+2019-2020,5e61587a7455336e878d08e3,2020-03-07T20:00:00Z,USport - Laval@Saskatchewan,Saskatchewan Huskies,Laval University,W20200307SASLAV
+2019-2020,5e61587a7455336e878d08ce,2020-03-07T18:00:00Z,USport - PrinceEdward@Brock,Brock Badgers,Prince Edward Island Panthers,W20200307BROUPEI
+2019-2020,5e6425ac7455336e8788c19c,2020-03-07T05:00:00Z,CarletonUni@Calgary,Calgary Dinos,Carleton University Ravens,W20200307CALCAR
+2019-2020,5e61587a7455336e878d08c2,2020-03-06T20:00:00Z,USport - CarletonUni@Alberta,Alberta Pandas,Carleton University Ravens,W20200306ALBCAR
+2019-2020,5e61587a7455336e878d08b6,2020-03-06T18:00:00Z,USport - Calgary@RyersonUni,Ryerson University Rams,Calgary Dinos,W20200306UNKCAL
+2019-2020,5e61587a7455336e878d0874,2020-03-06T00:00:00Z,PrinceEdward@RyersonUni,Toronto Metropolitan University,Prince Edward Island Panthers,W20200306TMUUPEI
+2019-2020,5e61587a7455336e878d0883,2020-03-06T00:00:00Z,Calgary@Brock,Brock Badgers,Calgary Dinos,W20200306BROCAL
+2019-2020,5e61587a7455336e878d0894,2020-03-06T00:00:00Z,Alberta@Laval,Laval University,Alberta Pandas,W20200306LAVALB
+2019-2020,5e61587a7455336e878d08a6,2020-03-06T00:00:00Z,CarletonUni@Saskatchewan,Saskatchewan Huskies,Carleton University Ravens,W20200306SASCAR
+2019-2020,5e4f01f37455336e87560fad,2020-03-01T08:27:00Z,AUS - Acadia@PrinceEdward,Prince Edward Island Panthers,Acadia Axewomen,W20200301UPEIACA
+2019-2020,5e4f01f37455336e87560f9b,2020-02-29T23:30:00Z,AUS - MemorialCan@Acadia,Acadia Axewomen,Memorial Sea-Hawks,W20200229ACAMEM
+2019-2020,5e4eff9b7455336e8749739d,2020-02-29T08:27:00Z,OUA - Brock@RyersonUni,Ryerson University Rams,Brock Badgers,W20200229UNKBRO
+2019-2020,5e4f01f37455336e87560e3d,2020-02-29T08:27:00Z,RSEQ - QuebecMontreal@Laval,Laval University,University Quebec - Montreal,W20200229LAVUQA
+2019-2020,5e4f01f37455336e87560f88,2020-02-29T08:27:00Z,AUS - NewBrunswick@PrinceEdward,Prince Edward Island Panthers,New Brunswick Varsity Reds,W20200229UPEIUNB
+2019-2020,5e4f01f37455336e87560f64,2020-02-28T08:27:00Z,AUS - CapeBreton@NewBrunStJohn,New Brunswick (Saint John) Seawolves,Cape Breton Capers,W20200228UNKCB
+2019-2020,5e4f01f37455336e87560f78,2020-02-28T08:27:00Z,AUS - SaintMary's(CAN)@MemorialCan,Memorial Sea-Hawks,Saint Mary's (CAN) Huskies  ,W20200228MEMUNK
+2019-2020,5e5163537455336e87207ede,2020-02-28T05:00:00Z,Canada West - Alberta@Saskatchewan,Saskatchewan Huskies,Alberta Pandas,W20200228SASALB
+2019-2020,5e4f01f37455336e87560e2e,2020-02-27T00:00:00Z,RSEQ - QuebecMontreal@Bishops,Bishops Gaiters,University Quebec - Montreal,W20200227BISUQA
+2019-2020,5e4f01f37455336e87560e0e,2020-02-27T00:00:00Z,RSEQ - McGill@Laval,Laval University,McGill University Martlets,W20200227LAVMCG
+2019-2020,5e4eff9b7455336e8749735d,2020-02-26T23:00:00Z,OUA - Brock@WesternOntario,Western Ontario Mustangs,Brock Badgers,W20200226WESBRO
+2019-2020,5e4eff9b7455336e8749737d,2020-02-26T23:00:00Z,OUA - RyersonUni@UniOttawa,Ottawa Gee-Gees,Ryerson University Rams,W20200226OTTUNK
+2019-2020,5d596c07f52909811e0b7532,2020-02-22T23:00:00Z,Bishops@QuebecMontreal,University Quebec - Montreal,Bishops Gaiters,W20200222UQABIS
+2019-2020,5d589c9af52909811e17ac96,2020-02-22T23:00:00Z,Dalhousie@NewBrunswick,New Brunswick Varsity Reds,Dalhousie Tigers,W20200222UNBDAL
+2019-2020,5d5971e3f52909811e139a68,2020-02-22T19:00:00Z,Laval@Concordia(QUE),Concordia (QUE) Stingers,Laval University,W20200222CONLAV
+2019-2020,5d58aaaaf52909811e292b43,2020-02-22T17:00:00Z,PrinceEdward@MemorialCan,Memorial Sea-Hawks,Prince Edward Island Panthers,W20200222MEMUPEI
+2019-2020,5e4eff9b7455336e8749732d,2020-02-22T08:27:00Z,OUA - QueensOntario@RyersonUni,Ryerson University Rams,Queens (ON) University Golden Gaels,W20200222UNKQUE
+2019-2020,5e4eff9b7455336e874972f9,2020-02-22T08:27:00Z,OUA - McMaster@WesternOntario,Western Ontario Mustangs,McMaster Marauders,W20200222WESMAC
+2019-2020,5e4eff9b7455336e87497317,2020-02-22T08:27:00Z,OUA - CarletonUni@UniOttawa,Ottawa Gee-Gees,Carleton University Ravens,W20200222OTTCAR
+2019-2020,5e4eff9b7455336e87497348,2020-02-22T08:27:00Z,OUA - Windsor@Brock,Brock Badgers,Windsor Lancers,W20200222BROWIN
+2019-2020,5d588d5ef52909811e0a8c2d,2020-02-21T23:00:00Z,CapeBreton@StFrancisXavier,St. Francis Xavier X-Men,Cape Breton Capers,W20200221UNKCB
+2019-2020,5d58aaaaf52909811e292b3a,2020-02-21T23:00:00Z,PrinceEdward@MemorialCan,Memorial Sea-Hawks,Prince Edward Island Panthers,W20200221MEMUPEI
+2019-2020,5e5163527455336e87207dfb,2020-02-21T05:00:00Z,Canada West - Alberta@Calgary,Calgary Dinos,Alberta Pandas,W20200221CALALB
+2019-2020,5e5163537455336e87207e9d,2020-02-21T05:00:00Z,Canada West - BritishColumbia@Saskatchewan,Saskatchewan Huskies,British Columbia Thunderbirds,W20200221SASUBC
+2019-2020,5e4eee087455336e87ed0c59,2020-02-21T01:00:00Z,CanadaWest - FraserValley@Alberta,Alberta Pandas,Fraser Valley Cascades,W20200221ALBUFV
+2019-2020,5e4eee087455336e87ed0c43,2020-02-21T00:00:00Z,CanadaWest - Victoria@Saskatchewan,Saskatchewan Huskies,Victoria Vikes,W20200221SASVIC
+2019-2020,5e4eee087455336e87ed0c2b,2020-02-20T23:00:00Z,CanadaWest - NorthernBC@Calgary,Calgary Dinos,Northern British Columbia Timberwolves,W20200220CALUNBC
+2019-2020,5d597692f52909811e1bf990,2020-02-20T23:00:00Z,QuebecMontreal@McGill,McGill University Martlets,University Quebec - Montreal,W20200220MCGUQA
+2019-2020,5d596c07f52909811e0b7528,2020-02-20T23:00:00Z,Concordia(QUE)@Bishops,Bishops Gaiters,Concordia (QUE) Stingers,W20200220BISCON
+2019-2020,5d5874c3f52909811ef01014,2020-02-20T00:30:00Z,SaintMary's(CAN)@Acadia,Acadia Axewomen,Saint Mary's (CAN) Huskies  ,W20200220ACAUNK
+2019-2020,5e4df6c27455336e8761309e,2020-02-20T00:00:00Z,York(ONT)@CarletonUni,Carleton University Ravens,York (ONT) Lions,W20200220CARYOR
+2019-2020,5e4e99a67455336e871568e9,2020-02-19T05:00:00Z,OUA - McMaster@Guelph,Guelph Gryphons,McMaster Marauders,W20200219GUEMAC
+2019-2020,5e4de52f7455336e8719a1ad,2020-02-19T05:00:00Z,Laurier@QueensOntario,Queens (ON) University Golden Gaels,Wilfrid Laurier,W20200219QUEWLU
+2019-2020,5d5883fef52909811e00e3ae,2020-02-17T00:30:00Z,Acadia@CapeBreton,Cape Breton Capers,Acadia Axewomen,W20200217CBACA
+2019-2020,5d58abd6f52909811e2a5b58,2020-02-16T18:30:00Z,MemorialCan@NewBrunswick,New Brunswick Varsity Reds,Memorial Sea-Hawks,W20200216UNBMEM
+2019-2020,5d589592f52909811e119584,2020-02-16T18:00:00Z,PrinceEdward@Dalhousie,Dalhousie Tigers,Prince Edward Island Panthers,W20200216DALUPEI
+2019-2020,5d5883fef52909811e00e3a4,2020-02-16T00:30:00Z,Acadia@CapeBreton,Cape Breton Capers,Acadia Axewomen,W20200216CBACA
+2019-2020,5d58abd6f52909811e2a5b4b,2020-02-15T23:30:00Z,MemorialCan@NewBrunswick,New Brunswick Varsity Reds,Memorial Sea-Hawks,W20200215UNBMEM
+2019-2020,5d59743af52909811e189f39,2020-02-15T23:00:00Z,QuebecMontreal@Laval,Laval University,University Quebec - Montreal,W20200215LAVUQA
+2019-2020,5d5969aff52909811e0956de,2020-02-15T23:00:00Z,QueensOntario@Lakehead,Lakehead University Thunderwolves,Queens (ON) University Golden Gaels,W20200215LAKQUE
+2019-2020,5d59536cf52909811ef15276,2020-02-15T23:00:00Z,Brock@CarletonUni,Carleton University Ravens,Brock Badgers,W20200215CARBRO
+2019-2020,5d597c6ef52909811e2568a8,2020-02-15T23:00:00Z,Nipissing@TorontoVarBlues,Toronto Varsity Blues,Nipissing Lakers,W20200215TORNIP
+2019-2020,5d598cd6f52909811e3ddc35,2020-02-15T23:00:00Z,Laurier@Waterloo,Waterloo Warriors,Wilfrid Laurier,W20200215WATWLU
+2019-2020,5d58b663f52909811e320f81,2020-02-15T23:00:00Z,StFrancisXavier@SaintMary's(CAN),Saint Mary's (CAN) Huskies  ,St. Francis Xavier X-Men,W20200215UNKUNK
+2019-2020,5d596c07f52909811e0b7581,2020-02-15T23:00:00Z,Laurentian@RyersonUni,Ryerson University Rams,Laurentian Voyageurs ,W20200215UNKUNK
+2019-2020,5d589592f52909811e119579,2020-02-15T23:00:00Z,PrinceEdward@Dalhousie,Dalhousie Tigers,Prince Edward Island Panthers,W20200215DALUPEI
+2019-2020,5d5978ebf52909811e20c5de,2020-02-15T23:00:00Z,McMaster@UniOttawa,Ottawa Gee-Gees,McMaster Marauders,W20200215OTTMAC
+2019-2020,5d5964fff52909811e042fdd,2020-02-15T23:00:00Z,Guelph@Algoma,Algoma Thunderbirds,Guelph Gryphons,W20200215ALGGUE
+2019-2020,5d598e03f52909811e3fb500,2020-02-15T20:00:00Z,Windsor@WesternOntario,Western Ontario Mustangs,Windsor Lancers,W20200215WESWIN
+2019-2020,5d5971e2f52909811e139a5c,2020-02-15T19:00:00Z,Concordia(QUE)@McGill,McGill University Martlets,Concordia (QUE) Stingers,W20200215MCGCON
+2019-2020,5d597c6ef52909811e25689b,2020-02-14T23:00:00Z,Nipissing@RyersonUni,Ryerson University Rams,Nipissing Lakers,W20200214UNKNIP
+2019-2020,5d596c07f52909811e0b7577,2020-02-14T23:00:00Z,Laurentian@TorontoVarBlues,Toronto Varsity Blues,Laurentian Voyageurs ,W20200214TORUNK
+2019-2020,5d59811ff52909811e2bd56b,2020-02-14T23:00:00Z,QueensOntario@York(ONT),York (ONT) Lions,Queens (ON) University Golden Gaels,W20200214YORQUE
+2019-2020,5d5964fff52909811e042fcf,2020-02-14T23:00:00Z,Guelph@Algoma,Algoma Thunderbirds,Guelph Gryphons,W20200214ALGGUE
+2019-2020,5d598cd6f52909811e3ddc2b,2020-02-14T23:00:00Z,Windsor@Waterloo,Waterloo Warriors,Windsor Lancers,W20200214WATWIN
+2019-2020,5d5969aff52909811e0956d3,2020-02-14T23:00:00Z,OntarioTech@Lakehead,Lakehead University Thunderwolves,Ontario Tech,W20200214LAKONT
+2019-2020,5d59536bf52909811ef15269,2020-02-14T23:00:00Z,Brock@UniOttawa,Ottawa Gee-Gees,Brock Badgers,W20200214OTTBRO
+2019-2020,5d595df7f52909811efc9195,2020-02-14T23:00:00Z,McMaster@CarletonUni,Carleton University Ravens,McMaster Marauders,W20200214CARMAC
+2019-2020,5e47ffd17455336e873da6dd,2020-02-14T22:00:00Z,CanadaWest - ManitobaBisons@Winnipeg,Winnipeg Wesmen,Manitoba Bisons,W20200214WINMAN
+2019-2020,5e47fea47455336e873942d7,2020-02-14T22:00:00Z,CanadaWest - Regina@Victoria,Victoria Vikes,Regina (Canada) Cougars,W20200214VICREG
+2019-2020,5e47fea47455336e873942ac,2020-02-14T22:00:00Z,CanadaWest - ThompsonRivers@FraserValley,Fraser Valley Cascades,Thompson Rivers University Wolfpack,W20200214UFVTRU
+2019-2020,5e49734d7455336e87e393d4,2020-02-14T05:00:00Z,CanadaWest - NorthernBC@Lethbridge,Lethbridge Pronghorns,Northern British Columbia Timberwolves,W20200214LETUNBC
+2019-2020,5d596c07f52909811e0b751e,2020-02-13T23:00:00Z,Laval@Bishops,Bishops Gaiters,Laval University,W20200213BISLAV
+2019-2020,5d58b78ef52909811e32e199,2020-02-12T23:00:00Z,SaintMary's(CAN)@StFrancisXavier,St. Francis Xavier X-Men,Saint Mary's (CAN) Huskies  ,W20200212UNKUNK
+2019-2020,5d59950bf52909811e4a48f4,2020-02-12T23:00:00Z,OntarioTech@York(ONT),York (ONT) Lions,Ontario Tech,W20200212YORONT
+2019-2020,5d5985cef52909811e338b89,2020-02-09T18:00:00Z,RyersonUni@Algoma,Algoma Thunderbirds,Ryerson University Rams,W20200209ALGUNK
+2019-2020,5d588c32f52909811e094dab,2020-02-09T18:00:00Z,CapeBreton@Dalhousie,Dalhousie Tigers,Cape Breton Capers,W20200209DALCB
+2019-2020,5d5964fff52909811e042fb4,2020-02-09T18:00:00Z,TorontoVarBlues@Guelph,Guelph Gryphons,Toronto Varsity Blues,W20200209GUETOR
+2019-2020,5e3fb6b87455336e879bd208,2020-02-09T00:30:00Z,PrinceEdward@Acadia,Acadia Axewomen,Prince Edward Island Panthers,W20200209ACAUPEI
+2019-2020,5d58b40af52909811e306557,2020-02-08T23:00:00Z,NewBrunswick@StFrancisXavier,St. Francis Xavier X-Men,New Brunswick Varsity Reds,W20200208UNKUNB
+2019-2020,5d588c32f52909811e094d9f,2020-02-08T23:00:00Z,CapeBreton@SaintMary's(CAN),Saint Mary's (CAN) Huskies  ,Cape Breton Capers,W20200208UNKCB
+2019-2020,5d595947f52909811ef72d7c,2020-02-08T23:00:00Z,MacEwan@NorthernBC,Northern British Columbia Timberwolves,MacEwan University Griffins,W20200208UNBCMAC
+2019-2020,5d598e03f52909811e3fb4f5,2020-02-08T23:00:00Z,York(ONT)@WesternOntario,Western Ontario Mustangs,York (ONT) Lions,W20200208WESYOR
+2019-2020,5d5969aff52909811e0956c9,2020-02-08T23:00:00Z,Lakehead@Windsor,Windsor Lancers,Lakehead University Thunderwolves,W20200208WINLAK
+2019-2020,5d596c07f52909811e0b756a,2020-02-08T23:00:00Z,Laurentian@OntarioTech,Ontario Tech,Laurentian Voyageurs ,W20200208ONTUNK
+2019-2020,5d596c07f52909811e0b7513,2020-02-08T23:00:00Z,McGill@Bishops,Bishops Gaiters,McGill University Martlets,W20200208BISMCG
+2019-2020,5d597b42f52909811e23d926,2020-02-08T23:00:00Z,Nipissing@QueensOntario,Queens (ON) University Golden Gaels,Nipissing Lakers,W20200208QUENIP
+2019-2020,5d587e22f52909811efb6fab,2020-02-08T23:00:00Z,Saskatchewan@Alberta,Alberta Pandas,Saskatchewan Huskies,W20200208ALBSAS
+2019-2020,5d588782f52909811e044c6f,2020-02-08T22:00:00Z,BrandonUni@ManitobaBisons,Manitoba Bisons,Brandon University Bobcats,W20200208MANBRA
+2019-2020,5d596757f52909811e06d487,2020-02-08T22:00:00Z,Victoria@TrinityWestern,Trinity Western Spartans,Victoria Vikes,W20200208TWUVIC
+2019-2020,5d595240f52909811ef057e2,2020-02-08T22:00:00Z,ThompsonRivers@Lethbridge,Lethbridge Pronghorns,Thompson Rivers University Wolfpack,W20200208LETTRU
+2019-2020,5d58b2def52909811e2f7df1,2020-02-08T22:00:00Z,Regina@FraserValley,Fraser Valley Cascades,Regina (Canada) Cougars,W20200208UFVREG
+2019-2020,5d58a01ff52909811e1a033d,2020-02-08T22:00:00Z,Winnipeg@BritishColumbia,British Columbia Thunderbirds,Winnipeg Wesmen,W20200208UBCWIN
+2019-2020,5d58a852f52909811e2769e5,2020-02-08T21:00:00Z,Calgary@MountRoyal,Mount Royal Cougars ,Calgary Dinos,W20200208UNKCAL
+2019-2020,5d5971e2f52909811e139a47,2020-02-08T19:00:00Z,Laval@Concordia(QUE),Concordia (QUE) Stingers,Laval University,W20200208CONLAV
+2019-2020,5d59536bf52909811ef15253,2020-02-08T17:00:00Z,Brock@Waterloo,Waterloo Warriors,Brock Badgers,W20200208WATBRO
+2019-2020,5d595946f52909811ef72d72,2020-02-08T00:00:00Z,MacEwan@NorthernBC,Northern British Columbia Timberwolves,MacEwan University Griffins,W20200208UNBCMAC
+2019-2020,5d598a7ff52909811e3a6f90,2020-02-07T23:00:00Z,TorontoVarBlues@Algoma,Algoma Thunderbirds,Toronto Varsity Blues,W20200207ALGTOR
+2019-2020,5d588782f52909811e044c56,2020-02-07T23:00:00Z,BrandonUni@ManitobaBisons,Manitoba Bisons,Brandon University Bobcats,W20200207MANBRA
+2021-2022,623b85d827fee22f44d2aa24,2022-04-03T19:00:00Z,Brock@QueensOntario,Queens (ON) University Golden Gaels,Brock Badgers,W20220403QUEBRO
+2021-2022,623b85d827fee22f44d2a98b,2022-04-02T22:00:00Z,QueensOntario@Winnipeg,Winnipeg Wesmen,Queens (ON) University Golden Gaels,W20220402WINQUE
+2021-2022,623b85d827fee22f44d2a93e,2022-04-02T19:00:00Z,Brock@RyersonUni,Ryerson University Rams,Brock Badgers,W20220402UNKBRO
+2021-2022,623b85d827fee22f44d2a8eb,2022-04-02T00:00:00Z,Laval@Saskatchewan,Saskatchewan Huskies,Laval University,W20220402SASLAV
+2021-2022,623b85d827fee22f44d2a816,2022-04-01T00:00:00Z,Saskatchewan@QueensOntario,Queens (ON) University Golden Gaels,Saskatchewan Huskies,W20220401QUESAS
+2021-2022,623b85d827fee22f44d2a7a2,2022-03-31T21:30:00Z,Laval@Winnipeg,Winnipeg Wesmen,Laval University,W20220331WINLAV
+2021-2022,623b85d827fee22f44d2a744,2022-03-31T19:00:00Z,Acadia@Brock,Brock Badgers,Acadia Axewomen,W20220331BROACA
+2021-2022,623b85d827fee22f44d2a652,2022-03-31T16:00:00Z,PrinceEdward@RyersonUni,Ryerson University Rams,Prince Edward Island Panthers,W20220331UNKUPEI
+2021-2022,623a5fc027fee22f4492082a,2022-03-26T23:00:00Z,QuebecMontreal@Laval,Laval University,University Quebec - Montreal,W20220326LAVUQA
+2021-2022,6233404e25a5348885941a79,2022-03-26T16:00:00Z,RyersonUni@Brock,Brock Badgers,Ryerson University Rams,W20220326BROUNK
+2021-2022,623a5fc027fee22f449207d2,2022-03-23T23:00:00Z,Laval@Bishops,Bishops Gaiters,Laval University,W20220323BISLAV
+2021-2022,623a5fc027fee22f4492074c,2022-03-23T22:00:00Z,QuebecMontreal@Concordia(QUE),Concordia (QUE) Stingers,University Quebec - Montreal,W20220323CONUQA
+2021-2022,6233404e25a53488859419e0,2022-03-23T07:27:00Z,WesternOntario@Brock,Brock Badgers,Western Ontario Mustangs,W20220323BROWES
+2021-2022,6233404e25a5348885941a27,2022-03-23T07:27:00Z,CarletonUni@RyersonUni,Ryerson University Rams,Carleton University Ravens,W20220323UNKCAR
+2021-2022,62339bb425a5348885dba33d,2022-03-20T17:00:00Z,CapeBreton@Acadia,Acadia Axewomen,Cape Breton Capers,W20220320ACACB
+2021-2022,622a20bb25a5348885e99f61,2022-03-20T01:00:00Z,Winnipeg@Saskatchewan,Saskatchewan Huskies,Winnipeg Wesmen,W20220320SASWIN
+2021-2022,622a20bb25a5348885e99f8f,2022-03-20T00:00:00Z,Regina@Lethbridge,Lethbridge Pronghorns,Regina (Canada) Cougars,W20220320LETREG
+2021-2022,6233404e25a53488859418d0,2022-03-19T22:00:00Z,UniOttawa@CarletonUni,Carleton University Ravens,Ottawa Gee-Gees,W20220319CAROTT
+2021-2022,6233404e25a534888594185a,2022-03-19T22:00:00Z,QueensOntario@RyersonUni,Ryerson University Rams,Queens (ON) University Golden Gaels,W20220319UNKQUE
+2021-2022,61369581f4b1fbbad2fe66d0,2022-03-19T21:00:00Z,QuebecMontreal@Bishops,Bishops Gaiters,University Quebec - Montreal,W20220319BISUQA
+2021-2022,62339bb425a5348885dba2c5,2022-03-19T18:30:00Z,SaintMary's(CAN)@Acadia,Acadia Axewomen,Saint Mary's (CAN) Huskies,W20220319ACASMU
+2021-2022,61369580f4b1fbbad2fe6552,2022-03-19T17:00:00Z,McGill@Concordia(QUE),Concordia (QUE) Stingers,McGill University Martlets,W20220319CONMCG
+2021-2022,6233404e25a534888594192e,2022-03-19T17:00:00Z,Guelph@WesternOntario,Western Ontario Mustangs,Guelph Gryphons,W20220319WESGUE
+2021-2022,6233404e25a5348885941995,2022-03-19T16:00:00Z,McMaster@Brock,Brock Badgers,McMaster Marauders,W20220319BROMAC
+2021-2022,62339bb425a5348885dba309,2022-03-19T13:00:00Z,CapeBreton@PrinceEdward,Prince Edward Island Panthers,Cape Breton Capers,W20220319UPEICB
+2021-2022,622a20bb25a5348885e99f23,2022-03-19T00:00:00Z,Regina@Winnipeg,Winnipeg Wesmen,Regina (Canada) Cougars,W20220319WINREG
+2021-2022,622a20bb25a5348885e99ee6,2022-03-18T22:00:00Z,Lethbridge@Saskatchewan,Saskatchewan Huskies,Lethbridge Pronghorns,W20220318SASLET
+2021-2022,62339bb425a5348885dba270,2022-03-18T22:00:00Z,NewBrunswick@SaintMary's(CAN),Saint Mary's (CAN) Huskies,New Brunswick Varsity Reds,W20220318SMUUNB
+2021-2022,62339bb325a5348885dba211,2022-03-18T17:00:00Z,MemorialCan@CapeBreton,Cape Breton Capers,Memorial Sea-Hawks,W20220318CBMEM
+2021-2022,62339bb325a5348885dba18b,2022-03-17T22:30:00Z,Dalhousie@PrinceEdward,Prince Edward Island Panthers,Dalhousie Tigers,W20220317UPEIDAL
+2021-2022,61369580f4b1fbbad2fe6467,2022-03-17T21:00:00Z,Concordia(QUE)@McGill,McGill University Martlets,Concordia (QUE) Stingers,W20220317MCGCON
+2021-2022,613696a4f4b1fbbad2067a2f,2022-03-17T19:00:00Z,Bishops@QuebecMontreal,University Quebec - Montreal,Bishops Gaiters,W20220317UQABIS
+2021-2022,62339bb325a5348885dba10d,2022-03-17T16:00:00Z,StFrancisXavier@Acadia,Acadia Axewomen,St. Francis Xavier X-Men,W20220317ACAUNK
+2021-2022,622d4a7925a53488859717f6,2022-03-16T22:00:00Z,York(ONT)@QueensOntario,Queens (ON) University Golden Gaels,York (ONT) Lions,W20220316QUEYOR
+2021-2022,6141228456604dae914e1d68,2022-03-16T21:00:00Z,Laurentian@UniOttawa,Ottawa Gee-Gees,Laurentian Voyageurs,W20220316OTTLAU
+2021-2022,623291a425a534888597ed2b,2022-03-16T21:00:00Z,Windsor@Guelph,Guelph Gryphons,Windsor Lancers,W20220316GUEWIN
+2021-2022,62327c9825a534888528588b,2022-03-16T19:00:00Z,McMaster@Waterloo,Waterloo Warriors,McMaster Marauders,W20220316WATMAC
+2021-2022,6141228456604dae914e1d65,2022-03-13T16:00:00Z,Nipissing@OntarioTech,Ontario Tech,Nipissing Lakers,W20220313ONTNIP
+2021-2022,6141228456604dae914e1d64,2022-03-12T23:00:00Z,Guelph@WesternOntario,Western Ontario Mustangs,Guelph Gryphons,W20220312WESGUE
+2021-2022,613cc0500e50d3cf17c92894,2022-03-12T22:00:00Z,Acadia@StFrancisXavier,St. Francis Xavier X-Men,Acadia Axewomen,W20220312UNKACA
+2021-2022,613cc0500e50d3cf17c92895,2022-03-12T22:00:00Z,SaintMary's(CAN)@NewBrunswick,New Brunswick Varsity Reds,Saint Mary's (CAN) Huskies,W20220312UNBSMU
+2021-2022,6141228456604dae914e1d61,2022-03-12T22:00:00Z,QueensOntario@CarletonUni,Carleton University Ravens,Queens (ON) University Golden Gaels,W20220312CARQUE
+2021-2022,6141228456604dae914e1d6d,2022-03-12T21:00:00Z,Algoma@Windsor,Windsor Lancers,Algoma Thunderbirds,W20220312WINALG
+2021-2022,6136957ff4b1fbbad2fe5bf4,2022-03-12T18:00:00Z,QuebecMontreal@Laval,Laval University,University Quebec - Montreal,W20220312LAVUQA
+2021-2022,613cc0500e50d3cf17c92892,2022-03-12T17:00:00Z,CapeBreton@Dalhousie,Dalhousie Tigers,Cape Breton Capers,W20220312DALCB
+2021-2022,613cc0500e50d3cf17c92896,2022-03-12T16:30:00Z,PrinceEdward@MemorialCan,Memorial Sea-Hawks,Prince Edward Island Panthers,W20220312MEMUPEI
+2021-2022,613cc0500e50d3cf17c92890,2022-03-11T22:00:00Z,CapeBreton@Dalhousie,Dalhousie Tigers,Cape Breton Capers,W20220311DALCB
+2021-2022,613cc0500e50d3cf17c92891,2022-03-11T22:00:00Z,SaintMary's(CAN)@NewBrunswick,New Brunswick Varsity Reds,Saint Mary's (CAN) Huskies,W20220311UNBSMU
+2021-2022,614123e94713df402f8df2b8,2022-03-11T22:00:00Z,York(ONT)@TorontoVarBlues,Toronto Varsity Blues,York (ONT) Lions,W20220311TORYOR
+2021-2022,6172ead3e771e94fc0d70942,2022-03-11T22:00:00Z,OntarioTech@Nipissing,Nipissing Lakers,Ontario Tech,W20220311NIPONT
+2021-2022,613cc0500e50d3cf17c92893,2022-03-11T21:30:00Z,PrinceEdward@MemorialCan,Memorial Sea-Hawks,Prince Edward Island Panthers,W20220311MEMUPEI
+2021-2022,613696a1f4b1fbbad2066a2e,2022-03-10T22:00:00Z,McGill@Bishops,Bishops Gaiters,McGill University Martlets,W20220310BISMCG
+2021-2022,61369449f4b1fbbad2f55603,2022-03-10T22:00:00Z,Laval@QuebecMontreal,University Quebec - Montreal,Laval University,W20220310UQALAV
+2021-2022,6141228456604dae914e1d5f,2022-03-09T23:00:00Z,WesternOntario@Guelph,Guelph Gryphons,Western Ontario Mustangs,W20220309GUEWES
+2021-2022,6141228456604dae914e1d60,2022-03-09T23:00:00Z,McMaster@Laurier,Wilfrid Laurier,McMaster Marauders,W20220309WLUMAC
+2021-2022,613cc0500e50d3cf17c9288f,2022-03-09T22:00:00Z,StFrancisXavier@Acadia,Acadia Axewomen,St. Francis Xavier X-Men,W20220309ACAUNK
+2021-2022,621d0cb725a53488851b52e7,2022-03-07T00:00:00Z,Winnipeg@FraserValley,Fraser Valley Cascades,Winnipeg Wesmen,W20220307UFVWIN
+2021-2022,613cc0500e50d3cf17c92885,2022-03-06T22:00:00Z,StFrancisXavier@PrinceEdward,Prince Edward Island Panthers,St. Francis Xavier X-Men,W20220306UPEIUNK
+2021-2022,613cc0500e50d3cf17c9288a,2022-03-06T22:00:00Z,NewBrunswick@Dalhousie,Dalhousie Tigers,New Brunswick Varsity Reds,W20220306DALUNB
+2021-2022,6141228456604dae914e1d5c,2022-03-06T20:00:00Z,Laurentian@RyersonUni,Ryerson University Rams,Laurentian Voyageurs,W20220306UNKLAU
+2021-2022,621d0cb725a53488851b525a,2022-03-06T20:00:00Z,Lethbridge@TrinityWestern,Trinity Western Spartans,Lethbridge Pronghorns,W20220306TWULET
+2021-2022,614123e94713df402f8df2b6,2022-03-06T18:00:00Z,OntarioTech@TorontoVarBlues,Toronto Varsity Blues,Ontario Tech,W20220306TORONT
+2021-2022,621d0cb725a53488851b51cc,2022-03-06T18:00:00Z,Calgary@Saskatchewan,Saskatchewan Huskies,Calgary Dinos,W20220306SASCAL
+2021-2022,613cc0500e50d3cf17c9288e,2022-03-06T17:00:00Z,MemorialCan@SaintMary's(CAN),Saint Mary's (CAN) Huskies,Memorial Sea-Hawks,W20220306SMUMEM
+2021-2022,62265b2025a53488850c990a,2022-03-06T17:00:00Z,Regina@Alberta,Alberta Pandas,Regina (Canada) Cougars,W20220306ALBREG
+2021-2022,621d0cb725a53488851b516a,2022-03-06T00:00:00Z,MountRoyal@Winnipeg,Winnipeg Wesmen,Mount Royal Cougars,W20220306WINMRU
+2021-2022,6222d26f25a53488855ded6b,2022-03-06T00:00:00Z,Windsor@Lakehead,Lakehead University Thunderwolves,Windsor Lancers,W20220306LAKWIN
+2021-2022,61369449f4b1fbbad2f55348,2022-03-05T22:00:00Z,Laval@Bishops,Bishops Gaiters,Laval University,W20220305BISLAV
+2021-2022,613cc0500e50d3cf17c9288b,2022-03-05T22:00:00Z,Acadia@PrinceEdward,Prince Edward Island Panthers,Acadia Axewomen,W20220305UPEIACA
+2021-2022,613cc0500e50d3cf17c9288d,2022-03-05T22:00:00Z,MemorialCan@SaintMary's(CAN),Saint Mary's (CAN) Huskies,Memorial Sea-Hawks,W20220305SMUMEM
+2021-2022,6141228456604dae914e1d56,2022-03-05T22:00:00Z,Laurentian@RyersonUni,Ryerson University Rams,Laurentian Voyageurs,W20220305UNKLAU
+2021-2022,621d0cb625a53488851b5119,2022-03-05T22:00:00Z,NorthernBC@Regina,Regina (Canada) Cougars,Northern British Columbia Timberwolves,W20220305REGUNBC
+2021-2022,621d0cb625a53488851b5094,2022-03-05T20:00:00Z,MacEwan@TrinityWestern,Trinity Western Spartans,MacEwan University Griffins,W20220305TWUMAC
+2021-2022,621d0cb625a53488851b50db,2022-03-05T20:00:00Z,ManitobaBisons@Lethbridge,Lethbridge Pronghorns,Manitoba Bisons,W20220305LETMAN
+2021-2022,61369448f4b1fbbad2f551b8,2022-03-05T20:00:00Z,Concordia(QUE)@QuebecMontreal,University Quebec - Montreal,Concordia (QUE) Stingers,W20220305UQACON
+2021-2022,6141228456604dae914e1d5a,2022-03-05T19:00:00Z,UniOttawa@Nipissing,Nipissing Lakers,Ottawa Gee-Gees,W20220305NIPOTT
+2021-2022,621d0cb625a53488851b504b,2022-03-05T18:00:00Z,Victoria@Calgary,Calgary Dinos,Victoria Vikes,W20220305CALVIC
+2021-2022,6222d26f25a53488855ded3d,2022-03-05T00:00:00Z,Windsor@Lakehead,Lakehead University Thunderwolves,Windsor Lancers,W20220305LAKWIN
+2021-2022,621d0cb625a53488851b4fff,2022-03-05T00:00:00Z,ThompsonRivers@MountRoyal,Mount Royal Cougars,Thompson Rivers University Wolfpack,W20220305MRUTRU
+2021-2022,614123e94713df402f8df2b5,2022-03-04T23:00:00Z,Waterloo@McMaster,McMaster Marauders,Waterloo Warriors,W20220304MACWAT
+2021-2022,6141228456604dae914e1d57,2022-03-04T23:00:00Z,Algoma@Brock,Brock Badgers,Algoma Thunderbirds,W20220304BROALG
+2021-2022,621d0cb625a53488851b4f76,2022-03-04T22:00:00Z,BrandonUni@NorthernBC,Northern British Columbia Timberwolves,Brandon University Bobcats,W20220304UNBCBRA
+2021-2022,6141228456604dae914e1d55,2022-03-04T22:00:00Z,York(ONT)@QueensOntario,Queens (ON) University Golden Gaels,York (ONT) Lions,W20220304QUEYOR
+2021-2022,6222ed6125a5348885eece59,2022-03-04T22:00:00Z,UniOttawa@Nipissing,Nipissing Lakers,Ottawa Gee-Gees,W20220304NIPOTT
+2021-2022,6141228456604dae914e1d59,2022-03-04T18:00:00Z,Guelph@Laurier,Wilfrid Laurier,Guelph Gryphons,W20220304WLUGUE
+2021-2022,621d0cb625a53488851b4eaa,2022-03-04T18:00:00Z,MacEwan@BCOkanagan,British Columbia - Okanagan,MacEwan University Griffins,W20220304UBCOMAC
+2021-2022,61369328f4b1fbbad2ebd8b8,2022-03-03T22:00:00Z,Bishops@Laval,Laval University,Bishops Gaiters,W20220303LAVBIS
+2021-2022,61369328f4b1fbbad2ebde7f,2022-03-03T22:00:00Z,QuebecMontreal@Concordia(QUE),Concordia (QUE) Stingers,University Quebec - Montreal,W20220303CONUQA
+2021-2022,614123e94713df402f8df2b4,2022-03-02T22:00:00Z,OntarioTech@TorontoVarBlues,Toronto Varsity Blues,Ontario Tech,W20220302TORONT
+2021-2022,6155d53b31250f8aaa48f759,2022-03-02T22:00:00Z,CarletonUni@UniOttawa,Ottawa Gee-Gees,Carleton University Ravens,W20220302OTTCAR
+2021-2022,614123e94713df402f8df2b7,2022-03-02T19:00:00Z,McMaster@Waterloo,Waterloo Warriors,McMaster Marauders,W20220302WATMAC
+2021-2022,613cc0500e50d3cf17c9286f,2022-02-27T22:00:00Z,NewBrunswick@StFrancisXavier,St. Francis Xavier X-Men,New Brunswick Varsity Reds,W20220227UNKUNB
+2021-2022,6141281ec35329ab78ec3953,2022-02-27T22:00:00Z,Calgary@Alberta,Alberta Pandas,Calgary Dinos,W20220227ALBCAL
+2021-2022,613cc0500e50d3cf17c92875,2022-02-27T17:00:00Z,MemorialCan@CapeBreton,Cape Breton Capers,Memorial Sea-Hawks,W20220227CBMEM
+2021-2022,613cc0500e50d3cf17c92876,2022-02-27T17:00:00Z,SaintMary's(CAN)@Acadia,Acadia Axewomen,Saint Mary's (CAN) Huskies,W20220227ACASMU
+2021-2022,6219878225a53488857304ae,2022-02-27T01:46:00Z,TorontoVarBlues@CarletonUni,Carleton University Ravens,Toronto Varsity Blues,W20220227CARTOR
+2021-2022,620f34f907c7bd5c291d0569,2022-02-27T01:00:00Z,Victoria@NorthernBC,Northern British Columbia Timberwolves,Victoria Vikes,W20220227UNBCVIC
+2021-2022,6141228456604dae914e1d48,2022-02-26T23:00:00Z,WesternOntario@Laurier,Wilfrid Laurier,Western Ontario Mustangs,W20220226WLUWES
+2021-2022,6141228456604dae914e1d52,2022-02-26T23:00:00Z,McMaster@Windsor,Windsor Lancers,McMaster Marauders,W20220226WINMAC
+2021-2022,614123e94713df402f8df2b1,2022-02-26T23:00:00Z,Brock@Waterloo,Waterloo Warriors,Brock Badgers,W20220226WATBRO
+2022-2023,640b059f6d20dc4a7739cd2a,2023-03-12T21:00:00Z,CarletonUni@QueensOntario,Queens (ON) University Golden Gaels,Carleton University Ravens,W20230312QUECAR
+2022-2023,640b059f6d20dc4a7739cc67,2023-03-12T18:00:00Z,SaintMary's(CAN)@Alberta,Alberta Pandas,Saint Mary's (CAN) Huskies,W20230312ALBSMU
+2022-2023,640b059f6d20dc4a7739cbcb,2023-03-12T15:00:00Z,Acadia@Calgary,Calgary Dinos,Acadia Axewomen,W20230312CALACA
+2022-2023,640b059f6d20dc4a7739cb0f,2023-03-11T22:00:00Z,SaintMary's(CAN)@CarletonUni,Carleton University Ravens,Saint Mary's (CAN) Huskies,W20230311CARSMU
+2022-2023,640b059f6d20dc4a7739ca46,2023-03-11T19:00:00Z,QueensOntario@Alberta,Alberta Pandas,Queens (ON) University Golden Gaels,W20230311ALBQUE
+2022-2023,640b059f6d20dc4a7739c965,2023-03-11T00:00:00Z,Calgary@CapeBreton,Cape Breton Capers,Calgary Dinos,W20230311CBCAL
+2022-2023,640b059f6d20dc4a7739c8b3,2023-03-10T22:00:00Z,Acadia@QuebecMontreal,University Quebec - Montreal,Acadia Axewomen,W20230310UQAACA
+2022-2023,64073b4f6d20dc4a7733bf55,2023-03-10T00:00:00Z,CarletonUni@CapeBreton,Cape Breton Capers,Carleton University Ravens,W20230310CBCAR
+2022-2023,64073b4f6d20dc4a7733be89,2023-03-09T21:30:00Z,Calgary@SaintMary's(CAN),Saint Mary's (CAN) Huskies,Calgary Dinos,W20230309SMUCAL
+2022-2023,64073b4f6d20dc4a7733bdfa,2023-03-09T18:00:00Z,Acadia@Alberta,Alberta Pandas,Acadia Axewomen,W20230309ALBACA
+2022-2023,64073b4f6d20dc4a7733bc6c,2023-03-09T15:30:00Z,QuebecMontreal@QueensOntario,Queens (ON) University Golden Gaels,University Quebec - Montreal,W20230309QUEUQA
+2022-2023,64008b3240c90c050f104df1,2023-03-05T00:00:00Z,CarletonUni@OUA F - QueensOntario,Queens (ON) University Golden Gaels,Carleton University Ravens,W20230305QUECAR
+2022-2023,6404b4806d20dc4a77f93064,2023-03-04T14:00:00Z,QuebecMontreal@Bishops,Bishops Gaiters,University Quebec - Montreal,W20230304BISUQA
+2022-2023,63ecf4bd76cb1b2c6cd2ca92,2023-03-03T17:00:00Z,Alberta@Calgary,Calgary Dinos,Alberta Pandas,W20230303CALALB
+2022-2023,6401b4d9ed4c9a91eea6f91b,2023-03-02T18:07:00Z,Concordia(QUE)@Bishops,Bishops Gaiters,Concordia (QUE) Stingers,W20230302BISCON
+2022-2023,63fbcf7840c90c050f792c64,2023-03-01T20:00:00Z,Waterloo@QueensOntario,Queens (ON) University Golden Gaels,Waterloo Warriors,W20230301QUEWAT
+2022-2023,63fbcf7840c90c050f792b73,2023-03-01T20:00:00Z,McMaster@CarletonUni,Carleton University Ravens,McMaster Marauders,W20230301CARMAC
+2022-2023,63f35fb540c90c050fbd516f,2023-02-26T18:00:00Z,SaintMary's(CAN)@Acadia,Acadia Axewomen,Saint Mary's (CAN) Huskies,W20230226ACASMU
+2022-2023,63f35fb540c90c050fbd510c,2023-02-25T23:30:00Z,PrinceEdward@SaintMary's(CAN),Saint Mary's (CAN) Huskies,Prince Edward Island Panthers,W20230225SMUUPEI
+2022-2023,63f5127b40c90c050f462f87,2023-02-25T23:00:00Z,TorontoMetro@CarletonUni,Carleton University Ravens,Toronto Metropolitan University,W20230225CARTMU
+2022-2023,63f5127b40c90c050f46309b,2023-02-25T23:00:00Z,Guelph@McMaster,McMaster Marauders,Guelph Gryphons,W20230225MACGUE
+2022-2023,63f5127b40c90c050f463009,2023-02-25T23:00:00Z,UniOttawa@Waterloo,Waterloo Warriors,Ottawa Gee-Gees,W20230225WATOTT
+2022-2023,63f5127a40c90c050f462f12,2023-02-25T23:00:00Z,Brock@QueensOntario,Queens (ON) University Golden Gaels,Brock Badgers,W20230225QUEBRO
+2022-2023,63301c66e0927e69681fe837,2023-02-25T21:00:00Z,Laval@Concordia(QUE),Concordia (QUE) Stingers,Laval University,W20230225CONLAV
+2022-2023,63316231e0927e696846f2c7,2023-02-25T19:00:00Z,McGill@QuebecMontreal,University Quebec - Montreal,McGill University Martlets,W20230225UQAMCG
+2022-2023,63f35fb540c90c050fbd508a,2023-02-25T18:00:00Z,NewBrunswick@Acadia,Acadia Axewomen,New Brunswick Varsity Reds,W20230225ACAUNB
+2022-2023,63ecf4bd76cb1b2c6cd2ca30,2023-02-25T17:00:00Z,Alberta@Saskatchewan,Saskatchewan Huskies,Alberta Pandas,W20230225SASALB
+2022-2023,63f35fb540c90c050fbd4ff5,2023-02-24T23:30:00Z,AUS QF  - CapeBreton@PrinceEdward,Prince Edward Island Panthers,Cape Breton Capers,W20230224UPEICB
+2022-2023,63f35fb540c90c050fbd4f6e,2023-02-24T18:00:00Z,AUS QF - MemorialCan@NewBrunswick,New Brunswick Varsity Reds,Memorial Sea-Hawks,W20230224UNBMEM
+2022-2023,63ecf4bd76cb1b2c6cd2c93c,2023-02-24T17:00:00Z,Calgary@Regina,Regina (Canada) Cougars,Calgary Dinos,W20230224REGCAL
+2022-2023,63315b7ce0927e6968e479c2,2023-02-23T23:00:00Z,QuebecMontreal@Bishops,Bishops Gaiters,University Quebec - Montreal,W20230223BISUQA
+2022-2023,63f5127a40c90c050f462d3a,2023-02-22T23:00:00Z,Laurentian@UniOttawa,Ottawa Gee-Gees,Laurentian Voyageurs,W20230222OTTLAU
+2022-2023,63f5127a40c90c050f462de5,2023-02-22T23:00:00Z,Brock@Windsor,Windsor Lancers,Brock Badgers,W20230222WINBRO
+2022-2023,63f5127a40c90c050f462c54,2023-02-22T23:00:00Z,WesternOntario@TorontoMetro,Toronto Metropolitan University,Western Ontario Mustangs,W20230222TMUWES
+2022-2023,63f5127a40c90c050f462e7a,2023-02-22T23:00:00Z,York(ONT)@Guelph,Guelph Gryphons,York (ONT) Lions,W20230222GUEYOR
+2022-2023,633313dbcf31008b535d1525,2023-02-19T20:00:00Z,York(ONT)@Algoma,Algoma Thunderbirds,York (ONT) Lions,W20230219ALGYOR
+2022-2023,63ecf4bd76cb1b2c6cd2c8e4,2023-02-19T00:00:00Z,TrinityWestern@Regina,Regina (Canada) Cougars,Trinity Western Spartans,W20230219REGTWU
+2022-2023,63317c03e0927e6968a53c5c,2023-02-18T23:00:00Z,SaintMary's(CAN)@StFrancisXavier,St. Francis Xavier X-Women,Saint Mary's (CAN) Huskies,W20230218SFXSMU
+2022-2023,6333fabccf31008b53d45bd7,2023-02-18T23:00:00Z,OntarioTech@Nipissing,Nipissing Lakers,Ontario Tech,W20230218NIPONT
+2022-2023,63316808e0927e69689a3292,2023-02-18T23:00:00Z,Acadia@NewBrunswick,New Brunswick Varsity Reds,Acadia Axewomen,W20230218UNBACA
+2022-2023,6333f72dcf31008b53ad3889,2023-02-18T23:00:00Z,TorontoVarBlues@McMaster,McMaster Marauders,Toronto Varsity Blues,W20230218MACTOR
+2022-2023,63ecf4bd76cb1b2c6cd2c870,2023-02-18T23:00:00Z,BritishColumbia@Saskatchewan,Saskatchewan Huskies,British Columbia Thunderbirds,W20230218SASUBC
+2022-2023,63331078cf31008b53472b0d,2023-02-18T23:00:00Z,Laurier@WesternOntario,Western Ontario Mustangs,Wilfrid Laurier,W20230218WESWLU
+2022-2023,63316ce0e0927e6968dd20f4,2023-02-18T23:00:00Z,CapeBreton@Dalhousie,Dalhousie Tigers,Cape Breton Capers,W20230218DALCB
+2022-2023,63331e6ecf31008b53b3b87b,2023-02-18T23:00:00Z,CarletonUni@Lakehead,Lakehead University Thunderwolves,Carleton University Ravens,W20230218LAKCAR
+2022-2023,6333ef00cf31008b535c9de8,2023-02-18T21:00:00Z,Guelph@Windsor,Windsor Lancers,Guelph Gryphons,W20230218WINGUE
+2022-2023,633319d1cf31008b538bff41,2023-02-18T21:00:00Z,QueensOntario@Laurentian,Laurentian Voyageurs,Queens (ON) University Golden Gaels,W20230218LAUQUE
+2022-2023,633321f5cf31008b53cfd02b,2023-02-18T19:00:00Z,Brock@TorontoMetro,Toronto Metropolitan University,Brock Badgers,W20230218TMUBRO
+2022-2023,63301a2ce0927e6968f92c41,2023-02-18T19:00:00Z,Concordia(QUE)@McGill,McGill University Martlets,Concordia (QUE) Stingers,W20230218MCGCON
+2022-2023,63ecf4bd76cb1b2c6cd2c7f6,2023-02-18T18:00:00Z,Winnipeg@Calgary,Calgary Dinos,Winnipeg Wesmen,W20230218CALWIN
+2022-2023,63ecf4bd76cb1b2c6cd2c755,2023-02-18T17:00:00Z,FraserValley@Alberta,Alberta Pandas,Fraser Valley Cascades,W20230218ALBUFV
+2022-2023,6331774fe0927e69686a5e6e,2023-02-18T17:00:00Z,PrinceEdward@MemorialCan,Memorial Sea-Hawks,Prince Edward Island Panthers,W20230218MEMUPEI
+2022-2023,63ecf38f76cb1b2c6cc05d49,2023-02-18T00:00:00Z,Victoria@TrinityWestern,Trinity Western Spartans,Victoria Vikes,W20230218TWUVIC
+2022-2023,6333233ccf31008b53dbdc39,2023-02-17T23:00:00Z,TorontoMetro@Brock,Brock Badgers,Toronto Metropolitan University,W20230217BROTMU
+2022-2023,6331774ee0927e69686a46c4,2023-02-17T23:00:00Z,PrinceEdward@MemorialCan,Memorial Sea-Hawks,Prince Edward Island Panthers,W20230217MEMUPEI
+2022-2023,63ecf38f76cb1b2c6cc05cfa,2023-02-17T23:00:00Z,BCOkanagan@BritishColumbia,British Columbia Thunderbirds,British Columbia - Okanagan,W20230217UBCUBCO
+2022-2023,6333fabdcf31008b53d463e0,2023-02-17T23:00:00Z,QueensOntario@Nipissing,Nipissing Lakers,Queens (ON) University Golden Gaels,W20230217NIPQUE
+2022-2023,63331512cf31008b53665e64,2023-02-17T23:00:00Z,Algoma@Lakehead,Lakehead University Thunderwolves,Algoma Thunderbirds,W20230217LAKALG
+2022-2023,63316cdfe0927e6968dd148e,2023-02-17T23:00:00Z,CapeBreton@SaintMary's(CAN),Saint Mary's (CAN) Huskies,Cape Breton Capers,W20230217SMUCB
+2022-2023,6333f72bcf31008b53ad32fa,2023-02-17T23:00:00Z,Waterloo@McMaster,McMaster Marauders,Waterloo Warriors,W20230217MACWAT
+2022-2023,63315b25e0927e6968dece15,2023-02-17T23:00:00Z,Bishops@Laval,Laval University,Bishops Gaiters,W20230217LAVBIS
+2022-2023,633319d0cf31008b538bf87a,2023-02-17T23:00:00Z,OntarioTech@Laurentian,Laurentian Voyageurs,Ontario Tech,W20230217LAUONT
+2022-2023,63ecf38f76cb1b2c6cc05c94,2023-02-17T18:00:00Z,MountRoyal@Winnipeg,Winnipeg Wesmen,Mount Royal Cougars,W20230217WINMRU
+2022-2023,63ecf38f76cb1b2c6cc05c0d,2023-02-17T17:00:00Z,NorthernBC@FraserValley,Fraser Valley Cascades,Northern British Columbia Timberwolves,W20230217UFVUNBC
+2022-2023,6333eeffcf31008b535c98f9,2023-02-15T23:00:00Z,WesternOntario@Guelph,Guelph Gryphons,Western Ontario Mustangs,W20230215GUEWES
+2022-2023,633408d3cf31008b5371e242,2023-02-15T23:00:00Z,York(ONT)@Waterloo,Waterloo Warriors,York (ONT) Lions,W20230215WATYOR
+2022-2023,63331077cf31008b53472704,2023-02-15T23:00:00Z,Laurier@Windsor,Windsor Lancers,Wilfrid Laurier,W20230215WINWLU
+2022-2023,63d571fa16efd8b4f1cba989,2023-02-15T18:00:00Z,UniOttawa@CarletonUni,Carleton University Ravens,Ottawa Gee-Gees,W20230215CAROTT
+2022-2023,63316807e0927e69689a26fc,2023-02-14T23:00:00Z,Acadia@StFrancisXavier,St. Francis Xavier X-Women,Acadia Axewomen,W20230214SFXACA
+2022-2023,633402fbcf31008b532e154c,2023-02-12T18:00:00Z,QueensOntario@York(ONT),York (ONT) Lions,Queens (ON) University Golden Gaels,W20230212YORQUE
+2022-2023,6331774de0927e69686a2fba,2023-02-12T17:00:00Z,NewBrunswick@MemorialCan,Memorial Sea-Hawks,New Brunswick Varsity Reds,W20230212MEMUNB
+2022-2023,633415bacf31008b53fcbbe5,2023-02-12T00:30:00Z,ManitobaBisons@ThompsonRivers,Thompson Rivers University Wolfpack,Manitoba Bisons,W20230212TRUMAN
+2022-2023,6334493ccf31008b53fb241e,2023-02-12T00:00:00Z,TrinityWestern@Winnipeg,Winnipeg Wesmen,Trinity Western Spartans,W20230212WINTWU
+2022-2023,63317292e0927e69682b33e7,2023-02-11T23:00:00Z,Dalhousie@SaintMary's(CAN),Saint Mary's (CAN) Huskies,Dalhousie Tigers,W20230211SMUDAL
+2022-2023,6331774ce0927e69686a18ef,2023-02-11T23:00:00Z,NewBrunswick@MemorialCan,Memorial Sea-Hawks,New Brunswick Varsity Reds,W20230211MEMUNB
+2022-2023,63316a73e0927e6968ba7a7d,2023-02-11T23:00:00Z,StFrancisXavier@Acadia,Acadia Axewomen,St. Francis Xavier X-Women,W20230211ACASFX
+2022-2023,6333f3adcf31008b5389f237,2023-02-11T23:00:00Z,Lakehead@OntarioTech,Ontario Tech,Lakehead University Thunderwolves,W20230211ONTLAK
+2022-2023,6332dddbcf31008b531f9a7f,2023-02-11T23:00:00Z,Regina@MacEwan,MacEwan University Griffins,Regina (Canada) Cougars,W20230211MACREG
+2022-2023,6333177ccf31008b5378e88a,2023-02-11T23:00:00Z,Brock@WesternOntario,Western Ontario Mustangs,Brock Badgers,W20230211WESBRO
+2022-2023,63331c39cf31008b53a1df40,2023-02-11T23:00:00Z,Nipissing@CarletonUni,Carleton University Ravens,Nipissing Lakers,W20230211CARNIP
+2022-2023,6334067ccf31008b5357a059,2023-02-11T23:00:00Z,Waterloo@TorontoVarBlues,Toronto Varsity Blues,Waterloo Warriors,W20230211TORWAT
+2022-2023,63315b7be0927e6968e46007,2023-02-11T23:00:00Z,QuebecMontreal@Bishops,Bishops Gaiters,University Quebec - Montreal,W20230211BISUQA
+2022-2023,6333eefecf31008b535c930d,2023-02-11T23:00:00Z,Windsor@Guelph,Guelph Gryphons,Windsor Lancers,W20230211GUEWIN
+2022-2023,6332cfcecf31008b537b8f57,2023-02-11T22:00:00Z,Victoria@BritishColumbia,British Columbia Thunderbirds,Victoria Vikes,W20230211UBCVIC
+2022-2023,6331a2b1e0927e6968957f2f,2023-02-11T22:00:00Z,Lethbridge@Alberta,Alberta Pandas,Lethbridge Pronghorns,W20230211ALBLET
+2022-2023,6331a630e0927e6968bc8573,2023-02-11T22:00:00Z,NorthernBC@BrandonUni,Brandon University Bobcats,Northern British Columbia Timberwolves,W20230211BRAUNBC
+2022-2023,6332d824cf31008b53e2e283,2023-02-11T22:00:00Z,Saskatchewan@FraserValley,Fraser Valley Cascades,Saskatchewan Huskies,W20230211UFVSAS
+2022-2023,633319bfcf31008b538b80a8,2023-02-11T21:00:00Z,Laurentian@UniOttawa,Ottawa Gee-Gees,Laurentian Voyageurs,W20230211OTTLAU
+2022-2023,6332d35acf31008b53a95e25,2023-02-11T21:00:00Z,MountRoyal@Calgary,Calgary Dinos,Mount Royal Cougars,W20230211CALMRU
+2022-2023,63301c64e0927e69681fd0b4,2023-02-11T19:00:00Z,McGill@Concordia(QUE),Concordia (QUE) Stingers,McGill University Martlets,W20230211CONMCG
+2022-2023,633321f4cf31008b53cfc90e,2023-02-11T19:00:00Z,McMaster@TorontoMetro,Toronto Metropolitan University,McMaster Marauders,W20230211TMUMAC
+2022-2023,63316f17e0927e6968fb60ba,2023-02-11T19:00:00Z,PrinceEdward@CapeBreton,Cape Breton Capers,Prince Edward Island Panthers,W20230211CBUPEI
+2022-2023,63330f33cf31008b533f651d,2023-02-11T19:00:00Z,Algoma@Laurier,Wilfrid Laurier,Algoma Thunderbirds,W20230211WLUALG
+2022-2023,633415b9cf31008b53fcaa07,2023-02-11T00:30:00Z,ManitobaBisons@ThompsonRivers,Thompson Rivers University Wolfpack,Manitoba Bisons,W20230211TRUMAN
+2022-2023,6333233bcf31008b53dbce9d,2023-02-10T23:00:00Z,TorontoMetro@York(ONT),York (ONT) Lions,Toronto Metropolitan University,W20230210YORTMU
+2022-2023,633319becf31008b538b7a17,2023-02-10T23:00:00Z,Laurentian@CarletonUni,Carleton University Ravens,Laurentian Voyageurs,W20230210CARLAU
+2022-2023,6332d823cf31008b53e2da0b,2023-02-10T23:00:00Z,Saskatchewan@FraserValley,Fraser Valley Cascades,Saskatchewan Huskies,W20230210UFVSAS
+2022-2023,6331a2b0e0927e6968956c6f,2023-02-10T23:00:00Z,Lethbridge@Alberta,Alberta Pandas,Lethbridge Pronghorns,W20230210ALBLET
+2022-2023,6332d359cf31008b53a953c8,2023-02-10T23:00:00Z,MountRoyal@Calgary,Calgary Dinos,Mount Royal Cougars,W20230210CALMRU
+2022-2023,6333f3accf31008b5389ec8b,2023-02-10T23:00:00Z,Lakehead@QueensOntario,Queens (ON) University Golden Gaels,Lakehead University Thunderwolves,W20230210QUELAK
+2023-2024,65edb285173dae17746b6827,2024-03-10T23:30:00Z,CarletonUni@Saskatchewan,Saskatchewan Huskies,Carleton University Ravens,W20240310SASCAR
+2023-2024,65edb285173dae17746b67f5,2024-03-10T21:00:00Z,QueensOntario@Laval,Laval University,Queens (ON) University Golden Gaels,W20240310LAVQUE
+2023-2024,65ecd75d173dae1774659d05,2024-03-10T03:00:00Z,QueensOntario@CarletonUni,Carleton University Ravens,Queens (ON) University Golden Gaels,W20240310CARQUE
+2023-2024,65ecd75d173dae1774659cd3,2024-03-10T01:00:00Z,Laval@Saskatchewan,Saskatchewan Huskies,Laval University,W20240310SASLAV
+2023-2024,65ecd75d173dae1774659c99,2024-03-09T22:00:00Z,SaintMary's(CAN)@Alberta,Alberta Pandas,Saint Mary's (CAN) Huskies,W20240309ALBSMU
+2023-2024,65eae7a7173dae1774afcbd8,2024-03-09T00:00:00Z,Calgary@Alberta,Alberta Pandas,Calgary Dinos,W20240309ALBCAL
+2023-2024,65eae7a7173dae1774afcba2,2024-03-08T22:00:00Z,FraserValley@SaintMary's(CAN),Saint Mary's (CAN) Huskies,Fraser Valley Cascades,W20240308SMUUFV
+2023-2024,65eae7a6173dae1774afc7f6,2024-03-08T05:00:00Z,Calgary@Saskatchewan,Saskatchewan Huskies,Calgary Dinos,W20240308SASCAL
+2023-2024,65eae7a6173dae1774afc82f,2024-03-08T01:00:00Z,Laval@Alberta,Alberta Pandas,Laval University,W20240308ALBLAV
+2023-2024,65eae7a6173dae1774afc774,2024-03-07T19:30:00Z,QueensOntario@SaintMary's(CAN),Saint Mary's (CAN) Huskies,Queens (ON) University Golden Gaels,W20240307SMUQUE
+2023-2024,650b7db87a4e83e6ee1bdf22,2024-03-07T17:30:00Z,FraserValley@CarletonUni,Carleton University Ravens,Fraser Valley Cascades,W20240307CARUFV
+2023-2024,65e0468f173dae1774428b1a,2024-03-03T00:00:00Z,QueensOntario@CarletonUni,Carleton University Ravens,Queens (ON) University Golden Gaels,W20240303CARQUE
+2023-2024,65e0c521173dae1774d22e56,2024-03-02T17:00:00Z,Bishops@Laval,Laval University,Bishops Gaiters,W20240302LAVBIS
+2023-2024,65dff5b3173dae1774683c90,2024-02-28T23:00:00Z,Concordia(QUE)@Bishops,Bishops Gaiters,Concordia (QUE) Stingers,W20240228BISCON
+2023-2024,65dff489173dae177465efe7,2024-02-28T23:00:00Z,TorontoMetro@QueensOntario,Queens (ON) University Golden Gaels,Toronto Metropolitan University,W20240228QUETMU
+2023-2024,65ddf91a173dae1774c7ef5c,2024-02-28T19:00:00Z,UniOttawa@CarletonUni,Carleton University Ravens,Ottawa Gee-Gees,W20240228CAROTT
+2023-2024,65e0c521173dae1774d22d5e,2024-02-28T17:00:00Z,McGill@Laval,Laval University,McGill University Martlets,W20240228LAVMCG
+2023-2024,65d64e35a80a99f43c8b62c3,2024-02-25T21:00:00Z,Alberta@Saskatchewan,Saskatchewan Huskies,Alberta Pandas,W20240225SASALB
+2023-2024,65d64e35a80a99f43c8b6278,2024-02-25T19:00:00Z,Victoria@FraserValley,Fraser Valley Cascades,Victoria Vikes,W20240225UFVVIC
+2023-2024,65dc5345a80a99f43c7a9df5,2024-02-25T18:00:00Z,NewBrunswick@SaintMary's(CAN),Saint Mary's (CAN) Huskies,New Brunswick Varsity Reds,W20240225SMUUNB
+2023-2024,65dab58ea80a99f43c32ab46,2024-02-25T00:33:00Z,Guelph@QueensOntario,Queens (ON) University Golden Gaels,Guelph Gryphons,W20240225QUEGUE
+2023-2024,65daa8a9a80a99f43c10ffe3,2024-02-24T23:36:00Z,UniOttawa@Waterloo,Waterloo Warriors,Ottawa Gee-Gees,W20240224WATOTT
+2023-2024,65d7a6bda80a99f43cc852a8,2024-02-24T23:00:00Z,McMaster@CarletonUni,Carleton University Ravens,McMaster Marauders,W20240224CARMAC
+2023-2024,65d64e34a80a99f43c8b6235,2024-02-24T21:00:00Z,Saskatchewan@FraserValley,Fraser Valley Cascades,Saskatchewan Huskies,W20240224UFVSAS
+2023-2024,6511a1efd856707232e82b23,2024-02-24T19:00:00Z,Laval@McGill,McGill University Martlets,Laval University,W20240224MCGLAV
+2023-2024,65d64e34a80a99f43c8b61e5,2024-02-24T19:00:00Z,Victoria@Alberta,Alberta Pandas,Victoria Vikes,W20240224ALBVIC
+2023-2024,6524c30bc0dd46415a44efe9,2024-02-24T19:00:00Z,Concordia(QUE)@QuebecMontreal,University Quebec - Montreal,Concordia (QUE) Stingers,W20240224UQACON
+2023-2024,65da64b2a80a99f43c18e9a7,2024-02-24T18:46:00Z,TorontoMetro@Brock,Brock Badgers,Toronto Metropolitan University,W20240224BROTMU
+2023-2024,65d9f0aea80a99f43cb82bbc,2024-02-24T13:32:00Z,MemorialCan@NewBrunswick,New Brunswick Reds,Memorial Sea-Hawks,W20240224UNKMEM
+2023-2024,65d9f0aea80a99f43cb82b81,2024-02-24T13:31:00Z,StFrancisXavier@SaintMary's(CAN),Saint Mary's (CAN) Huskies,St. Francis Xavier X-Women,W20240224SMUSFX
+2023-2024,65d9f0aea80a99f43cb82b35,2024-02-23T13:31:00Z,MemorialCan@Acadia,Acadia Axewomen,Memorial Sea-Hawks,W20240223ACAMEM
+2023-2024,65d9df1aa80a99f43c90234a,2024-02-23T12:15:00Z,StFrancisXavier@PrinceEdward,Prince Edward Island Panthers,St. Francis Xavier X-Women,W20240223UPEISFX
+2023-2024,65d64d0ca80a99f43c86c933,2024-02-23T01:00:00Z,BCOkanagan@Saskatchewan,Saskatchewan Huskies,British Columbia - Okanagan,W20240223SASUBCO
+2023-2024,65d64d0ca80a99f43c86c8de,2024-02-22T23:00:00Z,Regina@FraserValley,Fraser Valley Cascades,Regina (Canada) Cougars,W20240222UFVREG
+2023-2024,65d64d0ca80a99f43c86c87f,2024-02-22T21:00:00Z,Victoria@BritishColumbia,British Columbia Thunderbirds,Victoria Vikes,W20240222UBCVIC
+2023-2024,65d64d0ca80a99f43c86c825,2024-02-22T19:00:00Z,Alberta@Calgary,Calgary Dinos,Alberta Pandas,W20240222CALALB
+2023-2024,65d64d0ca80a99f43c86c7b9,2024-02-22T00:00:00Z,BCOkanagan@TrinityWestern,Trinity Western Spartans,British Columbia - Okanagan,W20240222TWUUBCO
+2023-2024,65d7758ba80a99f43c27cf1c,2024-02-21T23:00:00Z,WesternOntario@TorontoMetro,Toronto Metropolitan University,Western Ontario Mustangs,W20240221TMUWES
+2023-2024,6511a1efd856707232e82b19,2024-02-21T23:00:00Z,QuebecMontreal@Bishops,Bishops Gaiters,University Quebec - Montreal,W20240221BISUQA
+2023-2024,65d64d0ca80a99f43c86c750,2024-02-21T21:00:00Z,ManitobaBisons@Regina,Regina (Canada) Cougars,Manitoba Bisons,W20240221REGMAN
+2023-2024,65d64d0ca80a99f43c86c6d9,2024-02-21T20:00:00Z,Victoria@Lethbridge,Lethbridge Pronghorns,Victoria Vikes,W20240221LETVIC
+2023-2024,65d64d0ca80a99f43c86c671,2024-02-21T19:00:00Z,MountRoyal@Alberta,Alberta Pandas,Mount Royal Cougars,W20240221ALBMRU
+2023-2024,65d6f951a80a99f43c7d3eea,2024-02-21T07:31:00Z,Windsor@Guelph,Guelph Gryphons,Windsor Lancers,W20240221GUEWIN
+2023-2024,65d6f827a80a99f43c77d0a9,2024-02-21T07:30:00Z,Laurier@McMaster,McMaster Marauders,Wilfrid Laurier,W20240221MACWLU
+2023-2024,65d6f4a8a80a99f43c704767,2024-02-21T07:14:00Z,Laurentian@UniOttawa,Ottawa Gee-Gees,Laurentian Voyageurs,W20240221OTTLAU
+2023-2024,65119c46894543571769d254,2024-02-17T23:00:00Z,CarletonUni@QueensOntario,Queens (ON) University Golden Gaels,Carleton University Ravens,W20240217QUECAR
+2023-2024,6511980d3c5559206cf90361,2024-02-17T23:00:00Z,TorontoMetro@York(ONT),York (ONT) Lions,Toronto Metropolitan University,W20240217YORTMU
+2023-2024,6511980d3c5559206cf90328,2024-02-17T23:00:00Z,WesternOntario@Laurier,Wilfrid Laurier,Western Ontario Mustangs,W20240217WLUWES
+2023-2024,6511980d3c5559206cf90313,2024-02-17T23:00:00Z,TorontoVarBlues@Waterloo,Waterloo Warriors,Toronto Varsity Blues,W20240217WATTOR
+2023-2024,65119ae15e357cdeda557bd1,2024-02-17T23:00:00Z,Nipissing@Brock,Brock Badgers,Nipissing Lakers,W20240217BRONIP
+2023-2024,65119c46894543571769d22d,2024-02-17T23:00:00Z,Guelph@Laurentian,Laurentian Voyageurs,Guelph Gryphons,W20240217LAUGUE
+2023-2024,65119541a7700f5badf41bb7,2024-02-17T23:00:00Z,Lakehead@McMaster,McMaster Marauders,Lakehead University Thunderwolves,W20240217MACLAK
+2023-2024,6511980d3c5559206cf90353,2024-02-17T21:00:00Z,Algoma@Windsor,Windsor Lancers,Algoma Thunderbirds,W20240217WINALG
+2023-2024,651196a6c26e1db3656cb2ce,2024-02-17T21:00:00Z,UniOttawa@OntarioTech,Ontario Tech,Ottawa Gee-Gees,W20240217ONTOTT
+2023-2024,6524c30bc0dd46415a44efbb,2024-02-17T19:00:00Z,Concordia(QUE)@McGill,McGill University Martlets,Concordia (QUE) Stingers,W20240217MCGCON
+2023-2024,650a522f8e51437100083f07,2024-02-17T08:07:00Z,SaintMary's(CAN)@MemorialCan,Memorial Sea-Hawks,Saint Mary's (CAN) Huskies,W20240217MEMSMU
+2023-2024,650a522f8e51437100083f0d,2024-02-17T08:07:00Z,CapeBreton@StFrancisXavier,St. Francis Xavier X-Women,Cape Breton Capers,W20240217SFXCB
+2023-2024,650a522f8e51437100083efe,2024-02-16T23:00:00Z,PrinceEdward@CapeBreton,Cape Breton Capers,Prince Edward Island Panthers,W20240216CBUPEI
+2023-2024,6508551bd828458ab4d2a5de,2024-02-16T23:00:00Z,Acadia@NewBrunswick,New Brunswick Varsity Reds,Acadia Axewomen,W20240216UNBACA
+2023-2024,6508d94cba414280670401e1,2024-02-16T23:00:00Z,StFrancisXavier@Dalhousie,Dalhousie Tigers,St. Francis Xavier X-Women,W20240216DALSFX
+2023-2024,651196a6c26e1db3656cb2cd,2024-02-16T23:00:00Z,CarletonUni@OntarioTech,Ontario Tech,Carleton University Ravens,W20240216ONTCAR
+2023-2024,6511980d3c5559206cf90342,2024-02-16T23:00:00Z,TorontoVarBlues@Laurier,Wilfrid Laurier,Toronto Varsity Blues,W20240216WLUTOR
+2023-2024,6511a1efd856707232e82b18,2024-02-16T23:00:00Z,Bishops@Laval,Laval University,Bishops Gaiters,W20240216LAVBIS
+2023-2024,65119c46894543571769d22c,2024-02-16T23:00:00Z,Guelph@Nipissing,Nipissing Lakers,Guelph Gryphons,W20240216NIPGUE
+2023-2024,6511980d3c5559206cf90352,2024-02-16T23:00:00Z,Algoma@Windsor,Windsor Lancers,Algoma Thunderbirds,W20240216WINALG
+2023-2024,65119c46894543571769d246,2024-02-16T23:00:00Z,UniOttawa@QueensOntario,Queens (ON) University Golden Gaels,Ottawa Gee-Gees,W20240216QUEOTT
+2023-2024,65119541a7700f5badf41bb6,2024-02-16T23:00:00Z,Lakehead@McMaster,McMaster Marauders,Lakehead University Thunderwolves,W20240216MACLAK
+2023-2024,650a522f8e51437100083f06,2024-02-16T08:07:00Z,SaintMary's(CAN)@MemorialCan,Memorial Sea-Hawks,Saint Mary's (CAN) Huskies,W20240216MEMSMU
+2023-2024,6511980d3c5559206cf90360,2024-02-14T23:00:00Z,York(ONT)@TorontoMetro,Toronto Metropolitan University,York (ONT) Lions,W20240214TMUYOR
+2023-2024,650b8791660c73f0335407ed,2024-02-14T23:00:00Z,ThompsonRivers@Victoria,Victoria Vikes,Thompson Rivers University Wolfpack,W20240214VICTRU
+2023-2024,6511980d3c5559206cf90312,2024-02-14T23:00:00Z,WesternOntario@Waterloo,Waterloo Warriors,Western Ontario Mustangs,W20240214WATWES
+2023-2024,65119ae15e357cdeda557bcd,2024-02-11T17:00:00Z,Algoma@Laurentian,Laurentian Voyageurs,Algoma Thunderbirds,W20240211LAUALG
+2023-2024,65c6e5afe60e5f5399a22583,2024-02-11T02:50:00Z,StFrancisXavier@NewBrunswick,New Brunswick Varsity Reds,St. Francis Xavier X-Women,W20240211UNBSFX
+2023-2024,650b88f8d3304fc65131f2ff,2024-02-11T00:00:00Z,Saskatchewan@NorthernBC,Northern British Columbia Timberwolves,Saskatchewan Huskies,W20240211UNBCSAS
+2023-2024,6511a1efd856707232e82b21,2024-02-10T23:00:00Z,McGill@Laval,Laval University,McGill University Martlets,W20240210LAVMCG
+2023-2024,650a522f8e51437100083efd,2024-02-10T23:00:00Z,MemorialCan@PrinceEdward,Prince Edward Island Panthers,Memorial Sea-Hawks,W20240210UPEIMEM
+2023-2024,6508d94cba414280670401e0,2024-02-10T23:00:00Z,Dalhousie@CapeBreton,Cape Breton Capers,Dalhousie Tigers,W20240210CBDAL
+2023-2024,651196a6c26e1db3656cb2cc,2024-02-10T23:00:00Z,OntarioTech@Lakehead,Lakehead University Thunderwolves,Ontario Tech,W20240210LAKONT
+2023-2024,65119541a7700f5badf41bb5,2024-02-10T23:00:00Z,Brock@McMaster,McMaster Marauders,Brock Badgers,W20240210MACBRO
+2023-2024,6511980d3c5559206cf90327,2024-02-10T23:00:00Z,WesternOntario@Guelph,Guelph Gryphons,Western Ontario Mustangs,W20240210GUEWES
+2023-2024,653963809f8029d7f9e2edea,2024-02-10T23:00:00Z,SaintMary's(CAN)@Acadia,Acadia Axewomen,Saint Mary's (CAN) Huskies,W20240210ACASMU
+2023-2024,6511980d3c5559206cf90341,2024-02-10T23:00:00Z,York(ONT)@Laurier,Wilfrid Laurier,York (ONT) Lions,W20240210WLUYOR
+2023-2024,651196a6c26e1db3656cb2dc,2024-02-10T23:00:00Z,TorontoMetro@CarletonUni,Carleton University Ravens,Toronto Metropolitan University,W20240210CARTMU
+2023-2024,650b83558d6c0b0b0d86edd7,2024-02-10T23:00:00Z,Winnipeg@Regina,Regina (Canada) Cougars,Winnipeg Wesmen,W20240210REGWIN
+2023-2024,650b84bf0e63a2149f6975f8,2024-02-10T22:30:00Z,MountRoyal@ThompsonRivers,Thompson Rivers University Wolfpack,Mount Royal Cougars,W20240210TRUMRU
+2023-2024,650a57cc7a7c680e8941b948,2024-02-10T22:00:00Z,Alberta@Lethbridge,Lethbridge Pronghorns,Alberta Pandas,W20240210LETALB
+2023-2024,650b7db87a4e83e6ee1bdf30,2024-02-10T22:00:00Z,TrinityWestern@FraserValley,Fraser Valley Cascades,Trinity Western Spartans,W20240210UFVTWU
+2023-2024,65119f16a9415113e4b9e5d7,2024-02-10T21:00:00Z,TorontoVarBlues@UniOttawa,Ottawa Gee-Gees,Toronto Varsity Blues,W20240210OTTTOR
+2023-2024,6511980d3c5559206cf90311,2024-02-10T21:00:00Z,Windsor@Waterloo,Waterloo Warriors,Windsor Lancers,W20240210WATWIN
+2023-2024,651371e0d8ae024d500b3195,2024-02-10T18:00:00Z,QuebecMontreal@Concordia(QUE),Concordia (QUE) Stingers,University Quebec - Montreal,W20240210CONUQA
+2023-2024,650b7ae9826e94b7e1245c58,2024-02-10T11:07:00Z,Calgary@BritishColumbia,British Columbia Thunderbirds,Calgary Dinos,W20240210UBCCAL
+2023-2024,650b7ae9826e94b7e1245c48,2024-02-10T11:07:00Z,BCOkanagan@ManitobaBisons,Manitoba Bisons,British Columbia - Okanagan,W20240210MANUBCO
+2023-2024,650b7db87a4e83e6ee1bdf44,2024-02-10T10:07:00Z,Victoria@MacEwan,MacEwan University Griffins,Victoria Vikes,W20240210MACVIC
+2023-2024,650b88f8d3304fc65131f2fe,2024-02-10T01:00:00Z,Saskatchewan@NorthernBC,Northern British Columbia Timberwolves,Saskatchewan Huskies,W20240210UNBCSAS
+2023-2024,65119f16a9415113e4b9e5c4,2024-02-09T23:00:00Z,TorontoMetro@UniOttawa,Ottawa Gee-Gees,Toronto Metropolitan University,W20240209OTTTMU
+2023-2024,650a522f8e51437100083efc,2024-02-09T23:00:00Z,MemorialCan@PrinceEdward,Prince Edward Island Panthers,Memorial Sea-Hawks,W20240209UPEIMEM
+2023-2024,6508d94cba414280670401df,2024-02-09T23:00:00Z,Dalhousie@CapeBreton,Cape Breton Capers,Dalhousie Tigers,W20240209CBDAL
+2023-2024,65119c46894543571769d253,2024-02-09T23:00:00Z,QueensOntario@Lakehead,Lakehead University Thunderwolves,Queens (ON) University Golden Gaels,W20240209LAKQUE
+2023-2024,65119541a7700f5badf41bb4,2024-02-09T23:00:00Z,McMaster@Waterloo,Waterloo Warriors,McMaster Marauders,W20240209WATMAC
+2023-2024,65119ae15e357cdeda557bd0,2024-02-09T23:00:00Z,Laurentian@Brock,Brock Badgers,Laurentian Voyageurs,W20240209BROLAU
+2024-2025,66d5e6e8e6278f51f7733500,2024-10-26T22:00:00Z,TorontoMetro@Laurentian,Laurentian Voyageurs,Toronto Metropolitan University,W20241026LAUTMU
+2024-2025,66d5e3658b28ebe64a579548,2024-10-26T17:00:00Z,QueensOntario@Guelph,Guelph Gryphons,Queens (ON) University Golden Gaels,W20241026GUEQUE
+2024-2025,66d5f3cbb211625d6a8de4cc,2024-10-25T22:00:00Z,Windsor@UniOttawa,Ottawa Gee-Gees,Windsor Lancers,W20241025OTTWIN
+2024-2025,66d605603664b69ade85025b,2024-10-25T22:00:00Z,Laurier@York(ONT),York (ONT) Lions,Wilfrid Laurier,W20241025YORWLU
+2024-2025,66d5dc5b211564822295ee56,2024-10-25T22:00:00Z,WesternOntario@CarletonUni,Carleton University Ravens,Western Ontario Mustangs,W20241025CARWES
+2024-2025,66d5ecd08428516b919b5be4,2024-10-25T22:00:00Z,TorontoMetro@Nipissing,Nipissing Lakers,Toronto Metropolitan University,W20241025NIPTMU
+2024-2025,66d36a95ae35cd516dee3fe3,2024-10-25T20:00:00Z,Lethbridge@BritishColumbia,British Columbia Thunderbirds,Lethbridge Pronghorns,W20241025UBCLET
+2024-2025,671cd64644571cdd5df57afb,2024-10-25T17:00:00Z,OntarioTech@McMaster,McMaster Marauders,Ontario Tech,W20241025MACONT
+2024-2025,66d5d55480268844545cd928,2024-10-24T22:00:00Z,Guelph@Brock,Brock Badgers,Guelph Gryphons,W20241024BROGUE
+2024-2025,671b13f8150da995241f0ecb,2024-10-24T16:00:00Z,ThompsonRivers@WallaWalla,Walla Walla Wolves,Thompson Rivers University Wolfpack,W20241024UNKTRU
+2024-2025,670c8a78ed793081a182ef2f,2024-10-21T03:00:00Z,SaintMary's(CAN)@Guelph,Guelph Gryphons,Saint Mary's (CAN) Huskies,W20241021GUESMU
+2024-2025,670eecf4ec091f803abb097f,2024-10-20T18:00:00Z,StFrancisXavier@McGill,McGill University Martlets,St. Francis Xavier X-Women,W20241020MCGSFX
+2024-2025,67153e328a37abdebd37c3e9,2024-10-20T17:30:00Z,Concordia(QUE)@McMaster,McMaster Marauders,Concordia (QUE) Stingers,W20241020MACCON
+2024-2025,67153e328a37abdebd37c3ea,2024-10-20T17:30:00Z,Acadia@Laurier,Wilfrid Laurier,Acadia Axewomen,W20241020WLUACA
+2024-2025,67153e328a37abdebd37c3e8,2024-10-20T17:30:00Z,CapeBreton@WesternOntario,Western Ontario Mustangs,Cape Breton Capers,W20241020WESCB
+2024-2025,67153e328a37abdebd37c3eb,2024-10-20T17:30:00Z,Saskatchewan@TorontoMetro,Toronto Metropolitan University,Saskatchewan Huskies,W20241020TMUSAS
+2024-2025,670eecf4ec091f803abb097e,2024-10-20T14:00:00Z,NorthernBC@Laurentian,Laurentian Voyageurs,Northern British Columbia Timberwolves,W20241020LAUUNBC
+2024-2025,670c8a78ed793081a182ef2e,2024-10-20T03:00:00Z,Guelph@Laval,Laval University,Guelph Gryphons,W20241020LAVGUE
+2024-2025,6715ac4fe5553adbcc0f33d4,2024-10-20T01:18:00Z,CarletonUni@ManitobaBisons,Manitoba Bisons,Carleton University Ravens,W20241020MANCAR
+2024-2025,67131636f21a4a3b307ede70,2024-10-19T22:00:00Z,Laurier@TorontoMetro,Toronto Metropolitan University,Wilfrid Laurier,W20241019TMUWLU
+2024-2025,66d36135e54db750e29738a6,2024-10-19T22:00:00Z,Alberta@Victoria,Victoria Vikes,Alberta Pandas,W20241019VICALB
+2024-2025,6712d5bb68279966d25e4b5e,2024-10-19T21:37:00Z,Windsor@Waterloo,Waterloo Warriors,Windsor Lancers,W20241019WATWIN
+2024-2025,670ee4c01a3988d1de103b14,2024-10-19T21:00:00Z,Winnipeg@Dalhousie,Dalhousie Tigers,Winnipeg Wesmen,W20241019DALWIN
+2024-2025,670eecf4ec091f803abb097d,2024-10-19T21:00:00Z,Laurentian@McGill,McGill University Martlets,Laurentian Voyageurs,W20241019MCGLAU
+2024-2025,671807d04c305e214a448355,2024-10-19T20:00:00Z,ThompsonRivers@MacEwan,MacEwan University Griffins,Thompson Rivers University Wolfpack,W20241019MACTRU
+2024-2025,67059077141b4fa31c47dfc3,2024-10-19T20:00:00Z,Algoma@NewBrunswick,New Brunswick Reds,Algoma Thunderbirds,W20241019UNKALG
+2024-2025,66d5f049415b1f48d4cb0208,2024-10-19T20:00:00Z,TorontoVarBlues@OntarioTech,Ontario Tech,Toronto Varsity Blues,W20241019ONTTOR
+2024-2025,67131636f21a4a3b307ede6f,2024-10-19T20:00:00Z,Saskatchewan@Acadia,Acadia Axewomen,Saskatchewan Huskies,W20241019ACASAS
+2024-2025,66d5d55480268844545cd927,2024-10-19T19:00:00Z,MountRoyal@Brock,Brock Badgers,Mount Royal Cougars,W20241019BROMRU
+2024-2025,66d36a95ae35cd516dee3fe2,2024-10-19T19:00:00Z,BritishColumbia@Regina,Regina (Canada) Cougars,British Columbia Thunderbirds,W20241019REGUBC
+2024-2025,6715c997f36cb9288031d136,2024-10-19T18:00:00Z,QuebecMontreal@QueensOntario,Queens (ON) University Golden Gaels,University Quebec - Montreal,W20241019QUEUQA
+2024-2025,671401bf480700636164164b,2024-10-19T18:00:00Z,CapeBreton@Concordia(QUE),Concordia (QUE) Stingers,Cape Breton Capers,W20241019CONCB
+2024-2025,6715407d694c312d66fa613e,2024-10-19T17:30:00Z,FraserValley@MemorialCan,Memorial Sea-Hawks,Fraser Valley Cascades,W20241019MEMUFV
+2024-2025,670eecf3ec091f803abb097c,2024-10-19T17:00:00Z,StFrancisXavier@NorthernBC,Northern British Columbia Timberwolves,St. Francis Xavier X-Women,W20241019UNBCSFX
+2024-2025,671401bf480700636164164a,2024-10-19T16:00:00Z,McMaster@WesternOntario,Western Ontario Mustangs,McMaster Marauders,W20241019WESMAC
+2024-2025,6715ac4fe5553adbcc0f33d3,2024-10-19T01:18:00Z,QuebecMontreal@CarletonUni,Carleton University Ravens,University Quebec - Montreal,W20241019CARUQA
+2024-2025,66d605603664b69ade85025a,2024-10-18T23:00:00Z,Concordia(QUE)@Laurier,Wilfrid Laurier,Concordia (QUE) Stingers,W20241018WLUCON
+2024-2025,66d5d2fea224de1849e2e4b5,2024-10-18T23:00:00Z,Algoma@Dalhousie,Dalhousie Tigers,Algoma Thunderbirds,W20241018DALALG
+2024-2025,66d5ff84ec5f00806b01244e,2024-10-18T22:00:00Z,FraserValley@Waterloo,Waterloo Warriors,Fraser Valley Cascades,W20241018WATUFV
+2024-2025,66d36135e54db750e29738a5,2024-10-18T22:00:00Z,Alberta@BritishColumbia,British Columbia Thunderbirds,Alberta Pandas,W20241018UBCALB
+2024-2025,66d38a38bf67a7f88735c5e1,2024-10-18T22:00:00Z,Regina@Victoria,Victoria Vikes,Regina (Canada) Cougars,W20241018VICREG
+2024-2025,670eecf3ec091f803abb097b,2024-10-18T22:00:00Z,NorthernBC@McGill,McGill University Martlets,Northern British Columbia Timberwolves,W20241018MCGUNBC
+2024-2025,66d365e5171fa05d9b725935,2024-10-18T22:00:00Z,MacEwan@BCOkanagan,British Columbia - Okanagan,MacEwan University Griffins,W20241018UBCOMAC
+2024-2025,6712d5bb68279966d25e4b5d,2024-10-18T21:36:00Z,MemorialCan@Windsor,Windsor Lancers,Memorial Sea-Hawks,W20241018WINMEM
+2024-2025,670e78ef30382acc950ed620,2024-10-18T21:00:00Z,CapeBreton@TorontoMetro,Toronto Metropolitan University,Cape Breton Capers,W20241018TMUCB
+2024-2025,67059077141b4fa31c47dfc2,2024-10-18T20:00:00Z,NewBrunswick@Winnipeg,Winnipeg Wesmen,New Brunswick Reds,W20241018WINUNK
+2024-2025,66d5f625e5769c2381487715,2024-10-18T20:00:00Z,ManitobaBisons@QueensOntario,Queens (ON) University Golden Gaels,Manitoba Bisons,W20241018QUEMAN
+2024-2025,6712ead5f241efc32423d75b,2024-10-18T19:00:00Z,MountRoyal@Brock,Brock Badgers,Mount Royal Cougars,W20241018BROMRU
+2024-2025,6712d36a5e4e0b190237de5b,2024-10-18T19:00:00Z,Saskatchewan@McMaster,McMaster Marauders,Saskatchewan Huskies,W20241018MACSAS
+2024-2025,66d60d94d04cfacf4e63d527,2024-10-18T18:00:00Z,Bishops@Guelph,Guelph Gryphons,Bishops Gaiters,W20241018GUEBIS
+2024-2025,66fc2cf607216d1fe9a9706b,2024-10-18T16:00:00Z,Acadia@WesternOntario,Western Ontario Mustangs,Acadia Axewomen,W20241018WESACA
+2024-2025,66d365e5171fa05d9b725934,2024-10-18T00:00:00Z,MacEwan@BCOkanagan,British Columbia - Okanagan,MacEwan University Griffins,W20241018UBCOMAC
+2024-2025,6712d5bb68279966d25e4b5c,2024-10-17T21:36:00Z,FraserValley@Windsor,Windsor Lancers,Fraser Valley Cascades,W20241017WINUFV
+2024-2025,6711ba26b124372206f911a2,2024-10-17T19:30:00Z,Nipissing@OntarioTech,Ontario Tech,Nipissing Lakers,W20241017ONTNIP
+2024-2025,670c8b96967b04a501858929,2024-10-13T03:10:00Z,Laurentian@Calgary,Calgary Dinos,Laurentian Voyageurs,W20241013CALLAU
+2024-2025,6708832abf2bd8e07283f9aa,2024-10-13T01:40:00Z,NewBrunswick@UniOttawa,Ottawa Gee-Gees,New Brunswick Reds,W20241013OTTUNK
+2024-2025,66d3544ff13db67c2ff90df4,2024-10-12T23:00:00Z,Brock@SaintMary's(CAN),Saint Mary's (CAN) Huskies,Brock Badgers,W20241012SMUBRO
+2024-2025,66d36135e54db750e29738a4,2024-10-12T18:00:00Z,TrinityWestern@Alberta,Alberta Pandas,Trinity Western Spartans,W20241012ALBTWU
+2024-2025,66d5fc0013461c419b2aeea0,2024-10-12T17:00:00Z,Dalhousie@TorontoVarBlues,Toronto Varsity Blues,Dalhousie Tigers,W20241012TORDAL
+2024-2025,670c8b96967b04a501858927,2024-10-12T03:00:00Z,Laurentian@MountRoyal,Mount Royal Cougars,Laurentian Voyageurs,W20241012MRULAU
+2024-2025,6709da86aa170c56a543d6f0,2024-10-12T00:00:00Z,TorontoMetro@FraserValley,Fraser Valley Cascades,Toronto Metropolitan University,W20241012UFVTMU
+2024-2025,66d343e8a101ed8d1b0f88bc,2024-10-11T22:00:00Z,PrinceEdward@CapeBreton,Cape Breton Capers,Prince Edward Island Panthers,W20241011CBUPEI
+2024-2025,67059077141b4fa31c47dfc0,2024-10-11T20:00:00Z,NewBrunswick@McGill,McGill University Martlets,New Brunswick Reds,W20241011MCGUNK
+2024-2025,66d36135e54db750e29738a3,2024-10-11T18:00:00Z,TrinityWestern@Alberta,Alberta Pandas,Trinity Western Spartans,W20241011ALBTWU
+2024-2025,66d5f049415b1f48d4cb0207,2024-10-11T18:00:00Z,OntarioTech@Bishops,Bishops Gaiters,Ontario Tech,W20241011BISONT
+2024-2025,66d60b3e0e33aa09c2c5fc08,2024-10-11T16:00:00Z,Dalhousie@York(ONT),York (ONT) Lions,Dalhousie Tigers,W20241011YORDAL
+2024-2025,66fc2cf507216d1fe9a97069,2024-10-11T16:00:00Z,MemorialCan@WesternOntario,Western Ontario Mustangs,Memorial Sea-Hawks,W20241011WESMEM
+2024-2025,66d5f625e5769c2381487714,2024-10-11T14:00:00Z,QueensOntario@Laval,Laval University,Queens (ON) University Golden Gaels,W20241011LAVQUE
+2024-2025,670c8b96967b04a501858926,2024-10-11T03:00:00Z,Laurentian@MountRoyal,Mount Royal Cougars,Laurentian Voyageurs,W20241011MRULAU
+2024-2025,6708832abf2bd8e07283f9a9,2024-10-11T01:40:00Z,McGill@UniOttawa,Ottawa Gee-Gees,McGill University Martlets,W20241011OTTMCG
+2024-2025,66d343e7a101ed8d1b0f88bb,2024-10-10T23:00:00Z,Brock@CapeBreton,Cape Breton Capers,Brock Badgers,W20241010CBBRO
+2024-2025,66d605603664b69ade850259,2024-10-10T22:00:00Z,Dalhousie@Laurier,Wilfrid Laurier,Dalhousie Tigers,W20241010WLUDAL
+2024-2025,6716b64f3a2bfd053ce57fd6,2024-10-10T22:00:00Z,QueensOntario@Bishops,Bishops Gaiters,Queens (ON) University Golden Gaels,W20241010BISQUE
+2024-2025,66d3696bdb02a47458305d3f,2024-10-10T22:00:00Z,TorontoMetro@BritishColumbia,British Columbia Thunderbirds,Toronto Metropolitan University,W20241010UBCTMU
+2024-2025,66d60b3e0e33aa09c2c5fc07,2024-10-10T21:00:00Z,MemorialCan@York(ONT),York (ONT) Lions,Memorial Sea-Hawks,W20241010YORMEM
+2024-2025,67059076141b4fa31c47dfbf,2024-10-10T20:00:00Z,NewBrunswick@CarletonUni,Carleton University Ravens,New Brunswick Reds,W20241010CARUNK
+2024-2025,67074dcae855e254394f528d,2024-10-09T16:00:00Z,MemorialCan@McMaster,McMaster Marauders,Memorial Sea-Hawks,W20241009MACMEM
+2024-2025,6708832abf2bd8e07283f9a8,2024-10-07T01:39:00Z,UniOttawa@PrinceEdward,Prince Edward Island Panthers,Ottawa Gee-Gees,W20241007UPEIOTT
+2024-2025,66d6055f3664b69ade850258,2024-10-06T19:00:00Z,Laurier@FraserValley,Fraser Valley Cascades,Wilfrid Laurier,W20241006UFVWLU
+2024-2025,66d36e17092d29c5d16a6007,2024-10-06T18:00:00Z,Victoria@Calgary,Calgary Dinos,Victoria Vikes,W20241006CALVIC
+2024-2025,66d3476be224e3d28f7b283f,2024-10-06T17:00:00Z,Dalhousie@NewBrunswick,New Brunswick Varsity Reds,Dalhousie Tigers,W20241006UNBDAL
+2024-2025,67031b2c870d1beb8a1baf5e,2024-10-06T17:00:00Z,McGill@TorontoMetro,Toronto Metropolitan University,McGill University Martlets,W20241006TMUMCG
+2024-2025,66d38a38bf67a7f88735c5e0,2024-10-06T16:00:00Z,Regina@Waterloo,Waterloo Warriors,Regina (Canada) Cougars,W20241006WATREG
+2024-2025,66d5fc0013461c419b2aee9f,2024-10-06T16:00:00Z,BritishColumbia@TorontoVarBlues,Toronto Varsity Blues,British Columbia Thunderbirds,W20241006TORUBC
+2024-2025,66d5f624e5769c2381487712,2024-10-06T15:00:00Z,QueensOntario@Laval,Laval University,Queens (ON) University Golden Gaels,W20241006LAVQUE
+2024-2025,6708832abf2bd8e07283f9a7,2024-10-06T01:38:00Z,Victoria@UniOttawa,Ottawa Gee-Gees,Victoria Vikes,W20241006OTTVIC
+2024-2025,66d34e76706d9a9e40dc8159,2024-10-05T22:00:00Z,QueensOntario@NewBrunswick,New Brunswick Varsity Reds,Queens (ON) University Golden Gaels,W20241005UNBQUE
+2024-2025,66d3418fec2a86085f5d0337,2024-10-05T22:00:00Z,Regina@Acadia,Acadia Axewomen,Regina (Canada) Cougars,W20241005ACAREG
+2024-2025,66d5fe577807bd945ec7f2ba,2024-10-05T20:00:00Z,Waterloo@SaintMary's(CAN),Saint Mary's (CAN) Huskies,Waterloo Warriors,W20241005SMUWAT
+2024-2025,66d60b3d0e33aa09c2c5fc06,2024-10-05T20:00:00Z,McGill@York(ONT),York (ONT) Lions,McGill University Martlets,W20241005YORMCG
+2024-2025,66d365e5171fa05d9b725933,2024-10-05T20:00:00Z,BCOkanagan@MountRoyal,Mount Royal Cougars,British Columbia - Okanagan,W20241005MRUUBCO
+2024-2025,670193c3b43f8e9e29138d65,2024-10-05T19:00:00Z,Laval@Dalhousie,Dalhousie Tigers,Laval University,W20241005DALLAV
+2024-2025,66d5d427907dbe812e035790,2024-10-05T18:30:00Z,BritishColumbia@Brock,Brock Badgers,British Columbia Thunderbirds,W20241005BROUBC
+2024-2025,66d5d2fea224de1849e2e4b4,2024-10-05T18:00:00Z,Nipissing@Algoma,Algoma Thunderbirds,Nipissing Lakers,W20241005ALGNIP
+2024-2025,66d5c870425f4e21bbbf87fa,2024-10-05T17:00:00Z,Laurier@TrinityWestern,Trinity Western Spartans,Wilfrid Laurier,W20241005TWUWLU
+2024-2025,66d36e17092d29c5d16a6006,2024-10-05T17:00:00Z,PrinceEdward@Calgary,Calgary Dinos,Prince Edward Island Panthers,W20241005CALUPEI
+2024-2025,66d36135e54db750e29738a2,2024-10-05T17:00:00Z,Alberta@NorthernBC,Northern British Columbia Timberwolves,Alberta Pandas,W20241005UNBCALB
+2024-2025,670c8b96967b04a501858928,2024-10-05T03:00:00Z,NorthernBC@MountRoyal,Mount Royal Cougars,Northern British Columbia Timberwolves,W20241005MRUUNBC
+2024-2025,66d34e76706d9a9e40dc8158,2024-10-05T00:00:00Z,Laval@NewBrunswick,New Brunswick Varsity Reds,Laval University,W20241005UNBLAV
+2024-2025,66d3418fec2a86085f5d0336,2024-10-04T22:00:00Z,Waterloo@Acadia,Acadia Axewomen,Waterloo Warriors,W20241004ACAWAT

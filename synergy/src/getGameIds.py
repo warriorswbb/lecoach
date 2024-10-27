@@ -23,10 +23,10 @@ headers = {
     "accept": "application/json, text/plain, */*",
     "accept-encoding": "gzip, deflate, br, zstd",
     "accept-language": "en-US,en;q=0.9",
-    "authorization": "Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6IjhDRjI4QTUzNTUzOURFMDU3ODFEOEFCRkQ5QUY4QUY1IiwidHlwIjoiYXQrand0In0.eyJpc3MiOiJodHRwczovL2F1dGguc3luZXJneXNwb3J0c3RlY2guY29tIiwibmJmIjoxNzI5OTkzOTYwLCJpYXQiOjE3Mjk5OTM5NjAsImV4cCI6MTcyOTk5NDU2MCwiYXVkIjpbImFwaS5jb25maWciLCJhcGkuc2VjdXJpdHkiLCJhcGkuYmFza2V0YmFsbCIsImFwaS5zcG9ydCIsImFwaS5lZGl0b3IiLCJodHRwczovL2F1dGguc3luZXJneXNwb3J0c3RlY2guY29tL3Jlc291cmNlcyJdLCJzY29wZSI6WyJvcGVuaWQiLCJhcGkuY29uZmlnIiwiYXBpLnNlY3VyaXR5IiwiYXBpLmJhc2tldGJhbGwiLCJhcGkuc3BvcnQiLCJhcGkuZWRpdG9yIiwib2ZmbGluZV9hY2Nlc3MiXSwiYW1yIjpbInB3ZCJdLCJjbGllbnRfaWQiOiJjbGllbnQuYmFza2V0YmFsbC50ZWFtc2l0ZSIsInN1YiI6IjY1ZWYzZTMxZDAyMDZkZWViNGY2ODVmMiIsImF1dGhfdGltZSI6MTcyOTkxNjA2NCwiaWRwIjoibG9jYWwiLCJlbWFpbCI6InN0ZXZlbnRhbnlhbmdAZ21haWwuY29tIiwibmFtZSI6IlN0ZXZlbiBZYW5nIiwic2lkIjoiREY2NTJFQTJBRjU2QjE2QjA5MjVENDY3NTI5OEJGMTUifQ.e1PbGdZde2IcUZaE9DBp5rkdY3TKL6hv45xO5gMVBK72qGzfGFqp7A6kpToZOmgh_6dMaIqr2insubcgKfB6cMl1h6x-Z7iWSn_qmR391IqdmjkR9SDn1n-C4HoF6MGwPBUWANXteB7mrswasLQO2M5_pCKhKe8oRiSsqePvtpyFdjR28qJfZwQ3OO-8CdDmOPYDl_lY2WwjniftZbZ7X5e3DIBGTGPq1u2miJ6VR_z_0uplYHG5AuYGv2WCMi1m3jfauGp13hKq1q8Imyx6lVyankAfvf4SbMy_ikJV2xZTwdLbMfhnNUtjPQSbXtE4NM0G1KRLsDUwt_ZadvL1Yg",
+    "authorization": "Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6IjhDRjI4QTUzNTUzOURFMDU3ODFEOEFCRkQ5QUY4QUY1IiwidHlwIjoiYXQrand0In0.eyJpc3MiOiJodHRwczovL2F1dGguc3luZXJneXNwb3J0c3RlY2guY29tIiwibmJmIjoxNzMwMDAyNzIwLCJpYXQiOjE3MzAwMDI3MjAsImV4cCI6MTczMDAwMzMyMCwiYXVkIjpbImFwaS5jb25maWciLCJhcGkuc2VjdXJpdHkiLCJhcGkuYmFza2V0YmFsbCIsImFwaS5zcG9ydCIsImFwaS5lZGl0b3IiLCJodHRwczovL2F1dGguc3luZXJneXNwb3J0c3RlY2guY29tL3Jlc291cmNlcyJdLCJzY29wZSI6WyJvcGVuaWQiLCJhcGkuY29uZmlnIiwiYXBpLnNlY3VyaXR5IiwiYXBpLmJhc2tldGJhbGwiLCJhcGkuc3BvcnQiLCJhcGkuZWRpdG9yIiwib2ZmbGluZV9hY2Nlc3MiXSwiYW1yIjpbInB3ZCJdLCJjbGllbnRfaWQiOiJjbGllbnQuYmFza2V0YmFsbC50ZWFtc2l0ZSIsInN1YiI6IjY1ZWYzZTMxZDAyMDZkZWViNGY2ODVmMiIsImF1dGhfdGltZSI6MTcyOTkxNjA2NCwiaWRwIjoibG9jYWwiLCJlbWFpbCI6InN0ZXZlbnRhbnlhbmdAZ21haWwuY29tIiwibmFtZSI6IlN0ZXZlbiBZYW5nIiwic2lkIjoiREY2NTJFQTJBRjU2QjE2QjA5MjVENDY3NTI5OEJGMTUifQ.X98dfDbhlkOrJXvOjrD9d8fuw9irSI_8VeDb7uivlUzWHETxvii1zpa2ZKCbwOmq2kdRQAC9pzdRDFesAIQynOqYHcHtXUzfaPaR3oujLKLXEVVG2VawSshYrFYsLZSCiO4v7iroEJ_BYLRjHdnKEqDl-vR27gY6NC5fekvcsQeqYi5LvU0U6RqFVqctaCNqp4W3ZIabC1JcLCw_Rda0H7HQ7cfB34emaoHlLxllf1u_hFG3WLwEy8srCOhhgjdj1tY5WymaQu2w8LoarWyCFvIsq8LPCS6-YmZDb85MsWqYVRJ2nW6wkJ_21sNqJjhlJWcJZdZQP9I1c_jZcbiRpA",
     "content-length": "863",
     "content-type": "application/json; charset=UTF-8",
-    "newrelic": "eyJ2IjpbMCwxXSwiZCI6eyJ0eSI6IkJyb3dzZXIiLCJhYyI6IjE0MDM4ODIiLCJhcCI6IjExMjAwMjIxMjMiLCJpZCI6ImJhNDEzZjk1NDA0M2E4ZmIiLCJ0ciI6ImI4ZjkyNzEzMTliY2YyNTEyM2NjNDE0ZDUxOWY4YjFhIiwidGkiOjE3Mjk5OTM5NjI3MDUsInRrIjoiMTM4NDI3MyJ9fQ==",
+    "newrelic": "eyJ2IjpbMCwxXSwiZCI6eyJ0eSI6IkJyb3dzZXIiLCJhYyI6IjE0MDM4ODIiLCJhcCI6IjExMjAwMjIxMjMiLCJpZCI6ImVjMzc4OTlhZTIzMjA3YmEiLCJ0ciI6ImRjOTQ5OGNhYzI0ZGE2YmUxNTYwMzIwMDkxYTk1ZTI4IiwidGkiOjE3MzAwMDMwNDUxMzUsInRrIjoiMTM4NDI3MyJ9fQ==",
     "origin": "https://apps.synergysports.com",
     "priority": "u=1, i",
     "referer": "https://apps.synergysports.com/",
@@ -39,6 +39,9 @@ headers = {
     "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36",
     "x-synergy-client": "ProductVersion=2024.10.15.3688; ProductName=Basketball.TeamSite"
 }
+
+#TODO - test this
+print("Season,Game ID,UTC Date,Game Name,Home Team,Away Team")
 
 for season in seasons:
     # Payload (data) for the POST request
@@ -60,7 +63,7 @@ for season in seasons:
             "623b3ef28863b92839774246"
         ],
         "skip": 0,
-        "take": 100,
+        "take": 1000,
         "endDate": "2024-10-28T01:52:42.705Z",
         "statuses": [4, 1, 2, 3, 5],
         "sort": "utc:desc",
@@ -74,7 +77,7 @@ for season in seasons:
         data = response.json()
 
         for game in data["result"]:
-           print(f"{game['season']['name']},{game['id']},{game['name']},{game['homeTeam']['fullName']},{game['awayTeam']['fullName']}")
+           print(f"{game['season']['name']},{game['id']},{game['utcDate']},{game['name']},{game['homeTeam']['fullName']},{game['awayTeam']['fullName']}")
     else:
         print(f"Request failed with status code {response.status_code}")
         print(response.text)  # Print response text for debugging

@@ -45,7 +45,9 @@ for id in gameIds:
 
         try:
             json_data = json.loads(data)
-            print(json_data)
+            with open(f"data/{id}.json", "w") as json_file:
+                json.dump(json_data, json_file, indent=4)
+            print(f"Data for game {id} saved successfully.")
         except json.JSONDecodeError:
             print("The response is not JSON-formatted.")
             print("Decoded response content:", data.decode('utf-8', errors='replace'))
