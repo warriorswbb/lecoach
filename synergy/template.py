@@ -2,7 +2,6 @@ import requests
 import zlib
 import json
 
-
 seasons = [
     "57589fa55762021398add0e5", # 2014-15
     "57589fa55762021398add0e6", # 2015-16
@@ -17,9 +16,10 @@ seasons = [
     "66c6294bac528f0cafb5ea59", # 2024-25
 ]
 
-# url = f'https://basketball.synergysportstech.com/api/games/66d5fe577807bd945ec7f2ba/events?skip=0&take=1000'
+# regular play by play
+# url = 'https://basketball.synergysportstech.com/api/games/66d5fe577807bd945ec7f2ba/playbyplays?skip=0&take=1000'
 
-url = 'https://basketball.synergysportstech.com/api/games'
+url = f'https://basketball.synergysportstech.com/api/games/66d5fe577807bd945ec7f2ba/events?skip=0&take=1000'
 
 headers = {
     "accept": "application/json, text/plain, */*",
