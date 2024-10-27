@@ -57,7 +57,7 @@ const ShotChart = ({ shots }) => {
       .select(markingsRef.current)
       .attr("width", 800)
       .attr("height", 750)
-      .attr("viewBox", "-270 -500 600 592");
+      .attr("viewBox", "-268 -500 600 592");
 
     svg.selectAll("*").remove(); // Clear previous SVG elements if they exist
 

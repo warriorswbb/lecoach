@@ -1,0 +1,3 @@
+- `template.py` - template
+- `src/getGameIds` - used to get game ids > gamesIds.csv
+- `src/scrapeGame` - uses gamesIds.csv to put {id}.json play by play files in /data

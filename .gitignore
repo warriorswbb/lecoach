@@ -1,2 +1,6 @@
 node_modules
 .env
+synergy/test.json
+synergy/test2.json
+synergy/venv
+synergy/src/__pycache__
