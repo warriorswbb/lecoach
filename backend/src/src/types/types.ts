@@ -107,3 +107,8 @@ export type BPMCoefficientsType = {
   blk: number;
   pf: number;
 };
+
+export type TeamShotDistribution = {
+  threes: number;
+  twos: number;
+};
