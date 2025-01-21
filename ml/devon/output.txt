@@ -1,0 +1,172 @@
+
+Player Health Score Analysis:
+
+Overall Scores (0-1 scale, higher is better):
+                   avg_score  min_score  ...  recent_trend  consistency
+Charissa Virr          0.681      0.430  ...         0.185        0.100
+Kymora Stafford        0.547      0.373  ...        -0.011        0.067
+Nehita Oko-Oboh        0.527      0.430  ...        -0.013        0.054
+Alliasen Miscione      0.519      0.207  ...         0.185        0.118
+Jaime Newell           0.486      0.323  ...         0.077        0.072
+Yemi Oladipo           0.469      0.323  ...        -0.019        0.112
+Gigi Goulet            0.463      0.300  ...        -0.073        0.083
+Tamara Popovic         0.460      0.307  ...         0.030        0.055
+Carina Fiore           0.459      0.250  ...         0.116        0.081
+Kate Huh               0.453      0.323  ...         0.064        0.042
+Alyssa Renaud          0.451      0.267  ...         0.019        0.087
+Mya Jickling           0.440      0.330  ...         0.009        0.050
+Ghiselle Poblete       0.439      0.207  ...        -0.118        0.075
+
+[13 rows x 7 columns]
+
+Detailed Component Analysis:
+
+Charissa Virr:
+Overall Score: 0.681
+Component Scores (0-1 scale):
+Health: 0.683
+Sleep: 0.698
+Soreness: 0.715
+Mood: 0.632
+Stress: 0.677
+Recent Trend: 0.185
+Based on 62 valid entries
+
+Kymora Stafford:
+Overall Score: 0.547
+Component Scores (0-1 scale):
+Health: 0.509
+Sleep: 0.507
+Soreness: 0.486
+Mood: 0.662
+Stress: 0.573
+Recent Trend: -0.011
+Based on 73 valid entries
+
+Nehita Oko-Oboh:
+Overall Score: 0.527
+Component Scores (0-1 scale):
+Health: 0.517
+Sleep: 0.474
+Soreness: 0.542
+Mood: 0.677
+Stress: 0.425
+Recent Trend: -0.013
+Based on 48 valid entries
+
+Alliasen Miscione:
+Overall Score: 0.519
+Component Scores (0-1 scale):
+Health: 0.472
+Sleep: 0.519
+Soreness: 0.525
+Mood: 0.601
+Stress: 0.476
+Recent Trend: 0.185
+Based on 66 valid entries
+
+Jaime Newell:
+Overall Score: 0.486
+Component Scores (0-1 scale):
+Health: 0.532
+Sleep: 0.488
+Soreness: 0.598
+Mood: 0.402
+Stress: 0.410
+Recent Trend: 0.077
+Based on 63 valid entries
+
+Yemi Oladipo:
+Overall Score: 0.469
+Component Scores (0-1 scale):
+Health: 0.525
+Sleep: 0.436
+Soreness: 0.531
+Mood: 0.415
+Stress: 0.437
+Recent Trend: -0.019
+Based on 59 valid entries
+
+Gigi Goulet:
+Overall Score: 0.463
+Component Scores (0-1 scale):
+Health: 0.454
+Sleep: 0.431
+Soreness: 0.522
+Mood: 0.493
+Stress: 0.414
+Recent Trend: -0.073
+Based on 69 valid entries
+
+Tamara Popovic:
+Overall Score: 0.460
+Component Scores (0-1 scale):
+Health: 0.461
+Sleep: 0.495
+Soreness: 0.476
+Mood: 0.479
+Stress: 0.389
+Recent Trend: 0.030
+Based on 55 valid entries
+
+Carina Fiore:
+Overall Score: 0.459
+Component Scores (0-1 scale):
+Health: 0.486
+Sleep: 0.422
+Soreness: 0.609
+Mood: 0.437
+Stress: 0.341
+Recent Trend: 0.116
+Based on 58 valid entries
+
+Kate Huh:
+Overall Score: 0.453
+Component Scores (0-1 scale):
+Health: 0.452
+Sleep: 0.480
+Soreness: 0.480
+Mood: 0.465
+Stress: 0.389
+Recent Trend: 0.064
+Based on 76 valid entries
+
+Alyssa Renaud:
+Overall Score: 0.451
+Component Scores (0-1 scale):
+Health: 0.445
+Sleep: 0.430
+Soreness: 0.552
+Mood: 0.391
+Stress: 0.438
+Recent Trend: 0.019
+Based on 64 valid entries
+
+Mya Jickling:
+Overall Score: 0.440
+Component Scores (0-1 scale):
+Health: 0.466
+Sleep: 0.472
+Soreness: 0.466
+Mood: 0.401
+Stress: 0.396
+Recent Trend: 0.009
+Based on 54 valid entries
+
+Ghiselle Poblete:
+Overall Score: 0.439
+Component Scores (0-1 scale):
+Health: 0.467
+Sleep: 0.457
+Soreness: 0.484
+Mood: 0.423
+Stress: 0.366
+Recent Trend: -0.118
+Based on 41 valid entries
+
+Team Averages:
+health_avg: 0.498
+sleep_avg: 0.485
+soreness_avg: 0.537
+mood_avg: 0.498
+stress_avg: 0.441

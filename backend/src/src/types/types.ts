@@ -111,4 +111,6 @@ export type BPMCoefficientsType = {
 export type TeamShotDistribution = {
   threes: number;
   twos: number;
+  threePointPercentage: string;
+  twoPointPercentage: string;
 };

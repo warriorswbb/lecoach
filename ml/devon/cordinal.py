@@ -1,11 +1,11 @@
 import pandas as pd
-import statsmodels.api as sm
+import numpy as np
 from statsmodels.miscmodels.ordinal_model import OrderedModel
 
-# Load your dataset
-data = pd.read_csv('playerHealthData.csv')
+# Read the CSV data
+df = pd.read_csv('playerHealthData.csv')
 
-# Define the mapping for Sleep Quantity
+# Same mapping dictionaries
 sleep_quantity_map = {
     "5 or less": 1,
     "5 - 7": 2,
@@ -16,44 +16,85 @@ sleep_quantity_map = {
     "More than 10": 7
 }
 
-# Define the mapping for Sleep Quality
 sleep_quality_map = {
-    "Horrible - Virtually no sleep": 1,
-    "Disrupted": 2,
-    "Worse than normal": 3,
-    "Normal": 4,
-    "Better than normal": 5,
-    "Very good": 6,
-    "Outstanding": 7
+    "Moderately Unwell": 1,
+    "Slightly Unwell": 2,
+    "Normal": 3,
+    "Very Good": 4,
+    "Excellent": 5
 }
 
-# Map the Sleep Quantity and Sleep Quality columns to ordinal values
-data['Sleep_Quantity_Ordinal'] = data['How many hours did you sleep last night?'].map(sleep_quantity_map)
-data['Sleep_Quality_Ordinal'] = data['How was your sleep last night?'].map(sleep_quality_map)
+def analyze_player_sleep(player_data):
+    # Map the sleep values
+    player_data['sleep_quantity_score'] = player_data['How many hours did you sleep last night?'].map(sleep_quantity_map)
+    player_data['sleep_quality_score'] = player_data['How was your sleep last night?'].map(sleep_quality_map)
+    
+    # Drop rows where either sleep metric is NaN
+    valid_data = player_data.dropna(subset=['sleep_quantity_score', 'sleep_quality_score'])
+    
+    if len(valid_data) < 10:  # Need reasonable sample size for ordinal regression
+        return None
+    
+    try:
+        # Fit ordinal regression model
+        model = OrderedModel(valid_data['sleep_quality_score'], 
+                           valid_data[['sleep_quantity_score']], 
+                           distr='logit')
+        
+        results = model.fit(method='bfgs', maxiter=100)
+        
+        return {
+            'coef': results.params['sleep_quantity_score'],
+            'pvalue': results.pvalues['sleep_quantity_score'],
+            'pseudo_r2': results.prsquared,
+            'n_samples': len(valid_data),
+            'std_err': results.bse['sleep_quantity_score'],
+            'conf_int': results.conf_int().loc['sleep_quantity_score'],
+            'invalid_entries': len(player_data) - len(valid_data)
+        }
+    except Exception as e:
+        print(f"Error analyzing player {player_data['First name'].iloc[0]} {player_data['Last name'].iloc[0]}: {str(e)}")
+        return None
 
-# Check mappings and drop NaN rows
-print(data[['Sleep_Quantity_Ordinal', 'Sleep_Quality_Ordinal']].head())  # Debug mappings
-data = data.dropna(subset=['Sleep_Quantity_Ordinal', 'Sleep_Quality_Ordinal'])
+# Analyze each player
+results = {}
+for name, player_data in df.groupby(['First name', 'Last name']):
+    player_name = f"{name[0]} {name[1]}"
+    analysis = analyze_player_sleep(player_data)
+    if analysis is not None:
+        results[player_name] = analysis
 
-# Ensure data isn't empty after preprocessing
-print(f"Data shape after preprocessing: {data.shape}")
-if data.empty:
-    raise ValueError("No data available for regression after preprocessing. Check your mappings or input data.")
+# Create summary dataframe
+summary_df = pd.DataFrame.from_dict(results, orient='index')
+summary_df = summary_df.sort_values('coef', ascending=False)
 
-# Independent variable: Sleep Quantity (Ordinal)
-X = data[['Sleep_Quantity_Ordinal']]
-X = sm.add_constant(X)  # Add intercept
+# Print results
+print("\nOrdinal Regression Analysis by Player:")
+print("\nResults Summary:")
+pd.set_option('display.float_format', lambda x: '%.3f' % x)
+print(summary_df)
 
-# Ensure X is not empty
-print(f"Independent variable shape: {X.shape}")
-print(X.head())  # Debug independent variable
+# Print interpretation for each player
+print("\nDetailed Interpretation:")
+for player in summary_df.index:
+    coef = summary_df.loc[player, 'coef']
+    p_val = summary_df.loc[player, 'pvalue']
+    ci_lower, ci_upper = summary_df.loc[player, 'conf_int']
+    
+    print(f"\n{player}:")
+    print(f"Coefficient: {coef:.3f}")
+    print(f"95% CI: ({ci_lower:.3f}, {ci_upper:.3f})")
+    print(f"P-value: {p_val:.3f}")
+    if p_val < 0.05:
+        print("Significant relationship found")
+        if coef > 0:
+            print("More sleep is associated with better sleep quality")
+        else:
+            print("More sleep is associated with worse sleep quality")
+    else:
+        print("No significant relationship found")
 
-# Dependent variable: Sleep Quality (Ordinal)
-y = data['Sleep_Quality_Ordinal']
-
-# Fit the ordinal logistic regression model
-model = OrderedModel(y, X, distr='logit')  # You can use 'probit' instead of 'logit'
-result = model.fit(method='bfgs')
-
-# Print the regression results
-print(result.summary())
+# Calculate team-level statistics
+print("\nTeam Statistics:")
+print(f"Number of players with significant relationship (p < 0.05): {(summary_df['pvalue'] < 0.05).sum()}")
+print(f"Average pseudo R-squared: {summary_df['pseudo_r2'].mean():.3f}")
