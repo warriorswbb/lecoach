@@ -32,8 +32,13 @@ def compare_schemas():
     model_table_names = set(model_tables.keys())
     db_table_names = set(db_tables)
     
-    # Exclude migration tables
-    excluded_tables = {'knex_migrations', 'knex_migrations_lock', 'test_table'}
+    # Exclude migration and system tables
+    excluded_tables = {
+        'knex_migrations', 
+        'knex_migrations_lock', 
+        'test_table',
+        'alembic_version'
+    }
     db_table_names = db_table_names - excluded_tables
     
     if model_table_names != db_table_names:
