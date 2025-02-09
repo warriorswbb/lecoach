@@ -1,0 +1,7 @@
+.cursorrules
+.venv
+
+v1/.env
+
+__pycache__
+v1/__pycache__
