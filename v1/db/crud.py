@@ -59,4 +59,12 @@ def create_player_from_scrape(db: Session, player_data: dict) -> models.Player:
     db.add(player)
     db.commit()
     db.refresh(player)
-    return player 
+    return player
+
+def create_game(db: Session, game_data: Dict[str, Any]) -> models.Game:
+    """Create a game from scraped data"""
+    game = models.Game(**game_data)
+    db.add(game)
+    db.commit()
+    db.refresh(game)
+    return game 
