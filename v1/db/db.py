@@ -1,4 +1,4 @@
-from sqlalchemy import create_engine
+from sqlalchemy import create_engine, text
 from sqlalchemy.orm import sessionmaker, declarative_base
 from sqlalchemy.exc import SQLAlchemyError
 import os
@@ -8,8 +8,12 @@ import logging
 # Load environment variables
 load_dotenv()
 
-# Get database URL from environment variables
-DATABASE_URL = os.getenv('DATABASE_URL')
+# Get database URL based on environment
+DB_ENVIRONMENT = os.getenv('DB_ENVIRONMENT', 'LOCAL')
+if DB_ENVIRONMENT == 'DOCKER':
+    DATABASE_URL = os.getenv('DOCKER_DATABASE_URL')
+else:
+    DATABASE_URL = os.getenv('LOCAL_DATABASE_URL')
 
 # Create the SQLAlchemy engine
 engine = create_engine(DATABASE_URL)
@@ -49,3 +53,17 @@ try:
 except SQLAlchemyError as e:
     logger.error(f"Failed to connect to database: {str(e)}")
     raise
+
+def test_db_connection():
+    try:
+        with engine.connect() as connection:
+            result = connection.execute(text("SELECT 1"))
+            print("Database connection test successful!")
+            # Test if we can create tables
+            Base.metadata.create_all(engine)
+            print("Database tables created successfully!")
+    except Exception as e:
+        print(f"Database connection test failed: {str(e)}")
+
+# Call the test function
+test_db_connection()
