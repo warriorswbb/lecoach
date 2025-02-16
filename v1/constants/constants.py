@@ -53,7 +53,7 @@ team_names = [
     "teamName": "Reds",
     "short": "UNB",
     "fullSchoolName": "University of New Brunswick",
-    "fullTeamName": "New Brunswick Varsity Reds",
+    "fullTeamName": "New Brunswick Reds",
   },
   {
     "city": "UPEI",

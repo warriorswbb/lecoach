@@ -1,0 +1,91 @@
+{
+    "result": [
+        {
+            "name": "Victoria@BCOkanagan",
+            "localDate": "2025-02-14T19:00:00Z",
+            "utcDate": "2025-02-15T00:00:00Z",
+            "timezone": "America/New_York",
+            "league": {
+                "name": "College Women",
+                "abbr": "CW",
+                "id": "54457dce300969b132fcfb38",
+                "iid": 6
+            },
+            "season": {
+                "name": "2024-2025",
+                "id": "66c6294bac528f0cafb5ea59",
+                "iid": 2024
+            },
+            "competition": {
+                "name": "Regular Season",
+                "id": "560100ac8dc7a24394b95617",
+                "iid": 83
+            },
+            "homeTeam": {
+                "fullName": "British Columbia - Okanagan",
+                "conference": {
+                    "name": "U Sports",
+                    "abbr": "US",
+                    "id": "54457dcf300969b132fcfb7d",
+                    "iid": 67
+                },
+                "division": {
+                    "name": "Canada West",
+                    "abbr": "CW",
+                    "id": "54457dd2300969b132fcfdb7",
+                    "iid": 596
+                },
+                "name": "BCOkanagan",
+                "abbr": "BCO",
+                "id": "54457de7300969b132fd0a8f",
+                "iid": 6829
+            },
+            "awayTeam": {
+                "fullName": "Victoria Vikes",
+                "conference": {
+                    "name": "U Sports",
+                    "abbr": "US",
+                    "id": "54457dcf300969b132fcfb7d",
+                    "iid": 67
+                },
+                "division": {
+                    "name": "Canada West",
+                    "abbr": "CW",
+                    "id": "54457dd2300969b132fcfdb7",
+                    "iid": 596
+                },
+                "name": "Victoria",
+                "abbr": "VIC",
+                "id": "54457de7300969b132fd0a7e",
+                "iid": 6732
+            },
+            "homeScore": 70,
+            "awayScore": 76,
+            "comment": "",
+            "status": 2,
+            "phase0": {
+                "status": 2
+            },
+            "phase1": {
+                "status": 2
+            },
+            "phase1_5": {
+                "status": 4
+            },
+            "phase2": {},
+            "videoSource": 1,
+            "videoUploaded": true,
+            "court": {
+                "id": "63e245fd8450b2c6210e9e86",
+                "iid": 2
+            },
+            "possessionsCount": 369,
+            "possessionsUpdated": "2025-02-16T00:13:55.92Z",
+            "playerBoxscoresCount": 19,
+            "playerBoxscoresUpdated": "2025-02-16T00:13:55.524Z",
+            "id": "66d3670fbc30e7088abe455b",
+            "iid": 1452711,
+            "updated": "2025-02-16T00:14:00.366Z"
+        }
+    ]
+}
