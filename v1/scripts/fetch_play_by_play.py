@@ -1,3 +1,30 @@
+"""
+Script to fetch play-by-play data from Synergy Sports API
+
+Flow:
+1. Reads game IDs from ids.csv
+2. Makes concurrent API requests to Synergy's play-by-play endpoint
+3. Handles various response encodings (gzip, deflate)
+4. Saves raw JSON responses to files
+
+Configuration:
+- Uses ThreadPoolExecutor for concurrent requests (30 workers)
+- Requires SYNERGY_TOKEN in .env file
+- Skips existing files to allow for partial runs
+
+Output:
+- Creates JSON files in output/pbp_data/{game_id}.json
+- Each file contains full play-by-play data for one game
+
+Run this when:
+- Initially populating play-by-play data
+- Fetching data for new games
+- Updating existing play-by-play data
+
+Note: This script requires valid Synergy Sports API credentials
+and respects rate limits through concurrent request management.
+"""
+
 import requests
 import zlib
 import json

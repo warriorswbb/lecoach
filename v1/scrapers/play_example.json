@@ -1,0 +1,149 @@
+{
+    "id": "5a0acbdff9344911754652e7",
+    "iid": 66447055,
+    "updated": "2020-10-08T12:50:19.807Z",
+    "ishome": true,
+    "period": 1,
+    "last": 61,
+    "plays0": 62,
+    "plays1": 61,
+    "plays2": -1,
+    "plays3": -1,
+    "plays4": -1,
+    "defense": {
+        "name": "MacEwan",
+        "abbr": "MAC",
+        "id": "54457de7300969b132fd0a7c",
+        "iid": 6726
+    },
+    "offense": {
+        "name": "ManitobaBisons",
+        "abbr": "MAN",
+        "id": "54457de1300969b132fd0800",
+        "iid": 4820
+    },
+    "oplayer": {
+        "name": "Claire Harvey",
+        "id": "5445820a300969b132fe6fad",
+        "iid": 90439
+    },
+    "rplayer": {
+        "name": "Claire Harvey",
+        "id": "5445820a300969b132fe6fad",
+        "iid": 90439
+    },
+    "roots": [
+        62,
+        61
+    ],
+    "plays": [
+        62,
+        61
+    ],
+    "tags": [],
+    "pick": [],
+    "description": "11 Claire Harvey > Non Possession > No Violation",
+    "duration": 7370,
+    "utc": "2017-11-11T00:00:03.889Z",
+    "game": {
+        "awayTeam": {
+            "fullName": "MacEwan University Griffins",
+            "conference": {
+                "name": "Canadian Interuniversity Sport",
+                "id": "54457dcf300969b132fcfb7d",
+                "iid": 67
+            },
+            "division": {
+                "name": "Canada West",
+                "id": "54457dd2300969b132fcfdb7",
+                "iid": 596
+            },
+            "name": "MacEwan",
+            "abbr": "MAC",
+            "id": "54457de7300969b132fd0a7c",
+            "iid": 6726
+        },
+        "competition": {
+            "name": "Regular Season",
+            "id": "560100ac8dc7a24394b95617",
+            "iid": 83
+        },
+        "date": "2017-11-11T00:00:00Z",
+        "homeTeam": {
+            "fullName": "Manitoba Bisons",
+            "conference": {
+                "name": "Canadian Interuniversity Sport",
+                "id": "54457dcf300969b132fcfb7d",
+                "iid": 67
+            },
+            "division": {
+                "name": "Canada West",
+                "id": "54457dd2300969b132fcfdb7",
+                "iid": 596
+            },
+            "name": "ManitobaBisons",
+            "abbr": "MAN",
+            "id": "54457de1300969b132fd0800",
+            "iid": 4820
+        },
+        "league": {
+            "name": "College Women",
+            "abbr": "CW",
+            "id": "54457dce300969b132fcfb38",
+            "iid": 6
+        },
+        "season": {
+            "name": "2017-2018",
+            "id": "59d33e3144b2b8aa7e26c3f3",
+            "iid": 2017
+        },
+        "phase": 7,
+        "id": "5a0acbdff9344911754652c4",
+        "iid": 443255
+    },
+    "offensiveLineup": [],
+    "onOffense": [],
+    "defensiveLineup": [],
+    "onDefense": [],
+    "playActors": [
+        {
+            "player": {
+                "name": "Claire Harvey",
+                "id": "5445820a300969b132fe6fad",
+                "iid": 90439
+            },
+            "team": {
+                "name": "ManitobaBisons",
+                "abbr": "MAN",
+                "id": "54457de1300969b132fd0800",
+                "iid": 4820
+            },
+            "playType": "offense"
+        }
+    ],
+    "items": [
+        {
+            "$type": "Synergy.Model.Api.Basketball.PossessionPlayerEvent, Synergy.Model.Api",
+            "player": {
+                "name": "Claire Harvey",
+                "id": "5445820a300969b132fe6fad",
+                "iid": 90439
+            },
+            "iid": 90439,
+            "name": "Claire Harvey"
+        },
+        {
+            "$type": "Synergy.Model.Api.Basketball.PossessionPlayEvent, Synergy.Model.Api",
+            "eventNum": 1,
+            "iid": 239,
+            "name": "Non Possession"
+        },
+        {
+            "$type": "Synergy.Model.Api.Basketball.PossessionPlayEvent, Synergy.Model.Api",
+            "eventNum": 2,
+            "iid": 281,
+            "name": "No Violation"
+        }
+    ],
+    "name": "No Violation"
+}

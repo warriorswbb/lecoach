@@ -32,6 +32,7 @@ class Game(Base):
     __tablename__ = "games"
     
     game_id = Column(String, primary_key=True)
+    synergy_id = Column(String)
     date = Column(Date, nullable=False)
     season = Column(String, nullable=False)
     location = Column(String, nullable=False)

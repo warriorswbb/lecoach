@@ -1,7 +1,7 @@
 ## database commands
 
 ### create new migration
-- `alembic revision --autogenerate -m "___________"
+- `alembic revision --autogenerate -m "___________"`
 
 ### update db
 - `alembic upgrade head`
@@ -20,13 +20,16 @@
 
 ## docker
 
- Working with local database
-brew services start postgresql
-export DB_ENVIRONMENT=LOCAL  # or edit .env
-python your_script.py
+### Working with local database
+- `brew services start postgresql`
+- `export DB_ENVIRONMENT=LOCAL  # or edit .env`
+- `python your_script.py`
 
- Switching to Docker
-brew services stop postgresql
-export DB_ENVIRONMENT=DOCKER  # or edit .env
-docker-compose up -d
-python your_script.py
+### Switching to Docker
+- `brew services stop postgresql`
+- `export DB_ENVIRONMENT=DOCKER  # or edit .env`
+- `docker-compose up -d`
+- `python your_script.py`
+
+### pg dump
+- `pg_dump -c -O -U postgres gqldb | docker exec -i v1-db-1 psql -U postgres app`
