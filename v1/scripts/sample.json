@@ -1,0 +1,95 @@
+{
+    "result": [
+        {
+            "name": "CapeBreton@PrinceEdward",
+            "localDate": "2025-02-22T18:00:00Z",
+            "utcDate": "2025-02-22T23:00:00Z",
+            "timezone": "America/New_York",
+            "league": {
+                "name": "College Women",
+                "abbr": "CW",
+                "id": "54457dce300969b132fcfb38",
+                "iid": 6
+            },
+            "season": {
+                "name": "2024-2025",
+                "id": "66c6294bac528f0cafb5ea59",
+                "iid": 2024
+            },
+            "competition": {
+                "name": "Regular Season",
+                "id": "560100ac8dc7a24394b95617",
+                "iid": 83
+            },
+            "homeTeam": {
+                "fullName": "Prince Edward Island Panthers",
+                "conference": {
+                    "name": "U Sports",
+                    "abbr": "US",
+                    "id": "54457dcf300969b132fcfb7d",
+                    "iid": 67
+                },
+                "division": {
+                    "name": "Atlantic University Sports",
+                    "abbr": "AUS",
+                    "id": "54457dd2300969b132fcfe37",
+                    "iid": 724
+                },
+                "name": "PrinceEdward",
+                "abbr": "PEI",
+                "id": "55f71c301e31501db44459d2",
+                "iid": 8269
+            },
+            "awayTeam": {
+                "fullName": "Cape Breton Capers",
+                "conference": {
+                    "name": "U Sports",
+                    "abbr": "US",
+                    "id": "54457dcf300969b132fcfb7d",
+                    "iid": 67
+                },
+                "division": {
+                    "name": "Atlantic University Sports",
+                    "abbr": "AUS",
+                    "id": "54457dd2300969b132fcfe37",
+                    "iid": 724
+                },
+                "name": "CapeBreton",
+                "abbr": "CBC",
+                "id": "55e75f7f1e31501db4445102",
+                "iid": 8219
+            },
+            "homeScore": 71,
+            "awayScore": 52,
+            "comment": "",
+            "status": 2,
+            "phase0": {
+                "status": 2
+            },
+            "phase1": {
+                "status": 2
+            },
+            "phase1_5": {
+                "status": 4
+            },
+            "phase2": {
+                "status": 2
+            },
+            "videoSource": 1,
+            "videoUploaded": true,
+            "court": {
+                "id": "63e245fd8450b2c6210e9e8c",
+                "iid": 8
+            },
+            "playByPlaysCount": 323,
+            "playByPlaysUpdated": "2025-02-23T22:50:01.761Z",
+            "possessionsCount": 237,
+            "possessionsUpdated": "2025-02-24T01:51:42.381Z",
+            "playerBoxscoresCount": 20,
+            "playerBoxscoresUpdated": "2025-02-23T22:50:03.224Z",
+            "id": "66d345132f7a3f8a9b42c865",
+            "iid": 1452589,
+            "updated": "2025-02-24T01:52:10.7Z"
+        }
+    ]
+}
