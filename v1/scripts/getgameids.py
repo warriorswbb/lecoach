@@ -1,9 +1,39 @@
+import sys
+from pathlib import Path
+sys.path.append(str(Path(__file__).parent.parent.parent))
+
+"""
+Script to fetch all games from Synergy API and save to CSV file
+
+Flow:
+1. Fetches games for each season from Synergy API
+2. Processes response data into CSV format
+3. Saves results to output/ids.csv
+
+CSV Format:
+- Season: Season name (e.g., "2024-2025")
+- Game ID: Synergy's internal game ID
+- UTC Date: Game date in UTC format
+- Game Name: Short game description
+- Home Team: Full name of home team
+- Away Team: Full name of away team
+
+Example row:
+2024-2025,66d5deb58f44bce4fb5069fa,2025-02-07T23:00:00Z,"CarletonUni@UniOttawa","Ottawa Gee-Gees","Carleton University Ravens"
+
+This script is typically run:
+- When initializing the database
+- To update game records periodically
+- Before running matchgameids.py to generate standardized game IDs
+"""
+
 import requests
 import zlib
 import json
 import os
 import brotli
 from dotenv import load_dotenv
+import csv
 
 load_dotenv()
 
@@ -34,46 +64,54 @@ headers = {
     "x-synergy-client": "ProductVersion=2025.02.13.5203; ProductName=Basketball.TeamSite"
 }
 
-#TODO - test this
-print("Season,Game ID,UTC Date,Game Name,Home Team,Away Team")
+# Create output directory if it doesn't exist
+os.makedirs('output', exist_ok=True)
 
-for season in seasons:
-    # Payload (data) for the POST request
-    payload = {
-        "excludeGamesWithoutCompetition": True,
-        "seasonIds": [f"{season}"],
-        "competitionDefinitionKey": "54457dce300969b132fcfb38:CEE",
-        "skip": 0,
-        "take": 100,
-        "endDate": "2025-02-25T03:46:42.473Z",
-        "statuses": [4, 1, 2, 3, 5],
-        "sort": "utc:desc",
-        "conferenceIds": ["54457dcf300969b132fcfb7d"]
-    }
+# Open CSV file for writing
+with open('output/ids.csv', 'w', newline='') as csvfile:
+    csvwriter = csv.writer(csvfile)
+    # Write header
+    csvwriter.writerow(['Season', 'Game ID', 'UTC Date', 'Game Name', 'Home Team', 'Away Team'])
 
-    response = requests.post(url, headers=headers, json=payload)
+    for season in seasons:
+        # Payload (data) for the POST request
+        payload = {
+            "excludeGamesWithoutCompetition": True,
+            "seasonIds": [f"{season}"],
+            "competitionDefinitionKey": "54457dce300969b132fcfb38:CEE",
+            "skip": 0,
+            "take": 5000,
+            "endDate": "2025-02-25T03:46:42.473Z",
+            "statuses": [4, 1, 2, 3, 5],
+            "sort": "utc:desc",
+            "conferenceIds": ["54457dcf300969b132fcfb7d"]
+        }
 
-    print(f"Status Code: {response.status_code}")
-    print(f"Response Headers: {dict(response.headers)}")
-    
-    if response.status_code == 200:
-        try:
-            # Let requests handle decompression automatically
-            data = response.json()
-            
-            if "result" in data and isinstance(data["result"], list):
-                for game in data["result"]:
-                    print(f'{game["season"]["name"]},'
-                          f'{game["id"]},'
-                          f'{game["utcDate"]},'
-                          f'"{game["name"]}",'
-                          f'"{game["homeTeam"]["fullName"]}",'
-                          f'"{game["awayTeam"]["fullName"]}"')
-            else:
-                print("No results found in response")
-        except Exception as e:
-            print(f"Error processing response: {str(e)}")
-            print(f"Raw response: {response.text[:200]}")
-    else:
-        print(f"Request failed with status code {response.status_code}")
-        print(f"Error response: {response.text}")
+        response = requests.post(url, headers=headers, json=payload)
+
+        print(f"Status Code: {response.status_code}")
+        print(f"Response Headers: {dict(response.headers)}")
+        
+        if response.status_code == 200:
+            try:
+                # Let requests handle decompression automatically
+                data = response.json()
+                
+                if "result" in data and isinstance(data["result"], list):
+                    for game in data["result"]:
+                        csvwriter.writerow([
+                            game["season"]["name"],
+                            game["id"],
+                            game["utcDate"],
+                            game["name"],
+                            game["homeTeam"]["fullName"],
+                            game["awayTeam"]["fullName"]
+                        ])
+                else:
+                    print("No results found in response")
+            except Exception as e:
+                print(f"Error processing response: {str(e)}")
+                print(f"Raw response: {response.text[:200]}")
+        else:
+            print(f"Request failed with status code {response.status_code}")
+            print(f"Error response: {response.text}")
