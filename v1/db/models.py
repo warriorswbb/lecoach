@@ -1,4 +1,4 @@
-from sqlalchemy import Column, Integer, String, Date, Boolean, Float, Text, ForeignKey, Index, REAL
+from sqlalchemy import Column, Integer, String, Date, Boolean, Float, Text, ForeignKey, Index, REAL, DateTime, ARRAY
 from sqlalchemy.orm import relationship
 from .db import Base
 
@@ -200,6 +200,80 @@ class PlayerSeasonStats(Base):
 class PlayByPlay(Base):
     __tablename__ = "play_by_play"
     
+    id = Column(String, primary_key=True)  # Synergy's play ID
+    game_id = Column(String, ForeignKey("games.game_id", ondelete="CASCADE"))
+    period = Column(Integer, nullable=False)  # Quarter/Period number
+    clock_time = Column(Integer)  # Duration in milliseconds
+    time_remaining = Column(Integer)  # Time remaining in period (seconds)
+    utc_time = Column(DateTime)  # UTC timestamp of the play
+    
+    # Team info
+    offense_team = Column(String)
+    defense_team = Column(String)
+    is_home_offense = Column(Boolean)
+    
+    # Player info
+    offense_player = Column(String)  # Player name
+    offense_player_id = Column(String)  # Synergy player ID
+    result_player = Column(String)  # Player who completed action (if different)
+    result_player_id = Column(String)
+    
+    # Play details
+    play_type = Column(String)  # e.g., "Non Possession"
+    play_result = Column(String)  # e.g., "No Violation" 
+    description = Column(Text)
+    
+    # Additional metadata
+    tags = Column(ARRAY(String))  # Any tags associated with the play
+    play_number = Column(Integer)  # Original play sequence number
+    
+    # New columns
+    is_home = Column(Boolean)  # ishome from Synergy
+    after_timeout = Column(Boolean)  # ato flag
+    shot_quality = Column(REAL, nullable=True)  # Shot quality rating
+    home_score = Column(Integer)  # Current home team score
+    away_score = Column(Integer)  # Current away team score
+    
+    # Run tracking
+    run_team = Column(String, nullable=True)  # Team currently on a run (null if no run)
+    run_points = Column(Integer, default=0)  # Points scored in current run
+    home_run = Column(Integer, default=0)  # Current home team run (resets when other team scores)
+    away_run = Column(Integer, default=0)  # Current away team run (resets when other team scores)
+    
+    # Score context
+    score_margin = Column(Integer)  # Current score difference (positive = home leading)
+    score_margin_percent = Column(REAL)  # Score margin as percentage of total score
+    
+    # Game context
+    possession_number = Column(Integer)  # Which possession in the game
+    seconds_remaining = Column(Integer)  # Total seconds remaining in game
+    game_percent_complete = Column(REAL)  # Percentage of game completed
+    
+    # Momentum/Pace
+    points_last_minute = Column(Integer)  # Points scored in last 60 seconds
+    possessions_last_minute = Column(Integer)  # Possessions in last 60 seconds
+    lead_changes = Column(Integer)  # Number of lead changes so far
+    largest_lead = Column(Integer)  # Largest lead in game so far
+    
+    # Situational
+    bonus = Column(Boolean)  # Team in bonus
+    double_bonus = Column(Boolean)  # Team in double bonus
+    timeouts_remaining_home = Column(Integer)
+    timeouts_remaining_away = Column(Integer)
+    
+    # Previous play context
+    previous_play_type = Column(String)  # Type of previous play
+    time_since_last_score = Column(Integer)  # Seconds since last score
+    
+    __table_args__ = (
+        Index('play_by_play_game_id_idx', 'game_id'),
+        Index('play_by_play_offense_team_idx', 'offense_team'),
+        Index('play_by_play_offense_player_idx', 'offense_player'),
+    ) 
+
+class PlayByPlayOld(Base):
+    __tablename__ = "play_by_play_old"
+    
     play_id = Column(String, primary_key=True)
     game_id = Column(String, nullable=False)
     season = Column(String, nullable=False)
@@ -219,6 +293,6 @@ class PlayByPlay(Base):
     shotClock = Column(Integer)
 
     __table_args__ = (
-        Index('play_by_play_game_id_play_actor_team_play_actor_player_index', 
+        Index('pbp_old_game_actor_idx', 
               'game_id', 'play_actor_team', 'play_actor_player'),
     ) 

@@ -23,6 +23,7 @@ Run this when:
 
 Note: This script requires valid Synergy Sports API credentials
 and respects rate limits through concurrent request management.
+ids2.csv was used when my computer ran out of memory and missed out on the last few games. 
 """
 
 import requests
