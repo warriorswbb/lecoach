@@ -33,3 +33,13 @@
 
 ### pg dump
 - `pg_dump -c -O -U postgres gqldb | docker exec -i v1-db-1 psql -U postgres app`
+
+## Working with RDS Database
+
+### Create migrations
+- Create migrations locally: `alembic revision --autogenerate -m "description"`
+- Test locally: `alembic upgrade head`
+
+### Apply to RDS
+- `export DB_ENVIRONMENT=PROD`
+- `alembic upgrade head`

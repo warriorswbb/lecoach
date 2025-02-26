@@ -210,6 +210,7 @@ class PlayByPlay(Base):
     # Team info
     offense_team = Column(String)
     defense_team = Column(String)
+    winning_team = Column(String)
     is_home_offense = Column(Boolean)
     
     # Player info

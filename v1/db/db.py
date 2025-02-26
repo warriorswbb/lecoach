@@ -12,6 +12,11 @@ load_dotenv()
 DB_ENVIRONMENT = os.getenv('DB_ENVIRONMENT', 'LOCAL')
 if DB_ENVIRONMENT == 'DOCKER':
     DATABASE_URL = os.getenv('DOCKER_DATABASE_URL')
+elif DB_ENVIRONMENT == 'PROD':
+    # Handle production database
+    raw_url = os.getenv('PROD_DATABASE_URL')
+    DB_PASSWORD = os.getenv('PROD_DB_PASSWORD')
+    DATABASE_URL = raw_url.replace('${PROD_DB_PASSWORD}', DB_PASSWORD)
 else:
     DATABASE_URL = os.getenv('LOCAL_DATABASE_URL')
 
