@@ -22,6 +22,7 @@ from sklearn.calibration import calibration_curve
 import joblib
 import sys
 import os
+import time
 
 # Add the project root to the path so we can import our database modules
 sys.path.append(os.path.abspath('../..'))
@@ -38,61 +39,257 @@ plt.rcParams['figure.figsize'] = (12, 8)
 # First, we'll extract play-by-play data and game outcomes from our database.
 
 # %% [Cell 2] - Extract data
-def extract_play_by_play_data():
+def extract_play_by_play_data(limit=None, export_csv=False):
     """
-    Extract play-by-play data from the database and merge with game outcomes.
+    Extract play-by-play data from the database and determine win outcomes
+    using only data from the PlayByPlay table.
+    
+    Parameters:
+    -----------
+    limit : int, optional
+        Limit the number of games to process (for testing)
+    export_csv : bool, optional
+        Whether to export the data to CSV for inspection
     """
+    start_time = time.time()
+    
+    print(f"Starting play-by-play data extraction...")
+    
     with SessionLocal() as session:
-        # Get all games
-        games_query = session.query(
-            Game.game_id,
-            Game.team_one,
-            Game.team_two,
-            Game.team_one_score,
-            Game.team_two_score
-        ).all()
+        # Count total records for progress reporting
+        total_count = session.query(PlayByPlay.game_id.distinct()).count()
+        print(f"Found {total_count} games in database.")
         
-        games_df = pd.DataFrame(games_query, columns=['game_id', 'team_one', 'team_two', 'team_one_score', 'team_two_score'])
-        # Add a column indicating if home team won (1) or away team won (0)
-        games_df['home_win'] = (games_df['team_one_score'] > games_df['team_two_score']).astype(int)
+        if limit:
+            print(f"Limiting to {limit} games for testing.")
+            # Get limited set of game IDs
+            game_ids = [g[0] for g in session.query(PlayByPlay.game_id.distinct()).limit(limit).all()]
+        else:
+            # Get all game IDs
+            game_ids = [g[0] for g in session.query(PlayByPlay.game_id.distinct()).all()]
         
-        # Get all play-by-play data
-        pbp_query = session.query(PlayByPlay).all()
+        # Process games in chunks
+        chunk_size = 10  # Process 10 games at a time
+        all_data = []
         
-        # Convert to DataFrame
-        pbp_data = []
-        for play in pbp_query:
-            pbp_data.append({
-                'id': play.id,
-                'game_id': play.game_id,
-                'period': play.period,
-                'time_remaining': play.time_remaining,
-                'seconds_remaining': play.seconds_remaining,
-                'score_margin': play.score_margin,
-                'home_score': play.home_score,
-                'away_score': play.away_score,
-                'is_home_offense': play.is_home_offense,
-                'bonus': play.bonus,
-                'double_bonus': play.double_bonus,
-                'timeouts_remaining_home': play.timeouts_remaining_home,
-                'timeouts_remaining_away': play.timeouts_remaining_away,
-                'points_last_minute': play.points_last_minute,
-                'lead_changes': play.lead_changes,
-                'largest_lead': play.largest_lead
-            })
+        for i in range(0, len(game_ids), chunk_size):
+            chunk_start = time.time()
+            chunk_game_ids = game_ids[i:i+chunk_size]
+            print(f"Processing games {i+1}-{i+len(chunk_game_ids)} of {len(game_ids)}...")
+            
+            # Query only the necessary fields for the current chunk of games
+            query_start = time.time()
+            chunk_query = session.query(
+                PlayByPlay.id,
+                PlayByPlay.game_id,
+                PlayByPlay.period,
+                PlayByPlay.time_remaining,
+                PlayByPlay.seconds_remaining,
+                PlayByPlay.score_margin,
+                PlayByPlay.home_score,
+                PlayByPlay.away_score,
+                PlayByPlay.is_home_offense,
+                PlayByPlay.bonus,
+                PlayByPlay.double_bonus,
+                PlayByPlay.timeouts_remaining_home,
+                PlayByPlay.timeouts_remaining_away,
+                PlayByPlay.points_last_minute,
+                PlayByPlay.lead_changes,
+                PlayByPlay.largest_lead,
+                PlayByPlay.winning_team
+            ).filter(PlayByPlay.game_id.in_(chunk_game_ids)).all()
+            
+            print(f"  Query completed in {time.time() - query_start:.2f} seconds. Found {len(chunk_query)} plays.")
+            
+            # Convert to list of dictionaries
+            df_start = time.time()
+            chunk_data = [
+                {
+                    'id': play[0],
+                    'game_id': play[1],
+                    'period': play[2],
+                    'time_remaining': play[3],
+                    'seconds_remaining': play[4],
+                    'score_margin': play[5],
+                    'home_score': play[6],
+                    'away_score': play[7],
+                    'is_home_offense': play[8],
+                    'bonus': play[9],
+                    'double_bonus': play[10],
+                    'timeouts_remaining_home': play[11],
+                    'timeouts_remaining_away': play[12],
+                    'points_last_minute': play[13],
+                    'lead_changes': play[14],
+                    'largest_lead': play[15],
+                    'winning_team': play[16]
+                } for play in chunk_query
+            ]
+            all_data.extend(chunk_data)
+            print(f"  Chunk processed in {time.time() - chunk_start:.2f} seconds.")
         
-        pbp_df = pd.DataFrame(pbp_data)
+        # Convert all data to DataFrame
+        print(f"Converting all data to DataFrame...")
+        df_start = time.time()
+        pbp_df = pd.DataFrame(all_data)
+        print(f"DataFrame conversion completed in {time.time() - df_start:.2f} seconds.")
         
-        # Merge play-by-play with game outcomes
-        merged_df = pd.merge(pbp_df, games_df[['game_id', 'home_win']], on='game_id')
+        # Check for NaN values in the raw data
+        nan_counts = pbp_df.isna().sum()
+        print(f"NaN counts in raw data:")
+        for col, count in nan_counts[nan_counts > 0].items():
+            print(f"  {col}: {count} NaNs ({count/len(pbp_df)*100:.2f}%)")
         
-        print(f"Extracted {len(merged_df)} plays from {len(games_df)} games")
+        if len(pbp_df) == 0:
+            print("Warning: No play-by-play data found!")
+            return pd.DataFrame()
+        
+        # Process game outcomes
+        print(f"Processing game outcomes...")
+        outcome_start = time.time()
+        
+        # Get the final play from each game with valid score data
+        print(f"Finding final scores for each game...")
+        game_outcomes = {}
+        
+        for game_id, game_data in pbp_df.groupby('game_id'):
+            # Skip games with no score data
+            if game_data['home_score'].max() == 0 and game_data['away_score'].max() == 0:
+                continue
+            
+            # Get the last play of the game (last period, least time remaining)
+            final_plays = game_data.sort_values(['period', 'seconds_remaining'], 
+                                               ascending=[False, True])
+            
+            if len(final_plays) > 0:
+                # Take the first row (last period, least time)
+                final_play = final_plays.iloc[0]
+                
+                # Determine winner based on comparing home vs away score
+                home_score = final_play['home_score']
+                away_score = final_play['away_score']
+                
+                if home_score > away_score:
+                    # Home team won
+                    home_win = 1
+                elif away_score > home_score:
+                    # Away team won
+                    home_win = 0
+                else:
+                    # It's a tie
+                    home_win = 0.5
+                
+                game_outcomes[game_id] = {
+                    'home_win': home_win,
+                    'final_score_margin': home_score - away_score,
+                    'home_score': home_score,
+                    'away_score': away_score,
+                    'is_tie': home_score == away_score,
+                    'final_period': final_play['period']
+                }
+        
+        # Convert outcomes to DataFrame
+        outcomes_df = pd.DataFrame.from_dict(game_outcomes, orient='index')
+        outcomes_df.index.name = 'game_id'
+        outcomes_df = outcomes_df.reset_index()
+        
+        # Get stats on outcomes
+        home_wins = (outcomes_df['home_win'] == 1).sum()
+        away_wins = (outcomes_df['home_win'] == 0).sum()
+        ties = (outcomes_df['home_win'] == 0.5).sum()
+        
+        print(f"Game outcomes: {len(outcomes_df)} games processed")
+        print(f"  Home wins: {home_wins} ({home_wins/len(outcomes_df)*100:.1f}%)")
+        print(f"  Away wins: {away_wins} ({away_wins/len(outcomes_df)*100:.1f}%)")
+        print(f"  Ties: {ties} ({ties/len(outcomes_df)*100:.1f}%)")
+        
+        print(f"Game outcome processing completed in {time.time() - outcome_start:.2f} seconds.")
+        
+        # Merge win information back to the original dataframe
+        print(f"Merging win information back to play-by-play data...")
+        merge_start = time.time()
+        merged_df = pd.merge(pbp_df, outcomes_df[['game_id', 'home_win']], on='game_id', how='left')
+        print(f"Data merging completed in {time.time() - merge_start:.2f} seconds.")
+        
+        # Check for NaN values after merging
+        nan_counts = merged_df.isna().sum()
+        print(f"NaN counts after merging:")
+        for col, count in nan_counts[nan_counts > 0].items():
+            print(f"  {col}: {count} NaNs ({count/len(merged_df)*100:.2f}%)")
+        
+        valid_plays_count = merged_df.dropna(subset=['home_win']).shape[0]
+        print(f"Valid plays with outcome data: {valid_plays_count} ({valid_plays_count/len(merged_df)*100:.2f}%)")
+        
+        # Filter out games with ties (home_win = 0.5)
+        print(f"Before filtering: {len(merged_df)} plays")
+
+        # Filter out tie games
+        tied_games = merged_df[merged_df['home_win'] == 0.5]['game_id'].unique()
+        if len(tied_games) > 0:
+            print(f"Removing {len(tied_games)} tied games")
+            merged_df = merged_df[merged_df['home_win'] != 0.5]
+
+        # Filter out suspicious data (games with all zeros or missing key information)
+        suspicious_games = []
+
+        # Check each game for suspicious data patterns
+        for game_id, game_data in merged_df.groupby('game_id'):
+            max_home_score = game_data['home_score'].max()
+            max_away_score = game_data['away_score'].max()
+            max_period = game_data['period'].max()
+            
+            # Criteria for suspicious games:
+            # 1. Games where neither team scored
+            # 2. Games that don't reach at least period 2
+            # 3. Games with very few plays (less than 20)
+            if (max_home_score == 0 and max_away_score == 0) or \
+               (max_period < 2) or \
+               (len(game_data) < 20):
+                suspicious_games.append(game_id)
+
+        if len(suspicious_games) > 0:
+            print(f"Removing {len(suspicious_games)} games with suspicious data")
+            suspicious_df = merged_df[merged_df['game_id'].isin(suspicious_games)]
+            
+            if export_csv:
+                suspicious_df.to_csv("suspicious_games.csv", index=False)
+                print(f"Suspicious games exported to suspicious_games.csv")
+            
+            merged_df = merged_df[~merged_df['game_id'].isin(suspicious_games)]
+
+        print(f"After filtering: {len(merged_df)} plays ({len(merged_df['game_id'].unique())} games)")
+
+        # Additional check for completely empty fields that might be problematic for modeling
+        null_percents = merged_df.isnull().mean() * 100
+        if any(null_percents > 5):
+            print("Warning: Some columns have significant missing data:")
+            for col, pct in null_percents[null_percents > 5].items():
+                print(f"  {col}: {pct:.1f}% missing")
+
+        # Export to CSV if requested
+        if export_csv:
+            csv_file = "play_by_play_data.csv"
+            merged_df.to_csv(csv_file, index=False)
+            print(f"Data exported to {csv_file}")
+            
+            # Export the outcomes summary
+            outcomes_df.to_csv("game_outcomes.csv", index=False)
+            print(f"Game outcomes exported to game_outcomes.csv")
+            
+            # Also export a sample of games with NaN values if any
+            nan_games = merged_df[merged_df.isna().any(axis=1)]['game_id'].unique()
+            if len(nan_games) > 0:
+                nan_sample = merged_df[merged_df['game_id'].isin(nan_games[:5])]
+                nan_sample.to_csv("nan_sample.csv", index=False)
+                print(f"Sample of games with NaN values exported to nan_sample.csv")
         
         return merged_df
 
-# Extract the data
-pbp_data = extract_play_by_play_data()
-pbp_data.head()
+# Extract with CSV export and then filter for clean data
+pbp_data = extract_play_by_play_data(limit=6000, export_csv=True)
+
+# Further clean the data for modeling by removing any remaining NaN values
+pbp_data_clean = pbp_data.dropna()
+print(f"Final clean data shape: {pbp_data_clean.shape} ({len(pbp_data_clean['game_id'].unique())} unique games)")
 
 # %% [markdown]
 # ## 2. Feature Engineering
@@ -144,7 +341,7 @@ def engineer_features(df):
     return X[features], y
 
 # Engineer features
-X, y = engineer_features(pbp_data)
+X, y = engineer_features(pbp_data_clean)
 
 # Display the features
 X.head()
@@ -172,14 +369,14 @@ def split_by_games(pbp_data, test_size=0.3, random_state=42):
     return train_indices, test_indices
 
 # Get train/test indices
-train_indices, test_indices = split_by_games(pbp_data)
+train_indices, test_indices = split_by_games(pbp_data_clean)
 
 # Split the data
 X_train, y_train = X.loc[train_indices], y.loc[train_indices]
 X_test, y_test = X.loc[test_indices], y.loc[test_indices]
 
-print(f"Training data: {X_train.shape[0]} plays from {len(pbp_data.loc[train_indices, 'game_id'].unique())} games")
-print(f"Testing data: {X_test.shape[0]} plays from {len(pbp_data.loc[test_indices, 'game_id'].unique())} games")
+print(f"Training data: {X_train.shape[0]} plays from {len(pbp_data_clean.loc[train_indices, 'game_id'].unique())} games")
+print(f"Testing data: {X_test.shape[0]} plays from {len(pbp_data_clean.loc[test_indices, 'game_id'].unique())} games")
 
 # %% [markdown]
 # ## 4. Train the Model
@@ -251,11 +448,11 @@ def evaluate_model(model, X_test, y_test):
     plt.show()
     
     # Plot win probability over time for a few games
-    sample_games = pbp_data.loc[test_indices, 'game_id'].unique()[:3]
+    sample_games = pbp_data_clean.loc[test_indices, 'game_id'].unique()[:3]
     
     plt.figure(figsize=(15, 10))
     for i, game_id in enumerate(sample_games):
-        game_data = pbp_data[pbp_data['game_id'] == game_id].sort_values('seconds_remaining', ascending=False)
+        game_data = pbp_data_clean[pbp_data_clean['game_id'] == game_id].sort_values('seconds_remaining', ascending=False)
         game_features = X.loc[game_data.index]
         win_probs = model.predict_proba(game_features)[:, 1]
         
@@ -327,7 +524,7 @@ def calculate_play_impact(model, pbp_data, X):
     return game_data
 
 # Calculate play impact
-impact_data = calculate_play_impact(model, pbp_data, X)
+impact_data = calculate_play_impact(model, pbp_data_clean, X)
 
 # %% [markdown]
 # ## 7. Save the Model
