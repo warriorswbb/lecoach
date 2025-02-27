@@ -307,22 +307,57 @@ def engineer_features(df):
     # Target variable
     y = X['home_win']
     
+    # Calculate total time remaining in the game
+    # For a regulation game with 4 periods of 10 minutes each (600 seconds)
+    seconds_per_period = 600  # 10 minutes per period
+    total_periods = 4  # Regular game has 4 periods
+    
+    # Handle overtime periods differently
+    # For regulation time (periods 1-4), calculate normally
+    # For overtime (periods 5+), set remaining time to just what's left in current period
+    X['is_overtime'] = X['period'] > total_periods
+    
+    # Calculate time remaining in the entire game
+    X['total_seconds_remaining'] = np.where(
+        X['is_overtime'],
+        # For overtime: just the time remaining in current period
+        X['time_remaining'] / 10,
+        # For regulation: regular calculation
+        ((total_periods - X['period']) * seconds_per_period) + (X['time_remaining'] / 10)
+    )
+    
     # Transform time remaining - higher impact as game progresses
     # Using log transformation to emphasize late-game situations
-    X['time_remaining_transformed'] = np.log1p(X['seconds_remaining'])
+    X['time_remaining_transformed'] = np.log1p(X['total_seconds_remaining'])
+    
+    # Game completion percentage (0% at start, 100% at end)
+    total_game_seconds = total_periods * seconds_per_period
+    # For overtime, set completion to >100%
+    X['game_completion_pct'] = np.where(
+        X['is_overtime'],
+        1.0 + ((X['period'] - total_periods) / 10),  # Over 100% for overtime
+        1 - (X['total_seconds_remaining'] / total_game_seconds)
+    )
     
     # Relative score (normalized by total points to handle different game paces)
     X['total_score'] = X['home_score'] + X['away_score']
-    X['score_margin_pct'] = X['score_margin'] / X['total_score'].replace(0, 1)  # Avoid division by zero
+    
+    # Handle division by zero more carefully
+    X['score_margin_pct'] = np.where(
+        X['total_score'] > 0,
+        X['score_margin'] / X['total_score'],
+        0  # When total_score is 0, set to 0
+    )
     
     # Interaction: Score margin × time remaining
     # Score differences matter more as time decreases
-    X['margin_time_interaction'] = X['score_margin'] * (1 / np.log1p(X['seconds_remaining'] + 1))
+    X['margin_time_interaction'] = X['score_margin'] * (1 / np.log1p(X['total_seconds_remaining'] + 1))
     
     # Game phase indicators
     X['is_first_half'] = (X['period'] <= 2).astype(int)
     X['is_last_period'] = (X['period'] >= 4).astype(int)
-    X['is_last_two_min'] = (X['seconds_remaining'] <= 120).astype(int)
+    X['is_overtime'] = X['is_overtime'].astype(int)  # Add overtime as a feature
+    X['is_last_two_min'] = (X['total_seconds_remaining'] <= 120).astype(int)
     
     # Possession value (offense opportunity)
     X['home_has_ball'] = X['is_home_offense'].astype(int)
@@ -333,12 +368,61 @@ def engineer_features(df):
     # Select features for the model
     features = [
         'score_margin', 'score_margin_pct', 'time_remaining_transformed',
-        'margin_time_interaction', 'is_first_half', 'is_last_period',
-        'is_last_two_min', 'home_has_ball', 'timeout_advantage',
-        'bonus', 'double_bonus', 'points_last_minute', 'lead_changes'
+        'game_completion_pct', 'margin_time_interaction', 'is_first_half', 
+        'is_last_period', 'is_overtime', 'is_last_two_min', 'home_has_ball', 
+        'timeout_advantage', 'bonus', 'double_bonus', 
+        'points_last_minute', 'lead_changes'
     ]
     
-    return X[features], y
+    # Make sure there are no NaN values in our features
+    X_features = X[features]
+    
+    # Check for any remaining NaN values
+    nan_counts = X_features.isna().sum()
+    has_nans = nan_counts.any()
+    
+    if has_nans:
+        # Print columns with NaN values
+        print("Warning: NaN values found in features:")
+        for col, count in nan_counts[nan_counts > 0].items():
+            print(f"  {col}: {count} NaNs ({count/len(X_features)*100:.2f}%)")
+        
+        # Export problematic rows to CSV
+        nan_rows = X[X_features.isna().any(axis=1)].copy()
+        
+        # Add information about which columns have NaNs
+        for col in X_features.columns:
+            nan_rows[f"{col}_isnan"] = nan_rows[col].isna()
+        
+        # Export to CSV
+        nan_rows.to_csv("nan_problem_rows.csv", index=False)
+        print(f"Exported {len(nan_rows)} problematic rows to nan_problem_rows.csv")
+        
+        # Export a random sample of valid rows for comparison
+        valid_rows = X[~X_features.isna().any(axis=1)].sample(min(100, len(X)))
+        valid_rows.to_csv("valid_sample_rows.csv", index=False)
+        print(f"Exported {len(valid_rows)} valid rows to valid_sample_rows.csv for comparison")
+        
+        # Drop rows with NaN values
+        mask = ~X_features.isna().any(axis=1)
+        X_features = X_features[mask]
+        y = y[mask]
+    
+    # Check for infinities
+    inf_counts = np.isinf(X_features).sum()
+    has_infs = inf_counts.any()
+    
+    if has_infs:
+        # Print columns with infinity values
+        print("Warning: Infinity values found in features:")
+        for col, count in inf_counts[inf_counts > 0].items():
+            print(f"  {col}: {count} infinities ({count/len(X_features)*100:.2f}%)")
+        
+        # Replace infinities with large values
+        X_features = X_features.replace([np.inf, -np.inf], np.nan)
+        X_features = X_features.fillna(X_features.abs().max() * 10)
+    
+    return X_features, y
 
 # Engineer features
 X, y = engineer_features(pbp_data_clean)
@@ -579,19 +663,43 @@ def predict_win_probability(model, features, game_state):
     # Create feature vector
     feature_vector = {}
     
+    # Calculate total time remaining
+    seconds_per_period = 600  # 10 minutes per period
+    total_periods = 4  # Regular game has 4 periods
+    
+    # Check if we're in overtime
+    is_overtime = game_state['period'] > total_periods
+    
+    # Calculate total seconds remaining properly
+    if is_overtime:
+        # For overtime: just the time remaining in current period
+        total_seconds_remaining = game_state['time_remaining'] / 10
+    else:
+        # For regulation: regular calculation
+        total_seconds_remaining = ((total_periods - game_state['period']) * seconds_per_period) + \
+                                 (game_state['time_remaining'] / 10)
+    
     # Basic features
     feature_vector['score_margin'] = game_state['score_margin']
-    feature_vector['time_remaining_transformed'] = np.log1p(game_state['seconds_remaining'])
+    feature_vector['time_remaining_transformed'] = np.log1p(total_seconds_remaining)
+    
+    # Game completion percentage
+    total_game_seconds = total_periods * seconds_per_period
+    if is_overtime:
+        feature_vector['game_completion_pct'] = 1.0 + ((game_state['period'] - total_periods) / 10)
+    else:
+        feature_vector['game_completion_pct'] = 1 - (total_seconds_remaining / total_game_seconds)
     
     # Derived features
     total_score = game_state['home_score'] + game_state['away_score']
     feature_vector['score_margin_pct'] = game_state['score_margin'] / max(total_score, 1)
-    feature_vector['margin_time_interaction'] = game_state['score_margin'] * (1 / np.log1p(game_state['seconds_remaining'] + 1))
+    feature_vector['margin_time_interaction'] = game_state['score_margin'] * (1 / np.log1p(total_seconds_remaining + 1))
     
     # Game phase
     feature_vector['is_first_half'] = 1 if game_state['period'] <= 2 else 0
     feature_vector['is_last_period'] = 1 if game_state['period'] >= 4 else 0
-    feature_vector['is_last_two_min'] = 1 if game_state['seconds_remaining'] <= 120 else 0
+    feature_vector['is_overtime'] = 1 if is_overtime else 0
+    feature_vector['is_last_two_min'] = 1 if total_seconds_remaining <= 120 else 0
     
     # Other features
     feature_vector['home_has_ball'] = 1 if game_state['is_home_offense'] else 0

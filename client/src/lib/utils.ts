@@ -5,4 +5,4 @@ export function formatDate(dateString: string) {
     month: 'long',
     day: 'numeric'
   }).format(date);
-} 
+}
