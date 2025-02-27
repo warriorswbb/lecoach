@@ -34,3 +34,8 @@ Evaluate the model on your validation set
 Deploy the model to calculate win probabilities for each play in real-time
 
 For the "impact" calculation, you'd store the win probability after each play, then calculate the difference when a new play occurs. That delta is your win probability added/lost metric.
+
+
+Accuracy: 81.6%
+Brier Score: 0.1235 (lower is better, with 0.25 representing random guessing)
+Log Loss: 0.3805 (measures probability calibration)

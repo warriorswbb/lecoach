@@ -1,1 +1,3 @@
 *.csv
+/deployment
+lambda_deployment.zip
