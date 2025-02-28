@@ -1,36 +1,45 @@
-import json
 import os
+import json
 import joblib
 import numpy as np
-import base64
 
-# Load model on cold start (only happens occasionally)
-model_path = os.path.join(os.path.dirname(__file__), 'models/win_probability_model.joblib')
-feature_path = os.path.join(os.path.dirname(__file__), 'models/feature_list.joblib')
+# Load model artifacts
+def model_fn(model_dir):
+    model_path = os.path.join(model_dir, 'models/win_probability_model.joblib')
+    feature_path = os.path.join(model_dir, 'models/feature_list.joblib')
+    
+    model = joblib.load(model_path)
+    features = joblib.load(feature_path)
+    
+    return {"model": model, "features": features}
 
-model = joblib.load(model_path)
-features = joblib.load(feature_path)
+# Process incoming request
+def input_fn(request_body, request_content_type):
+    if request_content_type == 'application/json':
+        game_state = json.loads(request_body)['game_state']
+        return game_state
+    else:
+        raise ValueError(f"Unsupported content type: {request_content_type}")
 
-def predict_win_probability(game_state):
-    """
-    Predict win probability based on game state
-    """
+# Transform features
+def predict_fn(game_state, model_data):
+    model = model_data["model"]
+    features = model_data["features"]
+    
     # Create feature vector
     feature_vector = {}
     
     # Calculate total time remaining
-    seconds_per_period = 600  # 10 minutes per period
-    total_periods = 4  # Regular game has 4 periods
+    seconds_per_period = 600
+    total_periods = 4
     
     # Check if we're in overtime
     is_overtime = game_state['period'] > total_periods
     
-    # Calculate total seconds remaining properly - using time_remaining/10 to match original model
+    # Calculate total seconds remaining
     if is_overtime:
-        # For overtime: just the time remaining in current period
         total_seconds_remaining = game_state['time_remaining'] / 10
     else:
-        # For regulation: regular calculation
         total_seconds_remaining = ((total_periods - game_state['period']) * seconds_per_period) + \
                                  (game_state['time_remaining'] / 10)
     
@@ -73,48 +82,10 @@ def predict_win_probability(game_state):
     
     return win_prob
 
-def lambda_handler(event, context):
-    """
-    AWS Lambda handler function
-    """
-    try:
-        # Parse the game state from the request
-        if 'body' in event:
-            # Handle API Gateway format
-            if isinstance(event['body'], str):
-                body = json.loads(event['body'])
-            else:
-                body = event['body']
-            game_state = body['game_state']
-        else:
-            # Direct invocation
-            game_state = event['game_state']
-        
-        # Calculate win probability
-        win_prob = predict_win_probability(game_state)
-        
-        # Return the result
-        return {
-            'statusCode': 200,
-            'headers': {
-                'Content-Type': 'application/json',
-                'Access-Control-Allow-Origin': '*'  # Enable CORS for browser access
-            },
-            'body': json.dumps({
-                'win_probability': win_prob,
-                'win_probability_percentage': round(win_prob * 100, 1)
-            })
-        }
-    except Exception as e:
-        # Log error and return error response
-        print(f"Error processing request: {str(e)}")
-        return {
-            'statusCode': 500,
-            'headers': {
-                'Content-Type': 'application/json',
-                'Access-Control-Allow-Origin': '*'
-            },
-            'body': json.dumps({
-                'error': str(e)
-            })
-        } 
+# Return prediction
+def output_fn(prediction, response_content_type):
+    response = {
+        'win_probability': prediction,
+        'win_probability_percentage': round(prediction * 100, 1)
+    }
+    return json.dumps(response) 
