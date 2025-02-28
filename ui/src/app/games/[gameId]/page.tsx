@@ -2,6 +2,26 @@ import { getGameById, getPlayByPlayData } from "@/lib/db";
 import { format } from "date-fns";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { AreaChartComponent } from "@/components/ui/area-chart";
+import { PlayByPlayDisplay } from "@/components/PlayByPlayDisplay";
+
+// Add this interface for the server component
+interface PlayByPlay {
+  play_id: string;
+  game_id: string;
+  team_id: string;
+  team_short: string;
+  team_name: string;
+  player_id: string;
+  player_name: string;
+  play_type: string;
+  play_description: string;
+  points: number;
+  time_remaining: number;
+  period: string;
+  team_one_score: number;
+  team_two_score: number;
+}
 
 export default async function GamePage({
   params,
@@ -20,14 +40,32 @@ export default async function GamePage({
 
   const playByPlay = await getPlayByPlayData(gameId);
 
-  // Group play-by-play by period
-  const playByPlayByPeriod = playByPlay.reduce((acc, play) => {
-    if (!acc[play.period]) {
-      acc[play.period] = [];
-    }
-    acc[play.period].push(play);
-    return acc;
-  }, {});
+  // Then update your reduce function to use the interface
+  const playByPlayByPeriod = playByPlay.reduce(
+    (acc: Record<string, PlayByPlay[]>, play: PlayByPlay) => {
+      if (!acc[play.period]) {
+        acc[play.period] = [];
+      }
+      acc[play.period].push(play);
+      return acc;
+    },
+    {}
+  );
+
+  // Sample data for the area chart
+  const chartData = [
+    { name: "Jan", Team1: 40, Team2: 24 },
+    { name: "Feb", Team1: 30, Team2: 28 },
+    { name: "Mar", Team1: 45, Team2: 35 },
+    { name: "Apr", Team1: 50, Team2: 40 },
+    { name: "May", Team1: 35, Team2: 30 },
+    { name: "Jun", Team1: 45, Team2: 25 },
+  ];
+
+  const chartCategories = [
+    { name: "Team1", color: "#4f46e5" },
+    { name: "Team2", color: "#7c3aed" },
+  ];
 
   return (
     <div className="relative min-h-screen overflow-hidden bg-[#0a0a0a] text-white font-sans">
@@ -86,83 +124,36 @@ export default async function GamePage({
           </div>
         </div>
 
-        {/* Play-by-Play */}
-        <div className="bg-[#121212] border border-neutral-800 rounded-lg overflow-hidden">
-          {Object.keys(playByPlayByPeriod).length > 0 ? (
-            Object.keys(playByPlayByPeriod).map((period) => (
-              <div key={period}>
-                <div className="bg-[#1a1a1a] px-6 py-3 font-medium">
-                  {period === "1"
-                    ? "1st"
-                    : period === "2"
-                    ? "2nd"
-                    : period === "3"
-                    ? "3rd"
-                    : period === "4"
-                    ? "4th"
-                    : `OT${parseInt(period) - 4}`}{" "}
-                  Period
+        {/* Two-column layout */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          {/* Left column - Charts */}
+          <div className="space-y-8">
+            <div className="bg-[#121212] border border-neutral-800 rounded-lg p-6">
+              <AreaChartComponent
+                data={chartData}
+                categories={chartCategories}
+                index="name"
+                title="Area Chart - Stacked Expanded"
+                subtitle="Showing total visitors for the last 6 months"
+              />
+              <div className="mt-4 flex items-center justify-between text-sm">
+                <div className="text-neutral-400">
+                  Trending up by 5.2% this month
                 </div>
-
-                <div className="divide-y divide-neutral-800">
-                  {playByPlayByPeriod[period].map((play) => (
-                    <div
-                      key={play.play_id}
-                      className="px-6 py-4 flex items-start"
-                    >
-                      <div className="w-16 text-neutral-400 font-mono">
-                        {formatTime(play.time_remaining)}
-                      </div>
-
-                      <div className="flex-1">
-                        <div className="flex items-center">
-                          <div
-                            className={`w-8 h-8 flex items-center justify-center rounded-full mr-3 ${
-                              play.team_id === game.team_one_id
-                                ? "bg-blue-900/30"
-                                : "bg-red-900/30"
-                            }`}
-                          >
-                            <span className="text-sm font-bold">
-                              {play.team_short}
-                            </span>
-                          </div>
-
-                          <div>
-                            <div className="font-medium">
-                              {play.player_name ? play.player_name : "Team"} •{" "}
-                              {play.play_type}
-                            </div>
-                            <div className="text-sm text-neutral-400">
-                              {play.play_description}
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-
-                      <div className="text-right whitespace-nowrap">
-                        <div className="font-medium">
-                          {play.team_one_score} - {play.team_two_score}
-                        </div>
-                      </div>
-                    </div>
-                  ))}
-                </div>
+                <div className="text-neutral-500">January - June 2024</div>
               </div>
-            ))
-          ) : (
-            <div className="p-8 text-center text-neutral-400">
-              No play-by-play data available for this game.
             </div>
-          )}
+
+            {/* Additional charts can be added here */}
+          </div>
+
+          {/* Right column - Play-by-Play */}
+          <PlayByPlayDisplay
+            playByPlayByPeriod={playByPlayByPeriod}
+            gameTeamOneId={game.team_one_id}
+          />
         </div>
       </main>
     </div>
   );
-}
-
-function formatTime(seconds: number): string {
-  const mins = Math.floor(seconds / 60);
-  const secs = seconds % 60;
-  return `${mins}:${secs.toString().padStart(2, "0")}`;
 }
