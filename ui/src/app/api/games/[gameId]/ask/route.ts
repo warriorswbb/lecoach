@@ -19,11 +19,17 @@ export async function POST(
       );
     }
 
-    // Create agent and get response
+    console.log(`API Route: Processing question about game ${gameId}`);
+    console.log(`Question: "${question}"`);
+
+    // Create agent and get response (using our new multi-agent system)
     const agent = new BasketballAnalyticsAgent();
     const startTime = Date.now();
     const response = await agent.answerQuestion(question, gameId);
     const executionTime = Date.now() - startTime;
+
+    console.log(`API Route: Response generated in ${executionTime}ms`);
+    console.log(`API Route: Total tokens used: ${response.totalTokens}`);
 
     return NextResponse.json({
       ...response,

@@ -3,8 +3,7 @@ import { format } from "date-fns";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { AreaChartComponent } from "@/components/ui/area-chart";
-import { PlayByPlayDisplay } from "@/components/PlayByPlayDisplay";
-import { AnalyticsChat } from "@/components/AnalyticsChat";
+import { GameAnalytics } from "@/components/GameAnalytics";
 
 // Add this interface for the server component
 interface PlayByPlay {
@@ -29,9 +28,7 @@ export default async function GamePage({
 }: {
   params: { gameId: string };
 }) {
-  // Await the params object before accessing its properties
-  const resolvedParams = await params;
-  const gameId = resolvedParams.gameId;
+  const gameId = params.gameId;
 
   const game = await getGameById(gameId);
 
@@ -41,13 +38,14 @@ export default async function GamePage({
 
   const playByPlay = await getPlayByPlayData(gameId);
 
-  // Then update your reduce function to use the interface
+  // Group play by play data by period
   const playByPlayByPeriod = playByPlay.reduce(
     (acc: Record<string, PlayByPlay[]>, play: PlayByPlay) => {
-      if (!acc[play.period]) {
-        acc[play.period] = [];
+      const period = play.period;
+      if (!acc[period]) {
+        acc[period] = [];
       }
-      acc[play.period].push(play);
+      acc[period].push(play);
       return acc;
     },
     {}
@@ -69,65 +67,60 @@ export default async function GamePage({
   ];
 
   return (
-    <div className="relative min-h-screen overflow-hidden bg-[#0a0a0a] text-white font-sans">
-      {/* Background glow effect */}
-      <div className="absolute inset-0 z-0 overflow-hidden">
-        <div className="animate-gradient-slow absolute inset-0">
-          <div className="absolute top-1/4 left-1/3 w-[600px] h-[600px] bg-purple-600/30 rounded-full blur-[100px]"></div>
-          <div className="absolute bottom-1/3 right-1/4 w-[800px] h-[800px] bg-pink-600/30 rounded-full blur-[100px]"></div>
-          <div className="absolute top-2/3 left-1/4 w-[700px] h-[700px] bg-blue-600/30 rounded-full blur-[100px]"></div>
-          <div className="absolute bottom-1/4 right-1/3 w-[900px] h-[900px] bg-emerald-600/20 rounded-full blur-[100px]"></div>
-        </div>
-      </div>
-
-      <main className="container relative z-10 mx-auto py-10 px-4">
-        <Link
-          href="/"
-          className="inline-flex items-center text-neutral-400 hover:text-white mb-6"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            className="h-5 w-5 mr-2"
-            viewBox="0 0 20 20"
-            fill="currentColor"
+    <div className="min-h-screen pb-16">
+      {/* Header section */}
+      <header className="bg-[#121212] border-b border-neutral-800 sticky top-0 z-10">
+        <div className="container mx-auto px-4 py-8">
+          <Link
+            href="/"
+            className="inline-flex items-center text-neutral-400 hover:text-white mb-6"
           >
-            <path
-              fillRule="evenodd"
-              d="M9.707 16.707a1 1 0 01-1.414 0l-6-6a1 1 0 010-1.414l6-6a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l4.293 4.293a1 1 0 010 1.414z"
-              clipRule="evenodd"
-            />
-          </svg>
-          Back to Games
-        </Link>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-5 w-5 mr-2"
+              viewBox="0 0 20 20"
+              fill="currentColor"
+            >
+              <path
+                fillRule="evenodd"
+                d="M9.707 16.707a1 1 0 01-1.414 0l-6-6a1 1 0 010-1.414l6-6a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l4.293 4.293a1 1 0 010 1.414z"
+                clipRule="evenodd"
+              />
+            </svg>
+            Back to Games
+          </Link>
 
-        {/* Game Header */}
-        <div className="bg-[#121212] border border-neutral-800 rounded-lg p-6 mb-8">
-          <div className="text-sm text-neutral-400 mb-2">
-            {format(new Date(game.date), "MMMM d, yyyy")} • {game.season} Season
-          </div>
-
-          <div className="flex flex-col md:flex-row justify-between items-center gap-6">
-            <div className="flex-1 text-center md:text-left">
-              <div className="text-3xl font-bold">{game.team_one_short}</div>
-              <div className="text-neutral-400">{game.team_one_name}</div>
+          {/* Game Header */}
+          <div className="bg-[#121212] border border-neutral-800 rounded-lg p-6 mb-8">
+            <div className="text-sm text-neutral-400 mb-2">
+              {format(new Date(game.date), "MMMM d, yyyy")} • {game.season}{" "}
+              Season
             </div>
 
-            <div className="flex items-center gap-4">
-              <div className="text-5xl font-bold">{game.team_one_score}</div>
-              <div className="text-xl text-neutral-500">-</div>
-              <div className="text-5xl font-bold">{game.team_two_score}</div>
-            </div>
+            <div className="flex flex-col md:flex-row justify-between items-center gap-6">
+              <div className="flex-1 text-center md:text-left">
+                <div className="text-3xl font-bold">{game.team_one_short}</div>
+                <div className="text-neutral-400">{game.team_one_name}</div>
+              </div>
 
-            <div className="flex-1 text-center md:text-right">
-              <div className="text-3xl font-bold">{game.team_two_short}</div>
-              <div className="text-neutral-400">{game.team_two_name}</div>
+              <div className="flex items-center gap-4">
+                <div className="text-5xl font-bold">{game.team_one_score}</div>
+                <div className="text-xl text-neutral-500">-</div>
+                <div className="text-5xl font-bold">{game.team_two_score}</div>
+              </div>
+
+              <div className="flex-1 text-center md:text-right">
+                <div className="text-3xl font-bold">{game.team_two_short}</div>
+                <div className="text-neutral-400">{game.team_two_name}</div>
+              </div>
             </div>
           </div>
         </div>
+      </header>
 
-        {/* Two-column layout */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-          {/* Left column - Charts */}
+      <main className="container mx-auto px-4 py-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mt-8">
+          {/* Left column - Just the chart */}
           <div className="space-y-8">
             <div className="bg-[#121212] border border-neutral-800 rounded-lg p-6">
               <AreaChartComponent
@@ -144,17 +137,17 @@ export default async function GamePage({
                 <div className="text-neutral-500">January - June 2024</div>
               </div>
             </div>
-
-            <AnalyticsChat gameId={gameId} />
-
-            {/* Additional charts can be added here */}
+            {/* You can add other charts here if needed */}
           </div>
 
-          {/* Right column - Play-by-Play */}
-          <PlayByPlayDisplay
-            playByPlayByPeriod={playByPlayByPeriod}
-            gameTeamOneId={game.team_one_id}
-          />
+          {/* Right column - GameAnalytics with toggle */}
+          <div>
+            <GameAnalytics
+              gameId={gameId}
+              playByPlayByPeriod={playByPlayByPeriod}
+              gameTeamOneId={game.team_one_id}
+            />
+          </div>
         </div>
       </main>
     </div>

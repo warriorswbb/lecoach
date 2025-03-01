@@ -2,16 +2,46 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import { AgentStep } from "@/lib/agents/BasketballAnalytics";
 
 interface ChatMessage {
   role: "user" | "assistant";
   content: string;
+  steps?: AgentStep[];
+  executionTime?: number;
+  totalTokens?: number;
 }
+
+// Loading state messages for each step
+const STEP_MESSAGES = {
+  "Query Understanding": [
+    "Analyzing your question...",
+    "Identifying key entities...",
+    "Determining question intent..."
+  ],
+  "SQL Generation": [
+    "Formulating database query...",
+    "Finding relevant game data...",
+    "Building SQL statement..."
+  ],
+  "Data Processing": [
+    "Processing raw data...",
+    "Calculating relevant statistics...",
+    "Analyzing game patterns..."
+  ],
+  "Response Generation": [
+    "Generating insights...",
+    "Preparing concise response...",
+    "Formulating answer..."
+  ]
+};
 
 export function AnalyticsChat({ gameId }: { gameId: string }) {
   const [messages, setMessages] = useState<ChatMessage[]>([]);
   const [input, setInput] = useState("");
   const [isLoading, setIsLoading] = useState(false);
+  const [currentStep, setCurrentStep] = useState<string | null>(null);
+  const [showDetails, setShowDetails] = useState<number | null>(null);
   const router = useRouter();
 
   const sendMessage = async () => {
@@ -22,6 +52,19 @@ export function AnalyticsChat({ gameId }: { gameId: string }) {
     setMessages((prev) => [...prev, userMessage]);
     setInput("");
     setIsLoading(true);
+    
+    // Sequence through loading states
+    const steps = ["Query Understanding", "SQL Generation", "Data Processing", "Response Generation"];
+    let stepIndex = 0;
+    
+    const stepInterval = setInterval(() => {
+      if (stepIndex < steps.length) {
+        setCurrentStep(steps[stepIndex]);
+        stepIndex++;
+      } else {
+        clearInterval(stepInterval);
+      }
+    }, 1500); // Advance to next step every 1.5 seconds
     
     try {
       // Send request to API
@@ -36,16 +79,22 @@ export function AnalyticsChat({ gameId }: { gameId: string }) {
       }
       
       const data = await response.json();
+      clearInterval(stepInterval);
       
       // Add AI response to chat
       const aiMessage: ChatMessage = {
         role: "assistant",
         content: data.answer,
+        steps: data.steps,
+        executionTime: data.executionTime,
+        totalTokens: data.totalTokens
       };
       
       setMessages((prev) => [...prev, aiMessage]);
     } catch (error) {
       console.error("Error sending message:", error);
+      clearInterval(stepInterval);
+      
       // Add error message
       setMessages((prev) => [
         ...prev,
@@ -56,6 +105,15 @@ export function AnalyticsChat({ gameId }: { gameId: string }) {
       ]);
     } finally {
       setIsLoading(false);
+      setCurrentStep(null);
+    }
+  };
+
+  const toggleDetails = (index: number) => {
+    if (showDetails === index) {
+      setShowDetails(null);
+    } else {
+      setShowDetails(index);
     }
   };
 
@@ -73,31 +131,107 @@ export function AnalyticsChat({ gameId }: { gameId: string }) {
           </div>
         ) : (
           messages.map((message, index) => (
-            <div
-              key={index}
-              className={`flex ${
-                message.role === "user" ? "justify-end" : "justify-start"
-              }`}
-            >
+            <div key={index} className="space-y-2">
               <div
-                className={`max-w-[80%] rounded-lg px-4 py-2 ${
-                  message.role === "user"
-                    ? "bg-blue-900/30 text-white"
-                    : "bg-neutral-800 text-white"
+                className={`flex ${
+                  message.role === "user" ? "justify-end" : "justify-start"
                 }`}
               >
-                {message.content}
+                <div
+                  className={`max-w-[80%] rounded-lg px-4 py-2 ${
+                    message.role === "user"
+                      ? "bg-blue-900/30 text-white"
+                      : "bg-neutral-800 text-white"
+                  }`}
+                >
+                  {message.content}
+                </div>
               </div>
+              
+              {/* Detail toggle button */}
+              {message.role === "assistant" && message.steps && (
+                <div className="flex justify-start">
+                  <button
+                    onClick={() => toggleDetails(index)}
+                    className="text-xs text-neutral-400 hover:text-blue-400 flex items-center"
+                  >
+                    <svg 
+                      className={`w-3 h-3 mr-1 transition-transform ${showDetails === index ? 'rotate-90' : ''}`} 
+                      fill="none" 
+                      stroke="currentColor" 
+                      viewBox="0 0 24 24"
+                    >
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    </svg>
+                    {showDetails === index ? "Hide details" : "View analytics process"}
+                  </button>
+                </div>
+              )}
+              
+              {/* Detailed steps */}
+              {showDetails === index && message.steps && (
+                <div className="bg-neutral-900 rounded-lg p-3 text-xs space-y-3 mt-1">
+                  <div className="text-neutral-400">
+                    Total time: {(message.executionTime || 0) / 1000}s | 
+                    Tokens used: {message.totalTokens || 0}
+                  </div>
+                  {message.steps.map((step, stepIdx) => (
+                    <div key={stepIdx} className="border-l-2 border-blue-700 pl-3">
+                      <div className="flex justify-between">
+                        <span className="font-medium text-blue-400">{step.agent}</span>
+                        <span className="text-neutral-500">
+                          {((step.endTime || 0) - step.startTime) / 1000}s | 
+                          {step.tokens?.total || 0} tokens
+                        </span>
+                      </div>
+                      <div className="mt-1 text-neutral-300">
+                        {step.agent === "SQL Generation" ? (
+                          <div className="bg-neutral-800 p-2 rounded font-mono text-green-400 overflow-x-auto">
+                            {step.output}
+                          </div>
+                        ) : (
+                          <div className="text-neutral-400">
+                            {step.agent === "Query Understanding" && 
+                              `Intent: ${step.output?.intent}, Entities: ${Object.keys(step.output?.entities || {}).length}`
+                            }
+                            {step.agent === "Data Processing" && 
+                              `Processed ${step.output?.rawCount || 0} records`
+                            }
+                          </div>
+                        )}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              )}
             </div>
           ))
         )}
+        
+        {/* Advanced loading indicator */}
         {isLoading && (
           <div className="flex justify-start">
-            <div className="max-w-[80%] rounded-lg px-4 py-2 bg-neutral-800 text-white">
-              <div className="flex space-x-2 items-center">
-                <div className="w-2 h-2 bg-neutral-400 rounded-full animate-pulse"></div>
-                <div className="w-2 h-2 bg-neutral-400 rounded-full animate-pulse delay-75"></div>
-                <div className="w-2 h-2 bg-neutral-400 rounded-full animate-pulse delay-150"></div>
+            <div className="max-w-[80%] rounded-lg px-4 py-3 bg-neutral-800 text-white">
+              <div className="flex flex-col space-y-2">
+                <div className="flex items-center">
+                  <div className="loading-dots mr-3">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                  </div>
+                  <div className="text-sm text-neutral-300">
+                    {currentStep 
+                      ? STEP_MESSAGES[currentStep as keyof typeof STEP_MESSAGES]?.[
+                          Math.floor(Date.now() / 1000) % 3
+                        ] 
+                      : "Processing..."}
+                  </div>
+                </div>
+                {currentStep && (
+                  <div className="text-xs text-neutral-500 mt-1 ml-1">
+                    Step: {currentStep}
+                  </div>
+                )}
               </div>
             </div>
           </div>
