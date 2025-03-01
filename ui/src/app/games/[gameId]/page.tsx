@@ -118,11 +118,11 @@ export default async function GamePage({
         </div>
       </header>
 
-      <main className="container mx-auto px-4 py-8">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mt-8">
+      <main className="container mx-auto px-4 py-4">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
           {/* Left column - Just the chart */}
-          <div className="space-y-8">
-            <div className="bg-[#121212] border border-neutral-800 rounded-lg p-6">
+          <div>
+            <div className="bg-[#121212] border border-neutral-800 rounded-lg p-6 h-[650px] flex flex-col">
               <AreaChartComponent
                 data={chartData}
                 categories={chartCategories}
@@ -137,7 +137,6 @@ export default async function GamePage({
                 <div className="text-neutral-500">January - June 2024</div>
               </div>
             </div>
-            {/* You can add other charts here if needed */}
           </div>
 
           {/* Right column - GameAnalytics with toggle */}

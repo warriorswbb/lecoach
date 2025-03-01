@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import { PlayByPlayDisplay } from "./PlayByPlayDisplay";
 import { AnalyticsChat } from "./AnalyticsChat";
 
 type ViewMode = "play-by-play" | "chat";
@@ -23,67 +22,76 @@ export function GameAnalytics({
   const [activePeriod, setActivePeriod] = useState(periods[0] || "1");
 
   return (
-    <div className="bg-[#121212] border border-neutral-800 rounded-lg overflow-hidden">
-      {/* Header with quarters and toggle */}
-      <div className="bg-[#1a1a1a] px-4 py-2 flex justify-between border-b border-neutral-800">
+    <div className="bg-[#121212] border border-neutral-800 rounded-lg overflow-hidden h-[650px] flex flex-col">
+      {/* Header with quarters and toggle - fixed height */}
+      <div className="bg-[#1a1a1a] px-4 py-1.5 flex justify-between border-b border-neutral-800 items-center">
         {/* Quarter tabs */}
-        <div className="flex">
-          {activeView === "play-by-play" && periods.map((period) => (
-            <button
-              key={period}
-              onClick={() => setActivePeriod(period)}
-              className={`px-4 py-2 text-sm font-medium rounded-md transition-colors ${
-                activePeriod === period
-                  ? "bg-neutral-800 text-white"
-                  : "text-neutral-400 hover:text-white"
-              }`}
-            >
-              {period === "1"
-                ? "1st"
-                : period === "2"
-                ? "2nd"
-                : period === "3"
-                ? "3rd"
-                : period === "4"
-                ? "4th"
-                : `OT${parseInt(period) - 4}`}
-            </button>
-          ))}
+        <div className="flex h-9">
+          {activeView === "play-by-play" ? (
+            periods.map((period) => (
+              <button
+                key={period}
+                onClick={() => setActivePeriod(period)}
+                className={`px-4 h-full text-sm font-medium rounded-md transition-colors ${
+                  activePeriod === period
+                    ? "bg-neutral-800 text-white"
+                    : "text-neutral-400 hover:text-white"
+                }`}
+              >
+                {period === "1"
+                  ? "1st"
+                  : period === "2"
+                  ? "2nd"
+                  : period === "3"
+                  ? "3rd"
+                  : period === "4"
+                  ? "4th"
+                  : `OT${parseInt(period) - 4}`}
+              </button>
+            ))
+          ) : (
+            <div className="text-sm text-neutral-400 flex items-center">
+              Basketball AI Assistant
+            </div>
+          )}
         </div>
 
-        {/* View toggle */}
-        <div className="flex divide-x divide-neutral-700 border border-neutral-700 rounded-md overflow-hidden">
+        {/* View toggle - fixed height */}
+        <div className="flex space-x-2">
           <button
             onClick={() => setActiveView("play-by-play")}
-            className={`px-3 py-1 text-xs font-medium ${
-              activeView === "play-by-play"
-                ? "bg-blue-600 text-white"
-                : "bg-neutral-800 text-neutral-300 hover:bg-neutral-700"
+            className={`rounded-full px-5 py-2 font-medium text-sm transition-colors ${
+              activeView === "play-by-play" 
+                ? "bg-white text-black" 
+                : "bg-neutral-800 text-white hover:bg-neutral-700"
             }`}
           >
             Play-by-Play
           </button>
           <button
             onClick={() => setActiveView("chat")}
-            className={`px-3 py-1 text-xs font-medium ${
-              activeView === "chat"
-                ? "bg-blue-600 text-white"
-                : "bg-neutral-800 text-neutral-300 hover:bg-neutral-700"
+            className={`rounded-full px-5 py-2 font-medium text-sm transition-colors ${
+              activeView === "chat" 
+                ? "bg-white text-black" 
+                : "bg-neutral-800 text-white hover:bg-neutral-700"
             }`}
           >
-            AI Analytics
+            AI Chat
           </button>
         </div>
       </div>
 
-      {/* Content area with consistent height */}
-      <div className="h-[600px] overflow-y-auto">
+      {/* Content area with flex-grow to fill remaining space */}
+      <div className="flex-grow overflow-y-auto">
         {activeView === "play-by-play" ? (
           <div className="h-full">
             {periods.length > 0 && playByPlayByPeriod[activePeriod] ? (
               <div className="divide-y divide-neutral-800">
                 {playByPlayByPeriod[activePeriod].map((play: any) => (
-                  <div key={play.play_id} className="px-6 py-4 flex items-start">
+                  <div
+                    key={play.play_id}
+                    className="px-6 py-3.5 flex items-start"
+                  >
                     <div className="w-16 text-neutral-400 font-mono">
                       {formatTime(play.time_remaining)}
                     </div>
@@ -129,7 +137,7 @@ export function GameAnalytics({
             )}
           </div>
         ) : (
-          <div className="h-full">
+          <div className="h-full flex flex-col">
             <AnalyticsChat gameId={gameId} />
           </div>
         )}
@@ -142,4 +150,4 @@ function formatTime(seconds: number): string {
   const mins = Math.floor(seconds / 60);
   const secs = seconds % 60;
   return `${mins}:${secs.toString().padStart(2, "0")}`;
-} 
+}
