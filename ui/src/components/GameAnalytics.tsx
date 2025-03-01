@@ -6,12 +6,30 @@ import { PlayByPlayDisplay } from "./PlayByPlayDisplay";
 
 type ViewMode = "play-by-play" | "chat";
 
+// Add the missing interface
+interface PlayByPlay {
+  play_id: string;
+  game_id: string;
+  team_id: string;
+  team_short: string;
+  team_name: string;
+  player_id: string;
+  player_name: string;
+  play_type: string;
+  play_description: string;
+  points: number;
+  time_remaining: number;
+  period: string;
+  team_one_score: number;
+  team_two_score: number;
+}
+
 export function GameAnalytics({
   gameId,
   playByPlayByPeriod,
   gameTeamOneId,
   teamOneColor,
-  teamTwoColor
+  teamTwoColor,
 }: {
   gameId: string;
   playByPlayByPeriod: Record<string, PlayByPlay[]>;
@@ -66,8 +84,8 @@ export function GameAnalytics({
           <button
             onClick={() => setActiveView("play-by-play")}
             className={`rounded-full px-5 py-2 font-medium text-sm transition-colors ${
-              activeView === "play-by-play" 
-                ? "bg-white text-black" 
+              activeView === "play-by-play"
+                ? "bg-white text-black"
                 : "bg-neutral-800 text-white hover:bg-neutral-700"
             }`}
           >
@@ -76,8 +94,8 @@ export function GameAnalytics({
           <button
             onClick={() => setActiveView("chat")}
             className={`rounded-full px-5 py-2 font-medium text-sm transition-colors ${
-              activeView === "chat" 
-                ? "bg-white text-black" 
+              activeView === "chat"
+                ? "bg-white text-black"
                 : "bg-neutral-800 text-white hover:bg-neutral-700"
             }`}
           >
@@ -89,8 +107,8 @@ export function GameAnalytics({
       {/* Content area */}
       <div className="flex-grow overflow-y-auto">
         {activeView === "play-by-play" ? (
-          <PlayByPlayDisplay 
-            playByPlayByPeriod={playByPlayByPeriod} 
+          <PlayByPlayDisplay
+            playByPlayByPeriod={playByPlayByPeriod}
             gameTeamOneId={gameTeamOneId}
             teamOneColor={teamOneColor}
             teamTwoColor={teamTwoColor}

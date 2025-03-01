@@ -34,6 +34,7 @@ interface AreaChartProps {
   title?: string;
   subtitle?: string;
   className?: string;
+  stacked?: boolean;
 }
 
 export function AreaChartComponent({
@@ -51,6 +52,7 @@ export function AreaChartComponent({
   title,
   subtitle,
   className,
+  stacked = false,
 }: AreaChartProps) {
   // Default formatter just returns the value as a string
   const formatValue = (value: number) => value.toString();
@@ -89,6 +91,7 @@ export function AreaChartComponent({
                 axisLine={{ stroke: "#444444" }}
                 tickLine={{ stroke: "#444444" }}
                 tickFormatter={formatValue}
+                domain={stacked ? [0, 100] : ["auto", "auto"]}
               />
             )}
             {showTooltip && (
@@ -122,7 +125,7 @@ export function AreaChartComponent({
                 key={index}
                 type="monotone"
                 dataKey={category.name}
-                stackId="1"
+                stackId={stacked ? "1" : undefined}
                 stroke={category.color}
                 strokeWidth={2}
                 fill={category.color}

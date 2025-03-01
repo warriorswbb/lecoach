@@ -4,6 +4,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { AreaChartComponent } from "@/components/ui/area-chart";
 import { GameAnalytics } from "@/components/GameAnalytics";
+import { WinProbabilityChart } from "@/components/WinProbabilityChart";
 
 // Add this interface for the server component
 interface PlayByPlay {
@@ -70,6 +71,49 @@ export default async function GamePage({
   };
 
   const [teamOneColor, teamTwoColor] = getRandomTeamColors();
+
+  // Create win probability chart data for different periods
+  const generateWinProbabilityData = (
+    teamOneShort: string,
+    teamTwoShort: string
+  ) => {
+    // Helper to generate random probability data points that sum to 100
+    const generateDataPoints = (count: number, bias: number = 0.5) => {
+      const points = [];
+      // Start with 50-50 probability
+      let teamOneProbability = 50 + (Math.random() * 10 - 5) * bias;
+
+      for (let i = 0; i < count; i++) {
+        // Random change in probability, weighted towards bias
+        const change = (Math.random() * 8 - 4) * bias;
+        teamOneProbability = Math.max(
+          30,
+          Math.min(70, teamOneProbability + change)
+        );
+
+        points.push({
+          time: i,
+          [teamOneShort]: teamOneProbability,
+          [teamTwoShort]: 100 - teamOneProbability,
+        });
+      }
+      return points;
+    };
+
+    // Generate data for each quarter with different biases
+    return {
+      "1": generateDataPoints(10, 0.8), // First quarter slight bias
+      "2": generateDataPoints(10, 1.2), // Second quarter stronger movements
+      "3": generateDataPoints(10, 0.9), // Third quarter moderate
+      "4": generateDataPoints(10, 1.5), // Fourth quarter dramatic changes
+      full: generateDataPoints(40, 1.0), // Full game (all quarters combined)
+    };
+  };
+
+  const winProbabilityData = generateWinProbabilityData(
+    game.team_one_short,
+    game.team_two_short
+  );
 
   // Create chart data using actual game data
   const chartData = [
@@ -201,23 +245,15 @@ export default async function GamePage({
 
       <main className="container mx-auto px-4 py-4 relative z-1">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-          {/* Left column - Just the chart */}
+          {/* Left column - Chart with period selection */}
           <div>
-            <div className="bg-[#121212] border border-neutral-800 rounded-lg p-6 h-[650px] flex flex-col">
-              <AreaChartComponent
-                data={chartData}
-                categories={chartCategories}
-                index="name"
-                title="Score Progression"
-                subtitle={`${game.team_one_short} vs ${game.team_two_short}`}
-              />
-              <div className="mt-4 flex items-center justify-between text-sm">
-                <div className="text-neutral-400">
-                  Trending up by 5.2% this month
-                </div>
-                <div className="text-neutral-500">January - June 2024</div>
-              </div>
-            </div>
+            <WinProbabilityChart
+              winProbabilityData={winProbabilityData}
+              teamOneShort={game.team_one_short}
+              teamTwoShort={game.team_two_short}
+              teamOneColor={teamOneColor}
+              teamTwoColor={teamTwoColor}
+            />
           </div>
 
           {/* Right column - GameAnalytics with toggle */}
