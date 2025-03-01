@@ -44,15 +44,15 @@ export function PlayByPlayDisplay({
   return (
     <div className="bg-[#121212] border border-neutral-800 rounded-lg overflow-hidden">
       {!hideControls && (
-        <div className="bg-[#1a1a1a] px-4 py-2 flex border-b border-neutral-800">
+        <div className="bg-[#1a1a1a] px-4 py-2 flex gap-2 border-b border-neutral-800">
           {periods.map((period) => (
             <button
               key={period}
               onClick={() => setLocalActivePeriod(period)}
-              className={`px-4 py-2 text-sm font-medium rounded-md transition-colors ${
+              className={`px-4 py-1.5 text-sm font-medium rounded-full transition-colors ${
                 currentPeriod === period
-                  ? "bg-neutral-800 text-white"
-                  : "text-neutral-400 hover:text-white"
+                  ? "bg-white text-black"
+                  : "bg-neutral-800 text-neutral-400 hover:text-white"
               }`}
             >
               {period === "1"
@@ -81,7 +81,7 @@ export function PlayByPlayDisplay({
                 <div className="flex-1">
                   <div className="flex items-center">
                     <div
-                      className="w-3 h-3 rounded-full flex-shrink-0 mr-3 border border-neutral-700/30"
+                      className="w-4 h-4 rounded-full flex-shrink-0 mr-3 border border-neutral-700/30"
                       style={{
                         backgroundColor:
                           Math.random() > 0.5 ? teamOneColor : teamTwoColor,

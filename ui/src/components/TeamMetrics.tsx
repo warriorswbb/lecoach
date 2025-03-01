@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { CircleChart } from "@/components/ui/circle-chart";
 
 interface TeamMetricsProps {
@@ -19,6 +19,13 @@ export function TeamMetrics({
   const [activeTeam, setActiveTeam] = useState<"team1" | "team2">("team1");
   const [activePeriod, setActivePeriod] = useState("full");
   const periods = ["1", "2", "3", "4", "full"];
+  
+  // Animation states for circle values
+  const [animatedValues, setAnimatedValues] = useState({
+    pace: 0,
+    offensiveEfficiency: 0,
+    defensiveEfficiency: 0
+  });
   
   // Generate different metrics for each period
   const generateMetricsData = () => {
@@ -54,6 +61,27 @@ export function TeamMetrics({
   
   const currentMetrics = metricsData[activePeriod][activeTeam];
   
+  // Animate values when team or period changes
+  useEffect(() => {
+    // Reset values to 0 for animation
+    setAnimatedValues({
+      pace: 0,
+      offensiveEfficiency: 0,
+      defensiveEfficiency: 0
+    });
+    
+    // Animate to target values
+    const timer = setTimeout(() => {
+      setAnimatedValues({
+        pace: currentMetrics.pace,
+        offensiveEfficiency: currentMetrics.offensiveEfficiency,
+        defensiveEfficiency: currentMetrics.defensiveEfficiency
+      });
+    }, 50);
+    
+    return () => clearTimeout(timer);
+  }, [activeTeam, activePeriod, currentMetrics]);
+  
   // Labels for period display
   const periodLabels = {
     "1": "1st Quarter",
@@ -66,15 +94,15 @@ export function TeamMetrics({
   return (
     <div className="bg-[#121212] border border-neutral-800 rounded-lg flex flex-col h-[284px]">
       {/* Period tabs */}
-      <div className="bg-[#1a1a1a] px-4 py-1.5 flex border-b border-neutral-800">
+      <div className="bg-[#1a1a1a] px-4 py-2 flex gap-2 border-b border-neutral-800">
         {periods.map((period) => (
           <button
             key={period}
             onClick={() => setActivePeriod(period)}
-            className={`px-4 py-2 text-sm font-medium rounded-md transition-colors ${
+            className={`px-4 py-1.5 text-sm font-medium rounded-full transition-colors ${
               activePeriod === period
-                ? "bg-neutral-800 text-white"
-                : "text-neutral-400 hover:text-white"
+                ? "bg-white text-black"
+                : "bg-neutral-800 text-neutral-400 hover:text-white"
             }`}
           >
             {period === "full"
@@ -97,26 +125,38 @@ export function TeamMetrics({
             <h3 className="text-lg font-medium">Team Metrics</h3>
             <span className="text-sm text-neutral-400">• {periodLabels[activePeriod]}</span>
           </div>
-          <div className="flex items-center gap-2 bg-neutral-900 rounded-full p-1">
+          
+          {/* Team toggle with slider animation */}
+          <div className="flex items-center gap-0 bg-neutral-800 rounded-full p-1 relative">
+            {/* Animated background slider */}
+            <div 
+              className="absolute h-[80%] rounded-full transition-all duration-300 ease-in-out"
+              style={{
+                left: activeTeam === "team1" ? '4px' : '50%',
+                right: activeTeam === "team2" ? '4px' : '50%',
+                backgroundColor: activeTeam === "team1" 
+                  ? `${teamOneColor}80` // 50% opacity
+                  : `${teamTwoColor}80`  // 50% opacity
+              }}
+            ></div>
+            
             <button
               onClick={() => setActiveTeam("team1")}
-              className={`py-1 px-3 rounded-full text-sm transition-colors ${
+              className={`py-1 px-3 rounded-full text-sm transition-colors z-10 ${
                 activeTeam === "team1"
-                  ? `text-white bg-opacity-90`
+                  ? `text-white`
                   : "text-neutral-400 hover:text-white"
               }`}
-              style={activeTeam === "team1" ? { backgroundColor: teamOneColor } : {}}
             >
               {teamOneShort}
             </button>
             <button
               onClick={() => setActiveTeam("team2")}
-              className={`py-1 px-3 rounded-full text-sm transition-colors ${
+              className={`py-1 px-3 rounded-full text-sm transition-colors z-10 ${
                 activeTeam === "team2"
-                  ? `text-white bg-opacity-90`
+                  ? `text-white`
                   : "text-neutral-400 hover:text-white"
               }`}
-              style={activeTeam === "team2" ? { backgroundColor: teamTwoColor } : {}}
             >
               {teamTwoShort}
             </button>
@@ -126,22 +166,25 @@ export function TeamMetrics({
         {/* Circle Charts */}
         <div className="flex justify-center items-center gap-4 flex-grow">
           <CircleChart 
-            value={currentMetrics.pace} 
+            value={animatedValues.pace} 
             label="Pace" 
             color={currentTeam.color}
             size={140}
+            animate={true}
           />
           <CircleChart 
-            value={currentMetrics.offensiveEfficiency} 
-            label="Off. Efficiency" 
+            value={animatedValues.offensiveEfficiency} 
+            label="Off Eff" 
             color={currentTeam.color}
             size={140} 
+            animate={true}
           />
           <CircleChart 
-            value={currentMetrics.defensiveEfficiency} 
-            label="Def. Efficiency" 
+            value={animatedValues.defensiveEfficiency} 
+            label="Def Eff" 
             color={currentTeam.color}
             size={140}
+            animate={true}
           />
         </div>
       </div>

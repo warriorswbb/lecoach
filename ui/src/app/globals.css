@@ -96,3 +96,98 @@ body {
 .btn-small {
   @apply rounded-full px-3 py-1 text-xs font-medium transition-colors;
 }
+
+/* Add these classes to your globals.css file */
+@keyframes spin-slow {
+  0% {
+    transform: rotateX(0) rotateY(0);
+  }
+  100% {
+    transform: rotateX(360deg) rotateY(360deg);
+  }
+}
+
+.perspective-800 {
+  perspective: 800px;
+}
+
+.transform-style-3d {
+  transform-style: preserve-3d;
+}
+
+.animate-spin-slow {
+  animation: spin-slow 12s linear infinite;
+}
+
+.rotate-y-0 {
+  transform: rotateY(0deg);
+}
+
+.rotate-y-90 {
+  transform: rotateY(90deg);
+}
+
+.rotate-y-180 {
+  transform: rotateY(180deg);
+}
+
+.rotate-y-270 {
+  transform: rotateY(270deg);
+}
+
+.rotate-x-90 {
+  transform: rotateX(90deg);
+}
+
+.rotate-x-270 {
+  transform: rotateX(270deg);
+}
+
+.translate-z-10 {
+  transform: translateZ(10px);
+}
+
+.cube-face {
+  backface-visibility: visible;
+}
+
+@keyframes blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
+.animate-blink {
+  animation: blink 1s step-end infinite;
+}
+
+/* Replace the existing rotate-square animation with this pausing version */
+@keyframes rotate-square-pause {
+  0%,
+  20% {
+    transform: rotate(0deg);
+  }
+  25%,
+  45% {
+    transform: rotate(90deg);
+  }
+  50%,
+  70% {
+    transform: rotate(180deg);
+  }
+  75%,
+  95% {
+    transform: rotate(270deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-rotate-square-pause {
+  animation: rotate-square-pause 4s steps(4, jump-none) infinite;
+}

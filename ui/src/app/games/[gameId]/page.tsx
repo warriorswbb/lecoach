@@ -54,8 +54,8 @@ export default async function GamePage({
     {}
   );
 
-  // Generate randomized team colors instead of fixed blue/red
-  const getRandomTeamColors = () => {
+  // Replace the random color generation function with a deterministic one
+  const getTeamColors = (gameId: string) => {
     const colorPairs = [
       ["#2563eb", "#dc2626"], // blue/red
       ["#7c3aed", "#ea580c"], // purple/orange
@@ -64,14 +64,23 @@ export default async function GamePage({
       ["#14b8a6", "#9f1239"], // teal/ruby
     ];
 
-    // Select a random pair or shuffle the selected pair
-    const randomPair =
-      colorPairs[Math.floor(Math.random() * colorPairs.length)];
-    // Randomly decide whether to swap the colors
-    return Math.random() > 0.5 ? randomPair : [randomPair[1], randomPair[0]];
+    // Generate a numeric hash from gameId
+    let hash = 0;
+    for (let i = 0; i < gameId.length; i++) {
+      hash = (hash << 5) - hash + gameId.charCodeAt(i);
+      hash = hash & hash; // Convert to 32bit integer
+    }
+
+    // Use the hash to deterministically select a color pair
+    const index = Math.abs(hash) % colorPairs.length;
+    const pair = colorPairs[index];
+
+    // Also use hash to determine if colors should be swapped
+    return hash % 2 === 0 ? pair : [pair[1], pair[0]];
   };
 
-  const [teamOneColor, teamTwoColor] = getRandomTeamColors();
+  // Then use this function instead of getRandomTeamColors
+  const [teamOneColor, teamTwoColor] = getTeamColors(gameId);
 
   // Create win probability chart data for different periods
   const generateWinProbabilityData = (

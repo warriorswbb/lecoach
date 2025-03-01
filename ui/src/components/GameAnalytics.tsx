@@ -49,34 +49,28 @@ export function GameAnalytics({
       {/* Header with quarters and toggle - fixed height */}
       <div className="bg-[#1a1a1a] px-4 py-1.5 flex justify-between border-b border-neutral-800 items-center">
         {/* Quarter tabs */}
-        <div className="flex h-9">
-          {activeView === "play-by-play" ? (
-            periods.map((period) => (
-              <button
-                key={period}
-                onClick={() => setActivePeriod(period)}
-                className={`px-4 h-full text-sm font-medium rounded-md transition-colors ${
-                  activePeriod === period
-                    ? "bg-neutral-800 text-white"
-                    : "text-neutral-400 hover:text-white"
-                }`}
-              >
-                {period === "1"
-                  ? "1st"
-                  : period === "2"
-                  ? "2nd"
-                  : period === "3"
-                  ? "3rd"
-                  : period === "4"
-                  ? "4th"
-                  : `OT${parseInt(period) - 4}`}
-              </button>
-            ))
-          ) : (
-            <div className="text-sm text-neutral-400 flex items-center">
-              Basketball AI Assistant
-            </div>
-          )}
+        <div className="bg-[#1a1a1a] px-4 py-2 flex gap-2 border-b border-neutral-800">
+          {periods.map((period) => (
+            <button
+              key={period}
+              onClick={() => setActivePeriod(period)}
+              className={`px-4 py-1.5 text-sm font-medium rounded-full transition-colors ${
+                activePeriod === period
+                  ? "bg-white text-black"
+                  : "bg-neutral-800 text-neutral-400 hover:text-white"
+              }`}
+            >
+              {period === "1"
+                ? "1st"
+                : period === "2"
+                ? "2nd"
+                : period === "3"
+                ? "3rd"
+                : period === "4"
+                ? "4th"
+                : `OT${parseInt(period) - 4}`}
+            </button>
+          ))}
         </div>
 
         {/* View toggle */}
@@ -99,7 +93,7 @@ export function GameAnalytics({
                 : "bg-neutral-800 text-white hover:bg-neutral-700"
             }`}
           >
-            AI Chat
+            Agent
           </button>
         </div>
       </div>

@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { useRouter } from "next/navigation";
 import { AgentStep } from "@/lib/agents/BasketballAnalytics";
 
@@ -41,13 +41,92 @@ const STEP_MESSAGES = {
   ],
 };
 
+// Sample prompts that will rotate with typing animation
+const SAMPLE_PROMPTS = [
+  "Who scored the most points in this game?",
+  "What was the shooting percentage in the 3rd quarter?",
+  "How many turnovers did the home team have?",
+  "Which player had the best plus/minus?",
+  "How did the teams perform in fast break points?",
+  "What was the biggest lead in the game?",
+  "Who had the most assists tonight?",
+  "Compare the bench scoring between both teams",
+];
+
+// Updated rotating square component with slower rotation and pauses
+const RotatingSquare = ({ size = "w-16 h-16", marginClass = "mb-6" }) => (
+  <div className={`${marginClass} ${size} relative`}>
+    <div
+      className="w-full h-full bg-gradient-to-br from-neutral-500 to-white animate-rotate-square-pause"
+      style={{
+        transformOrigin: "center",
+      }}
+    ></div>
+  </div>
+);
+
+// Define a type for the step names
+type StepName = keyof typeof STEP_MESSAGES;
+
 export function AnalyticsChat({ gameId }: { gameId: string }) {
   const [messages, setMessages] = useState<ChatMessage[]>([]);
   const [input, setInput] = useState("");
   const [isLoading, setIsLoading] = useState(false);
-  const [currentStep, setCurrentStep] = useState<string | null>(null);
+  const [currentStep, setCurrentStep] = useState<StepName | null>(null);
   const [showDetails, setShowDetails] = useState<number | null>(null);
+  const [displayText, setDisplayText] = useState("");
+  const [isTyping, setIsTyping] = useState(true);
+  const [isDeleting, setIsDeleting] = useState(false);
+  const [currentPromptIndex, setCurrentPromptIndex] = useState(0);
+  const typingTimeout = useRef<NodeJS.Timeout | null>(null);
   const router = useRouter();
+
+  // Fixed typing animation effect
+  useEffect(() => {
+    if (messages.length > 0) return;
+
+    // Clear any existing timeout to prevent conflicts
+    if (typingTimeout.current) {
+      clearTimeout(typingTimeout.current);
+    }
+
+    const currentPrompt = SAMPLE_PROMPTS[currentPromptIndex];
+
+    if (isTyping) {
+      if (displayText.length < currentPrompt.length) {
+        // Type the next character
+        typingTimeout.current = setTimeout(() => {
+          setDisplayText(currentPrompt.substring(0, displayText.length + 1));
+        }, 70); // typing speed
+      } else {
+        // Finished typing, pause before deleting
+        typingTimeout.current = setTimeout(() => {
+          setIsDeleting(true);
+          setIsTyping(false);
+        }, 2000); // pause after typing
+      }
+    } else if (isDeleting) {
+      if (displayText.length > 0) {
+        // Delete the last character
+        typingTimeout.current = setTimeout(() => {
+          setDisplayText(displayText.substring(0, displayText.length - 1));
+        }, 35); // delete speed (faster than typing)
+      } else {
+        // Finished deleting, move to next prompt
+        setIsDeleting(false);
+        setIsTyping(true);
+        setCurrentPromptIndex((prev) => (prev + 1) % SAMPLE_PROMPTS.length);
+        // Pause before typing next prompt
+        typingTimeout.current = setTimeout(() => {}, 500);
+      }
+    }
+
+    return () => {
+      if (typingTimeout.current) {
+        clearTimeout(typingTimeout.current);
+      }
+    };
+  }, [displayText, isTyping, isDeleting, currentPromptIndex, messages.length]);
 
   const sendMessage = async () => {
     if (!input.trim() || isLoading) return;
@@ -59,7 +138,7 @@ export function AnalyticsChat({ gameId }: { gameId: string }) {
     setIsLoading(true);
 
     // Sequence through loading states
-    const steps = [
+    const steps: StepName[] = [
       "Query Understanding",
       "SQL Generation",
       "Data Processing",
@@ -125,27 +204,17 @@ export function AnalyticsChat({ gameId }: { gameId: string }) {
       <div className="flex-grow overflow-y-auto pb-4 px-3">
         {messages.length === 0 ? (
           <div className="h-full flex flex-col items-center justify-center text-center px-4">
-            <div className="mb-4 p-6 rounded-full bg-blue-600/10 backdrop-blur-sm border border-blue-500/20">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-10 w-10 text-blue-400"
-                viewBox="0 0 20 20"
-                fill="currentColor"
-              >
-                <path
-                  fillRule="evenodd"
-                  d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-3a1 1 0 00-.867.5 1 1 0 11-1.731-1A3 3 0 0113 8a3.001 3.001 0 01-2 2.83V11a1 1 0 11-2 0v-1a1 1 0 011-1 1 1 0 100-2zm0 8a1 1 0 100-2 1 1 0 000 2z"
-                  clipRule="evenodd"
-                />
-              </svg>
-            </div>
-            <h3 className="text-lg font-medium text-white">
-              Basketball Analytics AI
-            </h3>
-            <p className="text-neutral-400 mt-3 max-w-sm leading-relaxed">
-              Ask a question about this game, player stats, or team performance.
+            {/* Simple rotating square */}
+            <RotatingSquare />
+
+            {/* Typing animation for prompts */}
+            <p className="text-neutral-400 mt-3 max-w-sm leading-relaxed h-16">
+              <span className="text-neutral-300 italic">
+                "{displayText}
+                <span className="animate-blink">|</span>"
+              </span>
             </p>
-            <div className="mt-6 w-16 h-0.5 bg-gradient-to-r from-transparent via-blue-500/50 to-transparent"></div>
+            <div className="mt-6 w-16 h-0.5 bg-gradient-to-r from-transparent via-neutral-500/50 to-transparent"></div>
           </div>
         ) : (
           messages.map((message, index) => (
@@ -156,86 +225,155 @@ export function AnalyticsChat({ gameId }: { gameId: string }) {
               <div
                 className={`max-w-[90%] rounded-lg px-4 py-3 ${
                   message.role === "user"
-                    ? "bg-blue-600 text-white ml-auto"
+                    ? "bg-neutral-700 text-white ml-auto"
                     : "bg-neutral-800 text-white"
                 }`}
               >
-                {message.content}
+                <div className="mb-2">{message.content}</div>
 
                 {/* Only show "Show Thinking" for AI messages with steps */}
                 {message.role === "assistant" && message.steps && (
-                  <button
-                    onClick={() =>
-                      setShowDetails(showDetails === index ? null : index)
-                    }
-                    className="mt-2 text-xs bg-white text-black rounded-full px-3 py-1 transition-colors hover:bg-neutral-200"
-                  >
-                    {showDetails === index ? "Hide Thinking" : "Show Thinking"}
-                  </button>
+                  <div className="mt-3">
+                    <button
+                      onClick={() =>
+                        setShowDetails(showDetails === index ? null : index)
+                      }
+                      className="text-xs bg-white text-black rounded-full px-3 py-1 transition-colors hover:bg-neutral-200"
+                    >
+                      {showDetails === index
+                        ? "Hide Thinking"
+                        : "Show Thinking"}
+                    </button>
+                  </div>
                 )}
               </div>
 
-              {/* Thinking process display */}
+              {/* Enhanced thinking process display */}
               {showDetails === index && message.steps && (
-                <div className="bg-neutral-900 rounded-lg p-3 text-xs space-y-3 mt-1 border border-neutral-800">
-                  <div className="text-neutral-400">
-                    Response time:{" "}
-                    {((message.executionTime || 0) / 1000).toFixed(1)}s
+                <div className="bg-neutral-900 rounded-lg p-4 text-sm space-y-4 mt-2 border border-neutral-800">
+                  <div className="flex justify-between items-center">
+                    <div className="text-neutral-300 font-medium">
+                      Analysis Process
+                    </div>
+                    <div className="text-neutral-400">
+                      Response time:{" "}
+                      {((message.executionTime || 0) / 1000).toFixed(1)}s
+                    </div>
                   </div>
 
                   {message.steps.map((step, stepIdx) => (
                     <div
                       key={stepIdx}
-                      className="border-l-2 border-blue-700 pl-3 pb-2"
+                      className="border-l-2 border-neutral-600 pl-4 pb-3"
                     >
-                      <div className="flex justify-between items-center">
-                        <span className="font-medium text-blue-400">
+                      <div className="flex justify-between items-center mb-2">
+                        <span className="font-medium text-white">
                           {step.agent}
                         </span>
-                        <span className="text-neutral-500">
+                        <span className="text-neutral-500 bg-neutral-800 px-2 py-0.5 rounded text-xs">
                           {((step.endTime || 0) - step.startTime) / 1000}s
                         </span>
                       </div>
 
-                      {/* Show step's thinking process */}
-                      <div className="mt-1">
+                      {/* Show step's thinking process with improved formatting */}
+                      <div className="mt-2">
                         {step.agent === "SQL Generation" ? (
-                          <div className="bg-neutral-800 p-2 rounded font-mono text-green-400 overflow-x-auto text-xs">
+                          <div className="bg-neutral-800 p-3 rounded font-mono text-neutral-200 overflow-x-auto whitespace-pre">
                             {step.output}
                           </div>
                         ) : step.agent === "Query Understanding" ? (
-                          <div className="text-neutral-400">
-                            <span className="text-neutral-300">Intent:</span>{" "}
-                            {step.output?.intent}
-                            <br />
-                            <span className="text-neutral-300">
-                              Analysis:
-                            </span>{" "}
-                            {step.output?.analysisType}
-                            {step.output?.complexity && (
-                              <>
-                                <br />
-                                <span className="text-neutral-300">
-                                  Complexity:
-                                </span>{" "}
-                                {step.output?.complexity}
-                              </>
+                          <div className="bg-neutral-800 p-3 rounded">
+                            {/* If output is a string, display it directly */}
+                            {typeof step.output === "string" ? (
+                              <div className="text-neutral-200">
+                                {step.output}
+                              </div>
+                            ) : /* If output has the expected fields, display them structured */
+                            step.output?.intent || step.output?.analysisType ? (
+                              <div className="space-y-2">
+                                {step.output?.intent && (
+                                  <div className="flex">
+                                    <span className="text-neutral-400 w-24">
+                                      Intent:
+                                    </span>
+                                    <span className="text-neutral-200">
+                                      {step.output.intent}
+                                    </span>
+                                  </div>
+                                )}
+                                {step.output?.analysisType && (
+                                  <div className="flex">
+                                    <span className="text-neutral-400 w-24">
+                                      Analysis:
+                                    </span>
+                                    <span className="text-neutral-200">
+                                      {step.output.analysisType}
+                                    </span>
+                                  </div>
+                                )}
+                                {step.output?.complexity && (
+                                  <div className="flex">
+                                    <span className="text-neutral-400 w-24">
+                                      Complexity:
+                                    </span>
+                                    <span className="text-neutral-200">
+                                      {step.output.complexity}
+                                    </span>
+                                  </div>
+                                )}
+                                {step.output?.entities && (
+                                  <div className="flex">
+                                    <span className="text-neutral-400 w-24">
+                                      Entities:
+                                    </span>
+                                    <span className="text-neutral-200">
+                                      {JSON.stringify(step.output.entities)}
+                                    </span>
+                                  </div>
+                                )}
+                              </div>
+                            ) : (
+                              /* Otherwise, display the raw JSON for the entire output */
+                              <div>
+                                <div className="text-neutral-400 mb-2">
+                                  Analysis output:
+                                </div>
+                                <pre className="whitespace-pre-wrap text-xs max-h-52 overflow-y-auto text-neutral-200">
+                                  {JSON.stringify(step.output, null, 2) ||
+                                    "No output data available"}
+                                </pre>
+                              </div>
                             )}
                           </div>
                         ) : step.agent === "Data Processing" ? (
-                          <div className="text-neutral-400">
-                            Processed{" "}
-                            {step.output?.rawCount ||
-                              step.output?.data?.length ||
-                              0}{" "}
-                            records
+                          <div className="bg-neutral-800 p-3 rounded">
+                            <div className="text-neutral-300 mb-2">
+                              Processed{" "}
+                              {step.output?.rawCount ||
+                                step.output?.data?.length ||
+                                0}{" "}
+                              records
+                            </div>
+                            <div className="text-neutral-400 text-xs max-h-36 overflow-y-auto">
+                              {step.output?.data && (
+                                <pre className="whitespace-pre-wrap">
+                                  {JSON.stringify(
+                                    step.output.data.slice(0, 5),
+                                    null,
+                                    2
+                                  )}
+                                  {step.output.data.length > 5 && "..."}
+                                </pre>
+                              )}
+                            </div>
                           </div>
                         ) : (
-                          <div className="text-neutral-400">
-                            {step.output
-                              ? JSON.stringify(step.output).substring(0, 100) +
-                                "..."
-                              : "Processing completed"}
+                          <div className="bg-neutral-800 p-3 rounded text-neutral-300">
+                            <pre className="whitespace-pre-wrap text-xs max-h-36 overflow-y-auto">
+                              {typeof step.output === "object"
+                                ? JSON.stringify(step.output, null, 2)
+                                : step.output || "Processing completed"}
+                            </pre>
                           </div>
                         )}
                       </div>
@@ -247,21 +385,19 @@ export function AnalyticsChat({ gameId }: { gameId: string }) {
           ))
         )}
 
-        {/* Loading indicator code remains the same */}
+        {/* Loading indicator with better spacing */}
         {isLoading && (
           <div className="flex justify-start">
             <div className="max-w-[90%] rounded-lg px-4 py-3 bg-neutral-800 text-white">
-              <div className="flex items-center space-x-3">
-                <div className="loading-dots">
-                  <span></span>
-                  <span></span>
-                  <span></span>
-                </div>
+              <div className="flex items-center">
+                {/* Smaller rotating square with more right margin */}
+                <RotatingSquare size="w-5 h-5" marginClass="mr-4" />
+
                 <div className="text-sm text-neutral-300">
                   {currentStep
-                    ? STEP_MESSAGES[
-                        currentStep as keyof typeof STEP_MESSAGES
-                      ]?.[Math.floor(Date.now() / 1000) % 3]
+                    ? STEP_MESSAGES[currentStep]?.[
+                        Math.floor(Date.now() / 1000) % 3
+                      ]
                     : "Processing..."}
                 </div>
               </div>
@@ -284,7 +420,7 @@ export function AnalyticsChat({ gameId }: { gameId: string }) {
             onChange={(e) => setInput(e.target.value)}
             onKeyDown={(e) => e.key === "Enter" && sendMessage()}
             placeholder="Ask about this game..."
-            className="flex-1 bg-neutral-800 border border-neutral-700 rounded-full px-4 py-2 text-white focus:outline-none focus:ring-1 focus:ring-blue-500"
+            className="flex-1 bg-neutral-800 border border-neutral-700 rounded-full px-4 py-2 text-white focus:outline-none focus:ring-0 focus:border-neutral-600"
           />
           <button
             onClick={sendMessage}
