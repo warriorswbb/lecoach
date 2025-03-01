@@ -4,6 +4,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { AreaChartComponent } from "@/components/ui/area-chart";
 import { PlayByPlayDisplay } from "@/components/PlayByPlayDisplay";
+import { AnalyticsChat } from "@/components/AnalyticsChat";
 
 // Add this interface for the server component
 interface PlayByPlay {
@@ -143,6 +144,8 @@ export default async function GamePage({
                 <div className="text-neutral-500">January - June 2024</div>
               </div>
             </div>
+
+            <AnalyticsChat gameId={gameId} />
 
             {/* Additional charts can be added here */}
           </div>

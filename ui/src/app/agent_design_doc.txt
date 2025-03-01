@@ -1,0 +1,218 @@
+# Basketball Analytics Multi-Agent System: Design Document
+
+## 1. System Overview
+
+### 1.1 Purpose
+To create an AI-powered basketball analytics system that can answer complex questions about basketball games by breaking down the reasoning process across multiple specialized agents.
+
+### 1.2 Objectives
+Provide natural language interface for querying basketball data
+Support complex analytical questions about game events, player performance, and team statistics
+Ensure accurate SQL generation against existing database schema
+Present insights with appropriate context and visualizations
+Integrate seamlessly with existing game detail page
+
+## 2. Architecture
+### 2.1 High level architecture
+UI Component (React) → API Endpoint (Next.js) → Coordinator Agent → Query Understanding Agent → SQL Generation Agent → Database (PostgreSQL) → Data Processing Agent → Response Generation Agent → back to UI.
+
+### 2.2 Tech stack
+
+Framework: Next.js (existing)
+UI: React with Tailwind CSS (existing)
+Database: PostgreSQL (existing)
+AI Orchestration: LangChain.js
+LLM Provider: OpenAI
+API: REST endpoints for agent interaction
+
+## 3. Agent Specifications
+
+### 3.1 Orchestrator Agent
+Purpose: Orchestrate the entire question-answering process
+
+Inputs:
+User question
+Game context (gameId, teams, etc.)
+
+Outputs:
+Final response to user
+
+Key Features:
+Determines question type and routes to appropriate specialized agents
+Manages state throughout the multi-agent process
+Handles error cases and fallbacks
+Coordinates parallel processing when appropriate
+
+### 3.2 Query understanding agent
+Purpose: Parse and analyze user questions about basketball games
+Inputs:
+Raw user question
+Game metadata (teams, date, etc.)
+
+Outputs:
+Structured query intent
+Required data points
+Analysis type classification
+
+Key Features:
+Basketball terminology recognition
+Question type classification (scoring, player stats, team performance, etc.)
+Identification of time periods of interest (quarters, game segments)
+Entity extraction (player names, team references)
+
+### 3.3 SQL Generation Agent
+
+Purpose: Convert analytical requirements into executable SQL queries
+Inputs:
+Structured query intent
+Database schema information
+
+Outputs:
+SQL query or queries to execute
+Parameters for queries
+
+Key Features:
+Deep knowledge of database schema (from v1/db/models.py)
+Complex query generation for time-series analysis
+Query validation and optimization
+Handles different question types with appropriate SQL patterns
+
+
+### 3.4 Data Processing Agent
+
+Purpose: Process query results and perform advanced analytics
+
+Inputs:
+Raw database query results
+Analysis requirements
+
+Outputs:
+Processed insights
+Calculation results
+Data prepared for visualization
+
+Key Features:
+Statistical analysis functions
+Comparative analysis between players/teams
+Data transformation for visualization
+
+
+### 3.5 Reponse Generation Agent
+
+Purpose: Create natural language responses with insights and visualizations
+Inputs:
+Processed analytics results
+Original question context
+Outputs:
+Natural language response
+Visualization specifications
+Key Features:
+Natural language generation focused on basketball analytics
+Contextual response formatting
+Identification of key insights to highlight
+Recommendations for visualizations
+
+## 4. Data Flow
+### 4.1 Question Processing Flow
+User submits question via UI
+Question and game context passed to Coordinator Agent
+Coordinator routes to Query Understanding Agent
+Query Understanding identifies intent and required data
+SQL Generation Agent creates appropriate database queries
+Queries execute against PostgreSQL database
+Results passed to Data Processing Agent for analysis
+Processed insights passed to Response Generation Agent
+Final response returned to UI for display
+
+
+## 5. Database Integration
+### 5.1 Database Schema Analysis
+
+Key tables from v1/db/models.py:
+games: Game metadata (teams, scores, date)
+teams: Team information
+players: Player information
+play_by_play: Detailed game events with timestamps
+Additional statistics tables
+
+### 5.2 Database Connection
+Leverage existing connection in ui/src/lib/db.ts:
+Reuse PostgreSQL pool configuration
+Add new query functions for analytics
+Ensure proper error handling and connection management
+
+
+## 6. API Design
+### 6.1 Endpoints
+POST /api/games/:gameId/ask
+Purpose: Submit a basketball analytics question
+
+Request Body:
+
+  {
+    question: string;
+  }
+
+Response:
+
+  {
+    answer: string;
+    visualizationType?: 'chart' | 'highlight' | 'comparison';
+    visualizationData?: any;
+    confidence: number;
+    executionTime: number;
+  }
+
+### 6.2 API Implementation
+Location: ui/src/app/api/games/[gameId]/ask/route.ts
+Implements Next.js API Routes pattern
+Connects to LangChain orchestration layer
+Handles authentication if needed
+Manages response formatting
+
+
+## 7. UI Integration
+### 7.1 Analytics Chat Component
+New component: ui/src/components/AnalyticsChat.tsx
+Chat interface for asking questions
+Displays responses with appropriate formatting
+Renders visualizations based on response
+Maintains chat history
+
+7.2 Game Page Integration
+Update: ui/src/app/games/[gameId]/page.tsx
+Add Analytics Chat component to the existing layout
+Position in an expandable panel or dedicated section
+Style consistently with existing dark theme
+7.3 Visualization Integration
+Leverage existing AreaChartComponent for data visualization
+Add additional visualization types as needed
+Ensure consistent styling with the current design system
+
+
+## 8. Implementation Plan
+### 8.1 Phase 1: Core Agent Setup
+Create basic agent framework
+Implement coordinator and query understanding agents
+Set up basic communication patterns
+
+### 8.2 Phase 2: Database Integration
+Implement SQL generation agent
+Create database connection layer
+Test query generation and execution
+
+### 8.3 Phase 3: Analysis and Response
+Implement data processing agent
+2. Create response generation agent
+Add visualization selection logic
+
+### 8.4 Phase 4: UI Integration
+Create API endpoints
+Develop chat UI component
+Integrate with game detail page
+
+### 8.5 Phase 5: Testing and Refinement
+Create test suite for common basketball questions
+Measure accuracy and performance
+Refine agent behaviors based on results
+
