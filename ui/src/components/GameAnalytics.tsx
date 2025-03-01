@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { AnalyticsChat } from "./AnalyticsChat";
+import { PlayByPlayDisplay } from "./PlayByPlayDisplay";
 
 type ViewMode = "play-by-play" | "chat";
 
@@ -9,10 +10,14 @@ export function GameAnalytics({
   gameId,
   playByPlayByPeriod,
   gameTeamOneId,
+  teamOneColor,
+  teamTwoColor
 }: {
   gameId: string;
-  playByPlayByPeriod: Record<string, any[]>;
+  playByPlayByPeriod: Record<string, PlayByPlay[]>;
   gameTeamOneId: string;
+  teamOneColor: string;
+  teamTwoColor: string;
 }) {
   // Default to play-by-play view
   const [activeView, setActiveView] = useState<ViewMode>("play-by-play");
@@ -56,7 +61,7 @@ export function GameAnalytics({
           )}
         </div>
 
-        {/* View toggle - fixed height */}
+        {/* View toggle */}
         <div className="flex space-x-2">
           <button
             onClick={() => setActiveView("play-by-play")}
@@ -81,65 +86,19 @@ export function GameAnalytics({
         </div>
       </div>
 
-      {/* Content area with flex-grow to fill remaining space */}
+      {/* Content area */}
       <div className="flex-grow overflow-y-auto">
         {activeView === "play-by-play" ? (
-          <div className="h-full">
-            {periods.length > 0 && playByPlayByPeriod[activePeriod] ? (
-              <div className="divide-y divide-neutral-800">
-                {playByPlayByPeriod[activePeriod].map((play: any) => (
-                  <div
-                    key={play.play_id}
-                    className="px-6 py-3.5 flex items-start"
-                  >
-                    <div className="w-16 text-neutral-400 font-mono">
-                      {formatTime(play.time_remaining)}
-                    </div>
-
-                    <div className="flex-1">
-                      <div className="flex items-center">
-                        <div
-                          className={`w-8 h-8 flex items-center justify-center rounded-full mr-3 ${
-                            play.team_id === gameTeamOneId
-                              ? "bg-blue-900/30"
-                              : "bg-red-900/30"
-                          }`}
-                        >
-                          <span className="text-sm font-bold">
-                            {play.team_short}
-                          </span>
-                        </div>
-
-                        <div>
-                          <div className="font-medium">
-                            {play.player_name ? play.player_name : "Team"} •{" "}
-                            {play.play_type}
-                          </div>
-                          <div className="text-sm text-neutral-400">
-                            {play.play_description}
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div className="text-right whitespace-nowrap">
-                      <div className="font-medium">
-                        {play.team_one_score} - {play.team_two_score}
-                      </div>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            ) : (
-              <div className="p-8 text-center text-neutral-400">
-                No play-by-play data available for this period.
-              </div>
-            )}
-          </div>
+          <PlayByPlayDisplay 
+            playByPlayByPeriod={playByPlayByPeriod} 
+            gameTeamOneId={gameTeamOneId}
+            teamOneColor={teamOneColor}
+            teamTwoColor={teamTwoColor}
+            activePeriod={activePeriod}
+            hideControls={true} // Hide the duplicate controls
+          />
         ) : (
-          <div className="h-full flex flex-col">
-            <AnalyticsChat gameId={gameId} />
-          </div>
+          <AnalyticsChat gameId={gameId} />
         )}
       </div>
     </div>

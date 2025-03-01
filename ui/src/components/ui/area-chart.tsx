@@ -124,8 +124,9 @@ export function AreaChartComponent({
                 dataKey={category.name}
                 stackId="1"
                 stroke={category.color}
+                strokeWidth={2}
                 fill={category.color}
-                fillOpacity={0.6}
+                fillOpacity={0.4}
                 isAnimationActive={showAnimation}
               />
             ))}

@@ -22,47 +22,57 @@ interface PlayByPlay {
 export function PlayByPlayDisplay({
   playByPlayByPeriod,
   gameTeamOneId,
+  teamOneColor,
+  teamTwoColor,
+  activePeriod,
+  hideControls = false,
 }: {
   playByPlayByPeriod: Record<string, PlayByPlay[]>;
   gameTeamOneId: string;
+  teamOneColor: string;
+  teamTwoColor: string;
+  activePeriod?: string;
+  hideControls?: boolean;
 }) {
   const periods = Object.keys(playByPlayByPeriod).sort(
     (a, b) => parseInt(a) - parseInt(b)
   );
-  const [activePeriod, setActivePeriod] = useState(periods[0] || "1");
+  const [localActivePeriod, setLocalActivePeriod] = useState(periods[0] || "1");
+
+  const currentPeriod = activePeriod || localActivePeriod;
 
   return (
     <div className="bg-[#121212] border border-neutral-800 rounded-lg overflow-hidden">
-      {/* Quarter tabs */}
-      <div className="bg-[#1a1a1a] px-4 py-2 flex border-b border-neutral-800">
-        {periods.map((period) => (
-          <button
-            key={period}
-            onClick={() => setActivePeriod(period)}
-            className={`px-4 py-2 text-sm font-medium rounded-md transition-colors ${
-              activePeriod === period
-                ? "bg-neutral-800 text-white"
-                : "text-neutral-400 hover:text-white"
-            }`}
-          >
-            {period === "1"
-              ? "1st"
-              : period === "2"
-              ? "2nd"
-              : period === "3"
-              ? "3rd"
-              : period === "4"
-              ? "4th"
-              : `OT${parseInt(period) - 4}`}
-          </button>
-        ))}
-      </div>
+      {!hideControls && (
+        <div className="bg-[#1a1a1a] px-4 py-2 flex border-b border-neutral-800">
+          {periods.map((period) => (
+            <button
+              key={period}
+              onClick={() => setLocalActivePeriod(period)}
+              className={`px-4 py-2 text-sm font-medium rounded-md transition-colors ${
+                currentPeriod === period
+                  ? "bg-neutral-800 text-white"
+                  : "text-neutral-400 hover:text-white"
+              }`}
+            >
+              {period === "1"
+                ? "1st"
+                : period === "2"
+                ? "2nd"
+                : period === "3"
+                ? "3rd"
+                : period === "4"
+                ? "4th"
+                : `OT${parseInt(period) - 4}`}
+            </button>
+          ))}
+        </div>
+      )}
 
-      {/* Scrollable play-by-play content */}
       <div className="max-h-[600px] overflow-y-auto">
-        {periods.length > 0 && playByPlayByPeriod[activePeriod] ? (
+        {periods.length > 0 && playByPlayByPeriod[currentPeriod] ? (
           <div className="divide-y divide-neutral-800">
-            {playByPlayByPeriod[activePeriod].map((play: PlayByPlay) => (
+            {playByPlayByPeriod[currentPeriod].map((play: PlayByPlay) => (
               <div key={play.play_id} className="px-6 py-4 flex items-start">
                 <div className="w-16 text-neutral-400 font-mono">
                   {formatTime(play.time_remaining)}
@@ -71,16 +81,21 @@ export function PlayByPlayDisplay({
                 <div className="flex-1">
                   <div className="flex items-center">
                     <div
-                      className={`w-8 h-8 flex items-center justify-center rounded-full mr-3 ${
+                      className="w-3 h-3 rounded-full flex-shrink-0 mr-3 border border-neutral-700/30"
+                      style={{
+                        backgroundColor:
+                          Math.random() > 0.5 ? teamOneColor : teamTwoColor,
+                      }}
+                    ></div>
+                    <span
+                      className={`text-sm font-bold mr-3 ${
                         play.team_id === gameTeamOneId
-                          ? "bg-blue-900/30"
-                          : "bg-red-900/30"
+                          ? "text-blue-400"
+                          : "text-red-400"
                       }`}
                     >
-                      <span className="text-sm font-bold">
-                        {play.team_short}
-                      </span>
-                    </div>
+                      {play.team_short}
+                    </span>
 
                     <div>
                       <div className="font-medium">
@@ -113,7 +128,8 @@ export function PlayByPlayDisplay({
 }
 
 function formatTime(seconds: number): string {
+  seconds = seconds / 10;
   const mins = Math.floor(seconds / 60);
   const secs = seconds % 60;
   return `${mins}:${secs.toString().padStart(2, "0")}`;
-} 
+}
