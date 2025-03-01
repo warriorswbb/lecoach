@@ -5,6 +5,7 @@ import { notFound } from "next/navigation";
 import { AreaChartComponent } from "@/components/ui/area-chart";
 import { GameAnalytics } from "@/components/GameAnalytics";
 import { WinProbabilityChart } from "@/components/WinProbabilityChart";
+import { TeamMetrics } from "@/components/TeamMetrics";
 
 // Add this interface for the server component
 interface PlayByPlay {
@@ -75,21 +76,42 @@ export default async function GamePage({
   // Create win probability chart data for different periods
   const generateWinProbabilityData = (
     teamOneShort: string,
-    teamTwoShort: string
+    teamTwoShort: string,
+    teamOneWon: boolean
   ) => {
     // Helper to generate random probability data points that sum to 100
-    const generateDataPoints = (count: number, bias: number = 0.5) => {
+    const generateDataPoints = (
+      count: number,
+      bias: number = 0.5,
+      teamOneWinner: boolean
+    ) => {
       const points = [];
       // Start with 50-50 probability
       let teamOneProbability = 50 + (Math.random() * 10 - 5) * bias;
 
       for (let i = 0; i < count; i++) {
-        // Random change in probability, weighted towards bias
-        const change = (Math.random() * 8 - 4) * bias;
-        teamOneProbability = Math.max(
-          30,
-          Math.min(70, teamOneProbability + change)
-        );
+        // For the last point, ensure winning team reaches close to 100%
+        if (i === count - 1) {
+          teamOneProbability = teamOneWinner ? 99 : 1; // Team one wins or loses
+        }
+        // Approaching the end, start trending toward the final outcome
+        else if (i > count * 0.75) {
+          // Gradually move toward the final outcome
+          const finalValue = teamOneWinner ? 99 : 1;
+          const currentPosition = (i - count * 0.75) / (count * 0.25);
+          const moveAmount =
+            (finalValue - teamOneProbability) * currentPosition * 0.5;
+          teamOneProbability += moveAmount;
+        }
+        // Normal probability changes for most of the game
+        else {
+          // Random change in probability, weighted towards bias
+          const change = (Math.random() * 8 - 4) * bias;
+          teamOneProbability = Math.max(
+            30,
+            Math.min(70, teamOneProbability + change)
+          );
+        }
 
         points.push({
           time: i,
@@ -102,17 +124,21 @@ export default async function GamePage({
 
     // Generate data for each quarter with different biases
     return {
-      "1": generateDataPoints(10, 0.8), // First quarter slight bias
-      "2": generateDataPoints(10, 1.2), // Second quarter stronger movements
-      "3": generateDataPoints(10, 0.9), // Third quarter moderate
-      "4": generateDataPoints(10, 1.5), // Fourth quarter dramatic changes
-      full: generateDataPoints(40, 1.0), // Full game (all quarters combined)
+      "1": generateDataPoints(10, 0.8, teamOneWon), // First quarter slight bias
+      "2": generateDataPoints(10, 1.2, teamOneWon), // Second quarter stronger movements
+      "3": generateDataPoints(10, 0.9, teamOneWon), // Third quarter moderate
+      "4": generateDataPoints(10, 1.5, teamOneWon), // Fourth quarter dramatic changes with end outcome
+      full: generateDataPoints(40, 1.0, teamOneWon), // Full game (all quarters combined)
     };
   };
 
+  // Use the actual game result to determine the winner
+  const teamOneWon = game.team_one_score > game.team_two_score;
+
   const winProbabilityData = generateWinProbabilityData(
     game.team_one_short,
-    game.team_two_short
+    game.team_two_short,
+    teamOneWon // Pass the actual winner
   );
 
   // Create chart data using actual game data
@@ -245,10 +271,18 @@ export default async function GamePage({
 
       <main className="container mx-auto px-4 py-4 relative z-1">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-          {/* Left column - Chart with period selection */}
-          <div>
+          {/* Left column - Chart & Team Metrics */}
+          <div className="flex flex-col gap-4">
             <WinProbabilityChart
               winProbabilityData={winProbabilityData}
+              teamOneShort={game.team_one_short}
+              teamTwoShort={game.team_two_short}
+              teamOneColor={teamOneColor}
+              teamTwoColor={teamTwoColor}
+            />
+
+            {/* Add the TeamMetrics component below the chart */}
+            <TeamMetrics
               teamOneShort={game.team_one_short}
               teamTwoShort={game.team_two_short}
               teamOneColor={teamOneColor}

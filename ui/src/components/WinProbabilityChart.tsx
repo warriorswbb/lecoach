@@ -39,10 +39,15 @@ export function WinProbabilityChart({
     const mins = Math.floor(minutesRemaining);
     const secs = Math.floor((minutesRemaining - mins) * 60);
     
+    // For full game, only keep some labels to avoid crowding
+    const shouldShowLabel = activePeriod !== "full" || index % 4 === 0 || index === array.length - 1;
+    
     return {
       ...point,
       // Replace 'time' with a more meaningful label
-      time: `${mins}:${secs.toString().padStart(2, '0')}`
+      time: `${mins}:${secs.toString().padStart(2, '0')}`,
+      // Add display property to control which labels are shown
+      displayTime: shouldShowLabel ? `${mins}:${secs.toString().padStart(2, '0')}` : "",
     };
   });
 
@@ -53,7 +58,7 @@ export function WinProbabilityChart({
   ];
 
   return (
-    <div className="bg-[#121212] border border-neutral-800 rounded-lg h-[600px] flex flex-col">
+    <div className="bg-[#121212] border border-neutral-800 rounded-lg h-[350px] flex flex-col">
       {/* Period tabs */}
       <div className="bg-[#1a1a1a] px-4 py-1.5 flex border-b border-neutral-800">
         {periods.map((period) => (
@@ -88,13 +93,15 @@ export function WinProbabilityChart({
           data={improvedData}
           categories={chartCategories}
           index="time"
+          labelKey="displayTime"
           showXAxis={true}
           showYAxis={true}
-          height={480} // Reduced height to make more room for x-axis
+          height={240}
           stacked={true}
-          // Don't show title since we're showing it above
           title=""
           subtitle=""
+          chartMargin={{ top: 10, right: 10, left: 10, bottom: 25 }}
+          yAxisTicks={[25, 50, 75, 100]}
         />
       </div>
     </div>

@@ -19,6 +19,7 @@ interface AreaChartProps {
     color: string;
   }[];
   index: string;
+  labelKey?: string;
   valueFormatter?: string;
   colors?: string[];
   startColor?: string;
@@ -35,12 +36,20 @@ interface AreaChartProps {
   subtitle?: string;
   className?: string;
   stacked?: boolean;
+  chartMargin?: {
+    top: number;
+    right: number;
+    left: number;
+    bottom: number;
+  };
+  yAxisTicks?: number[];
 }
 
 export function AreaChartComponent({
   data,
   categories,
   index,
+  labelKey,
   valueFormatter,
   showXAxis = true,
   showYAxis = true,
@@ -53,6 +62,8 @@ export function AreaChartComponent({
   subtitle,
   className,
   stacked = false,
+  chartMargin = { top: 10, right: 10, left: 0, bottom: 10 },
+  yAxisTicks,
 }: AreaChartProps) {
   // Default formatter just returns the value as a string
   const formatValue = (value: number) => value.toString();
@@ -67,21 +78,14 @@ export function AreaChartComponent({
       )}
       <div style={{ height: `${height}px` }}>
         <ResponsiveContainer width="100%" height="100%">
-          <AreaChart
-            data={data}
-            margin={{
-              top: 10,
-              right: 10,
-              left: 0,
-              bottom: 10,
-            }}
-          >
+          <AreaChart data={data} margin={chartMargin}>
             {showXAxis && (
               <XAxis
-                dataKey={index}
+                dataKey={labelKey || index}
                 tick={{ fill: "#888888" }}
                 axisLine={{ stroke: "#444444" }}
                 tickLine={{ stroke: "#444444" }}
+                interval="preserveStartEnd"
               />
             )}
             {showYAxis && (
@@ -92,6 +96,7 @@ export function AreaChartComponent({
                 tickLine={{ stroke: "#444444" }}
                 tickFormatter={formatValue}
                 domain={stacked ? [0, 100] : ["auto", "auto"]}
+                ticks={yAxisTicks}
               />
             )}
             {showTooltip && (
